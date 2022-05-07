@@ -132,6 +132,11 @@ const config = {
             ],
           },
         ],
+        logo: {
+          alt: "ManhPT's Engineering Blog",
+          src: "img/ManhPT-logo-192h.png",
+          href: "/"
+        },
         copyright: "Built with Docusaurus.",
       },
       prism: {
