@@ -7,11 +7,21 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "ManhPT's Engineering Blog",
-  tagline: "IT Engineering Knowledges and Experiences",
   url: "https://manhpt.com",
   baseUrl: "/",
-  onBrokenLinks: "throw",
+
+  // The tagline for your website.
+  tagline: "IT Engineering Knowledges and Experiences",
+
+  // The behavior of Docusaurus when it detects any broken link.
+  // By default, it throws an error, to ensure you never ship any broken link, but you can lower this security if needed.
+  onBrokenLinks: "warn",
+
+  // The behavior of Docusaurus when it detects any broken markdown link.
+  // By default, it prints a warning, to let you know about your broken markdown link, but you can change this security if needed.
   onBrokenMarkdownLinks: "warn",
+
+  // Path to your site favicon; must be a URL that can be used in link's href. For example, if your favicon is in static/img/favicon.ico
   favicon: "img/favicon.ico",
 
   // GitHub pages deployment config.
