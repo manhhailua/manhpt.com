@@ -78,7 +78,7 @@ const config = {
         },
         {
           name: "og:image",
-          content: "manhpt-logo-192h.png"
+          content: "img/manhpt-logo-192h.png"
         }
       ],
       navbar: {
