@@ -11,7 +11,7 @@ const config = {
   baseUrl: "/",
 
   // The tagline for your website.
-  tagline: "IT Engineering Knowledges and Experiences",
+  tagline: "IT Engineering Knowledges and Experiences. Lưu trữ kiến thức, kinh nghiệm và đôi khi là góc nhìn về công nghệ.",
 
   // The behavior of Docusaurus when it detects any broken link.
   // By default, it throws an error, to ensure you never ship any broken link, but you can lower this security if needed.
@@ -56,6 +56,10 @@ const config = {
           // URL route for the blog section of your site. DO NOT include a trailing slash.
           // Use / to put the blog at root path.
           routeBasePath: "/",
+          // Blog page title for better SEO.
+          blogTitle: "Knowledges and Experiences",
+          // Blog page meta description for better SEO.
+          blogDescription: "IT Engineering Knowledges and Experiences. Lưu trữ kiến thức, kinh nghiệm và đôi khi là góc nhìn về công nghệ.",
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
@@ -67,6 +71,16 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      metadata: [
+        {
+          name: "keywords",
+          content: "engineering, blog, IT, IT knowledges, IT experiences",
+        },
+        {
+          name: "og:image",
+          content: "manhpt-logo-192h.png"
+        }
+      ],
       navbar: {
         title: "ManhPT",
         logo: {
@@ -134,10 +148,10 @@ const config = {
         ],
         logo: {
           alt: "ManhPT's Engineering Blog",
-          src: "img/ManhPT-logo-192h.png",
-          href: "/"
+          src: "img/manhpt-logo-192h.png",
+          href: "/",
         },
-        copyright: "Built with Docusaurus.",
+        copyright: "Powered by ManhPT | Built with Docusaurus",
       },
       prism: {
         theme: lightCodeTheme,
