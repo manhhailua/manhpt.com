@@ -93,10 +93,14 @@ const config = {
         style: "dark",
         links: [
           {
-            title: "Docs",
+            title: "Content",
             items: [
               {
-                label: "Tutorial",
+                label: "Blog",
+                to: "/",
+              },
+              {
+                label: "Tutorials",
                 to: "/docs/intro",
               },
             ],
@@ -105,16 +109,16 @@ const config = {
             title: "Community",
             items: [
               {
-                label: "Stack Overflow",
-                href: "https://stackoverflow.com/questions/tagged/docusaurus",
+                label: "Linkedin",
+                href: "https://www.linkedin.com/in/manhpt/",
               },
               {
-                label: "Discord",
-                href: "https://discordapp.com/invite/docusaurus",
+                label: "Stack Overflow",
+                href: "https://stackoverflow.com/users/1955725/manhhailua",
               },
               {
                 label: "Twitter",
-                href: "https://twitter.com/docusaurus",
+                href: "https://twitter.com/manhhailua",
               },
             ],
           },
@@ -122,12 +126,8 @@ const config = {
             title: "More",
             items: [
               {
-                label: "Blog",
-                to: "/blog",
-              },
-              {
                 label: "GitHub",
-                href: "https://github.com/facebook/docusaurus",
+                href: "https://github.com/manhhailua",
               },
             ],
           },
