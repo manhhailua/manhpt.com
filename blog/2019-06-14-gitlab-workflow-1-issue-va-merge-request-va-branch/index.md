@@ -20,7 +20,7 @@ Trước khi bắt đầu thực hành hoặc đọc tiếp, bạn nên tạo m�
 
 ## Tại sao cần Gitlab Flow
 
-Thực tế, gitlab flow hay [git workflow](https://manhpt.com/category/workflow/) không phải một khái niệm mới. Do git không hề dễ học cho người mới nên các workflow của nó thường bị bỏ qua, ngoài ra các nhà cung cấp công cụ devops cũng thường đưa ra những git workflow riêng để phù hợp với luồng devops trên công cụ của họ. Bạn có thể tham khảo thêm:
+Thực tế, gitlab flow hay [git workflow](/tags/workflow/) không phải một khái niệm mới. Do git không hề dễ học cho người mới nên các workflow của nó thường bị bỏ qua, ngoài ra các nhà cung cấp công cụ devops cũng thường đưa ra những git workflow riêng để phù hợp với luồng devops trên công cụ của họ. Bạn có thể tham khảo thêm:
 
 - Gitlab Flow - [https://docs.gitlab.com/ee/topics/gitlab_flow.html](https://docs.gitlab.com/ee/topics/gitlab_flow.html)
 - Github Flow - [https://guides.github.com/introduction/flow/](https://guides.github.com/introduction/flow/)

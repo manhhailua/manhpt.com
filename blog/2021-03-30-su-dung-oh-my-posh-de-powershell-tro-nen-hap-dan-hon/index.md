@@ -14,7 +14,7 @@ Bài viết hướng dẫn cách cài đặt Oh-My-Posh vào Powershell.
 
 Là một developer thì chắc hẳn bạn đã sử dụng shell/bash trên linux hay macos. Mà đã sử dụng shell/bash thì chắc cũng sẽ biết đến [Oh My Zsh](https://ohmyz.sh/) - một công cụ huyền thoại cho những ai yêu dòng lệnh (command line).
 
-Một developer xuất thân MacOS như mình khi chuyển môi trường sang Windows đã luôn cảm thấy CMD hay Powershell rất tù khi phải làm việc chéo cánh với các server Linux. Ngoài ra khi làm việc với [git](https://manhpt.com/tag/git/) command thì mình cũng bị phụ thuộc vào Git Bash để nhận được gợi ý khi gõ lệnh.
+Một developer xuất thân MacOS như mình khi chuyển môi trường sang Windows đã luôn cảm thấy CMD hay Powershell rất tù khi phải làm việc chéo cánh với các server Linux. Ngoài ra khi làm việc với [git](/tags/git/) command thì mình cũng bị phụ thuộc vào Git Bash để nhận được gợi ý khi gõ lệnh.
 
 Sau một thời giản dài sống chung với lũ hồi tìm hiểu thì cuối cùng cũng tìm ra được chân ái - [Oh My Posh](https://ohmyposh.dev/). Oh My Posh giúp powershell trở nên đầy màu sắc đi kèm với những thông tin hữu ích liên quan đến project hiện tại và cả git nữa, quá ngon rồi 😁 mlem mlem...
 
@@ -63,11 +63,11 @@ Cái "sai sai" ở đây là lỗi font chữ nên bạn có thể nhìn thấy 
 
 Bạn chỉ cần tải `Meslo.zip` về rồi giải nén ra rồi cài đặt.
 
-![cai-dat-meslo-font-oh-my-posh](https://s3.ap-southeast-1.amazonaws.com/manhpt.com/2021/03/Screenshot-2021-03-30-212124.png)
+![cai-dat-meslo-font-oh-my-posh](./Screenshot-2021-03-30-212124.png)
 
 Chưa xong, cần phải thay font cho Powershell nữa, **click chuột phải vào thanh menu của cửa sổ Powershell > Properties > tab Fonts**.
 
-![choose-font-meslo-oh-my-posh](https://s3.ap-southeast-1.amazonaws.com/manhpt.com/2021/03/2021-03-30-4.png)
+![choose-font-meslo-oh-my-posh](./2021-03-30-4.png)
 
 Chọn font `MesloLGM NF` như ảnh trên rồi click **OK**. Thế là xong rồi, khởi động lại Powershell để hưởng thụ thành quả thôi. Max xịn sò 😎.
 

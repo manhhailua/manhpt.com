@@ -8,7 +8,7 @@ image: ./k3s-logo-square.png
 
 ![](./k3s-logo-square.png)
 
-K3S là một phiên bản nhỏ và nhẹ của [Kubernetes](https://manhpt.com/category/kubernetes/) mà bạn có thể sử dụng trên rất nhiều môi trường thiết bị khác nhau. Bài viết này không nhằm mục đích giới thiệu K3S nên các bạn có thể tìm hiểu thêm về K3S tại đây [https://k3s.io/](https://k3s.io/) hoặc [https://github.com/rancher/k3s/blob/master/README.md](https://github.com/rancher/k3s/blob/master/README.md) trước khi đọc tiếp.
+K3S là một phiên bản nhỏ và nhẹ của [Kubernetes](/tags/kubernetes/) mà bạn có thể sử dụng trên rất nhiều môi trường thiết bị khác nhau. Bài viết này không nhằm mục đích giới thiệu K3S nên các bạn có thể tìm hiểu thêm về K3S tại đây [https://k3s.io/](https://k3s.io/) hoặc [https://github.com/rancher/k3s/blob/master/README.md](https://github.com/rancher/k3s/blob/master/README.md) trước khi đọc tiếp.
 
 Để có thể cài đặt và sử dụng K3S thì các bạn cũng nên tham khảo yêu cầu hệ thống của K3S trước tại: [https://rancher.com/docs/k3s/latest/en/installation/installation-requirements/](https://rancher.com/docs/k3s/latest/en/installation/installation-requirements/). Nếu bạn đã chuẩn bị đầy đủ môi trường theo đúng yêu cầu của K3S thì bắt đầu thôi.
 

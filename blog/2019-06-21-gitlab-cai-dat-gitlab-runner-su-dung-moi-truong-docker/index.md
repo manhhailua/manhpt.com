@@ -37,4 +37,4 @@ sudo docker run --rm -t -i \
 
 - _Cài đặt xong rồi nhưng pipeline của tôi vẫn không được kích hoạt?_ - Rất có thể bạn cần cấu hình thêm một chút để Runners có thể kích hoạt các jobs không được `tags`, việc này có thể làm ngay trên giao diện web gitlab. ([Link tham khảo](https://docs.gitlab.com/ee/ci/runners/#allowing-runners-with-tags-to-pick-jobs-without-tags))
 - _Tôi cần build docker image trên CI nhưng khi chạy thì báo không tìm thấy docker?_ - Chắc là quên bật `--privileged` ([link tham khảo](https://docs.gitlab.com/ee/ci/docker/using_docker_build.html#use-docker-in-docker-executor)).
-- Nếu bạn muốn sử dụng gitlab-runner cho docker swarm thì có thể tham khải [tại đây](https://manhpt.com/2019/11/30/gitlab-cai-dat-gitlab-runner-tren-moi-truong-docker-swarm/).
+- Nếu bạn muốn sử dụng gitlab-runner cho docker swarm thì có thể tham khảo [tại đây](../2019-11-30-gitlab-cai-dat-gitlab-runner-tren-moi-truong-docker-swarm/index.md).

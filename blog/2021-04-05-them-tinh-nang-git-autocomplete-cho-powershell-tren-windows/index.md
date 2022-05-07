@@ -3,10 +3,8 @@ title: Thêm tính năng git autocomplete cho powershell trên windows
 description: Post-git là một module Powershell cho phép tích hợp Git với Powershell. Hỗ trợ hiển thị các thông tin cơ bản và git autocomplete.
 authors: [manhpt]
 tags: [autocomplete, git, git autocomplete, posh, posh-git, powershell]
-image: ./Screenshot-2021-04-05-120851.png
+image: ./powershell-posh-git-oh-my-posh.png
 ---
-
-![](./Screenshot-2021-04-05-120851.png)
 
 Post-git là một module Powershell cho phép tích hợp Git với Powershell hỗ trợ git autocomplete. Posh-git có vài tính năng quan trọng như:
 
@@ -17,7 +15,7 @@ Giao diện Powershell sau khi tích hợp posh-git:
 
 ![demo-posh-git-on-powershell](./PromptDefaultLong.png)
 
-Trong một bài viết trước, mình có hướng dẫn cách [cài đặt và tích hợp oh-my-posh](https://manhpt.com/2021/03/30/su-dung-oh-my-posh-de-powershell-tro-nen-hap-dan-hon/) cho Powershell để cải thiện trải nghiệm làm việc. Trong bài viết này mình sẽ giới thiệu [posh-git](https://github.com/dahlbyk/posh-git).
+Trong một bài viết trước, mình có hướng dẫn cách [cài đặt và tích hợp oh-my-posh](../2021-03-30-su-dung-oh-my-posh-de-powershell-tro-nen-hap-dan-hon/index.md) cho Powershell để cải thiện trải nghiệm làm việc. Trong bài viết này mình sẽ giới thiệu [posh-git](https://github.com/dahlbyk/posh-git).
 
 ## 1. Cài đặt posh-git
 
@@ -51,7 +49,7 @@ Add-PoshGitToProfile
 
 Giao diện posh-git trên Powershell cơ bản:
 
-![powershell-post-git](https://s3.ap-southeast-1.amazonaws.com/manhpt.com/2021/04/Screenshot-2021-04-05-120543.png)
+![powershell-post-git](./powershell-post-git.png)
 
 Nếu thành công thì chỉ cần mở lại Powershell là đã có thể sử dụng posh-git với Powershell rồi. Nếu lệnh trên báo lỗi thì ta có thể làm thủ công bằng cách:
 
@@ -71,6 +69,6 @@ Lưu lại và khởi động lại Powershell để hưởng thụ thành quả
 
 Giao diện posh-git và oh-my-posh trên Powershell:
 
-![powershell-posh-git-oh-my-posh](https://s3.ap-southeast-1.amazonaws.com/manhpt.com/2021/04/Screenshot-2021-04-05-120851.png)
+![powershell-posh-git-oh-my-posh](./powershell-posh-git-oh-my-posh.png)
 
 Để nhận được gợi ý khi gõ lệnh với git thì bạn chỉ cần nhấn phím "Tab" là được.

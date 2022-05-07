@@ -10,7 +10,7 @@ image: ./Add-gitlab-run-in-docker-swarm-mode.jpg
 
 ## Why docker swarm? Liên quan gì đến gitlab-runner?
 
-Setup gitlab-runner trên môi trường docker bình thường khá đơn giản trong bài viết [này](https://manhpt.com/2019/06/21/gitlab-cai-dat-gitlab-runner-su-dung-moi-truong-docker/). Nhưng nếu bạn có nhiều máy (máy tính local hoặc server) thì sao? Setup gitlab-runner cho từng máy không phải là một ý hay:
+Setup gitlab-runner trên môi trường docker bình thường khá đơn giản trong bài viết [này](../2019-06-21-gitlab-cai-dat-gitlab-runner-su-dung-moi-truong-docker/index.md). Nhưng nếu bạn có nhiều máy (máy tính local hoặc server) thì sao? Setup gitlab-runner cho từng máy không phải là một ý hay:
 
 > Kết hợp các máy này lại với nhau, tạo thành một cụm docker swarm.
 

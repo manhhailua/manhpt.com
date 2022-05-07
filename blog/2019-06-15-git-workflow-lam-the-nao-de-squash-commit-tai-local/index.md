@@ -10,14 +10,16 @@ image: ./git-history.jpeg
 
 ## Vấn đề là...
 
-Trong quá trình code chắc hẳn bạn thường xuyên tạo ra những dumb commit để tránh mất code, hoặc nhiều commit trùng tên nhau. Bạn có bao giờ nghĩ đến việc gộp các commit (squash commit) đó lại thành một commit có ý nghĩa hơn chưa? Squash commit (gộp commit) là một việc nên làm nhưng không phải ai cũng nghĩ đến. Thậm chí có nghĩ đến thì đa số cũng không muốn làm bởi sợ rằng có thể gây ra mất code. Xin được khẳng định luôn là code một khi đã được commit thì không mất đi đâu được, vô tư đi.
+Trong quá trình code chắc hẳn bạn thường xuyên tạo ra những dumb commit để tránh mất code, hoặc nhiều commit trùng tên nhau. Bạn có bao giờ nghĩ đến việc gộp các commit (squash commit) đó lại thành một commit có ý nghĩa hơn chưa?
+
+Squash commit (gộp commit) là một việc nên làm nhưng không phải ai cũng nghĩ đến. Thậm chí có nghĩ đến thì đa số cũng không muốn làm bởi sợ rằng có thể gây ra mất code. Xin được khẳng định luôn là code một khi đã được commit thì không mất đi đâu được, vô tư đi.
 
 ![](./what-is-squash.jpg) Để squash commit, chúng ta sẽ sử dụng câu lệnh `git rebase -i` hoặc `git rebase --interactive`. Trong nội dung bài viết này tôi sẽ không giải thích về `rebase`. Các bạn có thể tham khảo thêm các bài viết sau để hiểu rõ ràng hơn:
 
 1.  [https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase](https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase)
 2.  [https://www.atlassian.com/git/tutorials/merging-vs-rebasing](https://www.atlassian.com/git/tutorials/merging-vs-rebasing)
 
-Bài viết này nằm trong series về [Git Workflow](https://manhpt.com/category/workflow/). Các bạn có thể tham khảo bài viết giới thiệu tại [đây](https://manhpt.com/2019/06/15/git-workflow-gioi-thieu/).
+Bài viết này nằm trong series về [Git Workflow](/tags/workflow/). Các bạn có thể tham khảo bài viết giới thiệu tại [đây](../2019-06-15-git-workflow-gioi-thieu/index.md).
 
 ## Trước khi squash
 

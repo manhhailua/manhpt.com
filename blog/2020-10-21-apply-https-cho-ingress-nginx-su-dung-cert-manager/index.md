@@ -12,11 +12,11 @@ Hướng dẫn cài đặt và cấu hình cert-manager cho website sử dụng 
 
 Kể từ ngày 24/07/2018, Google release Chrome 68 có tính năng đánh dấu các trang web không dùng HTTPS là “Không an toàn” nhằm xây dựng trình duyệt an toàn hơn. Việc này đã diễn ra trong vòng 1 năm. Hiện tại, Microsoft Edge (Chromium) vẫn đang duy trì điều này. Điều này khiến việc triển khai HTTPS cho website của bạn trở thành một yêu cầu bắt buộc.
 
-Trong bài viết này, mình sẽ hướng dẫn cấu hình cert-manager cho [nginx-ingress](https://kubernetes.github.io/ingress-nginx/how-it-works/) để tự động hóa hoàn toàn việc issue và renew chứng chỉ https cho website của bạn hoàn toàn miễn phí. Tất nhiên bài viết này chỉ áp dụng cho hệ thống sử dụng kubernetes. Trong thời điểm viết bài thì mình sử dụng [K3S](https://k3s.io/). Bạn có thể tham khảo cách cài đặt K3S tại [đây](https://manhpt.com/2020/09/10/cac-thu-thuat-cau-hinh-khi-cai-dat-k3s/).
+Trong bài viết này, mình sẽ hướng dẫn cấu hình cert-manager cho [nginx-ingress](https://kubernetes.github.io/ingress-nginx/how-it-works/) để tự động hóa hoàn toàn việc issue và renew chứng chỉ https cho website của bạn hoàn toàn miễn phí. Tất nhiên bài viết này chỉ áp dụng cho hệ thống sử dụng kubernetes. Trong thời điểm viết bài thì mình sử dụng [K3S](https://k3s.io/). Bạn có thể tham khảo cách cài đặt K3S tại [đây](../2020-09-10-cac-thu-thuat-cau-hinh-khi-cai-dat-k3s/index.md).
 
 ## Chuẩn bị
 
-- Hạ tầng sử dụng [Kubernetes](https://manhpt.com/category/kubernetes/)
+- Hạ tầng sử dụng [Kubernetes](/tags/kubernetes/)
 - Đã cài đặt nginx-ingress ([https://github.com/kubernetes/ingress-nginx/tree/master/charts/ingress-nginx#install-chart](https://github.com/kubernetes/ingress-nginx/tree/master/charts/ingress-nginx#install-chart))
 - Tên miền
 
@@ -55,7 +55,7 @@ Bạn có 2 sự lựa chọn, self signed hoặc letsencrypt. Vui lòng đọc 
 
 Sử dụng self signed certificate nếu website của bạn sử dụng kết hợp với [CloudFlare SSL/TLS](https://www.cloudflare.com/ssl/) và sử dụng encryption mode là **Full.**
 
-![](https://s3.ap-southeast-1.amazonaws.com/manhpt.com/2020/10/Screenshot-2020-10-21-233232-1024x492.png)
+![](./Screenshot-2020-10-21-233232-1024x492.png)
 
 Tạo một template file `selfsigned.issuer.yaml` với nội dung như sau:
 
@@ -79,7 +79,7 @@ kubectl --namespace cert-manager apply -f selfsigned.issuer.yaml
 
 Sử dụng Letsencrypt nếu website của bạn public trực tiếp ra internet hoặc sử dụng kết hợp CloudFlare SSL/TLS với encryption mode là **Full (strict)**.
 
-![](https://s3.ap-southeast-1.amazonaws.com/manhpt.com/2020/10/Screenshot-2020-10-21-164249-1024x493.png)
+![](./Screenshot-2020-10-21-164249-1024x493.png)
 
 Tạo một template file `letsencrypt-prod.issuer.yaml` với nội dung như sau:
 

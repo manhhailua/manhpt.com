@@ -10,13 +10,15 @@ image: ./ship_captain_devops_kubernetes_steer.png
 
 ## Lens là một phần mềm nguồn mở cung cấp giao diện thân thiện để làm việc với nhiều kubernetes cluster.
 
-Khi khối lượng công việc được chuyển lên môi trường container (cụ thể là docker) ngày một nhiều, việc quản lý một số lượng lớn container và kết nối giữa chúng trở lên khó khăn hơn. Khi quy mô và độ phức tạp của môi trường container tăng lên vượt quá khả năng quản lý bởi sức người, các nền tảng quản lý cấp phát container như [Kubernetes](https://manhpt.com/category/kubernetes/) ngày càng trở nên quan trọng. Tuy nhiên, các nền tảng như vậy cũng đi liền với những thách thức đòi hỏi các thông số, khả năng giám sát và mức độ thân thiện với người dùng để diễn tả mức độ phức tạp của chúng.
+Khi khối lượng công việc được chuyển lên môi trường container (cụ thể là docker) ngày một nhiều, việc quản lý một số lượng lớn container và kết nối giữa chúng trở lên khó khăn hơn. Khi quy mô và độ phức tạp của môi trường container tăng lên vượt quá khả năng quản lý bởi sức người, các nền tảng quản lý cấp phát container như [Kubernetes](/tags/kubernetes/) ngày càng trở nên quan trọng. Tuy nhiên, các nền tảng như vậy cũng đi liền với những thách thức đòi hỏi các thông số, khả năng giám sát và mức độ thân thiện với người dùng để diễn tả mức độ phức tạp của chúng.
 
 ## Sử dụng Lens
 
-[Lens](https://k8slens.dev/) - tự xưng Kubernetes IDE - là một công cụ khá hữu ích, hấp dẫn và open source cung cấp khả năng quản lý các kubernetes cluster. Lens có thể kết nối đến các kubernetes cluster sử dụng kubeconfig file, sau đó hiển thị các thông tin về cluster và [objects](https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/) bên trong. Lens cũng có thể kết nối hoặc cài đặt [Prometheus](https://prometheus.io/) stack để cung cấp các thông số về cluster, bao gồm thông tin và tình trạng các node. ![](https://s3.ap-southeast-1.amazonaws.com/manhpt.com/2020/11/Screenshot-2020-11-19-162418.png)
+[Lens](https://k8slens.dev/) - tự xưng Kubernetes IDE - là một công cụ khá hữu ích, hấp dẫn và open source cung cấp khả năng quản lý các kubernetes cluster. Lens có thể kết nối đến các kubernetes cluster sử dụng kubeconfig file, sau đó hiển thị các thông tin về cluster và [objects](https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/) bên trong. Lens cũng có thể kết nối hoặc cài đặt [Prometheus](https://prometheus.io/) stack để cung cấp các thông số về cluster, bao gồm thông tin và tình trạng các node.
 
-Cluster overview
+Màn hình cluster overview
+
+![](./Screenshot-2020-11-19-162418.png)
 
 Tương tự Kubernetes dashboard hoặc Openshift, Lens cung cấp các cập nhật realtime về tình trạng của cluster và thu thập thông số giám sát với Prometheus.
 

@@ -13,7 +13,7 @@ Bài viết này hướng dẫn nhanh cách thay đổi hostname trên Ubuntu 18
 
 Hostname thường được thiết lập khi bạn cài đặt hệ điều hành hoặc khởi tạo một máy chủ ảo (VM) thì nó sẽ được gán tự động. Cách thay đổi hostname dưới đây có thể áp dụng mà không cần phải khởi động lại hệ điều hành.
 
-Mặc dù hướng dẫn dành cho Ubuntu 18.04 nhưng bạn có thể áp dụng nó cho Ubuntu 16.04 hoặc bất kỳ hệ điều hành nào base trên [Ubuntu](https://manhpt.com/tag/ubuntu/), VD: Linux Mint, Elementary OS và thậm chí cả [ViettelOS](https://vtcc.vn/production/cyos/).
+Mặc dù hướng dẫn dành cho Ubuntu 18.04 nhưng bạn có thể áp dụng nó cho Ubuntu 16.04 hoặc bất kỳ hệ điều hành nào base trên [Ubuntu](/tags/ubuntu/), VD: Linux Mint, Elementary OS và thậm chí cả [ViettelOS](https://vtcc.vn/production/cyos/).
 
 ## Yêu cầu
 

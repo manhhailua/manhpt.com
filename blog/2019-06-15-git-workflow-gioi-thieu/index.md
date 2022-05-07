@@ -13,7 +13,7 @@ image: ./feature-branch.png
 3.  Ở vị trí team leader bạn sẽ vận hành git ra sao để kết hợp với process của team (agile) và giải quyết các conflict trong quá trình code?
 4.  Lịch sử git có giá trị như thế nào? Hay bạn chẳng bao giờ để ý đến nó?
 
-Nếu bạn là 1 git command line master thì mọi thứ đều có thể được giải quyết dưới local bằng dòng lệnh. Nhưng khi làm việc trong một nhóm đông thành viên, làm thế nào để xử lý các vấn đề conflict code, release ra sao, thêm feature mới như thế nào, hotfix ra làm sao một cách trơn tru và hiệu quả, giảm thiểu tối đa các bước thủ công, tiến dần đến một git [workflow](https://manhpt.com/category/workflow/) tự động hoàn toàn (devops).
+Nếu bạn là 1 git command line master thì mọi thứ đều có thể được giải quyết dưới local bằng dòng lệnh. Nhưng khi làm việc trong một nhóm đông thành viên, làm thế nào để xử lý các vấn đề conflict code, release ra sao, thêm feature mới như thế nào, hotfix ra làm sao một cách trơn tru và hiệu quả, giảm thiểu tối đa các bước thủ công, tiến dần đến một git [workflow](/tags/workflow/) tự động hoàn toàn (devops).
 
 ## Luôn luôn tạo ra linear history
 

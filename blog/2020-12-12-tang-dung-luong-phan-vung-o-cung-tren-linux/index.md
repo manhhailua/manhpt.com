@@ -8,7 +8,7 @@ image: ./istock-1061856176.jpg
 
 ![](./istock-1061856176.jpg)
 
-Trên các hệ thống hạ tầng cloud, sau khi sizing (bổ sung dung lượng) ổ đĩa ảo (volume), ta cần phải thực hiện thêm một vài lệnh đặc thù trên từng [phân vùng](https://manhpt.com/tag/partition/) ổ đĩa (partition) để hệ thống thực sự nhận diện được dung lượng mới thêm.
+Trên các hệ thống hạ tầng cloud, sau khi sizing (bổ sung dung lượng) ổ đĩa ảo (volume), ta cần phải thực hiện thêm một vài lệnh đặc thù trên từng [phân vùng](/tags/partition/) ổ đĩa (partition) để hệ thống thực sự nhận diện được dung lượng mới thêm.
 
 Chú ý: Trước khi cập nhật dụng lượng trên ổ đĩa có chứa dữ liệu quan trọng thì ta nên backup dữ liệu hoặc tạo snapshot cho ổ đĩa đó trên các hệ thống cloud mà có hỗ trợ tính năng snapshot.
 

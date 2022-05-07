@@ -14,7 +14,7 @@ Nội dung bài viết dành cho elasticsearch và kibana 7.x.
 
 ## Vấn đề là...
 
-Ở công ty mình vừa có mấy task devops liên quan đến scaling, clustering Elasticsearch nên viết lại đề phòng sau này cần dùng. Có một task là chuyển dữ liệu từ single-node [Elasticsearch](https://manhpt.com/tag/elasticsearch/) cũ lên cluster mới. Single-node Elasticsearch cũ nằm trên một máy chủ ảo (VM) riêng và deploy bằng docker-compose. Cluster Elasticsearch mới thì được deploy với [Helm](https://helm.sh/) trong Kubernetes và trên một cụm VM khác.
+Ở công ty mình vừa có mấy task devops liên quan đến scaling, clustering Elasticsearch nên viết lại đề phòng sau này cần dùng. Có một task là chuyển dữ liệu từ single-node [Elasticsearch](/tags/elasticsearch/) cũ lên cluster mới. Single-node Elasticsearch cũ nằm trên một máy chủ ảo (VM) riêng và deploy bằng docker-compose. Cluster Elasticsearch mới thì được deploy với [Helm](https://helm.sh/) trong Kubernetes và trên một cụm VM khác.
 
 Có một cách tương đối đơn giản để thực hiện việc này đó là tạo snapshot backup trên single-node cũ và restore snapshot đó trên cluster mới. Sau một hồi google thì mình cũng đã chốt lại được các bước cơ bản sử dụng [Kibana](https://www.elastic.co/kibana):
 
@@ -108,19 +108,19 @@ POST _nodes/reload_secure_settings
 
 ### 3.1. Nhập tên và chọn kiểu là S3 --> nhấn Next
 
-![](https://s3.ap-southeast-1.amazonaws.com/manhpt.com/2020/12/Screenshot-2020-12-30-172823.png)
+![](./Screenshot-2020-12-30-172823.png)
 
 ### 3.2. Nhập tên bucket --> nhấn Register
 
 Bucket cần được khởi tạo trước trên [AWS S3 console](https://s3.console.aws.amazon.com/s3/home).
 
-![](https://s3.ap-southeast-1.amazonaws.com/manhpt.com/2020/12/FireShot-Capture-007-Add-repository-Snapshot-and-Restore-Elastic-localhost.png)
+![](./FireShot-Capture-007-Add-repository-Snapshot-and-Restore-Elastic-localhost.png)
 
 ### 3.3. (optional) Verify repo
 
 Sau khi register thành công, màn hình sẽ hiển thị thông tin repo vừa được tạo. Bạn sẽ nhìn thấy nút "Verify repository" ở panel chi tiết phía bên phải, sau khi nhấn nút này thì Kibana sẽ hiển thị "Verification status" là connected.
 
-![](https://s3.ap-southeast-1.amazonaws.com/manhpt.com/2020/12/Screenshot-2020-12-30-173836.png)
+![](./Screenshot-2020-12-30-173836.png)
 
 Nếu status là "Not connected" thì thông tin lỗi cũng sẽ được hiển thị trong mục Details.
 
@@ -128,7 +128,7 @@ Nếu status là "Not connected" thì thông tin lỗi cũng sẽ được hiể
 
 Ta chỉ cần chuyển sang tab policy, nằm ngay bên cạnh repository. Nhấn "Create a policy".
 
-![](https://s3.ap-southeast-1.amazonaws.com/manhpt.com/2020/12/Screenshot-2020-12-30-175509.png)
+![](./Screenshot-2020-12-30-175509.png)
 
 Các bước tạo policy khá đơn giản và trực quan trên giao diện của Kibana. Bạn có thể tham khảo tài liệu chính hãng tại đây: [https://www.elastic.co/guide/en/kibana/current/snapshot-repositories.html#kib-snapshot-policy](https://www.elastic.co/guide/en/kibana/current/snapshot-repositories.html#kib-snapshot-policy).
 
