@@ -10,9 +10,9 @@ image: ./dns-concept-domain-name-system-decentralized-naming-system-computers-de
 
 ## Vấn đề là...
 
-Ubuntu là một trong những distro phổ biến nhất của Linux. Ngoài Ubuntu Server thì Ubuntu Desktop cũng được anh em developer sử dụng rất nhiều.
+Ubuntu là một trong những distro phổ biến nhất của Linux. Ngoài Ubuntu Server thì Ubuntu Desktop cũng được anh em developer sử dụng rất nhiều. Do tính chất dễ sử dụng và ổn định nên team dự án của mình hiện tại đang sử dụng Ubuntu Desktop cho những máy trạm (workstation) đặt tại địa điểm, văn phòng của đối tác.
 
-Do tính chất dễ sử dụng và ổn định nên team dự án của mình hiện tại đang sử dụng Ubuntu Desktop cho những máy trạm (workstation) đặt tại địa điểm, văn phòng của đối tác. Thực trạng này đôi khi phát sinh yêu cầu phải thay đổi local IP và DNS của máy trạm cho phù hợp với địa điểm triển khai. Tuy nhiên, các máy trạm này lại không được kết nối màn hình mà chỉ được duy trì kết nối internet và kết nối từ xa qua Anydesk.
+Thực trạng này đôi khi phát sinh yêu cầu phải thay đổi local IP và DNS của máy trạm cho phù hợp với địa điểm triển khai. Tuy nhiên, các máy trạm này lại không được kết nối màn hình mà chỉ được duy trì kết nối internet và kết nối từ xa qua Anydesk.
 
 Để thực hiện yêu cầu thay đổi IP/DNS của máy trạm, team phát triển chỉ có thể thao tác thông qua Terminal sau khi forward và kết nối đến SSH port của máy trạm từ máy làm việc. Việc forward và kết nối SSH đến máy trạm qua Anydesk sẽ nằm trong bài viết khác.
 

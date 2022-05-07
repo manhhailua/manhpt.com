@@ -202,8 +202,9 @@ export function createActionTypeOnSuccess(key) {
 
 Với saga trung gian mà tôi gọi là `unfoldSaga` cho nó hoành tráng, chúng ta có thể thống nhất việc xử lý action thông qua một helper duy nhất đồng thời cũng tạo ra một form chung cho các action type đều có chứa `_BEGAN` hay `_FINISHED`. Ở chỗ làm, tôi rất hay phàn nàn các anh em về cách đặt tên biến, tên hàm thiếu nhất quán; với các project React thì có thêm vấn action type, cũng đau đầu muốn chết.
 
-Ai đó: Callback trong saga à? Dị đời quá nhỉ.
-Tôi: Oke, cách dùng đây.
+>
+_Ai đó_: Callback trong saga à? Dị đời quá nhỉ.<br/>
+_Tôi_: Oke, cách dùng đây.
 
 ```js
 const CANCEL_ORDER = "CANCEL_ORDER";
@@ -223,10 +224,11 @@ Trong unfoldSaga kết quả của handler() sẽ được trả lại cho actio
 
 ### Kết quả
 
-Ai đó: Nhìn ngắn gọn hơn nhiều đấy nhỉ!
-Tôi: Cứ nói là không đi. :)))
-Ai đó: Sao không thấy dùng callback ở đâu nhỉ?
-Tôi: Code ngắn gọn hơn rồi. Bây giờ mới đến lúc callback tỏa sáng.
+>
+_Ai đó_: Nhìn ngắn gọn hơn nhiều đấy nhỉ!<br/>
+_Tôi_: Cứ nói là không đi. :)))<br/>
+_Ai đó_: Sao không thấy dùng callback ở đâu nhỉ?<br/>
+_Tôi_: Code ngắn gọn hơn rồi. Bây giờ mới đến lúc callback tỏa sáng.
 
 ```js
 function* takeCancelOrder({ callbacks, payload: { orderId } }) {
@@ -276,8 +278,9 @@ function cancelOrder(payload, callbacks) {
 }
 ```
 
-Ai đó: Damn!
-Tôi: Khởi tạo state thì thôi, tự viết nhé! :))
+>
+_Ai đó_: Damn!<br/>
+_Tôi_: Khởi tạo state thì thôi, tự viết nhé! :))
 
 Trông thật sự là hứa hẹn. Với cách gọi action ở ngay trên, chúng ta có thể sử dụng local state nhiều hơn thay vì cứ phải đẩy mọi thứ vào redux store. Chấm dứt lạm dụng redux cho những việc đơn giản như hiển thị một icon loading.
 

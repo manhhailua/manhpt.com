@@ -10,11 +10,15 @@ image: ./terminal-screen-1200x591.png
 
 ## Lịch sử git thiếu nhất quán
 
-Hầu hết developer chúng ta đều biết đến [git](https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F) - nếu chưa biết thì phải tìm hiểu và sử dụng ngay - một công cụ quá tuyệt vời để quản lý source code. Và giống như việc đặt tên biến trong code, commit messages cũng là một thứ gì đó thực sự gây đau đầu. Trong một team, có anh em sẽ chỉ đặt một message ngắn ngủn cho xong, một số cẩn thận sẽ viết rõ những thay đổi trong đó và chèn thêm cả JIRA ticket number. Như thế sẽ tạo ra sự thiếu nhất quán trong lịch sử commit vốn đã rất phức tạp. Điều này khiến mình nghĩ đến việc chuẩn hóa commit trong project hiện tại.
+Hầu hết developer chúng ta đều biết đến [git](https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F) - nếu chưa biết thì phải tìm hiểu và sử dụng ngay - một công cụ quá tuyệt vời để quản lý source code. Và giống như việc đặt tên biến trong code, commit messages cũng là một thứ gì đó thực sự gây đau đầu.
+
+Trong một team, có anh em sẽ chỉ đặt một message ngắn ngủn cho xong, một số cẩn thận sẽ viết rõ những thay đổi trong đó và chèn thêm cả JIRA ticket number. Như thế sẽ tạo ra sự thiếu nhất quán trong lịch sử commit vốn đã rất phức tạp. Điều này khiến mình nghĩ đến việc chuẩn hóa commit trong project hiện tại.
 
 ## Lựa chọn công cụ
 
-Để có một commit có đầy đủ ý nghĩa với: loại commit (feature, fix bug, refactor...), JIRA ticket number, description. Sau thời gian ngâm cứu trên mạng thì mình đã tìm ra [Commitizen](http://commitizen.github.io/cz-cli/) và quyết định sử dụng nó để áp `chuẩn` cho việc commit. Commitizen là công cụ dạng command line (dòng lệnh) hỗ trợ tự động format commit messages bằng cách hỏi bạn một vài câu hỏi, bạn nhập câu trả lời và commitizen sẽ tạo commit theo chuẩn dựa trên các thông tin được nhập. Bạn có thể cài đặt commitizen global với:
+Để có một commit có đầy đủ ý nghĩa với: loại commit (feature, fix bug, refactor...), JIRA ticket number, description. Sau thời gian ngâm cứu trên mạng thì mình đã tìm ra [Commitizen](http://commitizen.github.io/cz-cli/) và quyết định sử dụng nó để áp `chuẩn` cho việc commit.
+
+Commitizen là công cụ dạng command line (dòng lệnh) hỗ trợ tự động format commit messages bằng cách hỏi bạn một vài câu hỏi, bạn nhập câu trả lời và commitizen sẽ tạo commit theo chuẩn dựa trên các thông tin được nhập. Bạn có thể cài đặt commitizen global với:
 
 ```shell
 npm install commitizen -g
@@ -40,7 +44,9 @@ git cz
 
 ## Cấu hình commitizen
 
-Để bắt đầu làm việc với commitizen, chúng ta cần cài đặt thêm một vài cấu hình có sẵn trong package.json gọi là `adapter`. Những adapter này sẽ định nghĩa những câu hỏi khi commit. Bạn có thể chọn một adapter từ [đây](https://github.com/commitizen/cz-cli#adapters). Trong bài viết này mình chọn [cz-conventional-changelog](https://www.npmjs.com/package/cz-conventional-changelog) để bắt đầu, bạn cũng nên cài nó vào dev dependencies.
+Để bắt đầu làm việc với commitizen, chúng ta cần cài đặt thêm một vài cấu hình có sẵn trong package.json gọi là `adapter`. Những adapter này sẽ định nghĩa những câu hỏi khi commit. Bạn có thể chọn một adapter từ [đây](https://github.com/commitizen/cz-cli#adapters).
+
+Trong bài viết này mình chọn [cz-conventional-changelog](https://www.npmjs.com/package/cz-conventional-changelog) để bắt đầu, bạn cũng nên cài nó vào dev dependencies.
 
 ```shell
 npm install cz-conventional-changelog --save-dev

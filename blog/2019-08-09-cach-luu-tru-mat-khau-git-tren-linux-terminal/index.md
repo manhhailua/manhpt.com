@@ -10,7 +10,9 @@ image: ./5_password-best-practices_unique-passwords_authentication-100768646-lar
 
 ## Vấn đề là...
 
-Nếu bạn đã từng sử dụng git trên "cửa sổ dòng lệnh" (terminal) của windows, linux hay macOS, bạn sẽ thấy rằng mật khẩu git của chúng ta được lưu lại tự động. Sau đó, chúng ta chỉ cần fetch - push - pull bình thường. Không cần nhập lại username và password của git nữa. Hơi tiếc là Ubuntu nói riêng và linux nói chung không có tính năng này. Dĩ nhiên chúng ta có thể cài đặt thêm phần mềm bên thứ 3 để có được tính năng tương tự. Mmình chưa thử và cũng ko tin tưởng để thử... lol.
+Nếu bạn đã từng sử dụng git trên "cửa sổ dòng lệnh" (terminal) của windows, linux hay macOS, bạn sẽ thấy rằng mật khẩu git của chúng ta được lưu lại tự động. Sau đó, chúng ta chỉ cần fetch - push - pull bình thường. Không cần nhập lại username và password của git nữa.
+
+Hơi tiếc là Ubuntu nói riêng và linux nói chung không có tính năng này. Dĩ nhiên chúng ta có thể cài đặt thêm phần mềm bên thứ 3 để có được tính năng tương tự. Mmình chưa thử và cũng ko tin tưởng để thử... lol.
 
 ## Giải pháp
 
@@ -20,7 +22,7 @@ Sau đây là một thủ thuật nhỏ và cực kỳ đơn giản để bạn 
 git config --global credential.helper store
 ```
 
-- `store` mode: chế độ này lưu thông tin đăng nhập của bạn dưới dạng plain-text mặc định trong file `~/.my-credentials`. Bạn sẽ chỉ phải nhập lại mật khẩu khi bạn đã thay đổi mật khẩu trên git server. Cách này không được bảo mật cho lắm vì mật khẩu được lưu cứng dưới dạng không mã hoá. Do đó, ít nhất các bạn cũng nên sử dụng personal access token thay cho mật khẩu, ví dụ: [github personal access token](https://github.com/settings/tokens), [gitlab personal access token](https://gitlab.com/profile/personal_access_tokens)... - lúc nào mà nhỡ có bị lộ thì revoke cái là xong.
+- `store` mode: chế độ này lưu thông tin đăng nhập của bạn dưới dạng plain-text mặc định trong file `~/.my-credentials`. Bạn sẽ chỉ phải nhập lại mật khẩu khi bạn đã thay đổi mật khẩu trên git server. Cách này không được bảo mật cho lắm vì mật khẩu được lưu cứng dưới dạng không mã hoá. Do đó, ít nhất các bạn cũng nên sử dụng personal access token thay cho mật khẩu, ví dụ: [github personal access token](https://github.com/settings/tokens), [gitlab personal access token](https://gitlab.com/profile/personal_access_tokens)... (lúc nào mà nhỡ có bị lộ thì revoke cái là xong).
 
 ```shell
 git config --global credential.helper cache

@@ -35,7 +35,7 @@ Ví dụ trong ảnh trên, chúng ta có tới 4 commit giống nhau, cùng là
 ### Tổng hợp các commit
 
 - `$ git rebase -i dbd01be2` vào terminal tại root của project.
-- Màn hình VIM editor sẽ hiện lên như hình sau, đôi khi VIM không phải editor mặc định của git mà có thể là `nano` hay một editor nào đó khác do bạn thiết lập sẵn hoặc mặc định của hệ điều hành mà bạn dùng. Không cần quá lo lắng, mục đích chỉ là edit nội dung và cũng chỉ toàn là text mà thôi.
+- Màn hình VIM editor sẽ hiện lên như hình sau, đôi khi `vim` không phải editor mặc định của git mà có thể là `nano` hay một editor nào đó khác do bạn thiết lập sẵn hoặc mặc định của hệ điều hành mà bạn dùng. Không cần quá lo lắng, mục đích chỉ là edit nội dung và cũng chỉ toàn là text mà thôi.
 
 ![](./Screenshot_20190615_110625.png)
 
