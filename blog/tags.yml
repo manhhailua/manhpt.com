@@ -1,394 +1,404 @@
 docusaurus:
   label: Docusaurus
   permalink: /docusaurus
-  description: Docusaurus is a modern static site generator.
+  description: Docusaurus là một trình tạo trang tĩnh hiện đại.
 
 git:
   label: Git
   permalink: /git
-  description: Git is a distributed version control system.
+  description: Git là một hệ thống quản lý phiên bản phân tán.
 
 crlf:
   label: CRLF
   permalink: /crlf
-  description: CRLF is a sequence of characters that represent a line break in text files.
+  description: CRLF là một chuỗi ký tự đại diện cho dấu ngắt dòng trong tệp văn bản.
 
 lf:
   label: LF
   permalink: /lf
-  description: LF is a sequence of characters that represent a line break in text files.
+  description: LF là một chuỗi ký tự đại diện cho dấu ngắt dòng trong tệp văn bản.
 
 meslo:
   label: Meslo
   permalink: /meslo
-  description: Meslo is a font designed for programming.
+  description: Meslo là một phông chữ được thiết kế cho lập trình.
 
 oh-my-posh:
   label: Oh My Posh
   permalink: /oh-my-posh
-  description: Oh My Posh is a prompt theme engine for any shell.
+  description: Oh My Posh là một công cụ chủ đề nhắc lệnh cho bất kỳ shell nào.
 
 autocomplete:
   label: AutoComplete
   permalink: /autocomplete
-  description: AutoComplete is a feature that automatically suggests completions for commands.
+  description: AutoComplete là một tính năng tự động gợi ý hoàn thành lệnh.
 
 git autocomplete:
   label: Git AutoComplete
   permalink: /git-autocomplete
-  description: Git AutoComplete is a feature that automatically suggests completions for Git commands.
+  description: Git AutoComplete là một tính năng tự động gợi ý hoàn thành lệnh Git.
 
 posh:
   label: Posh
   permalink: /posh
-  description: Posh is a prompt theme engine for PowerShell.
+  description: Posh là một công cụ chủ đề nhắc lệnh cho PowerShell.
 
 posh-git:
   label: Posh Git
   permalink: /posh-git
-  description: Posh Git is a prompt theme engine for PowerShell that integrates with Git.
+  description: Posh Git là một công cụ chủ đề nhắc lệnh cho PowerShell tích hợp với Git.
 
 powershell:
   label: PowerShell
   permalink: /powershell
-  description: PowerShell is a task automation and configuration management framework.
+  description: PowerShell là một khung công tác tự động hóa tác vụ và quản lý cấu hình.
 
 windows:
   label: Windows
   permalink: /windows
-  description: Windows is a series of operating systems developed by Microsoft.
+  description: Windows là một loạt hệ điều hành được phát triển bởi Microsoft.
 
 gitlab:
   label: GitLab
   permalink: /gitlab
-  description: GitLab is a web-based DevOps lifecycle tool that provides a Git repository manager.
+  description: GitLab là một công cụ vòng đời DevOps dựa trên web cung cấp trình quản lý kho Git.
 
 github:
   label: GitHub
   permalink: /github
-  description: GitHub is a web-based Git repository hosting service.
+  description: GitHub là một dịch vụ lưu trữ kho Git dựa trên web.
 
 gitlab-ci:
   label: GitLab CI
   permalink: /gitlab-ci
-  description: GitLab CI is a continuous integration and deployment tool integrated into GitLab.
+  description: GitLab CI là một công cụ tích hợp và triển khai liên tục tích hợp vào GitLab.
 
 merge request:
   label: Merge Request
   permalink: /merge-request
-  description: Merge Request is a feature that allows you to propose changes to a repository.
+  description: Merge Request là một tính năng cho phép bạn đề xuất thay đổi cho một kho.
 
 devops:
   label: DevOps
   permalink: /devops
-  description: DevOps is a set of practices that combines software development and IT operations.
+  description: DevOps là một tập hợp các thực hành kết hợp phát triển phần mềm và vận hành CNTT.
 
 linux:
   label: Linux
   permalink: /linux
-  description: Linux is a family of open-source Unix-like operating systems.
+  description: Linux là một họ hệ điều hành mã nguồn mở giống Unix.
 
 ubuntu:
   label: Ubuntu
   permalink: /ubuntu
-  description: Ubuntu is a Linux distribution based on Debian.
+  description: Ubuntu là một bản phân phối Linux dựa trên Debian.
 
 virtual machine:
   label: Virtual Machine
   permalink: /virtual-machine
-  description: Virtual Machine is a software that emulates a physical computer.
+  description: Virtual Machine là một phần mềm mô phỏng một máy tính vật lý.
 
 volume:
   label: Volume
   permalink: /volume
-  description: Volume is a storage unit that can be attached to a container.
+  description: Volume là một đơn vị lưu trữ có thể được gắn vào một container.
 
 sizing:
   label: Sizing
   permalink: /sizing
-  description: Sizing is the process of determining the capacity of a system.
+  description: Sizing là quá trình xác định dung lượng của một hệ thống.
 
 partition:
   label: Partition
   permalink: /partition
-  description: Partition is a logical division of a storage unit.
+  description: Partition là một phân vùng logic của một đơn vị lưu trữ.
 
 k8s:
   label: Kubernetes
   permalink: /k8s
-  description: Kubernetes is an open-source container orchestration platform.
+  description: Kubernetes là một nền tảng điều phối container mã nguồn mở.
 
 kubernetes:
   label: Kubernetes
   permalink: /kubernetes
-  description: Kubernetes is an open-source container orchestration platform.
+  description: Kubernetes là một nền tảng điều phối container mã nguồn mở.
 
 disk:
   label: Disk
   permalink: /disk
-  description: Disk is a phisical storage unit that can be attached to a virtual machine.
+  description: Disk là một đơn vị lưu trữ vật lý có thể được gắn vào một máy ảo.
 
 drive:
   label: Drive
   permalink: /drive
-  description: Drive is a storage unit that can be attached to a virtual machine.
+  description: Drive là một đơn vị lưu trữ có thể được gắn vào một máy ảo.
 
 logical volume manager:
   label: Logical Volume Manager
   permalink: /logical-volume-manager
-  description: Logical Volume Manager is a storage management solution for Linux.
+  description: Logical Volume Manager là một giải pháp quản lý lưu trữ cho Linux.
 
 lvm:
   label: LVM
   permalink: /lvm
-  description: LVM is a storage management solution for Linux.
+  description: LVM là một giải pháp quản lý lưu trữ cho Linux.
 
 lvm volume:
   label: LVM Volume
   permalink: /lvm-volume
-  description: LVM Volume is a logical volume managed by LVM.
+  description: LVM Volume là một phân vùng logic được quản lý bởi LVM.
 
 react:
   label: React
   permalink: /react
-  description: React is a JavaScript library for building user interfaces.
+  description: React là một thư viện JavaScript để xây dựng giao diện người dùng.
 
 redux:
   label: Redux
   permalink: /redux
-  description: Redux is a predictable state container for JavaScript apps.
+  description: Redux là một container trạng thái dự đoán cho các ứng dụng JavaScript.
 
 redux-saga:
   label: Redux Saga
   permalink: /redux-saga
-  description: Redux Saga is a library for managing side effects in Redux applications.
+  description: Redux Saga là một thư viện quản lý các tác dụng phụ trong ứng dụng Redux.
 
 async:
   label: Async
   permalink: /async
-  description: Async is a programming pattern that allows you to perform tasks concurrently.
+  description: Async là một mẫu lập trình cho phép thực hiện các tác vụ đồng thời.
 
 elasticsearch:
   label: Elasticsearch
   permalink: /elasticsearch
-  description: Elasticsearch is a distributed search and analytics engine.
+  description: Elasticsearch là một công cụ tìm kiếm và phân tích phân tán.
 
 restore:
   label: Restore
   permalink: /restore
-  description: Restore is the process of recovering data from a backup.
+  description: Restore là quá trình khôi phục dữ liệu từ bản sao lưu.
 
 snapshot:
   label: Snapshot
   permalink: /snapshot
-  description: Snapshot is a point-in-time copy of a data volume.
+  description: Snapshot là một bản sao tại một thời điểm của một đơn vị dữ liệu.
 
 cluster:
   label: Cluster
   permalink: /cluster
-  description: Cluster is a group of interconnected servers that work together.
+  description: Cluster là một nhóm các máy chủ kết nối với nhau hoạt động cùng nhau.
 
 backup:
   label: Backup
   permalink: /backup
-  description: Backup is the process of copying data to prevent data loss.
+  description: Backup là quá trình sao chép dữ liệu để ngăn ngừa mất dữ liệu.
 
 nodejs:
   label: Node.js
   permalink: /nodejs
-  description: Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine.
+  description: Node.js là một môi trường chạy JavaScript được xây dựng trên động cơ JavaScript V8 của Chrome.
 
 multi-nodejs:
   label: Multi-Node.js
   permalink: /multi-nodejs
-  description: Multi-Node.js is a setup that runs multiple Node.js instances on a single machine.
+  description: Multi-Node.js là một thiết lập chạy nhiều phiên bản Node.js trên một máy.
 
 nvm:
   label: NVM
   permalink: /nvm
-  description: NVM is a version manager for Node.js.
+  description: NVM là một trình quản lý phiên bản cho Node.js.
 
 dns:
   label: DNS
   permalink: /dns
-  description: DNS is a system that translates domain names to IP addresses.
+  description: DNS là một hệ thống chuyển đổi tên miền thành địa chỉ IP.
 
 network:
   label: Network
   permalink: /network
-  description: Network is a group of interconnected devices that can communicate with each other.
+  description: Network là một nhóm các thiết bị kết nối với nhau có thể giao tiếp với nhau.
 
 workstation:
   label: Workstation
   permalink: /workstation
-  description: Workstation is a personal computer used for work.
+  description: Workstation là một máy tính cá nhân được sử dụng cho công việc.
 
 cloud:
   label: Cloud
   permalink: /cloud
-  description: Cloud is a network of remote servers hosted on the Internet.
+  description: Cloud là một mạng lưới các máy chủ từ xa được lưu trữ trên Internet.
 
 commit:
   label: Commit
   permalink: /commit
-  description: Commit is a snapshot of changes made to a repository.
+  description: Commit là một ảnh chụp nhanh của các thay đổi được thực hiện trong một kho.
 
 commitizen:
   label: Commitizen
   permalink: /commitizen
-  description: Commitizen is a tool that helps you write conventional commit messages.
+  description: Commitizen là một công cụ giúp bạn viết các thông điệp commit theo chuẩn.
 
 versioning:
   label: Versioning
   permalink: /versioning
-  description: Versioning is the process of assigning unique identifiers to software releases.
+  description: Versioning là quá trình gán các định danh duy nhất cho các phiên bản phần mềm.
 
 workflow:
   label: Workflow
   permalink: /workflow
-  description: Workflow is a series of tasks that are executed in a specific order.
+  description: Workflow là một chuỗi các tác vụ được thực hiện theo một thứ tự cụ thể.
 
 cert-manager:
   label: Cert-Manager
   permalink: /cert-manager
-  description: Cert-Manager is a Kubernetes add-on that automates the management of TLS certificates.
+  description: Cert-Manager là một tiện ích bổ sung cho Kubernetes tự động quản lý các chứng chỉ TLS.
 
 https:
   label: HTTPS
   permalink: /https
-  description: HTTPS is a secure version of HTTP that encrypts data sent between a client and a server.
+  description: HTTPS là một phiên bản bảo mật của HTTP mã hóa dữ liệu gửi giữa máy khách và máy chủ.
 
 ingress:
   label: Ingress
   permalink: /ingress
-  description: Ingress is a Kubernetes resource that manages external access to services in a cluster.
+  description: Ingress là một tài nguyên Kubernetes quản lý truy cập bên ngoài vào các dịch vụ trong một cụm.
 
 letsencrypt:
   label: Let's Encrypt
   permalink: /lets-encrypt
-  description: Let's Encrypt is a free, automated, and open certificate authority.
+  description: Let's Encrypt là một cơ quan chứng chỉ miễn phí, tự động và mở.
 
 nginx:
   label: Nginx
   permalink: /nginx
-  description: Nginx is a web server that can also be used as a reverse proxy, load balancer, and HTTP cache.
+  description: Nginx là một máy chủ web có thể được sử dụng làm proxy ngược, cân bằng tải và bộ nhớ đệm HTTP.
 
 ssl:
   label: SSL
   permalink: /ssl
-  description: SSL is a security protocol that encrypts data transmitted over the Internet.
+  description: SSL là một giao thức bảo mật mã hóa dữ liệu truyền qua Internet.
 
 tls:
   label: TLS
   permalink: /tls
-  description: TLS is a security protocol that encrypts data transmitted over the Internet.
+  description: TLS là một giao thức bảo mật mã hóa dữ liệu truyền qua Internet.
 
 k3s:
   label: K3s
   permalink: /k3s
-  description: K3s is a lightweight Kubernetes distribution designed for edge computing.
+  description: K3s là một phân phối Kubernetes nhẹ được thiết kế cho điện toán biên.
 
 rancher:
   label: Rancher
   permalink: /rancher
-  description: Rancher is a complete software stack for teams adopting containers.
+  description: Rancher là một bộ phần mềm hoàn chỉnh cho các nhóm áp dụng container.
 
 gitlab-runner:
   label: GitLab Runner
   permalink: /gitlab-runner
-  description: GitLab Runner is a tool that runs CI/CD jobs and sends the results back to GitLab.
+  description: GitLab Runner là một công cụ chạy các công việc CI/CD và gửi kết quả trở lại GitLab.
 
 lens:
   label: Lens
   permalink: /lens
-  description: Lens is a Kubernetes IDE that provides a visual interface for managing clusters.
+  description: Lens là một IDE Kubernetes cung cấp giao diện trực quan để quản lý các cụm.
 
 management:
   label: Management
   permalink: /management
-  description: Management is the process of coordinating and overseeing the activities of an organization.
+  description: Management là quá trình phối hợp và giám sát các hoạt động của một tổ chức.
 
 install:
   label: Install
   permalink: /install
-  description: Install is the process of setting up software on a computer.
+  description: Install là quá trình cài đặt phần mềm trên máy tính.
 
 cloud native:
   label: Cloud Native
   permalink: /cloud-native
-  description: Cloud Native is an approach to building and running applications that leverage the cloud.
+  description: Cloud Native là một cách tiếp cận xây dựng và chạy các ứng dụng tận dụng đám mây.
 
 branch:
   label: Branch
   permalink: /branch
-  description: Branch is a parallel version of a repository that allows you to work on features independently.
+  description: Branch là một phiên bản song song của một kho cho phép bạn làm việc trên các tính năng độc lập.
 
 issue:
   label: Issue
   permalink: /issue
-  description: Issue is a task, bug, or feature request that is tracked in a project management system.
+  description: Issue là một nhiệm vụ, lỗi hoặc yêu cầu tính năng được theo dõi trong hệ thống quản lý dự án.
 
 flow:
   label: Flow
   permalink: /flow
-  description: Flow is the sequence of tasks that are executed in a specific order.
+  description: Flow là chuỗi các tác vụ được thực hiện theo một thứ tự cụ thể.
 
 gitops:
   label: GitOps
   permalink: /gitops
-  description: GitOps is a set of practices that use Git as a single source of truth for infrastructure.
+  description: GitOps là một tập hợp các thực hành sử dụng Git làm nguồn sự thật duy nhất cho cơ sở hạ tầng.
 
 git password:
   label: Git Password
   permalink: /git-password
-  description: Git Password is a credential used to authenticate with a Git repository.
+  description: Git Password là một thông tin xác thực được sử dụng để xác thực với một kho Git.
 
 remember password:
   label: Remember Password
   permalink: /remember-password
-  description: Remember Password is a feature that stores your Git credentials for future use.
+  description: Remember Password là một tính năng lưu trữ thông tin xác thực Git của bạn cho lần sử dụng sau.
 
 docker:
   label: Docker
   permalink: /docker
-  description: Docker is a platform for developing, shipping, and running applications in containers.
+  description: Docker là một nền tảng phát triển, vận chuyển và chạy các ứng dụng trong container.
 
 swarm:
   label: Swarm
   permalink: /swarm
-  description: Swarm is a native clustering and scheduling tool for Docker containers.
+  description: Swarm là một công cụ cụm và lập lịch gốc cho các container Docker.
 
 squash:
   label: Squash
   permalink: /squash
-  description: Squash is a tool that allows you to combine multiple commits into a single commit.
+  description: Squash là một công cụ cho phép bạn kết hợp nhiều commit thành một commit duy nhất.
 
 squash commit:
   label: Squash Commit
   permalink: /squash-commit
-  description: Squash Commit is a single commit that combines multiple commits.
+  description: Squash Commit là một commit duy nhất kết hợp nhiều commit.
 
 redux-action:
   label: Redux Action
   permalink: /redux-action
-  description: Redux Action is a plain JavaScript object that describes an event.
+  description: Redux Action là một đối tượng JavaScript thuần túy mô tả một sự kiện.
 
 java:
   label: Java
   permalink: /java
-  description: Java is a high-level programming language developed by Sun Microsystems.
+  description: Java là một ngôn ngữ lập trình cấp cao được phát triển bởi Sun Microsystems.
 
 java_home:
   label: JAVA_HOME
   permalink: /java-home
-  description: JAVA_HOME is an environment variable that points to the Java installation directory.
+  description: JAVA_HOME là một biến môi trường trỏ đến thư mục cài đặt Java.
 
 jenv:
   label: JEnv
   permalink: /jenv
-  description: JEnv is a Java version manager that allows you to switch between different Java versions.
+  description: JEnv là một trình quản lý phiên bản Java cho phép bạn chuyển đổi giữa các phiên bản Java khác nhau.
 
 macos:
   label: macOS
   permalink: /macos
-  description: macOS is a series of operating systems developed by Apple Inc.
+  description: macOS là một loạt hệ điều hành được phát triển bởi Apple Inc.
+
+mcp:
+  label: Model Context Protocol (MCP)
+  permalink: /model-context-protocol
+  description: Model Context Protocol (MCP) là một giao thức chuẩn mở được Anthropic giới thiệu vào ngày 26/11/2024, nhằm mục đích kết nối các mô hình ngôn ngữ lớn (LLM) với dữ liệu và công cụ bên ngoài một cách liền mạch.
+
+langchain:
+  label: LangChain
+  permalink: /langchain
+  description: LangChain là một thư viện giúp xây dựng các ứng dụng sử dụng mô hình ngôn ngữ lớn (LLM) một cách dễ dàng và hiệu quả.
