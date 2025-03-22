@@ -15,6 +15,8 @@ Giao diện Powershell sau khi tích hợp posh-git:
 
 ![demo-posh-git-on-powershell](./PromptDefaultLong.png)
 
+<!-- truncate -->
+
 Trong một bài viết trước, mình có hướng dẫn cách [cài đặt và tích hợp oh-my-posh](../2021-03-30-su-dung-oh-my-posh-de-powershell-tro-nen-hap-dan-hon/index.md) cho Powershell để cải thiện trải nghiệm làm việc. Trong bài viết này mình sẽ giới thiệu [posh-git](https://github.com/dahlbyk/posh-git).
 
 ## 1. Cài đặt posh-git

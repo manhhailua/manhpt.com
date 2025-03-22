@@ -10,3 +10,5 @@ image: ./feature-branch.png
 ## Workflow
 
 ![](./branching-strategy-2048x874.jpg)
+
+<!-- truncate -->

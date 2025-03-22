@@ -16,6 +16,8 @@ Khi quy mô và độ phức tạp của môi trường container tăng lên vư
 
 Tuy nhiên, các nền tảng như vậy cũng đi liền với những thách thức đòi hỏi các thông số, khả năng giám sát và mức độ thân thiện với người dùng để diễn tả mức độ phức tạp của chúng.
 
+<!-- truncate -->
+
 ## Sử dụng Lens
 
 [Lens](https://k8slens.dev/) - tự xưng Kubernetes IDE - là một công cụ khá hữu ích, hấp dẫn và open source cung cấp khả năng quản lý các kubernetes cluster. Lens có thể kết nối đến các kubernetes cluster sử dụng kubeconfig file, sau đó hiển thị các thông tin về cluster và [objects](https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/) bên trong.

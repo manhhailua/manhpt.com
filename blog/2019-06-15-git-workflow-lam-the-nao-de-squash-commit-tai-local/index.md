@@ -14,6 +14,8 @@ Trong quá trình code chắc hẳn bạn thường xuyên tạo ra những dumb
 
 Squash commit (gộp commit) là một việc nên làm nhưng không phải ai cũng nghĩ đến. Thậm chí có nghĩ đến thì đa số cũng không muốn làm bởi sợ rằng có thể gây ra mất code. Xin được khẳng định luôn là code một khi đã được commit thì không mất đi đâu được, vô tư đi.
 
+<!-- truncate -->
+
 ![](./what-is-squash.jpg) Để squash commit, chúng ta sẽ sử dụng câu lệnh `git rebase -i` hoặc `git rebase --interactive`. Trong nội dung bài viết này tôi sẽ không giải thích về `rebase`. Các bạn có thể tham khảo thêm các bài viết sau để hiểu rõ ràng hơn:
 
 1.  [https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase](https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase)

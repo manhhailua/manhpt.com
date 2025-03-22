@@ -14,6 +14,8 @@ Kể từ ngày 24/07/2018, Google release Chrome 68 có tính năng đánh dấ
 
 Trong bài viết này, mình sẽ hướng dẫn cấu hình cert-manager cho [nginx-ingress](https://kubernetes.github.io/ingress-nginx/how-it-works/) để tự động hóa hoàn toàn việc issue và renew chứng chỉ https cho website của bạn hoàn toàn miễn phí. Tất nhiên bài viết này chỉ áp dụng cho hệ thống sử dụng kubernetes. Trong thời điểm viết bài thì mình sử dụng [K3S](https://k3s.io/). Bạn có thể tham khảo cách cài đặt K3S tại [đây](../2020-09-10-cac-thu-thuat-cau-hinh-khi-cai-dat-k3s/index.md).
 
+<!-- truncate -->
+
 ## Chuẩn bị
 
 - Hạ tầng sử dụng [Kubernetes](/tags/kubernetes/)

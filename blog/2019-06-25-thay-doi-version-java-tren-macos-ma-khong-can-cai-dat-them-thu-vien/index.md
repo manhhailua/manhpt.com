@@ -16,6 +16,8 @@ Sau đây là một vài bước đơn giản để bạn có thể thiết lậ
 
 Bạn không cần phải cài đặt thêm bất cứ plugin hay thư viện nào để có thể thực hiện các bước sau đây.
 
+<!-- truncate -->
+
 ## 1. Đầu tiên bạn cần list ra tất cả các version Java hiện có trên máy bằng câu lệnh sau:
 
 ```shell

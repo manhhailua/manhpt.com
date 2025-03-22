@@ -1,0 +1,394 @@
+docusaurus:
+  label: Docusaurus
+  permalink: /docusaurus
+  description: Docusaurus is a modern static site generator.
+
+git:
+  label: Git
+  permalink: /git
+  description: Git is a distributed version control system.
+
+crlf:
+  label: CRLF
+  permalink: /crlf
+  description: CRLF is a sequence of characters that represent a line break in text files.
+
+lf:
+  label: LF
+  permalink: /lf
+  description: LF is a sequence of characters that represent a line break in text files.
+
+meslo:
+  label: Meslo
+  permalink: /meslo
+  description: Meslo is a font designed for programming.
+
+oh-my-posh:
+  label: Oh My Posh
+  permalink: /oh-my-posh
+  description: Oh My Posh is a prompt theme engine for any shell.
+
+autocomplete:
+  label: AutoComplete
+  permalink: /autocomplete
+  description: AutoComplete is a feature that automatically suggests completions for commands.
+
+git autocomplete:
+  label: Git AutoComplete
+  permalink: /git-autocomplete
+  description: Git AutoComplete is a feature that automatically suggests completions for Git commands.
+
+posh:
+  label: Posh
+  permalink: /posh
+  description: Posh is a prompt theme engine for PowerShell.
+
+posh-git:
+  label: Posh Git
+  permalink: /posh-git
+  description: Posh Git is a prompt theme engine for PowerShell that integrates with Git.
+
+powershell:
+  label: PowerShell
+  permalink: /powershell
+  description: PowerShell is a task automation and configuration management framework.
+
+windows:
+  label: Windows
+  permalink: /windows
+  description: Windows is a series of operating systems developed by Microsoft.
+
+gitlab:
+  label: GitLab
+  permalink: /gitlab
+  description: GitLab is a web-based DevOps lifecycle tool that provides a Git repository manager.
+
+github:
+  label: GitHub
+  permalink: /github
+  description: GitHub is a web-based Git repository hosting service.
+
+gitlab-ci:
+  label: GitLab CI
+  permalink: /gitlab-ci
+  description: GitLab CI is a continuous integration and deployment tool integrated into GitLab.
+
+merge request:
+  label: Merge Request
+  permalink: /merge-request
+  description: Merge Request is a feature that allows you to propose changes to a repository.
+
+devops:
+  label: DevOps
+  permalink: /devops
+  description: DevOps is a set of practices that combines software development and IT operations.
+
+linux:
+  label: Linux
+  permalink: /linux
+  description: Linux is a family of open-source Unix-like operating systems.
+
+ubuntu:
+  label: Ubuntu
+  permalink: /ubuntu
+  description: Ubuntu is a Linux distribution based on Debian.
+
+virtual machine:
+  label: Virtual Machine
+  permalink: /virtual-machine
+  description: Virtual Machine is a software that emulates a physical computer.
+
+volume:
+  label: Volume
+  permalink: /volume
+  description: Volume is a storage unit that can be attached to a container.
+
+sizing:
+  label: Sizing
+  permalink: /sizing
+  description: Sizing is the process of determining the capacity of a system.
+
+partition:
+  label: Partition
+  permalink: /partition
+  description: Partition is a logical division of a storage unit.
+
+k8s:
+  label: Kubernetes
+  permalink: /k8s
+  description: Kubernetes is an open-source container orchestration platform.
+
+kubernetes:
+  label: Kubernetes
+  permalink: /kubernetes
+  description: Kubernetes is an open-source container orchestration platform.
+
+disk:
+  label: Disk
+  permalink: /disk
+  description: Disk is a phisical storage unit that can be attached to a virtual machine.
+
+drive:
+  label: Drive
+  permalink: /drive
+  description: Drive is a storage unit that can be attached to a virtual machine.
+
+logical volume manager:
+  label: Logical Volume Manager
+  permalink: /logical-volume-manager
+  description: Logical Volume Manager is a storage management solution for Linux.
+
+lvm:
+  label: LVM
+  permalink: /lvm
+  description: LVM is a storage management solution for Linux.
+
+lvm volume:
+  label: LVM Volume
+  permalink: /lvm-volume
+  description: LVM Volume is a logical volume managed by LVM.
+
+react:
+  label: React
+  permalink: /react
+  description: React is a JavaScript library for building user interfaces.
+
+redux:
+  label: Redux
+  permalink: /redux
+  description: Redux is a predictable state container for JavaScript apps.
+
+redux-saga:
+  label: Redux Saga
+  permalink: /redux-saga
+  description: Redux Saga is a library for managing side effects in Redux applications.
+
+async:
+  label: Async
+  permalink: /async
+  description: Async is a programming pattern that allows you to perform tasks concurrently.
+
+elasticsearch:
+  label: Elasticsearch
+  permalink: /elasticsearch
+  description: Elasticsearch is a distributed search and analytics engine.
+
+restore:
+  label: Restore
+  permalink: /restore
+  description: Restore is the process of recovering data from a backup.
+
+snapshot:
+  label: Snapshot
+  permalink: /snapshot
+  description: Snapshot is a point-in-time copy of a data volume.
+
+cluster:
+  label: Cluster
+  permalink: /cluster
+  description: Cluster is a group of interconnected servers that work together.
+
+backup:
+  label: Backup
+  permalink: /backup
+  description: Backup is the process of copying data to prevent data loss.
+
+nodejs:
+  label: Node.js
+  permalink: /nodejs
+  description: Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine.
+
+multi-nodejs:
+  label: Multi-Node.js
+  permalink: /multi-nodejs
+  description: Multi-Node.js is a setup that runs multiple Node.js instances on a single machine.
+
+nvm:
+  label: NVM
+  permalink: /nvm
+  description: NVM is a version manager for Node.js.
+
+dns:
+  label: DNS
+  permalink: /dns
+  description: DNS is a system that translates domain names to IP addresses.
+
+network:
+  label: Network
+  permalink: /network
+  description: Network is a group of interconnected devices that can communicate with each other.
+
+workstation:
+  label: Workstation
+  permalink: /workstation
+  description: Workstation is a personal computer used for work.
+
+cloud:
+  label: Cloud
+  permalink: /cloud
+  description: Cloud is a network of remote servers hosted on the Internet.
+
+commit:
+  label: Commit
+  permalink: /commit
+  description: Commit is a snapshot of changes made to a repository.
+
+commitizen:
+  label: Commitizen
+  permalink: /commitizen
+  description: Commitizen is a tool that helps you write conventional commit messages.
+
+versioning:
+  label: Versioning
+  permalink: /versioning
+  description: Versioning is the process of assigning unique identifiers to software releases.
+
+workflow:
+  label: Workflow
+  permalink: /workflow
+  description: Workflow is a series of tasks that are executed in a specific order.
+
+cert-manager:
+  label: Cert-Manager
+  permalink: /cert-manager
+  description: Cert-Manager is a Kubernetes add-on that automates the management of TLS certificates.
+
+https:
+  label: HTTPS
+  permalink: /https
+  description: HTTPS is a secure version of HTTP that encrypts data sent between a client and a server.
+
+ingress:
+  label: Ingress
+  permalink: /ingress
+  description: Ingress is a Kubernetes resource that manages external access to services in a cluster.
+
+letsencrypt:
+  label: Let's Encrypt
+  permalink: /lets-encrypt
+  description: Let's Encrypt is a free, automated, and open certificate authority.
+
+nginx:
+  label: Nginx
+  permalink: /nginx
+  description: Nginx is a web server that can also be used as a reverse proxy, load balancer, and HTTP cache.
+
+ssl:
+  label: SSL
+  permalink: /ssl
+  description: SSL is a security protocol that encrypts data transmitted over the Internet.
+
+tls:
+  label: TLS
+  permalink: /tls
+  description: TLS is a security protocol that encrypts data transmitted over the Internet.
+
+k3s:
+  label: K3s
+  permalink: /k3s
+  description: K3s is a lightweight Kubernetes distribution designed for edge computing.
+
+rancher:
+  label: Rancher
+  permalink: /rancher
+  description: Rancher is a complete software stack for teams adopting containers.
+
+gitlab-runner:
+  label: GitLab Runner
+  permalink: /gitlab-runner
+  description: GitLab Runner is a tool that runs CI/CD jobs and sends the results back to GitLab.
+
+lens:
+  label: Lens
+  permalink: /lens
+  description: Lens is a Kubernetes IDE that provides a visual interface for managing clusters.
+
+management:
+  label: Management
+  permalink: /management
+  description: Management is the process of coordinating and overseeing the activities of an organization.
+
+install:
+  label: Install
+  permalink: /install
+  description: Install is the process of setting up software on a computer.
+
+cloud native:
+  label: Cloud Native
+  permalink: /cloud-native
+  description: Cloud Native is an approach to building and running applications that leverage the cloud.
+
+branch:
+  label: Branch
+  permalink: /branch
+  description: Branch is a parallel version of a repository that allows you to work on features independently.
+
+issue:
+  label: Issue
+  permalink: /issue
+  description: Issue is a task, bug, or feature request that is tracked in a project management system.
+
+flow:
+  label: Flow
+  permalink: /flow
+  description: Flow is the sequence of tasks that are executed in a specific order.
+
+gitops:
+  label: GitOps
+  permalink: /gitops
+  description: GitOps is a set of practices that use Git as a single source of truth for infrastructure.
+
+git password:
+  label: Git Password
+  permalink: /git-password
+  description: Git Password is a credential used to authenticate with a Git repository.
+
+remember password:
+  label: Remember Password
+  permalink: /remember-password
+  description: Remember Password is a feature that stores your Git credentials for future use.
+
+docker:
+  label: Docker
+  permalink: /docker
+  description: Docker is a platform for developing, shipping, and running applications in containers.
+
+swarm:
+  label: Swarm
+  permalink: /swarm
+  description: Swarm is a native clustering and scheduling tool for Docker containers.
+
+squash:
+  label: Squash
+  permalink: /squash
+  description: Squash is a tool that allows you to combine multiple commits into a single commit.
+
+squash commit:
+  label: Squash Commit
+  permalink: /squash-commit
+  description: Squash Commit is a single commit that combines multiple commits.
+
+redux-action:
+  label: Redux Action
+  permalink: /redux-action
+  description: Redux Action is a plain JavaScript object that describes an event.
+
+java:
+  label: Java
+  permalink: /java
+  description: Java is a high-level programming language developed by Sun Microsystems.
+
+java_home:
+  label: JAVA_HOME
+  permalink: /java-home
+  description: JAVA_HOME is an environment variable that points to the Java installation directory.
+
+jenv:
+  label: JEnv
+  permalink: /jenv
+  description: JEnv is a Java version manager that allows you to switch between different Java versions.
+
+macos:
+  label: macOS
+  permalink: /macos
+  description: macOS is a series of operating systems developed by Apple Inc.

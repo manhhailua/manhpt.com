@@ -10,6 +10,8 @@ image: ./docker-build-push-gitlab-ci-1200x675.png
 
 Việc cài đặt `gitlab-runner` sử dụng docker được hướng dẫn khá đầy đủ tại [tài liệu chính thống](https://docs.gitlab.com/runner/install/docker.html). Nhưng thực tế quá trình cài đặt và sử dụng thường không diễn ra suôn sẻ với mình lắm nên mình chắc nhiều bạn cũng gặp vấn đề giống mình. Bài viết này chủ yếu chỉ ra những điều cần chú ý khi bạn cài đặt và sau khi cài thành công mà pipeline có thể vẫn báo tình trạng `stuck` (`job` không thể kích hoạt bởi gitlab-runner).
 
+<!-- truncate -->
+
 ## Triển khai gitlab-runner
 
 Để cài đặt `gitlab-runner` bạn chỉ cần 2 câu lệnh sau là đủ:

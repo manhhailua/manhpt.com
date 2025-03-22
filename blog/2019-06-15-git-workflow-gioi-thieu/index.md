@@ -15,6 +15,8 @@ image: ./feature-branch.png
 
 Nếu bạn là 1 git command line master thì mọi thứ đều có thể được giải quyết dưới local bằng dòng lệnh. Nhưng khi làm việc trong một nhóm đông thành viên, làm thế nào để xử lý các vấn đề conflict code, release ra sao, thêm feature mới như thế nào, hotfix ra làm sao một cách trơn tru và hiệu quả, giảm thiểu tối đa các bước thủ công, tiến dần đến một git [workflow](/tags/workflow/) tự động hoàn toàn (devops).
 
+<!-- truncate -->
+
 ## Luôn luôn tạo ra linear history
 
 > Git Workflow được giới thiệu sau đây luôn giữ một tư duy cực kỳ nhất quán về `git history` luôn luôn là `linear history` (có thể hiểu là history trên một đường thẳng). Nhìn trong hình đủ thấy `linear history` dễ hiểu hơn rất nhiều so với `non-linear history`, đủ dễ để nhìn vào graph là có thể thấy được thứ tự của các commit và sự khác nhau giữa các version được release.

@@ -1,37 +1,37 @@
 // @ts-check
-// Note: type annotations allow type checking and IDEs autocompletion
+// `@type` JSDoc annotations allow editor autocompletion and type checking
+// (when paired with `@ts-check`).
+// There are various equivalent ways to declare your Docusaurus config.
+// See: https://docusaurus.io/docs/api/docusaurus-config
 
-const lightCodeTheme = require("prism-react-renderer/themes/github");
-const darkCodeTheme = require("prism-react-renderer/themes/dracula");
+import { themes as prismThemes } from "prism-react-renderer";
+
+// This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "ManhPT's Engineering Blog",
-  url: "https://manhpt.com",
-  baseUrl: "/",
-
-  // The tagline for your website.
-  tagline: "IT Engineering Knowledges and Experiences. Lưu trữ kiến thức, kinh nghiệm và đôi khi là góc nhìn về công nghệ.",
-
-  // The behavior of Docusaurus when it detects any broken link.
-  // By default, it throws an error, to ensure you never ship any broken link, but you can lower this security if needed.
-  onBrokenLinks: "warn",
-
-  // The behavior of Docusaurus when it detects any broken markdown link.
-  // By default, it prints a warning, to let you know about your broken markdown link, but you can change this security if needed.
-  onBrokenMarkdownLinks: "warn",
-
-  // Path to your site favicon; must be a URL that can be used in link's href. For example, if your favicon is in static/img/favicon.ico
+  tagline:
+    "IT Engineering Knowledges and Experiences. Lưu trữ kiến thức, kinh nghiệm và đôi khi là góc nhìn về công nghệ.",
   favicon: "img/favicon.ico",
+
+  // Set the production url of your site here
+  url: "https://manhpt.com",
+  // Set the /<baseUrl>/ pathname under which your site is served
+  // For GitHub pages deployment, it is often '/<projectName>/'
+  baseUrl: "/",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: "manhhailua", // Usually your GitHub org/user name.
   projectName: "manhpt.com", // Usually your repo name.
 
-  // Even if you don't use internalization, you can use this field to set useful
-  // metadata like html lang. For example, if your site is Chinese, you may want
-  // to replace "en" with "zh-Hans".
+  onBrokenLinks: "throw",
+  onBrokenMarkdownLinks: "warn",
+
+  // Even if you don't use internationalization, you can use this field to set
+  // useful metadata like html lang. For example, if your site is Chinese, you
+  // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: "vi",
     locales: ["vi"],
@@ -42,45 +42,55 @@ const config = {
       "classic",
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
-        docs: {
-          sidebarPath: require.resolve("./sidebars.js"),
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl: "https://github.com/manhhailua/manhpt.com/tree/master/",
-        },
+        docs: false, // Disable the docs plugin
         blog: {
+          routeBasePath: "/", // Serve the blog at the site's root
           showReadingTime: true,
+          feedOptions: {
+            type: ["rss", "atom"],
+            xslt: true,
+          },
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: "https://github.com/manhhailua/manhpt.com/tree/master/",
-          // URL route for the blog section of your site. DO NOT include a trailing slash.
-          // Use / to put the blog at root path.
-          routeBasePath: "/",
-          // Blog page title for better SEO.
-          blogTitle: "Knowledges and Experiences",
-          // Blog page meta description for better SEO.
-          blogDescription: "IT Engineering Knowledges and Experiences. Lưu trữ kiến thức, kinh nghiệm và đôi khi là góc nhìn về công nghệ.",
+          editUrl: "https://github.com/manhhailua/manhpt.com/tree/master/blog",
+          // Useful options to enforce blogging best practices
+          onInlineTags: "warn",
+          onInlineAuthors: "warn",
+          onUntruncatedBlogPosts: "warn",
         },
         theme: {
-          customCss: require.resolve("./src/css/custom.css"),
+          customCss: "./src/css/custom.css",
         },
       }),
+    ],
+  ],
+
+  plugins: [
+    [
+      "@docusaurus/plugin-content-blog",
+      {
+        /**
+         * Required for any multi-instance plugin
+         */
+        id: "news",
+        /**
+         * URL route for the blog section of your site.
+         * *DO NOT* include a trailing slash.
+         */
+        routeBasePath: "news",
+        /**
+         * Path to data on filesystem relative to site dir.
+         */
+        path: "./news",
+      },
     ],
   ],
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      metadata: [
-        {
-          name: "keywords",
-          content: "engineering, blog, IT, IT knowledges, IT experiences",
-        },
-        {
-          name: "og:image",
-          content: "https://manhpt.com/img/manhpt-logo-192h.png"
-        }
-      ],
+      // Replace with your project's social card
+      image: "img/docusaurus-social-card.jpg",
       navbar: {
         title: "ManhPT",
         logo: {
@@ -89,13 +99,7 @@ const config = {
         },
         items: [
           { to: "/", label: "Blog", position: "left" },
-          { to: "/archive", label: "Archive", position: "left" },
-          {
-            type: "doc",
-            docId: "intro",
-            position: "left",
-            label: "Tutorial",
-          },
+          { to: "/news", label: "News", position: "left" },
           {
             href: "https://github.com/manhhailua",
             label: "GitHub",
@@ -114,8 +118,8 @@ const config = {
                 to: "/",
               },
               {
-                label: "Tutorials",
-                to: "/docs/intro",
+                label: "News",
+                to: "/news",
               },
             ],
           },
@@ -131,8 +135,8 @@ const config = {
                 href: "https://stackoverflow.com/users/1955725/manhhailua",
               },
               {
-                label: "Twitter",
-                href: "https://twitter.com/manhhailua",
+                label: "X",
+                href: "https://x.com/manhhailua",
               },
             ],
           },
@@ -154,10 +158,10 @@ const config = {
         copyright: "Powered by ManhPT | Built with Docusaurus",
       },
       prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
+        theme: prismThemes.github,
+        darkTheme: prismThemes.dracula,
       },
     }),
 };
 
-module.exports = config;
+export default config;

@@ -14,6 +14,8 @@ Nếu bạn đã từng sử dụng git trên "cửa sổ dòng lệnh" (termina
 
 Hơi tiếc là Ubuntu nói riêng và linux nói chung không có tính năng này. Dĩ nhiên chúng ta có thể cài đặt thêm phần mềm bên thứ 3 để có được tính năng tương tự. Mmình chưa thử và cũng ko tin tưởng để thử... lol.
 
+<!-- truncate -->
+
 ## Giải pháp
 
 Sau đây là một thủ thuật nhỏ và cực kỳ đơn giản để bạn có thể quên đi việc bị hỏi username và password liên tục mỗi khi `git fetch`. Đó là sử dụng [git credential storage](https://git-scm.com/book/en/v2/Git-Tools-Credential-Storage) chỉ với một câu lệnh duy nhất.

@@ -12,6 +12,8 @@ Trên các hệ thống hạ tầng cloud, sau khi sizing (bổ sung dung lượ
 
 Chú ý: Trước khi cập nhật dụng lượng trên ổ đĩa có chứa dữ liệu quan trọng thì ta nên backup dữ liệu hoặc tạo snapshot cho ổ đĩa đó trên các hệ thống cloud mà có hỗ trợ tính năng snapshot.
 
+<!-- truncate -->
+
 ## Các bước cơ bản
 
 Sau đó, thực hiện cập nhật dung lượng phân vùng theo các bước sau:

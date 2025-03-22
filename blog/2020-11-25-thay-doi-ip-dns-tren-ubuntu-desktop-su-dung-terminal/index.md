@@ -16,6 +16,8 @@ Thực trạng này đôi khi phát sinh yêu cầu phải thay đổi local IP 
 
 Để thực hiện yêu cầu thay đổi IP/DNS của máy trạm, team phát triển chỉ có thể thao tác thông qua Terminal sau khi forward và kết nối đến SSH port của máy trạm từ máy làm việc. Việc forward và kết nối SSH đến máy trạm qua Anydesk sẽ nằm trong bài viết khác.
 
+<!-- truncate -->
+
 ## Để thay đổi IP
 
 ```shell

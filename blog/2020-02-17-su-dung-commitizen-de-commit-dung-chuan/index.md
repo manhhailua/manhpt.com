@@ -14,6 +14,8 @@ Hầu hết developer chúng ta đều biết đến [git](https://git-scm.com/b
 
 Trong một team, có anh em sẽ chỉ đặt một message ngắn ngủn cho xong, một số cẩn thận sẽ viết rõ những thay đổi trong đó và chèn thêm cả JIRA ticket number. Như thế sẽ tạo ra sự thiếu nhất quán trong lịch sử commit vốn đã rất phức tạp. Điều này khiến mình nghĩ đến việc chuẩn hóa commit trong project hiện tại.
 
+<!-- truncate -->
+
 ## Lựa chọn công cụ
 
 Để có một commit có đầy đủ ý nghĩa với: loại commit (feature, fix bug, refactor...), JIRA ticket number, description. Sau thời gian ngâm cứu trên mạng thì mình đã tìm ra [Commitizen](http://commitizen.github.io/cz-cli/) và quyết định sử dụng nó để áp `chuẩn` cho việc commit.

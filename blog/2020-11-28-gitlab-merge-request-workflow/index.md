@@ -10,3 +10,5 @@ image: ./2814067-637351636914524797-16x9-1-1200x675.jpg
 ## Workflow
 
 ![](./merge-request-workflow.jpg)
+
+<!-- truncate -->

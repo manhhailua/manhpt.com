@@ -19,6 +19,8 @@ git config --global core.eol lf
 
 Gõ 2 dòng lệnh trên vào bất cứ CLI tool nào bạn có (powershell, cmd, terminal…). Done!
 
+<!-- truncate -->
+
 ## Giải ngố 1 chút
 
 - `core.autocrlf` là để tự động sử dụng CRLF cho các file mới được tạo hoặc sau khi `git add`

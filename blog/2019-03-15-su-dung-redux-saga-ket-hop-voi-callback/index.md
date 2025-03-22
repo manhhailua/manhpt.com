@@ -2,7 +2,7 @@
 title: Sử dụng redux-saga kết hợp với callback
 description: Sử dụng redux-saga xử lý async action và kết hợp với callback nhằm hạn chế lạm dụng redux. Cập nhật state theo action mà không cần redux.
 authors: [manhpt]
-tags: [action, async, react, redux, redux-saga]
+tags: [redux-action, async, react, redux, redux-saga]
 image: ./redux-saga.jpeg
 ---
 
@@ -22,6 +22,8 @@ Nếu bạn chưa biết hoặc chưa thực hành redux-saga thì trước hế
 ### Ví dụ kinh điển
 
 Bạn có một button submit form và muốn button được disable hoặc hiển thị trạng thái loading/processing trong khi chờ kết quả trả về, chỉ khi nhận được kết quả thành công hoặc có lỗi mới đưa button trở lại thái ban đầu.
+
+<!-- truncate -->
 
 ### Cụ thể
 

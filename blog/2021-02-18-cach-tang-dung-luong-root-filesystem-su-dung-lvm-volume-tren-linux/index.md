@@ -10,6 +10,8 @@ image: ./istock-1061856176.jpg
 
 Mình đã có một bài viết về cách [tăng dung lượng phân vùng ổ cứng trên linux](../2020-12-12-tang-dung-luong-phan-vung-o-cung-tren-linux/index.md). Nhưng có một trường hợp mà bài viết chưa nói đến là khi bạn sử dụng LVM. LVM cho phép bạn tạo, thay đổi dung lượng hoặc xóa phân vùng trong hệ thống mà không cần phải khởi động lại. Để tăng dung lượng cho LVM volume thì bạn có thể làm theo các bước sau:
 
+<!-- truncate -->
+
 ## 1. Xác định phân vùng đĩa cứng chứa LVM volume
 
 Trước tiên cần sử dụng lệnh `lsblk` để xem cấu trúc các phân vùng và ổ đĩa hiện tại.

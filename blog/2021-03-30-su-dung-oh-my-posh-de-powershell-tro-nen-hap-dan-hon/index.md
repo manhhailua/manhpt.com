@@ -2,7 +2,7 @@
 title: Sử dụng oh-my-posh để powershell trở nên hấp dẫn hơn
 description: Sử dụng oh-my-posh với powershell trên windows. Oh-my-posh cải thiện giao diện powershell và có thể tích hợp vào các IDE khác nhau.
 authors: [manhpt]
-tags: [git, meslo, oh-my-posh, ohmyposh, powershell, windows]
+tags: [git, meslo, oh-my-posh, powershell, windows]
 image: ./oh-my-posh-git-800x408.jpeg
 ---
 
@@ -17,6 +17,8 @@ Là một developer thì chắc hẳn bạn đã sử dụng shell/bash trên li
 Một developer xuất thân MacOS như mình khi chuyển môi trường sang Windows đã luôn cảm thấy CMD hay Powershell rất tù khi phải làm việc chéo cánh với các server Linux. Ngoài ra khi làm việc với [git](/tags/git/) command thì mình cũng bị phụ thuộc vào Git Bash để nhận được gợi ý khi gõ lệnh.
 
 Sau một thời giản dài sống chung với lũ hồi tìm hiểu thì cuối cùng cũng tìm ra được chân ái - [Oh My Posh](https://ohmyposh.dev/). Oh My Posh giúp powershell trở nên đầy màu sắc đi kèm với những thông tin hữu ích liên quan đến project hiện tại và cả git nữa, quá ngon rồi 😁 mlem mlem...
+
+<!-- truncate -->
 
 ![powershell-ohmyposh-screenshot](./power-shell-2021-03-30.png)
 

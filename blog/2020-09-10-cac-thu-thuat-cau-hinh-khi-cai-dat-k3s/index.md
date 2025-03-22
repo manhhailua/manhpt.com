@@ -12,6 +12,8 @@ K3S là một phiên bản nhỏ và nhẹ của [Kubernetes](/tags/kubernetes/)
 
 Để có thể cài đặt và sử dụng K3S thì các bạn cũng nên tham khảo yêu cầu hệ thống của K3S trước tại: [https://rancher.com/docs/k3s/latest/en/installation/installation-requirements/](https://rancher.com/docs/k3s/latest/en/installation/installation-requirements/). Nếu bạn đã chuẩn bị đầy đủ môi trường theo đúng yêu cầu của K3S thì bắt đầu thôi.
 
+<!-- truncate -->
+
 ## Cài đặt K3S với tất cả cấu hình mặc định:
 
 ```shell
@@ -70,8 +72,8 @@ Việc cập nhật phiên bản mới không nên diễn ra thường xuyên m�
 curl -sfL https://get.k3s.io | K3S_URL=https://<myserver>:6443 K3S_TOKEN=<mynodetoken> sh -
 ```
 
-- **<myserver\>** - thay bằng IP của master node (nên sử dụng IP LAN)
-- **<mynodetoken\>** - thay bằng token của master node được ghi tại **/var/lib/rancher/k3s/server/node-token**
+- **\<myserver\>** - thay bằng IP của master node (nên sử dụng IP LAN)
+- **\<mynodetoken\>** - thay bằng token của master node được ghi tại **/var/lib/rancher/k3s/server/node-token**
 
 ## Xóa cài đặt K3S
 

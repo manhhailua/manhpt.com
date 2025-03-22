@@ -16,6 +16,8 @@ Nội dung bài viết dành cho elasticsearch và kibana 7.x.
 
 Ở công ty mình vừa có mấy task devops liên quan đến scaling, clustering Elasticsearch nên viết lại đề phòng sau này cần dùng. Có một task là chuyển dữ liệu từ single-node [Elasticsearch](/tags/elasticsearch/) cũ lên cluster mới. Single-node Elasticsearch cũ nằm trên một máy chủ ảo (VM) riêng và deploy bằng docker-compose. Cluster Elasticsearch mới thì được deploy với [Helm](https://helm.sh/) trong Kubernetes và trên một cụm VM khác.
 
+<!-- truncate -->
+
 Có một cách tương đối đơn giản để thực hiện việc này đó là tạo snapshot backup trên single-node cũ và restore snapshot đó trên cluster mới. Sau một hồi google thì mình cũng đã chốt lại được các bước cơ bản sử dụng [Kibana](https://www.elastic.co/kibana):
 
 1.  Cài đặt plugin [repository-s3](https://www.elastic.co/guide/en/elasticsearch/plugins/7.10/repository-s3.html)

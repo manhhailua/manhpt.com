@@ -14,6 +14,8 @@ Setup gitlab-runner trên môi trường docker bình thường khá đơn giả
 
 > Kết hợp các máy này lại với nhau, tạo thành một cụm docker swarm.
 
+<!-- truncate -->
+
 ## Điều kiện cần
 
 ### Docker swarm

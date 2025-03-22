@@ -14,6 +14,8 @@ Mình gần như đã từng là fan của Apple khi mà sử dụng iPhone, Mac
 
 Ngoài ra, ngày còn khờ dại, đọc được thông tin đâu đó về việc NodeJs được tạo ra trên MacOS đã khiến mình quyết định mua chiếc Macbook đầu tiên - mình là một NodeJS Developer.
 
+<!-- truncate -->
+
 ## Chocolatey và sự ảnh hưởng của thói quen trên MacOS
 
 Sau khoảng 5 năm liên tục sử dụng MacOS thì cuối cùng mình đã quyết định quay trở lại với Windows. Lý do là muốn một sự thay đổi và cũng là để phục vụ niềm yêu thích chơi game (thực ra là sau khi xem phim The Witcher). Và đương nhiên khi trở lại sử dụng windows mình đã gặp phải một số vấn đề. Vấn đề lớn nhất mà mình thấy là việc cài đặt phần mềm và các công cụ phát triển phần mềm.

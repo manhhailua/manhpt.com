@@ -16,6 +16,8 @@ Gitlab là một công cụ rất hay và có self-hosted (on-premise) plan cho 
 - Gitlab còn cho phép bạn tạo các Merge Request (Pull Request, theo cách nói của Github) dựa trên các issue đã có, đồng thời tạo luôn cả source branch giúp bạn.
 - Bên cạnh đó, Gitlab cung cấp Gitlab CI cho phép bạn apply CI/CD vào bất cứ project nào. Với tôi thì đây là một tính năng không thể thiếu khi lựa chọn một công cụ devops.
 
+<!-- truncate -->
+
 Trước khi bắt đầu thực hành hoặc đọc tiếp, bạn nên tạo một repo trống để thử nghiệm.
 
 ## Tại sao cần Gitlab Flow
