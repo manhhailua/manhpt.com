@@ -2,7 +2,7 @@
 title: Tương lai của Model Context Protocol (MCP)
 description: Model Context Protocol (MCP) đang thu hút sự chú ý trong cộng đồng AI. Bài viết thảo luận về việc MCP có thực sự hữu ích hay chỉ là một xu hướng nhất thời.
 authors: [manhpt]
-tags: [mcp, langchain, langgraph, anthropic, model context protocol]
+tags: [mcp, langchain, langgraph, anthropic]
 image: ./mcp_explained_1086x1280.gif
 ---
 
