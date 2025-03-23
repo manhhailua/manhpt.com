@@ -12,6 +12,8 @@ image: ./API_Agents_Hero_16.9.webp
 
 OpenAI công bố bộ công cụ và API mới vào ngày 11/03/2025, nhằm hỗ trợ lập trình viên và doanh nghiệp xây dựng các AI Agent tự động, đáng tin cậy. Các điểm chính:
 
+<!-- truncate -->
+
 - **Responses API**: Kết hợp tính năng của Chat Completions API và Assistants API, cho phép tạo agent với các công cụ tích hợp như tìm kiếm web, tìm kiếm tệp, và điều khiển máy tính. API này thay thế Assistants API (sẽ ngừng hoạt động vào giữa năm 2026).
 - **Công cụ tích hợp**:
   - **Tìm kiếm web**: Sử dụng GPT-4o và GPT-4o-mini để cung cấp câu trả lời cập nhật kèm nguồn tham khảo.
