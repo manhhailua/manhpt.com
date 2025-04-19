@@ -427,3 +427,13 @@ langgraph:
   label: LangGraph
   permalink: /langgraph
   description: LangGraph là một thư viện Python mới được phát triển để giúp xây dựng các ứng dụng ngôn ngữ lớn (LLM) có trạng thái và đa tác tử. Nó được xây dựng trên LangChain và cung cấp một cách để phối hợp nhiều chuỗi (hoặc tác tử) qua nhiều bước tính toán theo cách tuần hoàn.
+
+ai-agent:
+  label: AI Agent
+  permalink: /ai-agent
+  description: AI Agent là một chương trình máy tính có khả năng tự động thực hiện các tác vụ hoặc ra quyết định dựa trên dữ liệu đầu vào và môi trường xung quanh.
+
+personalization:
+  label: Personalization
+  permalink: /personalization
+  description: Personalization là quá trình tùy chỉnh trải nghiệm người dùng dựa trên sở thích và hành vi của họ.

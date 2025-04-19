@@ -1,5 +1,5 @@
 ---
-title: AI Agent Cá Nhân Hóa: Bước Tiến Tới Tương Lai Nơi Mỗi Người Có Một "Trợ Lý Số" Riêng
+title: AI Agent Cá Nhân Hóa - Bước Tiến Tới Tương Lai Nơi Mỗi Người Có Một "Trợ Lý Số" Riêng
 description: AI Agent cá nhân hóa đang trở thành xu hướng trong kỷ nguyên số hóa. Bài viết khám phá tiềm năng và thách thức của AI Agent cá nhân hóa, cùng với vai trò của Model Context Protocol (MCP) trong việc tích hợp các công cụ.
 authors: [manhpt]
 tags: [mcp, ai-agent, personalization]
@@ -8,9 +8,11 @@ image: ./ai-agent-personalization.jpg
 
 [![AI Agent Cá Nhân Hóa](./ai-agent-personalization.jpg)](./ai-agent-personalization.jpg)
 
-**AI Agent Cá Nhân Hóa: Bước Tiến Tới Tương Lai Nơi Mỗi Người Có Một "Trợ Lý Số" Riêng**
+**AI Agent Cá Nhân Hóa - Bước Tiến Tới Tương Lai Nơi Mỗi Người Có Một "Trợ Lý Số" Riêng**
 
 Trong kỷ nguyên số hóa, trí tuệ nhân tạo (AI) không còn là khái niệm xa vời mà đã len lỏi vào mọi ngóc ngách của cuộc sống. Từ những chatbot trả lời tự động đến các hệ thống gợi ý phức tạp, AI đang dần thay đổi cách chúng ta làm việc và tương tác. Một trong những xu hướng hấp dẫn và đầy hứa hẹn nhất hiện nay chính là sự trỗi dậy của **AI Agent cá nhân hóa** – những trợ lý ảo thông minh được thiết kế riêng biệt, hoạt động như một "phiên bản số" thay mặt chúng ta thực hiện các tác vụ.
+
+<!-- truncate -->
 
 **Tại Sao Lại Là AI Agent Cá Nhân Hóa?**
 
