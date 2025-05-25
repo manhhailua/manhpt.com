@@ -4,7 +4,7 @@ sidebar_label: 'Privacy Policy'
 
 # Privacy Policy for IntelliLead Finder Chrome Extension
 
-**Last Updated: May 25, 2025**
+**Last Updated: May 26, 2025**
 
 IntelliLead Finder ("we," "us," or "our") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our IntelliLead Finder Chrome Extension (the "Extension"). Please read this privacy policy carefully. If you do not agree with the terms of this privacy policy, please do not install or use the Extension.
 
@@ -41,8 +41,16 @@ Specifically:
 
 ## Disclosure of Your Information
 
-We do not sell, trade, rent, or otherwise transfer your personally identifiable information to outside parties. As stated, the data you collect is stored locally or in services you control.
-Anonymous, aggregated usage data may be shared with third-party service providers to help us operate and improve the Extension, but this will not include any personal data.
+We do not sell, trade, or rent your personally identifiable information (such as your email address collected upon login) to outside parties for their marketing purposes.
+
+Your user data may be shared with the following types of parties under specific circumstances:
+
+- **Authentication Services (Firebase/Google)**: If you choose to log in, your email address is processed by Firebase Authentication (a Google service) to facilitate the login process and manage your account. Google's privacy policy will apply to their handling of this data.
+- **Third-Party Large Language Model (LLM) Providers**: If you use the Smart Analysis (AI) feature, the textual data you select for analysis is sent to a third-party LLM provider for processing. We do not store this data on our servers after the analysis is complete. We advise you to review the privacy policy of the specific LLM provider integrated with the Extension (if disclosed) or the general terms applicable to such AI services for details on their data handling practices.
+- **Analytics and Improvement Service Providers**: We may share anonymous, aggregated usage statistics (which does not identify you personally) with third-party service providers that help us operate, analyze, and improve the Extension.
+- **User-Designated Storage Services**: If you choose to export your locally stored prospecting data, it will be shared with the services you explicitly designate (e.g., Google Drive, Airtable). Their respective privacy policies will apply to the data you share with them.
+
+Other than the scenarios described above, your personally identifiable information is not shared with other third parties without your consent, unless required by law (e.g., to comply with a subpoena, or similar legal process).
 
 ## Data Security
 
