@@ -437,3 +437,8 @@ personalization:
   label: Personalization
   permalink: /personalization
   description: Personalization là quá trình tùy chỉnh trải nghiệm người dùng dựa trên sở thích và hành vi của họ.
+
+claude-code:
+  label: Claude Code
+  permalink: /claude-code
+  description: Claude Code là công cụ CLI chính thức của Anthropic cho phép Claude thực hiện các tác vụ kỹ thuật phức tạp trực tiếp trên codebase, bao gồm đọc/sửa file, chạy lệnh, và xử lý toàn bộ software engineering workflow.
