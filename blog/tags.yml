@@ -442,3 +442,28 @@ claude-code:
   label: Claude Code
   permalink: /claude-code
   description: Claude Code là công cụ CLI chính thức của Anthropic cho phép Claude thực hiện các tác vụ kỹ thuật phức tạp trực tiếp trên codebase, bao gồm đọc/sửa file, chạy lệnh, và xử lý toàn bộ software engineering workflow.
+
+openclaw:
+  label: OpenClaw
+  permalink: /openclaw
+  description: OpenClaw là một nền tảng AI agent mã nguồn mở cho phép tạo và quản lý các AI agents cá nhân với khả năng tích hợp đa công cụ và tự động hóa.
+
+deepseek:
+  label: DeepSeek
+  permalink: /deepseek
+  description: DeepSeek là một mô hình ngôn ngữ lớn mã nguồn mở của Trung Quốc với hiệu suất cao và chi phí thấp, phù hợp cho các tác vụ AI agentic.
+
+cost-optimization:
+  label: Cost Optimization
+  permalink: /cost-optimization
+  description: Cost Optimization là quá trình tối ưu hóa chi phí trong việc sử dụng các dịch vụ AI và cloud computing để đạt hiệu quả cao nhất với chi phí thấp nhất.
+
+personal-ai:
+  label: Personal AI
+  permalink: /personal-ai
+  description: Personal AI là các trợ lý AI cá nhân được tùy chỉnh theo nhu cầu và phong cách làm việc của từng người dùng.
+
+automation:
+  label: Automation
+  permalink: /automation
+  description: Automation là quá trình sử dụng công nghệ để thực hiện các tác vụ lặp đi lặp lại mà không cần sự can thiệp của con người.
