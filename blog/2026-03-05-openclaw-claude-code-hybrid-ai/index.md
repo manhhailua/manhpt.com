@@ -1,6 +1,6 @@
 ---
 title: "OpenClaw + Claude Code: Kiến Trúc Hybrid AI Cá Nhân Tối Ưu Chi Phí"
-description: Hướng dẫn setup thực tế OpenClaw kết hợp Claude Code tạo AI cá nhân mạnh mẽ với chi phí tối ưu: DeepSeek giá rẻ cho tác vụ tổng quát + Claude Code flat rate cho công việc kỹ thuật.
+description: "Hướng dẫn setup thực tế OpenClaw kết hợp Claude Code tạo AI cá nhân mạnh mẽ với chi phí tối ưu: DeepSeek giá rẻ cho tác vụ tổng quát + Claude Code flat rate cho công việc kỹ thuật."
 authors: [ai-enthusiast]
 tags: [openclaw, claude-code, deepseek, ai-agent, cost-optimization, personal-ai, automation]
 image: ./openclaw-claude-hybrid.jpg
