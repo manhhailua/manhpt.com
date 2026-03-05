@@ -20,17 +20,24 @@ image: ./openclaw-claude-hybrid.jpg
 | Refactor, implement | Claude Code (Opus) | Flat rate $20/tháng | Xuất sắc |
 | File operations | Claude Code | Flat rate $20/tháng | Bắt buộc |
 
-**So sánh chi phí:**
-- GPT-4 Turbo: ~$10/1M tokens input, $30/1M tokens output
-- Claude 3.5 Sonnet: ~$3/1M tokens input, $15/1M tokens output  
-- **DeepSeek Chat: $0.14/1M tokens input, $0.28/1M tokens output**
-- **Claude Code: Flat rate $20/tháng (Claude Pro)**
+**So sánh chi phí (Q1 2026):**
+- **GPT-5.3 Turbo**: ~$8/1M tokens input, $24/1M tokens output
+- **Claude Sonnet 4.6**: ~$2.5/1M tokens input, $12/1M tokens output  
+- **Gemini 3 Flash**: ~$0.35/1M tokens input, $1.05/1M tokens output
+- **DeepSeek Chat**: $0.14/1M tokens input, $0.28/1M tokens output
+- **Claude Code**: Flat rate $20/tháng (Claude Pro)
 
 ## Tại Sao DeepSeek Chat Là Lựa Chọn Tối Ưu Cho Agentic Work?
 
 ### 1. **Cost-Effectiveness Cho Orchestration**
-- **$0.14/1M tokens input** - rẻ hơn 70x so với GPT-4
-- **$0.28/1M tokens output** - rẻ hơn 100x so với GPT-4
+- **$0.14/1M tokens input** - rẻ hơn:
+  - 57x so với GPT-5.3 ($8/1M)
+  - 18x so với Claude Sonnet 4.6 ($2.5/1M) 
+  - 2.5x so với Gemini 3 Flash ($0.35/1M)
+- **$0.28/1M tokens output** - rẻ hơn:
+  - 86x so với GPT-5.3 ($24/1M)
+  - 43x so với Claude Sonnet 4.6 ($12/1M)
+  - 3.75x so với Gemini 3 Flash ($1.05/1M)
 - **Ideal cho memory management, context handling, và decision making**
 
 ### 2. **Performance Cho Agentic Tasks**
@@ -346,21 +353,23 @@ Total Cost: ~$0.50 (planning) + flat rate (implementation)
 | **Claude Code** | $20 flat rate | Unlimited technical tasks | Batch processing, offline queue |
 | **Total** | **$22-25/month** | Full AI assistant | **~50-70% cheaper than GPT-4 only** |
 
-### 3. So Sánh Với Các Giải Pháp Khác
+### 3. So Sánh Với Các Giải Pháp Khác (Q1 2026)
 
 | Solution | Monthly Cost | Technical Depth | General Intelligence | Best For |
 |----------|--------------|-----------------|---------------------|----------|
-| GPT-4 Only | ~$50-100 | Good | Excellent | Teams với budget lớn |
-| Claude 3.5 Only | ~$40-80 | Excellent | Excellent | Technical-heavy work |
-| **OpenClaw + Claude Code** | **~$22-25** | **Excellent** | **Very Good** | **Cost-conscious developers** |
+| GPT-5.3 Only | ~$60-120 | Excellent | Outstanding | Enterprise với budget không giới hạn |
+| Claude Sonnet 4.6 Only | ~$40-80 | Outstanding | Excellent | Technical-heavy work, research |
+| Gemini 3 Flash Only | ~$15-30 | Good | Very Good | Cost-effective general AI |
+| **OpenClaw + Claude Code** | **~$22-25** | **Outstanding** | **Very Good** | **Cost-conscious developers** |
 | DeepSeek Only | ~$5-10 | Fair | Good | General Q&A, light usage |
 | Local Models | $0 (hardware) | Variable | Variable | Privacy-focused, technical users |
 
 **Ưu điểm của hybrid approach:**
-- **Cost Efficiency:** 50-70% tiết kiệm so với GPT-4
-- **Technical Excellence:** Claude Code cho coding tasks
-- **General Intelligence:** DeepSeek cho conversation
+- **Cost Efficiency:** 60-80% tiết kiệm so với GPT-5.3
+- **Technical Excellence:** Claude Code cho coding tasks (outstanding)
+- **General Intelligence:** DeepSeek cho conversation (very good)
 - **Flexibility:** Có thể thay đổi model khi cần
+- **Best Value:** ~$22-25 cho performance của $60-120 solutions
 
 ## Phần 5: Best Practices Cho Production Setup
 
@@ -423,4 +432,140 @@ test -f ~/.openclaw/workspace/SOUL.md && echo "SOUL.md exists" || echo "Missing 
 test -f ~/.openclaw/workspace/USER.md && echo "USER.md exists" || echo "Missing USER.md"
 test -f ~/.openclaw/workspace/MEMORY.md && echo "MEMORY.md exists" || echo "Missing MEMORY.md"
 
-# Kh
+# Khởi tạo lại nếu cần
+openclaw init --force
+```
+
+**Issue 3: Chi phí cao hơn dự kiến**
+```bash
+# Kiểm tra usage logs
+openclaw logs --last 100 | grep -i "tokens\|cost"
+
+# Review routing decisions
+# Adjust routing thresholds nếu cần
+```
+
+**Issue 4: Memory không persist giữa sessions**
+```bash
+# Kiểm tra memory files
+ls -la ~/.openclaw/workspace/memory/
+
+# Kiểm tra permissions
+chmod 644 ~/.openclaw/workspace/memory/*.md 2>/dev/null
+
+# Tạo daily memory file nếu chưa có
+date_str=$(date +%Y-%m-%d)
+touch ~/.openclaw/workspace/memory/${date_str}.md
+```
+
+### Monthly Maintenance Checklist
+
+**Mỗi tuần:**
+```bash
+# 1. Review và update MEMORY.md
+openclaw chat "Review recent memory files and update MEMORY.md with significant learnings"
+
+# 2. Clean up old files
+find ~/.openclaw/workspace/tmp -type f -mtime +7 -delete
+
+# 3. Update skills
+clawhub update --all
+
+# 4. Backup workspace
+tar -czf ~/backups/openclaw-workspace-$(date +%Y%m%d).tar.gz ~/.openclaw/workspace/
+```
+
+**Mỗi tháng:**
+```bash
+# 1. Review cost optimization
+# Check usage patterns và adjust routing
+
+# 2. Update model configurations
+openclaw config get model.default
+# Kiểm tra có model mới tốt hơn không
+
+# 3. Security audit
+openclaw chat "Run security audit: check for exposed credentials, review access logs"
+
+# 4. Performance review
+openclaw chat "Review AI performance metrics and suggest improvements"
+```
+
+## Phần 7: Kết Luận
+
+### Tóm Tắt Lợi Ích
+
+**1. Chi Phí Tối Ưu (~$22-25/tháng):**
+- DeepSeek: $2-5 cho general tasks (90% requests)
+- Claude Code: $20 flat rate cho technical work (10% requests)
+- **Tiết kiệm 60-80% so với GPT-5.3 only**
+
+**2. Hiệu Suất Cao:**
+- Claude Code: Xuất sắc cho coding, refactoring, debugging
+- DeepSeek: Rất tốt cho conversation, explanation, planning
+- Smart Routing: Tự động chọn model phù hợp
+
+**3. Tính Linh Hoạt:**
+- Có thể thay đổi model khi cần
+- Dễ dàng tích hợp skills mới
+- Workspace-based memory system
+
+**4. Bảo Mật & Privacy:**
+- Local workspace với full control
+- Configurable security settings
+- No data sharing với third parties
+
+### Getting Started Checklist
+
+```bash
+# 1. Cài đặt OpenClaw
+npm install -g openclaw
+
+# 2. Khởi tạo workspace
+openclaw init
+
+# 3. Cấu hình model mặc định
+openclaw config set model.default "api-deepseek-com/deepseek-chat"
+
+# 4. Tạo các file cốt lõi
+touch ~/.openclaw/workspace/{SOUL.md,USER.md,MEMORY.md,AGENTS.md}
+
+# 5. Cài đặt Claude Code
+# Download từ https://claude.ai/code
+
+# 6. Cài đặt skills
+clawhub install coding-agent
+clawhub install proactive-agent
+clawhub install github
+
+# 7. Start using!
+openclaw chat "Hello! Let's optimize our AI setup together."
+```
+
+### Tài Nguyên Hữu Ích
+
+**Documentation:**
+- [OpenClaw Docs](https://docs.openclaw.ai)
+- [Claude Code Documentation](https://docs.anthropic.com/claude/code)
+- [DeepSeek API Docs](https://platform.deepseek.com/api-docs)
+
+**Community:**
+- [OpenClaw Discord](https://discord.com/invite/clawd)
+- [Claude Community](https://community.anthropic.com)
+- [DeepSeek Forum](https://forum.deepseek.com)
+
+**Tools & Skills:**
+- [ClawHub Skill Marketplace](https://clawhub.com)
+- [OpenClaw GitHub](https://github.com/openclaw/openclaw)
+- [Sample Configurations](https://github.com/openclaw/examples)
+
+---
+
+**Lời cuối:** Kiến trúc hybrid AI này không chỉ là giải pháp tiết kiệm chi phí, mà còn là cách tiếp cận thông minh để tận dụng điểm mạnh của từng model. Với ~$25/tháng, bạn có được trợ lý AI mạnh mẽ hơn nhiều giải pháp đắt tiền khác.
+
+**Câu hỏi hay feedback?** Hãy chia sẻ trong comments hoặc tham gia community discussion!
+
+*Last updated: March 2026*  
+*Estimated monthly savings vs GPT-5.3: $35-95*  
+*Technical satisfaction: 9/10*  
+*Cost efficiency: 10/10*
