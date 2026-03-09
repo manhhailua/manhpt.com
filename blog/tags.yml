@@ -467,3 +467,33 @@ automation:
   label: Automation
   permalink: /automation
   description: Automation là quá trình sử dụng công nghệ để thực hiện các tác vụ lặp đi lặp lại mà không cần sự can thiệp của con người.
+
+ai:
+  label: AI
+  permalink: /ai
+  description: Trí tuệ nhân tạo và machine learning.
+
+benchmark:
+  label: Benchmark
+  permalink: /benchmark
+  description: So sánh hiệu năng giữa các hệ thống, công cụ.
+
+qwen:
+  label: Qwen
+  permalink: /qwen
+  description: Mô hình ngôn ngữ lớn của Alibaba.
+
+gemini:
+  label: Gemini
+  permalink: /gemini
+  description: Mô hình ngôn ngữ lớn của Google.
+
+vietnamese:
+  label: Tiếng Việt
+  permalink: /vietnamese
+  description: Nội dung và ứng dụng tiếng Việt.
+
+llm:
+  label: LLM
+  permalink: /llm
+  description: Large Language Models - Mô hình ngôn ngữ lớn.
