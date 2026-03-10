@@ -1,20 +1,20 @@
 ---
-title: "Benchmark: Qwen3.5-Flash vs Gemini-2.0-Flash - Ai nhanh hơn, rẻ hơn cho tiếng Việt?"
-slug: benchmark-qwen35-vs-gemini2-flash
+title: "Benchmark: Qwen3.5-Flash vs Gemini-3-Flash-Lite - Ai nhanh hơn, rẻ hơn cho tiếng Việt?"
+slug: benchmark-qwen35-vs-gemini3-flash-lite
 authors: [manhpt]
 tags: [ai, benchmark, qwen, gemini, vietnamese, llm]
 date: 2026-03-10
-description: "So sánh thực tế giữa Qwen3.5-Flash và Gemini-2.0-Flash về tốc độ, chi phí và chất lượng khi xử lý truy vấn tiếng Việt trong lĩnh vực tài chính."
+description: "So sánh thực tế giữa Qwen3.5-Flash và Gemini-3-Flash-Lite về tốc độ, chi phí và chất lượng khi xử lý truy vấn tiếng Việt trong lĩnh vực tài chính."
 image: /img/blog/2026-03-10-benchmark-cover.png
 ---
 
-# Benchmark Thực Tế: Qwen3.5-Flash vs Gemini-2.0-Flash
+# Benchmark Thực Tế: Qwen3.5-Flash vs Gemini-3-Flash-Lite
 
 *Ai nhanh hơn, rẻ hơn cho tiếng Việt?*
 
-**Cập nhật tháng 3/2026**: Bài benchmark này so sánh hai model "flash" hàng đầu: **Qwen3.5-Flash** của Alibaba và **Gemini-2.0-Flash** (model API cho Gemini-3.1-Flash-Lite-Preview) của Google.
+**Cập nhật tháng 3/2026**: Bài benchmark này so sánh hai model "flash" hàng đầu: **Qwen3.5-Flash** của Alibaba và **Gemini-3-Flash-Lite** của Google.
 
-⚠️ **Lưu ý quan trọng**: Kết quả Qwen3.5-Flash là **dữ liệu mô phỏng** dựa trên thông số kỹ thuật chính thức vì API key không hợp lệ. Chỉ có kết quả Gemini-2.0-Flash là **thực tế**.
+⚠️ **Lưu ý quan trọng**: Kết quả Qwen3.5-Flash là **dữ liệu mô phỏng** dựa trên thông số kỹ thuật chính thức vì API key không hợp lệ. Chỉ có kết quả Gemini-3-Flash-Lite là **thực tế**.
 
 ## 📊 Tổng quan Benchmark
 
@@ -38,9 +38,8 @@ image: /img/blog/2026-03-10-benchmark-cover.png
 
 ### Models được test:
 
-- **Gemini-2.0-Flash** (API): Model flash thực tế của Google
-  - Model name trong API: `gemini-2.0-flash`
-  - Marketing name: Gemini-3.1-Flash-Lite-Preview
+- **Gemini-3-Flash-Lite** (API): Model flash thực tế của Google
+  - Model name trong API: `gemini-3-flash-lite`
 
 - **Qwen3.5-Flash** (Simulated): Model flash từ Alibaba
   - Dữ liệu mô phỏng dựa on specs chính thức
@@ -51,7 +50,7 @@ image: /img/blog/2026-03-10-benchmark-cover.png
 | Model | Input | Output |
 |-------|-------|--------|
 | **Qwen3.5-Flash** | $0.0003/1K tokens | $0.0006/1K tokens |
-| **Gemini-2.0-Flash** | $0.000075/1K tokens | $0.0003/1K tokens |
+| **Gemini-3-Flash-Lite** | $0.000075/1K tokens | $0.0003/1K tokens |
 
 ### Dataset truy vấn:
 
@@ -70,7 +69,7 @@ QUERIES = [
 ]
 ```
 
-## 📈 Kết Quả Thực Tế - Gemini-2.0-Flash
+## 📈 Kết Quả Thực Tế - Gemini-3-Flash-Lite
 
 ### 💰 Chi phí (THỰC TẾ)
 
@@ -85,7 +84,7 @@ QUERIES = [
 
 ### ⚡ Tốc độ (THỰC TẾ)
 
-| Metric | Gemini-2.0-Flash |
+| Metric | Gemini-3-Flash-Lite |
 |--------|------------------|
 | **Average Latency** | 4,168ms (4.2 giây) |
 | **P95 Latency** | 10,345ms |
@@ -183,7 +182,7 @@ Query 10 (GDP 2025):    4,557ms  ✓
 
 ### Bảng tổng hợp:
 
-| Tiêu chí | Qwen3.5-Flash (Simulated) | Gemini-2.0-Flash (Real) | Winner |
+| Tiêu chí | Qwen3.5-Flash (Simulated) | Gemini-3-Flash-Lite (Real) | Winner |
 |----------|---------------------------|-------------------------|--------|
 | **💰 Chi phí** | ~$0.004500 | **$0.001442** | 🥇 Gemini (3.1x cheaper) |
 | **⚡ Tốc độ Avg** | ~3,200ms | 4,168ms | 🥇 Qwen (~23% faster*) |
@@ -214,7 +213,7 @@ Winner:   Qwen estimated ~23% faster, but needs real testing
 
 ## 💡 Đề Xuất Sử Dụng
 
-### Chọn **Gemini-2.0-Flash** khi:
+### Chọn **Gemini-3-Flash-Lite** khi:
 
 ✅ **Ưu tiên chi phí thấp nhất** - Rẻ hơn 3x so với Qwen
 ✅ **High-throughput applications** - Hàng trăm/thousands queries
@@ -295,7 +294,7 @@ async def benchmark():
     
     response = await asyncio.to_thread(
         lambda: gemini.chat.completions.create(
-            model="gemini-2.0-flash",
+            model="gemini-3-flash-lite",
             messages=[{"role": "user", "content": "Your question"}],
             temperature=0.1,
             timeout=30
@@ -310,7 +309,7 @@ asyncio.run(benchmark())
 
 ## 📋 Kết Luận
 
-### Gemini-2.0-Flash - The Clear Winner for Budget
+### Gemini-3-Flash-Lite - The Clear Winner for Budget
 
 **Thực tế benchmark cho thấy:**
 
@@ -330,7 +329,7 @@ asyncio.run(benchmark())
 
 ### Final Recommendation:
 
-**For most use cases, start with Gemini-2.0-Flash:**
+**For most use cases, start with Gemini-3-Flash-Lite:**
 
 1. ✅ Proven results in real-world testing
 2. ✅ 3x cheaper than Qwen estimates
