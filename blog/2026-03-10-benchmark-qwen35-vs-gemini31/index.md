@@ -5,7 +5,6 @@ authors: [manhpt]
 tags: [ai, benchmark, qwen, gemini, vietnamese, llm]
 date: 2026-03-10
 description: "So sánh thực tế giữa Qwen3.5-Flash và Gemini-3-Flash-Lite về tốc độ, chi phí và chất lượng khi xử lý truy vấn tiếng Việt trong lĩnh vực tài chính."
-image: /img/blog/2026-03-10-benchmark-cover.png
 ---
 
 # Benchmark Thực Tế: Qwen3.5-Flash vs Gemini-3-Flash-Lite
@@ -252,8 +251,8 @@ def get_answer(query, priority="balanced"):
 ### Setup:
 
 ```bash
-# Clone repository
-cd /home/manhpt/.openclaw/workspace/benchmarks
+# Tạo thư mục benchmark
+mkdir benchmarks && cd benchmarks
 
 # Install dependencies
 pip install openai aiohttp python-dotenv
@@ -364,15 +363,15 @@ asyncio.run(benchmark())
 
 ### Detailed Gemini Results
 
-Full JSON results available at: [`benchmarks/gemini_results_20260310_072944.json`](../../benchmarks/gemini_results_20260310_072944.json)
+Kết quả Gemini đầy đủ được lưu trong file `gemini_results_20260310_072944.json` sau khi chạy benchmark script.
 
 ### Simulated Qwen Data
 
-Simulation methodology documented at: [`benchmarks/simulated_qwen_data.json`](../../benchmarks/simulated_qwen_data.json)
+Phương pháp mô phỏng dựa trên thông số kỹ thuật chính thức từ Alibaba Cloud documentation.
 
 ### Code Repository
 
-All benchmark code: [`benchmarks/`](../../benchmarks/)
+Toàn bộ benchmark code có thể được tạo theo các ví dụ code trong bài viết này.
 
 ---
 
