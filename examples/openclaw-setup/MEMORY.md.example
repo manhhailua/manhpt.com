@@ -1,0 +1,123 @@
+# MEMORY.md - Long-Term Memory
+
+This file contains significant events, decisions, and learnings worth remembering across sessions.
+
+## Identity Established
+- **Date:** [YYYY-MM-DD]
+- **My name:** [AI Assistant Name]
+- **Core traits:** [e.g., Security-focused, analytical, pragmatic, helpful]
+- **Primary directive:** [e.g., Prioritize safety and user productivity]
+
+## About [User's Name]
+- **Name:** [User's Name]
+- **Role:** [e.g., Software Engineer at Tech Company]
+- **Timezone:** [e.g., Asia/Bangkok]
+- **Technical Focus:** [e.g., Backend systems, AI/ML, DevOps]
+
+## Security Principles
+1. Never expose credentials, tokens, or sensitive data in clear text
+2. Security first, always - warn about potential risks proactively
+3. Handle sensitive information with utmost care
+4. Verify permissions before accessing restricted resources
+
+## Technical Decisions & Learnings
+
+### 2024-03-04: OpenClaw + Claude Code Architecture
+**Decision:** Implement hybrid architecture using OpenClaw with DeepSeek for general tasks and Claude Code for technical work.
+**Reasoning:** 
+- Cost optimization: DeepSeek ($0.14/1M tokens) vs GPT-4 ($10-30/1M tokens)
+- Technical depth: Claude Code excels at file operations and complex debugging
+- Flat rate advantage: Claude Code included in Claude Pro ($20/month)
+**Result:** Estimated 50-70% cost reduction compared to GPT-4 only setup.
+
+### 2024-03-05: Workspace Structure Standardization
+**Decision:** Standardize on specific file structure for OpenClaw workspace.
+**Structure:**
+- `SOUL.md`: AI personality and boundaries
+- `USER.md`: User preferences and context  
+- `MEMORY.md`: Long-term memory and learnings
+- `HEARTBEAT.md`: Proactive checklists
+- `AGENTS.md`: Workspace guidelines
+- `TOOLS.md`: Integration notes
+**Benefit:** Consistent experience across sessions, easier maintenance.
+
+### 2024-03-06: Skill Integration Pattern
+**Pattern:** Use `clawhub` to install and manage skills.
+**Installed Skills:**
+- `coding-agent`: Delegate complex coding tasks
+- `proactive-agent`: Anticipate needs and automate checks
+- `github`: GitHub integration for issue/PR management
+- `self-improvement`: Learn from mistakes and improve over time
+**Best Practice:** Review skill updates monthly, test in sandbox first.
+
+## User Preferences & Patterns
+
+### Communication Style
+- Prefers technical depth but appreciates executive summaries
+- Values proactive security warnings
+- Dislikes unnecessary small talk or filler phrases
+- Appreciates when I admit uncertainty and suggest research paths
+
+### Technical Preferences
+- **Code Style:** Clean, well-documented, with tests
+- **Tools:** Prefers open source where possible
+- **Documentation:** Markdown with practical examples
+- **Automation:** Enthusiastic about automating repetitive tasks
+
+### Project Management
+- Uses GitHub for version control and project tracking
+- Prefers iterative development with frequent feedback
+- Values cost transparency in tool selection
+- Appreciates when I track and report on progress
+
+## Cost Optimization Strategies
+
+### 1. Model Selection
+- **General tasks:** DeepSeek Chat ($0.14/1M tokens)
+- **Technical tasks:** Claude Code (flat rate $20/month)
+- **Research tasks:** Web search + local processing
+
+### 2. Token Management
+- Clear context window when conversation drifts
+- Use summaries for long documents
+- Batch similar requests
+- Cache frequent responses
+
+### 3. Task Routing Rules
+- File operations → Claude Code
+- Code debugging → Claude Code  
+- Explanations → DeepSeek
+- Planning → DeepSeek
+- Research → Web search + DeepSeek
+
+## Error Handling & Recovery
+
+### Common Issues & Solutions
+1. **API rate limits:** Implement exponential backoff, cache responses
+2. **Context window overflow:** Summarize, split into chunks
+3. **File permission errors:** Verify paths, check permissions
+4. **Network issues:** Retry with delay, provide offline alternatives
+
+### Learning from Mistakes
+_[Document specific mistakes and corrections here]_
+
+## Future Improvements
+
+### Short-term (1 month)
+- [ ] Implement better cost tracking dashboard
+- [ ] Add more skills from clawhub.com
+- [ ] Create backup/restore system for workspace
+
+### Medium-term (3 months)
+- [ ] Implement multi-user support
+- [ ] Add voice interface capability
+- [ ] Create skill development framework
+
+### Long-term (6+ months)
+- [ ] Implement federated learning from user interactions
+- [ ] Develop predictive task automation
+- [ ] Create community skill marketplace
+
+---
+
+_This memory evolves over time. Review and update periodically, removing outdated information and adding new learnings._
