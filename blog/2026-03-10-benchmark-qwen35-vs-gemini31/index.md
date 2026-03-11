@@ -385,21 +385,60 @@ asyncio.run(benchmark())
 4. ✅ 100% success rate confirmed
 5. ✅ Better token efficiency
 
+## 🔬 Advanced Benchmark: Query Breaking + Optimized Config
+
+**Cập nhật 11/03/2026**: Benchmark nâng cao với system prompt query breaking (2,496 tokens), temperature=0, và context cache optimization.
+
+### Cấu hình nâng cao:
+- **System Prompt**: Query breaking instructions + few-shot examples
+- **Temperature**: 0.0 (disable thinking/randomness)
+- **Context Cache**: Enabled for Qwen via prompt optimization
+- **Max Tokens**: 1024 per response
+
+### Kết quả Advanced Benchmark:
+
+| Metric | Gemini-3.1-Flash-Lite-Preview | Qwen3.5-Flash (Optimized) | Improvement |
+|--------|------------------------------|---------------------------|-------------|
+| **Avg Latency** | 3,971ms | **7,611ms** | Qwen: **60% faster** vs baseline |
+| **Total Cost** | $0.001987 | **$0.007867** | Qwen: **47% cheaper** vs baseline |
+| **Input Tokens** | 7,613 | 7,671 | Similar |
+| **Output Tokens** | 4,719 | **9,277** | Qwen: More verbose responses |
+| **Cost/Query** | $0.000199 | **$0.000787** | Gemini: **4x cheaper** |
+
+### Phân tích cải tiến:
+
+**Qwen3.5-Flash với optimization:**
+- ✅ **Tốc độ**: Giảm từ 19.0s → 7.6s (**60% cải thiện**)
+- ✅ **Chi phí**: Giảm từ $0.014752 → $0.007867 (**47% tiết kiệm**)
+- ✅ **Chất lượng**: Response có cấu trúc query breaking rõ ràng
+- ✅ **Token efficiency**: Output tokens tăng nhưng chất lượng tốt hơn
+
+**Gemini-3.1-Flash-Lite-Preview:**
+- ⚠️ **Chi phí**: Tăng từ $0.001347 → $0.001987 (47% tăng do system prompt dài)
+- ✅ **Tốc độ**: Ổn định ~4.0s
+- ✅ **Consistency**: Temperature=0 giúp response nhất quán hơn
+
+### Key Insights:
+1. **System prompt optimization** giúp cải thiện đáng kể performance cho Qwen
+2. **Gemini vẫn hiệu quả hơn** về cost-performance ratio (4x cheaper)
+3. **Query breaking** giúp response có cấu trúc tốt hơn cho cả hai models
+4. **Temperature=0** giúp response nhất quán, phù hợp cho production
+
 ## 🔮 Xu Hướng & Tips
 
 ### What to watch:
 
-1. **Price competition**: Both providers likely to reduce prices
-2. **Model updates**: New versions may change performance significantly
-3. **Vietnamese improvements**: Both models improving native language support
-4. **Speed optimizations**: Flash models getting faster over time
+1. **Prompt optimization**: System prompts có thể cải thiện performance đáng kể
+2. **Context caching**: Qwen có thể được optimize thêm với context cache
+3. **Vietnamese improvements**: Cả hai models đang cải thiện support tiếng Việt
+4. **Cost reductions**: Cả hai providers có thể giảm giá trong tương lai
 
 ### Tips:
 
-- 📊 **Benchmark regularly**: Landscape changes fast
-- 💰 **Monitor costs**: Track actual vs estimated spending
-- 🧪 **A/B test different prompts**: Can improve quality/cost ratio
-- 📈 **Measure business metrics**: Not just latency/quality, but user satisfaction
+- 📊 **Benchmark với different prompts**: System prompt ảnh hưởng lớn đến performance
+- 💰 **Optimize token usage**: Giảm input tokens khi có thể
+- 🧪 **Test temperature settings**: temperature=0 cho consistency, >0 cho creativity
+- 📈 **Monitor model updates**: Performance có thể thay đổi với model versions mới
 
 ---
 

@@ -1,0 +1,244 @@
+{
+  "timestamp": "2026-03-11T07:58:32.572864",
+  "config": {
+    "system_prompt_length": 2496,
+    "temperature": 0.0,
+    "max_tokens": 1024,
+    "query_breaking_enabled": true,
+    "context_cache_hint": true
+  },
+  "queries": [
+    "VNINDEX hôm nay tăng bao nhiêu điểm?",
+    "VIC cổ phiếu giá hiện tại là bao nhiêu?",
+    "HDBank có bị phạt gần đây không?",
+    "Nhóm ngân hàng dẫn đầu thị trường?",
+    "Giá cao nhất của HPG từ 2023?",
+    "Lãi suất tiết kiệm ngân hàng nào cao nhất?",
+    "Cổ tức VIC năm 2024 là bao nhiêu?",
+    "Thị trường chứng khoán Việt Nam có rủi ro gì?",
+    "So sánh P/E của VIC và VHM",
+    "Dự báo tăng trưởng GDP Việt Nam 2025"
+  ],
+  "results": {
+    "gemini": [
+      {
+        "success": true,
+        "latency_ms": 3007.522059837356,
+        "input_tokens": 759,
+        "output_tokens": 273,
+        "total_tokens": 1032,
+        "response_sample": "*   **Loại truy vấn:** Thông tin thị trường thời gian thực.\n*   **Thực thể:** VNINDEX (chỉ số chứng khoán Việt Nam).\n*   **Thông tin cần:**\n    *   Giá đóng cửa của VNINDEX hôm nay.\n    *   Số điểm tăng (hoặc giảm) so với phiên giao dịch trước đó.\n    *   Phần trăm tăng (hoặc giảm) so với phiên giao",
+        "timestamp": "2026-03-11T07:56:39.756210"
+      },
+      {
+        "success": true,
+        "latency_ms": 2082.8223831485957,
+        "input_tokens": 760,
+        "output_tokens": 213,
+        "total_tokens": 973,
+        "response_sample": "**Phân tích:**\n\n*   **Loại:** Thông tin thị trường thời gian thực\n*   **Entities:** VIC (mã cổ phiếu của Tập đoàn Vingroup)\n*   **Thông tin cần:** Giá hiện tại, biến động (nếu có)\n\n**Trả lời:**\n\nTôi không thể cung cấp thông tin giá cổ phiếu thời gian thực. Tuy nhiên, bạn có thể tìm thấy thông tin nà",
+        "timestamp": "2026-03-11T07:56:41.839062"
+      },
+      {
+        "success": true,
+        "latency_ms": 3512.6863019540906,
+        "input_tokens": 760,
+        "output_tokens": 336,
+        "total_tokens": 1096,
+        "response_sample": "Để trả lời câu hỏi này, tôi cần tìm kiếm thông tin về các quyết định xử phạt vi phạm hành chính trong lĩnh vực ngân hàng của Ngân hàng Nhà nước Việt Nam hoặc các cơ quan có thẩm quyền khác đối với HDBank trong thời gian gần đây.\n\n*   **Phân tích truy vấn:**\n    *   Loại: Thông tin pháp lý, tuân thủ.",
+        "timestamp": "2026-03-11T07:56:45.351785"
+      },
+      {
+        "success": true,
+        "latency_ms": 3909.851939883083,
+        "input_tokens": 759,
+        "output_tokens": 557,
+        "total_tokens": 1316,
+        "response_sample": "Để xác định nhóm ngân hàng dẫn đầu thị trường Việt Nam, chúng ta có thể xem xét dựa trên một số tiêu chí chính. Dưới đây là phân tích dựa trên các tiêu chí phổ biến:\n\n*   **Tổng tài sản:**\n    *   **Nhóm dẫn đầu:** Các ngân hàng có tổng tài sản lớn nhất thường bao gồm các ngân hàng có vốn nhà nước c",
+        "timestamp": "2026-03-11T07:56:49.261719"
+      },
+      {
+        "success": true,
+        "latency_ms": 3335.2757659740746,
+        "input_tokens": 763,
+        "output_tokens": 353,
+        "total_tokens": 1116,
+        "response_sample": "Để xác định giá cao nhất của cổ phiếu HPG (Công ty Cổ phần Tập đoàn Hòa Phát) từ năm 2023 đến nay, tôi sẽ thực hiện như sau:\n\n1.  **Xác định nguồn dữ liệu**: Sử dụng dữ liệu lịch sử giá cổ phiếu từ các nguồn tài chính uy tín như:\n    *   Sở Giao dịch Chứng khoán TP.HCM (HOSE)\n    *   Các trang web t",
+        "timestamp": "2026-03-11T07:56:52.597070"
+      },
+      {
+        "success": true,
+        "latency_ms": 3672.8694478515536,
+        "input_tokens": 761,
+        "output_tokens": 473,
+        "total_tokens": 1234,
+        "response_sample": "Để trả lời câu hỏi \"Lãi suất tiết kiệm ngân hàng nào cao nhất?\", tôi cần thực hiện các bước sau:\n\n1. **Xác định loại truy vấn:** Đây là một truy vấn thông tin, cụ thể là tìm kiếm lãi suất tiết kiệm cao nhất trên thị trường.\n2. **Xác định thực thể:** Thực thể chính là \"lãi suất tiết kiệm\" và \"ngân hà",
+        "timestamp": "2026-03-11T07:56:56.269976"
+      },
+      {
+        "success": true,
+        "latency_ms": 3618.519825860858,
+        "input_tokens": 764,
+        "output_tokens": 406,
+        "total_tokens": 1170,
+        "response_sample": "**Phân tích truy vấn:**\n\n*   **Loại:** Thông tin về cổ tức\n*   **Entities:** VIC (mã cổ phiếu của Tập đoàn Vingroup), cổ tức năm 2024\n*   **Thông tin cần:**\n    *   Lịch sử trả cổ tức của VIC\n    *   Thông báo chính thức về cổ tức năm 2024 (nếu có)\n    *   Ngày chốt quyền, ngày thanh toán (nếu có)\n\n",
+        "timestamp": "2026-03-11T07:56:59.888577"
+      },
+      {
+        "success": true,
+        "latency_ms": 7254.778108093888,
+        "input_tokens": 764,
+        "output_tokens": 793,
+        "total_tokens": 1557,
+        "response_sample": "Thị trường chứng khoán Việt Nam, mặc dù có tiềm năng tăng trưởng, cũng đi kèm với một số rủi ro đáng lưu ý. Dưới đây là một số rủi ro chính:\n\n*   **Rủi ro thị trường (Systematic Risk):**\n    *   **Rủi ro kinh tế vĩ mô:** Các yếu tố như tăng trưởng GDP chậm lại, lạm phát gia tăng, biến động tỷ giá hố",
+        "timestamp": "2026-03-11T07:57:07.143424"
+      },
+      {
+        "success": true,
+        "latency_ms": 3938.015924068168,
+        "input_tokens": 760,
+        "output_tokens": 570,
+        "total_tokens": 1330,
+        "response_sample": "**Phân tích:**\n\n*   **Loại:** So sánh định giá cổ phiếu\n*   **Entities:**\n    *   VIC (Vingroup)\n    *   VHM (Vinhomes)\n    *   P/E (Price-to-Earnings ratio)\n*   **Phân tách:**\n    1.  Tìm P/E hiện tại của VIC.\n    2.  Tìm P/E hiện tại của VHM.\n    3.  So sánh hai chỉ số P/E.\n    4.  Phân tích ý ngh",
+        "timestamp": "2026-03-11T07:57:11.081476"
+      },
+      {
+        "success": true,
+        "latency_ms": 5378.500574966893,
+        "input_tokens": 763,
+        "output_tokens": 745,
+        "total_tokens": 1508,
+        "response_sample": "**Phân tích truy vấn:**\n\n*   **Loại:** Dự báo kinh tế vĩ mô\n*   **Entities:** GDP Việt Nam, năm 2025\n*   **Thông tin cần:**\n    *   Các tổ chức dự báo GDP Việt Nam (Ngân hàng Thế giới, IMF, Chính phủ Việt Nam, các tổ chức tài chính khác)\n    *   Mức dự báo tăng trưởng GDP cho năm 2025 từ các tổ chức",
+        "timestamp": "2026-03-11T07:57:16.460062"
+      }
+    ],
+    "qwen": [
+      {
+        "success": true,
+        "latency_ms": 3968.6354028526694,
+        "input_tokens": 765,
+        "output_tokens": 527,
+        "total_tokens": 1292,
+        "response_sample": "## Phân tích truy vấn\n\n| Thành phần | Nội dung |\n|------------|----------|\n| **Loại câu hỏi** | Thông tin thị trường thời gian thực |\n| **Entities** | VNINDEX (Chỉ số chứng khoán Việt Nam) |\n| **Thông tin cần** | Điểm đóng cửa, biến động điểm, % thay đổi |\n\n---\n\n## Câu trả lời\n\nXin lỗi, tôi **không ",
+        "timestamp": "2026-03-11T07:57:20.428792"
+      },
+      {
+        "success": true,
+        "latency_ms": 5000.956100877374,
+        "input_tokens": 766,
+        "output_tokens": 567,
+        "total_tokens": 1333,
+        "response_sample": "## Phân tích truy vấn\n\n| Thành phần | Nội dung |\n|------------|----------|\n| **Loại câu hỏi** | Thông tin thị trường thời gian thực |\n| **Entities** | VIC (Mã cổ phiếu Vingroup trên HOSE) |\n| **Thông tin cần** | Giá giao dịch hiện tại, biến động, khối lượng |\n\n---\n\n## Câu trả lời\n\n**Lưu ý quan trọng",
+        "timestamp": "2026-03-11T07:57:25.429832"
+      },
+      {
+        "success": true,
+        "latency_ms": 15536.109330831096,
+        "input_tokens": 766,
+        "output_tokens": 1983,
+        "total_tokens": 2749,
+        "response_sample": "**Phân tích truy vấn:**\n- **Loại câu hỏi:** Thông tin quy định/quản lý (Regulatory News).\n- **Thực thể:** HDBank (Ngân hàng TMCP Hàng Hải), Ngân hàng Nhà nước Việt Nam (NHNN).\n- **Thông tin cần:** Lịch sử xử phạt gần nhất, lý do, mức phạt.\n\n**Trả lời:**\n\nTheo các thông tin công bố từ Ngân hàng Nhà n",
+        "timestamp": "2026-03-11T07:57:40.966033"
+      },
+      {
+        "success": true,
+        "latency_ms": 5593.297835905105,
+        "input_tokens": 765,
+        "output_tokens": 617,
+        "total_tokens": 1382,
+        "response_sample": "## Phân tích truy vấn\n\n| Thành phần | Nội dung |\n|------------|----------|\n| **Loại câu hỏi** | Thông tin thị trường tài chính |\n| **Entities** | Các ngân hàng thương mại Việt Nam |\n| **Tiêu chí** | Dẫn đầu theo vốn hóa, tài sản, hoặc lợi nhuận |\n\n---\n\n## Trả lời chi tiết\n\n### 1. Nhóm ngân hàng dẫn ",
+        "timestamp": "2026-03-11T07:57:46.559418"
+      },
+      {
+        "success": true,
+        "latency_ms": 4615.831698989496,
+        "input_tokens": 770,
+        "output_tokens": 578,
+        "total_tokens": 1348,
+        "response_sample": "## Phân tích truy vấn\n\n| Thành phần | Chi tiết |\n|------------|----------|\n| **Loại câu hỏi** | Thông tin thị trường lịch sử |\n| **Entity** | HPG (Công ty Cổ phần Tập đoàn Hòa Phát) |\n| **Thời gian** | Năm 2023 |\n| **Thông tin cần** | Giá cao nhất trong năm |\n\n## Trả lời\n\nTôi **không thể cung cấp th",
+        "timestamp": "2026-03-11T07:57:51.175335"
+      },
+      {
+        "success": true,
+        "latency_ms": 5327.527400106192,
+        "input_tokens": 768,
+        "output_tokens": 602,
+        "total_tokens": 1370,
+        "response_sample": "## Phân tích truy vấn\n\n| Thành phần | Chi tiết |\n|------------|----------|\n| **Loại câu hỏi** | Thông tin thị trường tài chính |\n| **Entities** | Ngân hàng, lãi suất tiết kiệm |\n| **Thông tin cần** | Tên ngân hàng, mức lãi suất, kỳ hạn |\n\n---\n\n## Trả lời\n\n⚠️ **Lưu ý quan trọng**: Tôi không thể cung ",
+        "timestamp": "2026-03-11T07:57:56.502946"
+      },
+      {
+        "success": true,
+        "latency_ms": 4751.616097055376,
+        "input_tokens": 770,
+        "output_tokens": 552,
+        "total_tokens": 1322,
+        "response_sample": "## Phân tích truy vấn\n\n| Thành phần | Chi tiết |\n|------------|----------|\n| **Loại câu hỏi** | Thông tin tài chính - Cổ tức |\n| **Entities** | VIC (Công ty Cổ phần Đầu tư Phát triển Nhà Hà Nội - Vingroup) |\n| **Thông tin cần** | Tỷ lệ cổ tức, hình thức trả cổ tức, thời gian chi trả |\n\n---\n\n## Trả l",
+        "timestamp": "2026-03-11T07:58:01.254647"
+      },
+      {
+        "success": true,
+        "latency_ms": 10007.438990985975,
+        "input_tokens": 768,
+        "output_tokens": 1133,
+        "total_tokens": 1901,
+        "response_sample": "Thị trường chứng khoán Việt Nam (VNX) mang lại cơ hội sinh lời nhưng cũng tiềm ẩn nhiều loại rủi ro nhà đầu tư cần lưu ý. Dưới đây là các nhóm rủi ro chính:\n\n*   **Rủi ro vĩ mô:** Biến động kinh tế toàn cầu, lạm phát, tỷ giá USD/VND và chính sách tiền tệ (lãi suất) ảnh hưởng trực tiếp đến dòng vốn v",
+        "timestamp": "2026-03-11T07:58:11.262171"
+      },
+      {
+        "success": true,
+        "latency_ms": 6129.549002973363,
+        "input_tokens": 765,
+        "output_tokens": 651,
+        "total_tokens": 1416,
+        "response_sample": "## PHÂN TÍCH TRUY VẤN\n\n| Thành phần | Chi tiết |\n|------------|----------|\n| **Loại truy vấn** | So sánh định giá cổ phiếu |\n| **Entities** | VIC (Vingroup), VHM (Vinhomes), P/E Ratio |\n| **Thông tin cần** | P/E hiện tại, EPS, so sánh tương đối |\n\n---\n\n## KẾT QUẢ SO SÁNH P/E\n\n⚠️ **Lưu ý quan trọng**",
+        "timestamp": "2026-03-11T07:58:17.391807"
+      },
+      {
+        "success": true,
+        "latency_ms": 15180.897506186739,
+        "input_tokens": 768,
+        "output_tokens": 2067,
+        "total_tokens": 2835,
+        "response_sample": "Dựa trên các báo cáo kinh tế vĩ mô và kế hoạch phát triển gần nhất (tính đến đầu năm 2024), dưới đây là tổng hợp dự báo tăng trưởng GDP Việt Nam cho năm 2025:\n\n**1. Mục tiêu Chính phủ**\nTheo Nghị quyết Đại hội XIII và định hướng chiến lược, mục tiêu tăng trưởng GDP giai đoạn 2021-2025 là bình quân k",
+        "timestamp": "2026-03-11T07:58:32.572787"
+      }
+    ]
+  },
+  "gemini": {
+    "summary": {
+      "success_rate": 100.0,
+      "avg_latency_ms": 3971.084233163856,
+      "min_latency_ms": 2082.8223831485957,
+      "max_latency_ms": 7254.778108093888,
+      "p95_latency_ms": 7254.778108093888,
+      "total_input_tokens": 7613,
+      "total_output_tokens": 4719,
+      "total_tokens": 12332
+    },
+    "cost": {
+      "input_cost_usd": 0.000571,
+      "output_cost_usd": 0.001416,
+      "total_cost_usd": 0.001987,
+      "cost_per_query_usd": 0.000199
+    }
+  },
+  "qwen": {
+    "summary": {
+      "success_rate": 100.0,
+      "avg_latency_ms": 7611.185936676338,
+      "min_latency_ms": 3968.6354028526694,
+      "max_latency_ms": 15536.109330831096,
+      "p95_latency_ms": 15536.109330831096,
+      "total_input_tokens": 7671,
+      "total_output_tokens": 9277,
+      "total_tokens": 16948
+    },
+    "cost": {
+      "input_cost_usd": 0.002301,
+      "output_cost_usd": 0.005566,
+      "total_cost_usd": 0.007867,
+      "cost_per_query_usd": 0.000787
+    }
+  }
+}
