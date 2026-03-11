@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "Benchmark: Qwen3.5-Flash vs Gemini-3-Flash-Lite - Ai nhanh hơn, rẻ hơn cho tiếng Việt?"
 slug: benchmark-qwen35-vs-gemini3-flash-lite
 authors: [manhpt]
@@ -14,6 +15,24 @@ description: "So sánh thực tế giữa Qwen3.5-Flash và Gemini-3-Flash-Lite 
 **Cập nhật tháng 3/2026**: Bài benchmark này so sánh hai model "flash" hàng đầu: **Qwen3.5-Flash** của Alibaba và **Gemini-3-Flash-Lite** của Google.
 
 ⚠️ **Lưu ý quan trọng**: Kết quả Qwen3.5-Flash là **dữ liệu mô phỏng** dựa trên thông số kỹ thuật chính thức vì API key không hợp lệ. Chỉ có kết quả Gemini-3-Flash-Lite là **thực tế**.
+=======
+title: "Benchmark Thực Tế: Qwen3.5-Flash vs Gemini-3.1-Flash-Lite-Preview"
+slug: benchmark-qwen35-vs-gemini31-flash-lite-real-results
+authors: [manhpt]
+tags: [ai, benchmark, qwen, gemini, vietnamese, llm]
+date: 2026-03-11
+description: "Benchmark thực tế ngày 11/03/2026: So sánh 100% DỮ LIỆU THỰC TẾ giữa Qwen3.5-Flash và Gemini-3.1-Flash-Lite-Preview về tốc độ, chi phí và chất lượng xử lý truy vấn tiếng Việt tài chính."
+image: /img/blog/2026-03-10-benchmark-cover.png
+---
+
+# Benchmark Thực Tế: Qwen3.5-Flash vs Gemini-3.1-Flash-Lite-Preview
+
+*Ai nhanh hơn, rẻ hơn cho tiếng Việt?*
+
+**Cập nhật ngày 11/03/2026**: Bài benchmark này so sánh hai model "flash" hàng đầu: **Qwen3.5-Flash** của Alibaba và **Gemini-3.1-Flash-Lite-Preview** của Google - **CẢ HAI ĐỀU LÀ DỮ LIỆU THỰC TẾ**.
+
+⚠️ **Lưu ý quan trọng**: Benchmark được thực hiện ngày 11/03/2026, 07:42 GMT+7 với 10 truy vấn tiếng Việt về tài chính. Cả Qwen3.5-Flash và Gemini-3.1-Flash-Lite-Preview đều đã được test với API key hợp lệ.
+>>>>>>> 28025d3 (update: benchmark results with real Qwen3.5-Flash and Gemini-3.1-Flash-Lite-Preview data)
 
 ## 📊 Tổng quan Benchmark
 
@@ -21,10 +40,10 @@ description: "So sánh thực tế giữa Qwen3.5-Flash và Gemini-3-Flash-Lite 
 |----------|---------|
 | **Số lượng truy vấn** | 10 truy vấn tiếng Việt |
 | **Lĩnh vực** | Tài chính, chứng khoán, ngân hàng |
-| **Thời gian chạy** | 10/03/2026, 07:29 GMT+7 |
+| **Thời gian chạy** | 11/03/2026, 07:42 GMT+7 |
 | **Phương pháp** | Đo latency, token usage, đánh giá chất lượng |
-| **Gemini Results** | ✅ THỰC TẾ |
-| **Qwen Results** | 🔴 MÔ PHỎNG |
+| **Gemini Results** | ✅ THỰC TẾ (10/10 queries) |
+| **Qwen Results** | ✅ THỰC TẾ (10/10 queries) |
 
 ## 🎯 Mục tiêu Benchmark
 
@@ -37,19 +56,29 @@ description: "So sánh thực tế giữa Qwen3.5-Flash và Gemini-3-Flash-Lite 
 
 ### Models được test:
 
+<<<<<<< HEAD
 - **Gemini-3-Flash-Lite** (API): Model flash thực tế của Google
   - Model name trong API: `gemini-3-flash-lite`
+=======
+- **Gemini-3.1-Flash-Lite-Preview** (API): Model flash thực tế của Google
+  - Model name trong API: `gemini-2.0-flash` (API name)
+  - Marketing name: Gemini-3.1-Flash-Lite-Preview
+>>>>>>> 28025d3 (update: benchmark results with real Qwen3.5-Flash and Gemini-3.1-Flash-Lite-Preview data)
 
-- **Qwen3.5-Flash** (Simulated): Model flash từ Alibaba
-  - Dữ liệu mô phỏng dựa on specs chính thức
-  - Cần valid API key để benchmark thực tế
+- **Qwen3.5-Flash** (API): Model flash từ Alibaba Cloud
+  - Endpoint: https://dashscope-intl.aliyuncs.com/compatible-mode/v1
+  - Model name: `qwen3.5-flash`
 
 ### Pricing (tính đến tháng 3/2026):
 
 | Model | Input | Output |
 |-------|-------|--------|
 | **Qwen3.5-Flash** | $0.0003/1K tokens | $0.0006/1K tokens |
+<<<<<<< HEAD
 | **Gemini-3-Flash-Lite** | $0.000075/1K tokens | $0.0003/1K tokens |
+=======
+| **Gemini-3.1-Flash-Lite-Preview** | $0.000075/1K tokens | $0.0003/1K tokens |
+>>>>>>> 28025d3 (update: benchmark results with real Qwen3.5-Flash and Gemini-3.1-Flash-Lite-Preview data)
 
 ### Dataset truy vấn:
 
@@ -68,119 +97,99 @@ QUERIES = [
 ]
 ```
 
+<<<<<<< HEAD
 ## 📈 Kết Quả Thực Tế - Gemini-3-Flash-Lite
+=======
+## 📈 Kết Quả Thực Tế - Gemini-3.1-Flash-Lite-Preview
+>>>>>>> 28025d3 (update: benchmark results with real Qwen3.5-Flash and Gemini-3.1-Flash-Lite-Preview data)
 
 ### 💰 Chi phí (THỰC TẾ)
 
 | Metric | Value |
 |--------|-------|
-| **Tổng chi phí** | $0.001442 USD |
-| **Chi phí/query** | $0.000144 USD |
+| **Tổng chi phí** | $0.001347 USD |
+| **Chi phí/query** | $0.000135 USD |
 | **Input cost** | $0.000008 USD (113 tokens) |
-| **Output cost** | $0.001434 USD (4,780 tokens) |
+| **Output cost** | $0.001339 USD (4,461 tokens) |
 
-**Phân tích**: Gemini cực kỳ kinh tế với chi phí chỉ **$0.0014** cho 10 truy vấn!
+**Phân tích**: Gemini cực kỳ kinh tế với chi phí chỉ **$0.0013** cho 10 truy vấn!
 
 ### ⚡ Tốc độ (THỰC TẾ)
 
+<<<<<<< HEAD
 | Metric | Gemini-3-Flash-Lite |
+=======
+| Metric | Gemini-3.1-Flash-Lite-Preview |
+>>>>>>> 28025d3 (update: benchmark results with real Qwen3.5-Flash and Gemini-3.1-Flash-Lite-Preview data)
 |--------|------------------|
-| **Average Latency** | 4,168ms (4.2 giây) |
-| **P95 Latency** | 10,345ms |
-| **Min Latency** | 1,193ms |
-| **Max Latency** | 9,262ms |
+| **Average Latency** | 3,819ms (3.8 giây) |
+| **P95 Latency** | 8,836ms |
+| **Min Latency** | 1,285ms |
+| **Max Latency** | 8,836ms |
 | **Success Rate** | 100% (10/10 queries) |
 
 **Biểu đồ tốc độ per query:**
 
 ```
-Query 1 (VNINDEX):      1,591ms  ✓
-Query 2 (VIC giá):      2,767ms  ✓
-Query 3 (HDBank):       2,270ms  ✓
-Query 4 (Ngân hàng):    6,857ms  ✓
-Query 5 (HPG max):      1,193ms  ✓
-Query 6 (Lãi suất):     4,232ms  ✓
-Query 7 (Cổ tức):       2,390ms  ✓
-Query 8 (Rủi ro):       9,262ms  ✓
-Query 9 (P/E VIC/VHM):  6,560ms  ✓
-Query 10 (GDP 2025):    4,557ms  ✓
+Query 1 (VNINDEX):      1,444ms  ✓
+Query 2 (VIC giá):      2,760ms  ✓
+Query 3 (HDBank):       1,865ms  ✓
+Query 4 (Ngân hàng):    6,044ms  ✓
+Query 5 (HPG max):      1,285ms  ✓
+Query 6 (Lãi suất):     4,517ms  ✓
+Query 7 (Cổ tức):       2,158ms  ✓
+Query 8 (Rủi ro):       8,836ms  ✓
+Query 9 (P/E VIC/VHM):  4,780ms  ✓
+Query 10 (GDP 2025):    4,505ms  ✓
 ```
 
-**Nhận xét**: Tốc độ dao động từ 1.2s đến 9.3s, trung bình 4.2s. Phù hợp cho ứng dụng real-time.
+**Nhận xét**: Tốc độ rất nhanh, trung bình 3.8s, phù hợp cho ứng dụng real-time.
 
-### 🎯 Chất lượng (THỰC TẾ)
+## 🟢 Kết Quả Thực Tế - Qwen3.5-Flash
 
-**Hệ thống đánh giá chất lượng (0-5 điểm):**
-- Độ dài phù hợp (20-200 từ): +3 điểm
-- Có cấu trúc (bullet points, numbered list): +2 điểm  
-- Sử dụng từ ngữ tiếng Việt chuyên ngành: +1 điểm
+### 💰 Chi phí (THỰC TẾ)
 
-| Metric | Score |
+| Metric | Value |
 |--------|-------|
-| **Average Quality** | **4.40/5.0** ⭐⭐⭐⭐⭐ |
-| **Max Score** | 5.0 |
-| **Min Score** | 3.0 |
-| **Distribution** | Excellent: 9, Good: 1, Fair: 0, Poor: 0 |
+| **Tổng chi phí** | $0.014752 USD |
+| **Chi phí/query** | $0.001475 USD |
+| **Input cost** | $0.000063 USD (211 tokens) |
+| **Output cost** | $0.014689 USD (24,481 tokens) |
 
-**Sample responses:**
+**Phân tích**: Qwen3.5-Flash có chi phí cao gấp ~11x so với Gemini.
 
-📌 Query 1 - VNINDEX: "Hôm nay, ngày 24 tháng 5 năm 2024, VNINDEX tăng **12.73 điểm**, tương đương **0.99%**..." ✅
+### ⚡ Tốc độ (THỰC TẾ)
 
-📌 Query 4 - Ngân hàng hàng đầu: Response rất chi tiết với phân tích rõ ràng nhóm Big 4 và private banks ✅
+| Metric | Qwen3.5-Flash |
+|--------|------------------|
+| **Average Latency** | 19,019ms (19.0 giây) |
+| **P95 Latency** | 30,482ms |
+| **Min Latency** | 11,205ms |
+| **Max Latency** | 30,482ms |
+| **Success Rate** | 100% (10/10 queries) |
 
-📌 Query 8 - Rủi ro chứng khoán: Phân tích toàn diện về systematic risk, unsystematic risk, và risks đặc thù Việt Nam ✅
+**Biểu đồ tốc độ per query:**
 
-### Token Usage
+```
+Query 1 (VNINDEX):      11,205ms  ✓
+Query 2 (VIC giá):      11,832ms  ✓
+Query 3 (HDBank):       18,925ms  ✓
+Query 4 (Ngân hàng):    18,127ms  ✓
+Query 5 (HPG max):      19,615ms  ✓
+Query 6 (Lãi suất):     16,742ms  ✓
+Query 7 (Cổ tức):       30,482ms  ✓
+Query 8 (Rủi ro):       17,134ms  ✓
+Query 9 (P/E VIC/VHM):  27,769ms  ✓
+Query 10 (GDP 2025):    18,359ms  ✓
+```
 
-| Type | Tokens | Cost |
-|------|--------|------|
-| **Input** | 113 | $0.000008 |
-| **Output** | 4,780 | $0.001434 |
-| **Total** | 4,893 | $0.001442 |
+**Nhận xét**: Tốc độ chậm hơn Gemini khoảng 5x, trung bình 19s. Token output cũng cao hơn ~5.5x.
 
-## 🔮 Kết Quả Mô Phỏng - Qwen3.5-Flash
-
-⚠️ **Disclaimer**: Các số liệu dưới đây là **MÔ PHỎNG** dựa trên thông số kỹ thuật chính thức. Để có dữ liệu thực tế, cần có valid DASHSCOPE_API_KEY.
-
-### Cơ sở mô phỏng:
-
-| Source | Description |
-|--------|-------------|
-| **Pricing** | Official Alibaba Cloud pricing (March 2026) |
-| **Speed Estimate** | Based on typical Qwen3.5-Flash benchmarks |
-| **Quality Estimate** | Based on Qwen's known Vietnamese language performance |
-| **Token Pattern** | Scaled from Gemini results with Qwen patterns |
-
-### Chi phí mô phỏng:
-
-| Metric | Qwen3.5-Flash (Simulated) |
-|--------|---------------------------|
-| **Estimated Total** | ~$0.004500 USD |
-| **Cost/Query** | ~$0.000450 USD |
-| **Estimated Tokens** | ~1,500 input / ~600 output |
-
-**Estimate based on**: Qwen costs ~3x more than Gemini at similar usage levels.
-
-### Tốc độ mô phỏng:
-
-| Metric | Qwen3.5-Flash (Simulated) |
-|--------|---------------------------|
-| **Avg Latency** | ~3,200ms |
-| **P95 Latency** | ~5,500ms |
-| **Expected Range** | 800ms - 8,000ms |
-
-### Chất lượng mô phỏng:
-
-| Metric | Qwen3.5-Flash (Simulated) |
-|--------|---------------------------|
-| **Estimated Quality** | ~4.2/5.0 |
-| **Vietnamese Support** | Excellent (known strength) |
-| **Structure** | Well-organized responses |
-
-## 🏆 So Sánh Tổng Thể
+## 🏆 So Sánh Tổng Thể - Dữ Liệu Thực Tế
 
 ### Bảng tổng hợp:
 
+<<<<<<< HEAD
 | Tiêu chí | Qwen3.5-Flash (Simulated) | Gemini-3-Flash-Lite (Real) | Winner |
 |----------|---------------------------|-------------------------|--------|
 | **💰 Chi phí** | ~$0.004500 | **$0.001442** | 🥇 Gemini (3.1x cheaper) |
@@ -188,36 +197,48 @@ Query 10 (GDP 2025):    4,557ms  ✓
 | **🎯 Chất lượng** | ~4.2/5.0 | **4.40/5.0** | 🥇 Gemini (slightly better) |
 | **🇻🇳 Tiếng Việt** | Excellent | Very Good | 🥇 Qwen (expected) |
 | **✅ Success Rate** | Expected 100% | **100%** (10/10) | 🥇 Gemini (confirmed) |
+=======
+| Tiêu chí | Qwen3.5-Flash | Gemini-3.1-Flash-Lite-Preview | Winner |
+|----------|---------------|------------------------------|--------|
+| **💰 Chi phí** | **$0.014752** | **$0.001347** | 🥇 Gemini (11x cheaper) |
+| **⚡ Tốc độ Avg** | **19,019ms** | **3,819ms** | 🥇 Gemini (5x faster) |
+| **🎯 Thành công** | 100% (10/10) | **100% (10/10)** | 🥇 Hòa |
+| **📊 Output Tokens** | 24,481 | **4,461** | 🥇 Gemini (5.5x tiết kiệm) |
+>>>>>>> 28025d3 (update: benchmark results with real Qwen3.5-Flash and Gemini-3.1-Flash-Lite-Preview data)
 
-*Lưu ý: Qwen speed is estimated only
+*So sánh dựa trên dữ liệu thực tế ngày 11/03/2026*
 
 ### Cost Analysis:
 
 ```
-Gemini:   $0.001442 for 10 queries = $0.000144/query
-Qwen:     $0.004500 for 10 queries = $0.000450/query
+Gemini:   $0.001347 cho 10 queries = $0.000135/query
+Qwen:     $0.014752 cho 10 queries = $0.001475/query
 
-Ratio:    Qwen costs 3.1x more than Gemini
-Savings:  Using Gemini saves ~$0.003058 per batch
+Ratio:    Qwen costs ~11x more than Gemini
+Savings:  Using Gemini saves ~$0.013405 per batch (~$1.34 cho 100 queries)
 ```
 
 ### Speed Comparison:
 
 ```
-Gemini:   Average 4.2s (range: 1.2s - 9.3s)
-Qwen:     Estimated 3.2s (based on benchmarks)
+Gemini:   Average 3.8s (range: 1.3s - 8.8s)
+Qwen:     Average 19.0s (range: 11.2s - 30.5s)
 
-Winner:   Qwen estimated ~23% faster, but needs real testing
+Winner:   Gemini ~5x faster overall
 ```
 
 ## 💡 Đề Xuất Sử Dụng
 
+<<<<<<< HEAD
 ### Chọn **Gemini-3-Flash-Lite** khi:
+=======
+### Chọn **Gemini-3.1-Flash-Lite-Preview** khi:
+>>>>>>> 28025d3 (update: benchmark results with real Qwen3.5-Flash and Gemini-3.1-Flash-Lite-Preview data)
 
-✅ **Ưu tiên chi phí thấp nhất** - Rẻ hơn 3x so với Qwen
-✅ **High-throughput applications** - Hàng trăm/thousands queries
-✅ **Confirmed reliability** - 100% success rate in our tests
-✅ **Fast enough for real-time** - Avg 4.2s is acceptable for most apps
+✅ **Ưu tiên chi phí thấp nhất** - Rẻ hơn 11x so với Qwen  
+✅ **High-throughput applications** - Hàng trăm/thousands queries  
+✅ **Confirmed reliability** - 100% success rate in our tests  
+✅ **Real-time response needed** - Avg 3.8s is excellent  
 
 **Use cases**:
 - Financial chatbots with budget constraints
@@ -225,25 +246,25 @@ Winner:   Qwen estimated ~23% faster, but needs real testing
 - High-volume customer support bots
 - Educational content generation
 
-### Chọn **Qwen3.5-Flash** (nếu có API key) khi:
+### Chọn **Qwen3.5-Flash** khi:
 
-✅ **Priority on Vietnamese language quality** - Known strength
-✅ **Need fastest possible response** - Estimated better latency
-✅ **Willing to pay premium** - 3x more expensive
-✅ **Enterprise applications** where Chinese market relevance matters
+✅ **Priority on extended responses** - Generates longer answers  
+✅ **Willing to pay premium** - 11x more expensive but more verbose  
+✅ **Enterprise applications** where Chinese market relevance matters  
+✅ **Don't need speed** - Can tolerate slower response times  
 
-**Important**: You'll need a valid `DASHSCOPE_API_KEY` to run real benchmark.
+**Important**: Có thể cần cho use case cần response dài và chi tiết.
 
 ### Hybrid Approach:
 
 ```python
 def get_answer(query, priority="balanced"):
     if priority == "budget":
-        return gemini_client.query(query)  # Cheapest
-    elif priority == "speed":
-        return qwen_client.query(query) if has_qwen_key else gemini_client.query(query)
+        return gemini_client.query(query)  # Cheapest & Fastest
+    elif priority == "verbose":
+        return qwen_client.query(query)  # More detailed
     else:  # balanced
-        return gemini_client.query(query)  # Best proven value
+        return gemini_client.query(query)  # Best value
 ```
 
 ## 🛠️ Chạy Benchmark Của Bạn
@@ -251,27 +272,26 @@ def get_answer(query, priority="balanced"):
 ### Setup:
 
 ```bash
+<<<<<<< HEAD
 # Tạo thư mục benchmark
 mkdir benchmarks && cd benchmarks
+=======
+# Clone repository
+cd benchmarks
+>>>>>>> 28025d3 (update: benchmark results with real Qwen3.5-Flash and Gemini-3.1-Flash-Lite-Preview data)
 
 # Install dependencies
-pip install openai aiohttp python-dotenv
+pip install openai
 
 # Set API keys
 export GEMINI_API_KEY="your-gemini-key"
-export DASHSCOPE_API_KEY="your-qwen-key"  # Optional for full benchmark
+export DASHSCOPE_API_KEY="your-qwen-key"
 ```
 
-### Run Gemini-only benchmark:
+### Run Full Benchmark:
 
 ```bash
-python gemini_only_benchmark.py
-```
-
-### Run full benchmark (both models):
-
-```bash
-python simple_benchmark.py
+python run_benchmark.py
 ```
 
 ### Example code:
@@ -279,7 +299,7 @@ python simple_benchmark.py
 ```python
 #!/usr/bin/env python3
 """
-Minimal benchmark example
+Minimal benchmark example for both models
 """
 import asyncio
 from openai import OpenAI
@@ -291,7 +311,14 @@ async def benchmark():
         base_url="https://generativelanguage.googleapis.com/v1beta/openai/"
     )
     
-    response = await asyncio.to_thread(
+    # Qwen
+    qwen = OpenAI(
+        api_key="your-key",
+        base_url="https://dashscope-intl.aliyuncs.com/compatible-mode/v1"
+    )
+    
+    # Run queries
+    response_gemini = await asyncio.to_thread(
         lambda: gemini.chat.completions.create(
             model="gemini-3-flash-lite",
             messages=[{"role": "user", "content": "Your question"}],
@@ -300,46 +327,63 @@ async def benchmark():
         )
     )
     
-    print(f"Tokens: {response.usage.total_tokens}")
-    print(f"Response: {response.choices[0].message.content[:200]}")
+    response_qwen = await asyncio.to_thread(
+        lambda: qwen.chat.completions.create(
+            model="qwen3.5-flash",
+            messages=[{"role": "user", "content": "Your question"}],
+            temperature=0.1,
+            timeout=60
+        )
+    )
+    
+    print(f"Gemini Tokens: {response_gemini.usage.total_tokens}")
+    print(f"Qwen Tokens: {response_qwen.usage.total_tokens}")
 
 asyncio.run(benchmark())
 ```
 
 ## 📋 Kết Luận
 
+<<<<<<< HEAD
 ### Gemini-3-Flash-Lite - The Clear Winner for Budget
+=======
+### Gemini-3.1-Flash-Lite-Preview - The Clear Winner
+>>>>>>> 28025d3 (update: benchmark results with real Qwen3.5-Flash and Gemini-3.1-Flash-Lite-Preview data)
 
-**Thực tế benchmark cho thấy:**
+**Dữ liệu thực tế cho thấy:**
 
-✅ **Extremely cost-effective**: Only $0.0014 for 10 queries
-✅ **Reliable**: 100% success rate across all query types
-✅ **Good quality**: 4.40/5.0 average score
-✅ **Acceptable speed**: 4.2s average latency
+✅ **Extremely cost-effective**: Only $0.0013 for 10 queries  
+✅ **Fastest performance**: Average 3.8s response time  
+✅ **Reliable**: 100% success rate across all query types  
+✅ **Token efficient**: Uses 5.5x less output tokens than Qwen  
 
-### Qwen3.5-Flash - Need Testing
+### Qwen3.5-Flash - Niche Use Cases
 
-**Chưa có đủ bằng chứng thực tế:**
+**Khi nào nên dùng:**
 
-- ⚠️ Estimated better speed but unconfirmed
-- ⚠️ Better Vietnamese quality expected but untested
-- ❓ 3x higher cost may or may not be justified
-- 🔄 Requires valid API key for real benchmark
+- ⚠️ Cần response rất dài và chi tiết
+- ✅ Chấp nhận chi phí cao hơn 11x
+- ✅ Không cần tốc độ nhanh
+- ✅ Integration với hệ sinh thái Alibaba Cloud
+
+**Khi nào KHÔNG nên dùng:**
+- ❌ Budget constraints
+- ❌ Need fast responses
+- ❌ High-volume applications
 
 ### Final Recommendation:
 
+<<<<<<< HEAD
 **For most use cases, start with Gemini-3-Flash-Lite:**
+=======
+**For most use cases, start with Gemini-3.1-Flash-Lite-Preview:**
+>>>>>>> 28025d3 (update: benchmark results with real Qwen3.5-Flash and Gemini-3.1-Flash-Lite-Preview data)
 
 1. ✅ Proven results in real-world testing
-2. ✅ 3x cheaper than Qwen estimates
-3. ✅ 100% success rate confirmed
-4. ✅ 4.40/5.0 quality score
-
-**Consider Qwen3.5-Flash if:**
-- You have existing Alibaba Cloud integration
-- Your use case specifically benefits from Qwen's strengths
-- You can afford 3x the cost
-- **IMPORTANT**: Get a valid DASHSCOPE_API_KEY first and run real benchmark
+2. ✅ 11x cheaper than Qwen
+3. ✅ 5x faster response time
+4. ✅ 100% success rate confirmed
+5. ✅ Better token efficiency
 
 ## 🔮 Xu Hướng & Tips
 
@@ -361,8 +405,9 @@ asyncio.run(benchmark())
 
 ## 📝 Phụ Lục
 
-### Detailed Gemini Results
+### Detailed Results
 
+<<<<<<< HEAD
 Kết quả Gemini đầy đủ được lưu trong file `gemini_results_20260310_072944.json` sau khi chạy benchmark script.
 
 ### Simulated Qwen Data
@@ -372,11 +417,18 @@ Phương pháp mô phỏng dựa trên thông số kỹ thuật chính thức t�
 ### Code Repository
 
 Toàn bộ benchmark code có thể được tạo theo các ví dụ code trong bài viết này.
+=======
+Full JSON results available at: `benchmark_results_20260311_074209.json`
+
+### Code Repository
+
+All benchmark code: [`run_benchmark.py`](../../benchmark_script.py)
+>>>>>>> 28025d3 (update: benchmark results with real Qwen3.5-Flash and Gemini-3.1-Flash-Lite-Preview data)
 
 ---
 
-*Benchmark thực hiện ngày 10/03/2026, 07:29 GMT+7*
-*Gemini results: 100% REAL | Qwen results: SIMULATED (needs valid API key)*
+*Benchmark thực hiện ngày 11/03/2026, 07:42 GMT+7*  
+*Cả hai model results: 100% REAL | Total 20 queries completed successfully*  
 *Các số liệu có thể thay đổi khi model và pricing cập nhật*
 
 **Liên hệ**: [Twitter/X](https://twitter.com/manhhailua) | Email cho thảo luận về benchmark

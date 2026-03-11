@@ -1,0 +1,297 @@
+{
+  "timestamp": "2026-03-11T07:42:09.724715",
+  "queries": [
+    {
+      "id": 1,
+      "query": "VNINDEX hôm nay tăng bao nhiêu điểm?",
+      "category": "market"
+    },
+    {
+      "id": 2,
+      "query": "VIC cổ phiếu giá hiện tại là bao nhiêu?",
+      "category": "stock"
+    },
+    {
+      "id": 3,
+      "query": "HDBank có bị phạt gần đây không?",
+      "category": "banking"
+    },
+    {
+      "id": 4,
+      "query": "Nhóm ngân hàng dẫn đầu thị trường?",
+      "category": "banking"
+    },
+    {
+      "id": 5,
+      "query": "Giá cao nhất của HPG từ 2023?",
+      "category": "stock"
+    },
+    {
+      "id": 6,
+      "query": "Lãi suất tiết kiệm ngân hàng nào cao nhất?",
+      "category": "banking"
+    },
+    {
+      "id": 7,
+      "query": "Cổ tức VIC năm 2024 là bao nhiêu?",
+      "category": "dividend"
+    },
+    {
+      "id": 8,
+      "query": "Thị trường chứng khoán Việt Nam có rủi ro gì?",
+      "category": "analysis"
+    },
+    {
+      "id": 9,
+      "query": "So sánh P/E của VIC và VHM",
+      "category": "valuation"
+    },
+    {
+      "id": 10,
+      "query": "Dự báo tăng trưởng GDP Việt Nam 2025",
+      "category": "macro"
+    }
+  ],
+  "results": {
+    "gemini": [
+      {
+        "success": true,
+        "query_id": 1,
+        "latency_ms": 1444.3954559974372,
+        "input_tokens": 9,
+        "output_tokens": 39,
+        "total_tokens": 48,
+        "response_sample": "Hôm nay, ngày 26 tháng 4 năm 2024, VNINDEX tăng **10.95 điểm**, tương đương **0.86%**.\n",
+        "timestamp": "2026-03-11T07:38:22.783485"
+      },
+      {
+        "success": true,
+        "query_id": 2,
+        "latency_ms": 2759.956358000636,
+        "input_tokens": 10,
+        "output_tokens": 293,
+        "total_tokens": 303,
+        "response_sample": "Để biết giá cổ phiếu VIC hiện tại, bạn có thể xem trên các trang web tài chính uy tín như:\n\n*   **CafeF:** [https://s.cafef.vn/hose/VIC-cong-ty-co-phan-tap-doan-vingroup.chn](https://s.cafef.vn/hose/VIC-cong-ty-co-phan-tap-doan-vingroup.chn)\n*   **VNDirect:** [https://www.vndirect.com.vn/co-phieu/VI",
+        "timestamp": "2026-03-11T07:38:25.543470"
+      },
+      {
+        "success": true,
+        "query_id": 3,
+        "latency_ms": 1865.1257548481226,
+        "input_tokens": 10,
+        "output_tokens": 127,
+        "total_tokens": 137,
+        "response_sample": "Có, HDBank vừa bị xử phạt vi phạm hành chính trong lĩnh vực thuế và hải quan.\n\nCụ thể, theo Quyết định số 100/QĐ-XPHC ngày 15/04/2024 của Cục Thuế TP.HCM, HDBank bị phạt tiền gần 560 triệu đồng do có hành vi khai sai dẫn đến thiếu số tiền thuế phải nộp.\n\nBạn có thể tìm đọc chi tiết quyết định này tr",
+        "timestamp": "2026-03-11T07:38:27.408631"
+      },
+      {
+        "success": true,
+        "query_id": 4,
+        "latency_ms": 6044.055003905669,
+        "input_tokens": 9,
+        "output_tokens": 773,
+        "total_tokens": 782,
+        "response_sample": "Việc xác định \"nhóm ngân hàng dẫn đầu thị trường\" có thể thay đổi tùy thuộc vào tiêu chí đánh giá và thời điểm cụ thể. Tuy nhiên, dựa trên các yếu tố như quy mô tài sản, lợi nhuận, hiệu quả hoạt động, uy tín thương hiệu, và mức độ ảnh hưởng đến thị trường, có thể kể đến một số nhóm ngân hàng sau:\n\n*",
+        "timestamp": "2026-03-11T07:38:33.452766"
+      },
+      {
+        "success": true,
+        "query_id": 5,
+        "latency_ms": 1284.935437142849,
+        "input_tokens": 13,
+        "output_tokens": 62,
+        "total_tokens": 75,
+        "response_sample": "Giá cao nhất của cổ phiếu HPG (Công ty Cổ phần Tập đoàn Hòa Phát) từ đầu năm 2023 đến nay là **28.850 VNĐ/cổ phiếu**, đạt được vào ngày **15 tháng 9 năm 2023**.\n",
+        "timestamp": "2026-03-11T07:38:34.737784"
+      },
+      {
+        "success": true,
+        "query_id": 6,
+        "latency_ms": 4517.259178915992,
+        "input_tokens": 11,
+        "output_tokens": 529,
+        "total_tokens": 540,
+        "response_sample": "Lãi suất tiết kiệm ngân hàng luôn biến động và khác nhau tùy thuộc vào nhiều yếu tố như:\n\n*   **Loại hình tiết kiệm:** Tiết kiệm có kỳ hạn (3 tháng, 6 tháng, 12 tháng,...) thường có lãi suất cao hơn tiết kiệm không kỳ hạn.\n*   **Số tiền gửi:** Số tiền gửi càng lớn, lãi suất thường càng cao.\n*   **Ng",
+        "timestamp": "2026-03-11T07:38:39.255130"
+      },
+      {
+        "success": true,
+        "query_id": 7,
+        "latency_ms": 2158.313984051347,
+        "input_tokens": 14,
+        "output_tokens": 190,
+        "total_tokens": 204,
+        "response_sample": "Tính đến thời điểm hiện tại (26/05/2024), Tập đoàn Vingroup (VIC) **chưa công bố chính thức** về việc chia cổ tức năm 2024.\n\nThông thường, thông tin về cổ tức sẽ được công bố trong báo cáo thường niên, nghị quyết đại hội cổ đông hoặc các thông báo chính thức từ công ty. Bạn nên theo dõi các kênh thô",
+        "timestamp": "2026-03-11T07:38:41.413553"
+      },
+      {
+        "success": true,
+        "query_id": 8,
+        "latency_ms": 8835.688114864752,
+        "input_tokens": 14,
+        "output_tokens": 1249,
+        "total_tokens": 1263,
+        "response_sample": "Thị trường chứng khoán Việt Nam, mặc dù có tiềm năng tăng trưởng, cũng đi kèm với nhiều rủi ro mà nhà đầu tư cần phải nhận thức rõ. Dưới đây là một số rủi ro chính:\n\n**1. Rủi ro thị trường (Systematic Risk):**\n\n*   **Rủi ro kinh tế vĩ mô:**\n    *   **Lạm phát:** Lạm phát tăng cao có thể làm giảm sức",
+        "timestamp": "2026-03-11T07:38:50.249327"
+      },
+      {
+        "success": true,
+        "query_id": 9,
+        "latency_ms": 4780.009319074452,
+        "input_tokens": 10,
+        "output_tokens": 621,
+        "total_tokens": 631,
+        "response_sample": "Để so sánh P/E (Price-to-Earnings ratio) của VIC (Vingroup) và VHM (Vinhomes), chúng ta cần xem xét dữ liệu P/E hiện tại của cả hai cổ phiếu. Tuy nhiên, do dữ liệu thị trường chứng khoán thay đổi liên tục, tôi không thể cung cấp con số chính xác tại thời điểm này.\n\n**Để có được thông tin P/E chính x",
+        "timestamp": "2026-03-11T07:38:55.029446"
+      },
+      {
+        "success": true,
+        "query_id": 10,
+        "latency_ms": 4504.84690698795,
+        "input_tokens": 13,
+        "output_tokens": 578,
+        "total_tokens": 591,
+        "response_sample": "Dự báo tăng trưởng GDP của Việt Nam năm 2025 có sự khác biệt giữa các tổ chức khác nhau, nhưng nhìn chung đều cho thấy triển vọng tích cực. Dưới đây là tổng hợp từ một số nguồn uy tín:\n\n*   **Ngân hàng Thế giới (World Bank):** Dự báo tăng trưởng GDP của Việt Nam đạt **6.0%** vào năm 2025.\n*   **Quỹ ",
+        "timestamp": "2026-03-11T07:38:59.534377"
+      }
+    ],
+    "qwen": [
+      {
+        "success": true,
+        "query_id": 1,
+        "latency_ms": 11204.662865027785,
+        "input_tokens": 19,
+        "output_tokens": 1270,
+        "total_tokens": 1289,
+        "response_sample": "Hiện tại tôi là một mô hình trí tuệ nhân tạo và **không có khả năng truy cập dữ liệu thị trường chứng khoán theo thời gian thực**. Do đó, tôi không thể cung cấp chính xác chỉ số VN-Index tăng hay giảm bao nhiêu điểm trong ngày hôm nay.\n\nĐể có thông tin mới nhất và chính xác nhất, bạn vui lòng tham k",
+        "timestamp": "2026-03-11T07:39:10.739133"
+      },
+      {
+        "success": true,
+        "query_id": 2,
+        "latency_ms": 11832.227311795577,
+        "input_tokens": 20,
+        "output_tokens": 1443,
+        "total_tokens": 1463,
+        "response_sample": "Xin chào bạn, hiện tại tôi là một trí tuệ nhân tạo và **không có quyền truy cập vào dữ liệu thị trường chứng khoán theo thời gian thực**. Do đó, tôi không thể cung cấp cho bạn con số chính xác về giá cổ phiếu VIC (Vingroup) ngay tại giây phút bạn đọc tin nhắn này.\n\nGiá cổ phiếu thay đổi liên tục tro",
+        "timestamp": "2026-03-11T07:39:22.571447"
+      },
+      {
+        "success": true,
+        "query_id": 3,
+        "latency_ms": 18924.776108935475,
+        "input_tokens": 20,
+        "output_tokens": 2088,
+        "total_tokens": 2108,
+        "response_sample": "Có, **HDBank (Ngân hàng Thương mại Cổ phần Đại Dương)** đã từng bị xử phạt hành chính bởi Ngân hàng Nhà nước Việt Nam (NHNN) trong thời gian gần đây.\n\nDưới đây là những thông tin cụ thể về vụ việc này:\n\n1.  **Thời điểm:** Vào cuối năm **2023** (cụ thể là tháng 12/2023).\n2.  **Cơ quan ra quyết định:*",
+        "timestamp": "2026-03-11T07:39:41.496316"
+      },
+      {
+        "success": true,
+        "query_id": 4,
+        "latency_ms": 18126.838880823925,
+        "input_tokens": 19,
+        "output_tokens": 2129,
+        "total_tokens": 2148,
+        "response_sample": "Câu hỏi về \"nhóm ngân hàng dẫn đầu thị trường\" thường được hiểu trong bối cảnh **thị trường ngân hàng Việt Nam**. Tuy nhiên, khái niệm \"dẫn đầu\" phụ thuộc vào tiêu chí đánh giá (tổng tài sản, lợi nhuận, vốn hóa, hay thị phần tín dụng).\n\nDưới đây là phân tích chi tiết các nhóm ngân hàng dẫn đầu dựa t",
+        "timestamp": "2026-03-11T07:39:59.623243"
+      },
+      {
+        "success": true,
+        "query_id": 5,
+        "latency_ms": 19614.56530704163,
+        "input_tokens": 24,
+        "output_tokens": 2601,
+        "total_tokens": 2625,
+        "response_sample": "Tính đến thời điểm hiện tại (giữa năm 2024), mức giá cao nhất của cổ phiếu **HPG (Công ty Cổ phần Tập đoàn Hòa Phát)** trên sàn HOSE kể từ đầu năm 2023 là:\n\n*   **Mức giá:** Khoảng **38.800 - 39.000 VNĐ/cổ phiếu**.\n*   **Thời điểm đạt đỉnh:** Vào khoảng **cuối tháng 3 và đầu tháng 4 năm 2024**.\n\n**M",
+        "timestamp": "2026-03-11T07:40:19.237899"
+      },
+      {
+        "success": true,
+        "query_id": 6,
+        "latency_ms": 16741.61628005095,
+        "input_tokens": 22,
+        "output_tokens": 2127,
+        "total_tokens": 2149,
+        "response_sample": "Hiện tại, **không có một con số cố định** cho lãi suất tiết kiệm cao nhất vì lãi suất thay đổi liên tục theo từng ngày, từng tuần và phụ thuộc vào nhiều yếu tố (thời gian gửi, số tiền, hình thức gửi...).\n\nTuy nhiên, dựa trên xu hướng thị trường tài chính gần đây tại Việt Nam, bạn có thể tham khảo cá",
+        "timestamp": "2026-03-11T07:40:35.979657"
+      },
+      {
+        "success": true,
+        "query_id": 7,
+        "latency_ms": 30482.474677963182,
+        "input_tokens": 24,
+        "output_tokens": 4270,
+        "total_tokens": 4294,
+        "response_sample": "Tính đến thời điểm hiện tại (giữa năm 2024), **chưa có thông tin chính thức về mức cổ tức cụ thể cho Năm tài chính 2024 của VIC (Công ty Cổ phần Tập đoàn Vingroup).**\n\nDưới đây là các thông tin chi tiết và bối cảnh liên quan để bạn tham khảo:\n\n### 1. Thời gian công bố cổ tức\n*   **Năm tài chính 2024",
+        "timestamp": "2026-03-11T07:41:06.462217"
+      },
+      {
+        "success": true,
+        "query_id": 8,
+        "latency_ms": 17133.904996095225,
+        "input_tokens": 22,
+        "output_tokens": 2382,
+        "total_tokens": 2404,
+        "response_sample": "Thị trường chứng khoán Việt Nam (TTCKVN) được đánh giá là một trong những thị trường có tiềm năng tăng trưởng cao tại khu vực Đông Nam Á, nhưng đi kèm với đó là mức độ rủi ro cũng khá lớn so với các thị trường phát triển.\n\nDưới đây là phân tích chi tiết về các nhóm rủi ro chính mà nhà đầu tư cần lưu",
+        "timestamp": "2026-03-11T07:41:23.596209"
+      },
+      {
+        "success": true,
+        "query_id": 9,
+        "latency_ms": 27769.17539187707,
+        "input_tokens": 19,
+        "output_tokens": 3645,
+        "total_tokens": 3664,
+        "response_sample": "Chào bạn, việc so sánh chỉ số P/E (Price-to-Earnings Ratio) giữa **VIC (Tập đoàn Vingroup)** và **VHM (Công ty Cổ phần Bất động sản Vinhomes)** là một câu hỏi thú vị nhưng cần sự thận trọng cao độ vì đặc thù hoạt động của hai doanh nghiệp này rất khác nhau.\n\n**Lưu ý quan trọng:** Dữ liệu chứng khoán",
+        "timestamp": "2026-03-11T07:41:51.365475"
+      },
+      {
+        "success": true,
+        "query_id": 10,
+        "latency_ms": 18359.07005891204,
+        "input_tokens": 22,
+        "output_tokens": 2526,
+        "total_tokens": 2548,
+        "response_sample": "Dựa trên các báo cáo kinh tế mới nhất từ các tổ chức quốc tế và cơ quan trong nước tính đến đầu năm 2024, dưới đây là dự báo về tốc độ tăng trưởng GDP của Việt Nam cho năm 2025:\n\n### 1. Con số dự báo chung\nHầu hết các tổ chức uy tín đều lạc quan về triển vọng kinh tế Việt Nam năm 2025, với mức tăng ",
+        "timestamp": "2026-03-11T07:42:09.724636"
+      }
+    ]
+  },
+  "gemini": {
+    "summary": {
+      "success_rate": 100.0,
+      "avg_latency_ms": 3819.4585513789207,
+      "min_latency_ms": 1284.935437142849,
+      "max_latency_ms": 8835.688114864752,
+      "p95_latency_ms": 8835.688114864752,
+      "total_input_tokens": 113,
+      "total_output_tokens": 4461,
+      "total_tokens": 4574
+    },
+    "cost": {
+      "input_cost_usd": 8e-06,
+      "output_cost_usd": 0.001338,
+      "total_cost_usd": 0.001347,
+      "cost_per_query_usd": 0.000135
+    }
+  },
+  "qwen": {
+    "summary": {
+      "success_rate": 100.0,
+      "avg_latency_ms": 19018.931187852286,
+      "min_latency_ms": 11204.662865027785,
+      "max_latency_ms": 30482.474677963182,
+      "p95_latency_ms": 30482.474677963182,
+      "total_input_tokens": 211,
+      "total_output_tokens": 24481,
+      "total_tokens": 24692
+    },
+    "cost": {
+      "input_cost_usd": 6.3e-05,
+      "output_cost_usd": 0.014689,
+      "total_cost_usd": 0.014752,
+      "cost_per_query_usd": 0.001475
+    }
+  }
+}
