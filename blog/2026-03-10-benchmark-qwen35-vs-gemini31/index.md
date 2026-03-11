@@ -385,44 +385,171 @@ asyncio.run(benchmark())
 4. ✅ 100% success rate confirmed
 5. ✅ Better token efficiency
 
-## 🔬 Advanced Benchmark: Query Breaking + Optimized Config
+## 🔄 Context Cache Optimization cho Qwen3.5-Flash
 
-**Cập nhật 11/03/2026**: Benchmark nâng cao với system prompt query breaking (2,496 tokens), temperature=0, và context cache optimization.
+**Dựa trên web search findings**: Qwen3.5-Flash hỗ trợ context caching mạnh mẽ qua DashScope API.
 
-### Cấu hình nâng cao:
-- **System Prompt**: Query breaking instructions + few-shot examples
-- **Temperature**: 0.0 (disable thinking/randomness)
-- **Context Cache**: Enabled for Qwen via prompt optimization
-- **Max Tokens**: 1024 per response
+### **Hai loại Cache:**
 
-### Kết quả Advanced Benchmark:
+#### **1. Explicit Cache (Manual)**
+- **Activation**: Manual với `cache_control: {"type": "ephemeral"}`
+- **Cost**: 125% để tạo cache, 10% cho cache hits
+- **Validity**: 5 phút
+- **Minimum**: 1,024 tokens cho cache block
+- **Strategy**: Backward prefix matching
 
-| Metric | Gemini-3.1-Flash-Lite-Preview | Qwen3.5-Flash (Optimized) | Improvement |
-|--------|------------------------------|---------------------------|-------------|
-| **Avg Latency** | 3,971ms | **7,611ms** | Qwen: **60% faster** vs baseline |
-| **Total Cost** | $0.001987 | **$0.007867** | Qwen: **47% cheaper** vs baseline |
-| **Input Tokens** | 7,613 | 7,671 | Similar |
-| **Output Tokens** | 4,719 | **9,277** | Qwen: More verbose responses |
-| **Cost/Query** | $0.000199 | **$0.000787** | Gemini: **4x cheaper** |
+#### **2. Implicit Cache (Automatic)**
+- **Activation**: Automatic, không thể disable
+- **Cost**: 20% cho matched tokens
+- **Use case**: General applications
 
-### Phân tích cải tiến:
+### **API Configuration:**
 
-**Qwen3.5-Flash với optimization:**
-- ✅ **Tốc độ**: Giảm từ 19.0s → 7.6s (**60% cải thiện**)
-- ✅ **Chi phí**: Giảm từ $0.014752 → $0.007867 (**47% tiết kiệm**)
-- ✅ **Chất lượng**: Response có cấu trúc query breaking rõ ràng
-- ✅ **Token efficiency**: Output tokens tăng nhưng chất lượng tốt hơn
+```python
+# Explicit cache example
+response = qwen.chat.completions.create(
+    model="qwen3.5-flash",
+    messages=[
+        {
+            "role": "system",
+            "content": "Your system prompt...",
+            "cache_control": {"type": "ephemeral"}  # ⭐ Cache marker
+        },
+        {"role": "user", "content": query}
+    ],
+    temperature=0.0,
+    max_tokens=1024
+)
 
-**Gemini-3.1-Flash-Lite-Preview:**
-- ⚠️ **Chi phí**: Tăng từ $0.001347 → $0.001987 (47% tăng do system prompt dài)
-- ✅ **Tốc độ**: Ổn định ~4.0s
-- ✅ **Consistency**: Temperature=0 giúp response nhất quán hơn
+# Monitor cache usage
+cached_tokens = getattr(response.usage, 'cached_tokens', 0)
+if cached_tokens > 0:
+    print(f"Cache hit: {cached_tokens} tokens saved")
+```
+
+### **Cost Savings Analysis:**
+
+| Scenario | Input Token Cost | Savings |
+|----------|-----------------|---------|
+| **No Cache** | 100% (baseline) | - |
+| **Implicit Cache Hit** | 20% | 80% savings |
+| **Explicit Cache Hit** | 10% | 90% savings |
+| **Explicit Cache Creation** | 125% | -25% (initial cost) |
+
+### **Recommendations cho Production:**
+
+#### **Use Explicit Cache khi:**
+✅ High-volume, repetitive queries  
+✅ Có thể chấp nhận 125% initial cost  
+✅ Cần maximum savings (90%)  
+✅ Query patterns ổn định  
+
+#### **Use Implicit Cache khi:**
+✅ General use cases  
+✅ Convenience là priority  
+✅ Moderate savings (80%) đủ  
+✅ Không muốn manage cache manually  
+
+#### **Monitoring:**
+- Track `usage.cached_tokens` trong API response
+- Monitor cost savings over time
+- Adjust cache strategy based on usage patterns
+
+### **Limitations trong Benchmark của chúng ta:**
+- Cache monitoring (`cached_tokens`) chỉ available ở Beijing và Singapore regions
+- International endpoint (`dashscope-intl.aliyuncs.com`) có thể không expose cache metrics
+- Cần region-specific configuration cho cache optimization
+
+### **Expected Benefits:**
+- **Cost reduction**: 80-90% trên cached tokens
+- **Speed improvement**: Faster responses với cache hits
+- **Scalability**: Better performance cho high-volume applications
 
 ### Key Insights:
 1. **System prompt optimization** giúp cải thiện đáng kể performance cho Qwen
 2. **Gemini vẫn hiệu quả hơn** về cost-performance ratio (4x cheaper)
 3. **Query breaking** giúp response có cấu trúc tốt hơn cho cả hai models
 4. **Temperature=0** giúp response nhất quán, phù hợp cho production
+
+## 🔄 Context Cache Optimization cho Qwen3.5-Flash
+
+**Dựa trên web search findings**: Qwen3.5-Flash hỗ trợ context caching mạnh mẽ qua DashScope API.
+
+### **Hai loại Cache:**
+
+#### **1. Explicit Cache (Manual)**
+- **Activation**: Manual với `cache_control: {"type": "ephemeral"}`
+- **Cost**: 125% để tạo cache, 10% cho cache hits
+- **Validity**: 5 phút
+- **Minimum**: 1,024 tokens cho cache block
+- **Strategy**: Backward prefix matching
+
+#### **2. Implicit Cache (Automatic)**
+- **Activation**: Automatic, không thể disable
+- **Cost**: 20% cho matched tokens
+- **Use case**: General applications
+
+### **API Configuration:**
+
+```python
+# Explicit cache example
+response = qwen.chat.completions.create(
+    model="qwen3.5-flash",
+    messages=[
+        {
+            "role": "system",
+            "content": "Your system prompt...",
+            "cache_control": {"type": "ephemeral"}  # ⭐ Cache marker
+        },
+        {"role": "user", "content": query}
+    ],
+    temperature=0.0,
+    max_tokens=1024
+)
+
+# Monitor cache usage
+cached_tokens = getattr(response.usage, 'cached_tokens', 0)
+if cached_tokens > 0:
+    print(f"Cache hit: {cached_tokens} tokens saved")
+```
+
+### **Cost Savings Analysis:**
+
+| Scenario | Input Token Cost | Savings |
+|----------|-----------------|---------|
+| **No Cache** | 100% (baseline) | - |
+| **Implicit Cache Hit** | 20% | 80% savings |
+| **Explicit Cache Hit** | 10% | 90% savings |
+| **Explicit Cache Creation** | 125% | -25% (initial cost) |
+
+### **Recommendations cho Production:**
+
+#### **Use Explicit Cache khi:**
+✅ High-volume, repetitive queries  
+✅ Có thể chấp nhận 125% initial cost  
+✅ Cần maximum savings (90%)  
+✅ Query patterns ổn định  
+
+#### **Use Implicit Cache khi:**
+✅ General use cases  
+✅ Convenience là priority  
+✅ Moderate savings (80%) đủ  
+✅ Không muốn manage cache manually  
+
+#### **Monitoring:**
+- Track `usage.cached_tokens` trong API response
+- Monitor cost savings over time
+- Adjust cache strategy based on usage patterns
+
+### **Limitations trong Benchmark của chúng ta:**
+- Cache monitoring (`cached_tokens`) chỉ available ở Beijing và Singapore regions
+- International endpoint (`dashscope-intl.aliyuncs.com`) có thể không expose cache metrics
+- Cần region-specific configuration cho cache optimization
+
+### **Expected Benefits:**
+- **Cost reduction**: 80-90% trên cached tokens
+- **Speed improvement**: Faster responses với cache hits
+- **Scalability**: Better performance cho high-volume applications
 
 ## 🔮 Xu Hướng & Tips
 
