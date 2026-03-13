@@ -467,3 +467,28 @@ automation:
   label: Automation
   permalink: /automation
   description: Automation là quá trình sử dụng công nghệ để thực hiện các tác vụ lặp đi lặp lại mà không cần sự can thiệp của con người.
+
+benchmark:
+  label: Benchmark
+  permalink: /benchmark
+  description: Benchmark là quá trình đo lường và so sánh hiệu suất của các hệ thống hoặc mô hình AI để đánh giá tốc độ, chi phí và chất lượng.
+
+qwen:
+  label: Qwen
+  permalink: /qwen
+  description: Qwen là dòng mô hình ngôn ngữ lớn của Alibaba Cloud, nổi bật với hiệu suất cao và chi phí thấp, được phân phối qua DashScope API.
+
+gemini:
+  label: Gemini
+  permalink: /gemini
+  description: Gemini là dòng mô hình ngôn ngữ lớn của Google DeepMind, bao gồm các biến thể Flash, Pro và Ultra với khả năng đa phương thức.
+
+vietnamese:
+  label: Tiếng Việt
+  permalink: /vietnamese
+  description: Nội dung và benchmark liên quan đến xử lý ngôn ngữ tiếng Việt với các mô hình AI.
+
+cache:
+  label: Cache
+  permalink: /cache
+  description: Cache trong AI là kỹ thuật lưu trữ tạm thời các prefix token để giảm chi phí và độ trễ khi gửi prompt lặp lại đến LLM API.
