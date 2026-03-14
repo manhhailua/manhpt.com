@@ -4,16 +4,16 @@
 
 .blogListHeader {
   background: var(--ai-gradient-subtle);
-  padding: 4rem 0 3rem;
-  margin-bottom: 3rem;
+  padding: 2.5rem 0 2rem;
+  margin-bottom: 2rem;
   border-bottom: 1px solid var(--ai-border-subtle);
 }
 
 .blogListTitle {
-  font-size: clamp(2rem, 5vw, 3rem);
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
   font-weight: 800;
   letter-spacing: -0.03em;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   background: var(--ai-gradient-primary);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -21,22 +21,26 @@
 }
 
 .blogListSubtitle {
-  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-size: clamp(0.9rem, 2vw, 1.05rem);
   color: var(--ifm-font-color-secondary);
   max-width: 42rem;
-  line-height: 1.6;
+  line-height: 1.5;
   margin: 0;
 }
 
 .blogListGrid {
   display: grid;
-  gap: 2rem;
-  margin-bottom: 3rem;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
 }
 
 @media (max-width: 996px) {
   .blogListHeader {
-    padding: 3rem 0 2rem;
-    margin-bottom: 2rem;
+    padding: 2rem 0 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .blogListGrid {
+    gap: 1rem;
   }
 }

@@ -1,8 +1,8 @@
 .blogPostCard {
   background: var(--ai-surface-card);
   border: 1px solid var(--ai-border-subtle);
-  border-radius: var(--ai-radius-lg);
-  padding: 2rem;
+  border-radius: var(--ai-radius-md);
+  padding: 1.5rem;
   transition: all var(--ai-transition-smooth);
   box-shadow: var(--ai-shadow-sm);
   height: 100%;
@@ -36,6 +36,6 @@
 
 @media (max-width: 996px) {
   .blogPostCard {
-    padding: 1.5rem;
+    padding: 1.25rem;
   }
 }
