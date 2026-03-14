@@ -492,3 +492,8 @@ cache:
   label: Cache
   permalink: /cache
   description: Cache trong AI là kỹ thuật lưu trữ tạm thời các prefix token để giảm chi phí và độ trễ khi gửi prompt lặp lại đến LLM API.
+
+rag:
+  label: Retrieval-Augmented Generation (RAG)
+  permalink: /rag
+  description: Retrieval-Augmented Generation (RAG) là kỹ thuật kết hợp truy xuất dữ liệu ngoài với mô hình ngôn ngữ để tạo phản hồi chính xác và cập nhật hơn.
