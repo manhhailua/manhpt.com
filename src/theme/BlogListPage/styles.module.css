@@ -1,0 +1,42 @@
+.blogListContainer {
+  min-height: 100vh;
+}
+
+.blogListHeader {
+  background: var(--ai-gradient-subtle);
+  padding: 4rem 0 3rem;
+  margin-bottom: 3rem;
+  border-bottom: 1px solid var(--ai-border-subtle);
+}
+
+.blogListTitle {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin-bottom: 1rem;
+  background: var(--ai-gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.blogListSubtitle {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: var(--ifm-font-color-secondary);
+  max-width: 42rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.blogListGrid {
+  display: grid;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+@media (max-width: 996px) {
+  .blogListHeader {
+    padding: 3rem 0 2rem;
+    margin-bottom: 2rem;
+  }
+}

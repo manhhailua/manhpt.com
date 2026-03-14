@@ -1,0 +1,16 @@
+.blogPostContent {
+  max-width: 100%;
+}
+
+.blogPostExcerpt {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  color: var(--ifm-font-color-secondary);
+  margin-bottom: 1rem;
+}
+
+.blogPostExcerpt p {
+  margin-bottom: 0;
+}

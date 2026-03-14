@@ -1,0 +1,41 @@
+.blogPostCard {
+  background: var(--ai-surface-card);
+  border: 1px solid var(--ai-border-subtle);
+  border-radius: var(--ai-radius-lg);
+  padding: 2rem;
+  transition: all var(--ai-transition-smooth);
+  box-shadow: var(--ai-shadow-sm);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.blogPostCard:hover {
+  border-color: var(--ifm-color-primary);
+  box-shadow: var(--ai-shadow-md);
+  transform: translateY(-2px);
+}
+
+.blogPostCardLink {
+  color: inherit;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.blogPostCardLink:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+.blogPostPage {
+  max-width: 48rem;
+  margin: 0 auto;
+}
+
+@media (max-width: 996px) {
+  .blogPostCard {
+    padding: 1.5rem;
+  }
+}
