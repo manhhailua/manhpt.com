@@ -84,16 +84,6 @@ const config = {
         path: "./news",
       },
     ],
-    [
-      "@docusaurus/plugin-content-docs",
-      {
-        id: "apps",
-        path: "apps",
-        routeBasePath: "apps",
-        sidebarPath: undefined, // Let Docusaurus generate the sidebar
-        // ... other options
-      },
-    ],
   ],
 
   themeConfig:
@@ -110,7 +100,6 @@ const config = {
         items: [
           { to: "/", label: "Blog", position: "left" },
           { to: "/news", label: "News", position: "left" },
-          { to: "/apps", label: "Apps", position: "left" }, // Add this line
           {
             href: "https://github.com/manhhailua",
             label: "GitHub",
