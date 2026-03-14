@@ -100,6 +100,7 @@ const config = {
         items: [
           { to: "/", label: "Blog", position: "left" },
           { to: "/news", label: "News", position: "left" },
+          { to: "/rag-papers", label: "RAG Papers", position: "left" },
           {
             href: "https://github.com/manhhailua",
             label: "GitHub",

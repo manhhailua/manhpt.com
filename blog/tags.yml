@@ -467,3 +467,8 @@ automation:
   label: Automation
   permalink: /automation
   description: Automation là quá trình sử dụng công nghệ để thực hiện các tác vụ lặp đi lặp lại mà không cần sự can thiệp của con người.
+
+rag:
+  label: Retrieval-Augmented Generation (RAG)
+  permalink: /rag
+  description: Retrieval-Augmented Generation (RAG) là kỹ thuật kết hợp truy xuất dữ liệu ngoài với mô hình ngôn ngữ để tạo phản hồi chính xác và cập nhật hơn.
