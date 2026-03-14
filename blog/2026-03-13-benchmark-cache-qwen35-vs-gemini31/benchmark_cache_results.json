@@ -1,0 +1,514 @@
+[
+  {
+    "model": "Qwen3.5-Flash",
+    "scenario": "Baseline",
+    "stats": {
+      "ttlt_mean_ms": 1131.0,
+      "ttlt_min_ms": 1013.0,
+      "ttlt_max_ms": 1258.0,
+      "ttlt_median_ms": 1137.0,
+      "ttft_mean_ms": 641.0,
+      "ttft_min_ms": 613.0,
+      "ttft_max_ms": 696.0,
+      "ttft_available": true,
+      "avg_cached_tokens": 0,
+      "avg_input_tokens": 1324.0,
+      "avg_output_tokens": 73.0
+    },
+    "queries": [
+      {
+        "query_index": 0,
+        "ttft_ms": 695.5169579887297,
+        "ttlt_ms": 1258.3407079946483,
+        "input_tokens": 1324,
+        "output_tokens": 86,
+        "cached_tokens": 0,
+        "text_preview": "[\"Lãi suất và điều kiện vay mua xe ô tô tại các ngân hàng Việt Nam\", \"Hồ sơ giấy tờ cần thiết để vay mua xe ô tô tại ngâ"
+      },
+      {
+        "query_index": 1,
+        "ttft_ms": 668.6508330021752,
+        "ttlt_ms": 1103.2891659997404,
+        "input_tokens": 1320,
+        "output_tokens": 54,
+        "cached_tokens": 0,
+        "text_preview": "[\"Lãi suất tiết kiệm 6 tháng tại Vietcombank\", \"Lãi suất tiết kiệm 12 tháng tại Vietcombank\", \"Lãi suất tiết kiệm 6 thán"
+      },
+      {
+        "query_index": 2,
+        "ttft_ms": 613.0375409993576,
+        "ttlt_ms": 1137.4110000033397,
+        "input_tokens": 1323,
+        "output_tokens": 75,
+        "cached_tokens": 0,
+        "text_preview": "[\"Gói bảo hiểm nhân thọ và quyền lợi bồi thường của Prudential Việt Nam\", \"Gói bảo hiểm nhân thọ và quyền lợi bồi thường"
+      },
+      {
+        "query_index": 3,
+        "ttft_ms": 613.8097499933792,
+        "ttlt_ms": 1141.2957909924444,
+        "input_tokens": 1327,
+        "output_tokens": 90,
+        "cached_tokens": 0,
+        "text_preview": "[\"Lợi nhuận và rủi ro khi đầu tư vàng tại Việt Nam với số vốn 100 triệu\", \"Lợi nhuận và rủi ro khi đầu tư vào cổ phiếu V"
+      },
+      {
+        "query_index": 4,
+        "ttft_ms": 615.6379169988213,
+        "ttlt_ms": 1012.5918749981793,
+        "input_tokens": 1325,
+        "output_tokens": 59,
+        "cached_tokens": 0,
+        "text_preview": "[\"Tác động của tỷ giá USD/VND đến lãi suất vay ngân hàng tại Việt Nam\", \"Tác động của lãi suất cơ bản NHNN đến lãi suất "
+      }
+    ]
+  },
+  {
+    "model": "Qwen3.5-Flash",
+    "scenario": "Implicit Cache",
+    "stats": {
+      "ttlt_mean_ms": 981.0,
+      "ttlt_min_ms": 808.0,
+      "ttlt_max_ms": 1123.0,
+      "ttlt_median_ms": 982.0,
+      "ttft_mean_ms": 516.0,
+      "ttft_min_ms": 474.0,
+      "ttft_max_ms": 596.0,
+      "ttft_available": true,
+      "avg_cached_tokens": 0,
+      "avg_input_tokens": 1324.0,
+      "avg_output_tokens": 70.0
+    },
+    "queries": [
+      {
+        "query_index": 0,
+        "ttft_ms": 506.469083004049,
+        "ttlt_ms": 961.8136249919189,
+        "input_tokens": 1324,
+        "output_tokens": 66,
+        "cached_tokens": 0,
+        "text_preview": "[\"Điều kiện vay mua xe ô tô và hồ sơ cần chuẩn bị tại các ngân hàng Việt Nam\", \"Lãi suất và điều kiện vay mua nhà tại cá"
+      },
+      {
+        "query_index": 1,
+        "ttft_ms": 474.47520900459494,
+        "ttlt_ms": 807.5409169978229,
+        "input_tokens": 1320,
+        "output_tokens": 54,
+        "cached_tokens": 0,
+        "text_preview": "[\"Lãi suất tiết kiệm 6 tháng tại Vietcombank\", \"Lãi suất tiết kiệm 12 tháng tại Vietcombank\", \"Lãi suất tiết kiệm 6 thán"
+      },
+      {
+        "query_index": 2,
+        "ttft_ms": 596.1569999926724,
+        "ttlt_ms": 1122.9700410040095,
+        "input_tokens": 1323,
+        "output_tokens": 71,
+        "cached_tokens": 0,
+        "text_preview": "[\"Gói bảo hiểm nhân thọ và quyền lợi bồi thường của Prudential Việt Nam\", \"Gói bảo hiểm nhân thọ và quyền lợi bồi thường"
+      },
+      {
+        "query_index": 3,
+        "ttft_ms": 512.8390000027139,
+        "ttlt_ms": 1029.9724170035915,
+        "input_tokens": 1327,
+        "output_tokens": 93,
+        "cached_tokens": 0,
+        "text_preview": "[\"Lợi nhuận và rủi ro khi đầu tư vàng với số tiền 100 triệu tại Việt Nam\", \"Lợi nhuận và rủi ro khi đầu tư cổ phiếu VN30"
+      },
+      {
+        "query_index": 4,
+        "ttft_ms": 491.0671249963343,
+        "ttlt_ms": 982.1397080086172,
+        "input_tokens": 1325,
+        "output_tokens": 67,
+        "cached_tokens": 0,
+        "text_preview": "[\"Tỷ giá USD/VND ảnh hưởng như thế nào đến lãi suất vay ngân hàng tại Việt Nam\", \"Lãi suất cơ bản của Ngân hàng Nhà nước"
+      }
+    ]
+  },
+  {
+    "model": "Qwen3.5-Flash",
+    "scenario": "Explicit Cache",
+    "stats": {
+      "ttlt_mean_ms": 951.0,
+      "ttlt_min_ms": 908.0,
+      "ttlt_max_ms": 991.0,
+      "ttlt_median_ms": 958.0,
+      "ttft_mean_ms": 516.0,
+      "ttft_min_ms": 473.0,
+      "ttft_max_ms": 576.0,
+      "ttft_available": true,
+      "avg_cached_tokens": 0,
+      "avg_input_tokens": 1324.0,
+      "avg_output_tokens": 71.0
+    },
+    "queries": [
+      {
+        "query_index": 0,
+        "ttft_ms": 473.1841659959173,
+        "ttlt_ms": 907.6721659948817,
+        "input_tokens": 1324,
+        "output_tokens": 64,
+        "cached_tokens": 0,
+        "text_preview": "[\"Lãi suất và điều kiện vay mua xe ô tô tại các ngân hàng Việt Nam\", \"Hồ sơ giấy tờ cần chuẩn bị để vay mua xe ô tô\", \"L"
+      },
+      {
+        "query_index": 1,
+        "ttft_ms": 576.2143750034738,
+        "ttlt_ms": 991.4558329910506,
+        "input_tokens": 1320,
+        "output_tokens": 75,
+        "cached_tokens": 0,
+        "text_preview": "[\"Lãi suất tiết kiệm 6 tháng tại Vietcombank hiện nay\", \"Lãi suất tiết kiệm 12 tháng tại Vietcombank hiện nay\", \"Lãi suấ"
+      },
+      {
+        "query_index": 2,
+        "ttft_ms": 507.93433299986646,
+        "ttlt_ms": 987.1976660069777,
+        "input_tokens": 1323,
+        "output_tokens": 71,
+        "cached_tokens": 0,
+        "text_preview": "[\"Gói bảo hiểm nhân thọ và quyền lợi bồi thường của Prudential Việt Nam\", \"Gói bảo hiểm nhân thọ và quyền lợi bồi thường"
+      },
+      {
+        "query_index": 3,
+        "ttft_ms": 484.87824999028817,
+        "ttlt_ms": 957.683457992971,
+        "input_tokens": 1327,
+        "output_tokens": 83,
+        "cached_tokens": 0,
+        "text_preview": "[\"Lợi nhuận và rủi ro khi đầu tư vàng tại Việt Nam\", \"Lợi nhuận và rủi ro khi đầu tư cổ phiếu VN30 tại Việt Nam\", \"Lãi s"
+      },
+      {
+        "query_index": 4,
+        "ttft_ms": 536.9665420003003,
+        "ttlt_ms": 912.715084006777,
+        "input_tokens": 1325,
+        "output_tokens": 61,
+        "cached_tokens": 0,
+        "text_preview": "[\"Mối quan hệ giữa tỷ giá USD/VND và lãi suất vay ngân hàng tại Việt Nam\", \"Tác động của lãi suất cơ bản NHNN đến lãi su"
+      }
+    ]
+  },
+  {
+    "model": "Qwen3.5-Flash",
+    "scenario": "Explicit Cache + No Streaming",
+    "stats": {
+      "ttlt_mean_ms": 949.0,
+      "ttlt_min_ms": 851.0,
+      "ttlt_max_ms": 1122.0,
+      "ttlt_median_ms": 915.0,
+      "ttft_mean_ms": null,
+      "ttft_min_ms": null,
+      "ttft_max_ms": null,
+      "ttft_available": false,
+      "avg_cached_tokens": 0,
+      "avg_input_tokens": 1324.0,
+      "avg_output_tokens": 64.0
+    },
+    "queries": [
+      {
+        "query_index": 0,
+        "ttft_ms": null,
+        "ttlt_ms": 1121.5141660068184,
+        "input_tokens": 1324,
+        "output_tokens": 70,
+        "cached_tokens": 0,
+        "text_preview": "[\"Lãi suất và điều kiện vay mua xe ô tô tại các ngân hàng Việt Nam\", \"Hồ sơ giấy tờ cần chuẩn bị để vay mua xe ô tô tại "
+      },
+      {
+        "query_index": 1,
+        "ttft_ms": null,
+        "ttlt_ms": 914.5447500050068,
+        "input_tokens": 1320,
+        "output_tokens": 54,
+        "cached_tokens": 0,
+        "text_preview": "[\"Lãi suất tiết kiệm 6 tháng tại Vietcombank\", \"Lãi suất tiết kiệm 12 tháng tại Vietcombank\", \"Lãi suất tiết kiệm 6 thán"
+      },
+      {
+        "query_index": 2,
+        "ttft_ms": null,
+        "ttlt_ms": 850.8735840005102,
+        "input_tokens": 1323,
+        "output_tokens": 71,
+        "cached_tokens": 0,
+        "text_preview": "[\"Gói bảo hiểm nhân thọ và quyền lợi bồi thường của Prudential Việt Nam\", \"Gói bảo hiểm nhân thọ và quyền lợi bồi thường"
+      },
+      {
+        "query_index": 3,
+        "ttft_ms": null,
+        "ttlt_ms": 941.6169579926645,
+        "input_tokens": 1327,
+        "output_tokens": 69,
+        "cached_tokens": 0,
+        "text_preview": "[\"Lợi nhuận và rủi ro khi đầu tư vàng tại Việt Nam\", \"Lợi nhuận và rủi ro khi đầu tư cổ phiếu VN30 tại Việt Nam\", \"Lãi s"
+      },
+      {
+        "query_index": 4,
+        "ttft_ms": null,
+        "ttlt_ms": 913.9588749967515,
+        "input_tokens": 1325,
+        "output_tokens": 58,
+        "cached_tokens": 0,
+        "text_preview": "[\"Tác động của tỷ giá USD/VND đến lãi suất vay ngân hàng tại Việt Nam\", \"Tác động của lãi suất cơ bản NHNN đến lãi suất "
+      }
+    ]
+  },
+  {
+    "model": "Gemini-3.1-Flash-Lite",
+    "scenario": "Baseline",
+    "stats": {
+      "ttlt_mean_ms": 1449.0,
+      "ttlt_min_ms": 1439.0,
+      "ttlt_max_ms": 1467.0,
+      "ttlt_median_ms": 1441.0,
+      "ttft_mean_ms": 1162.0,
+      "ttft_min_ms": 1083.0,
+      "ttft_max_ms": 1234.0,
+      "ttft_available": true,
+      "avg_cached_tokens": 0,
+      "avg_input_tokens": 1357.0,
+      "avg_output_tokens": 73.0
+    },
+    "queries": [
+      {
+        "query_index": 0,
+        "ttft_ms": 1192.9490420006914,
+        "ttlt_ms": 1466.7490420106333,
+        "input_tokens": 1356,
+        "output_tokens": 72,
+        "cached_tokens": 0,
+        "text_preview": "[\"Lãi suất và ngân hàng vay mua xe ô tô tốt nhất hiện nay\", \"Lãi suất và ngân hàng vay mua nhà tốt nhất hiện nay\", \"Hồ s"
+      },
+      {
+        "query_index": 1,
+        "ttft_ms": 1214.1750419978052,
+        "ttlt_ms": 1438.66674999299,
+        "input_tokens": 1354,
+        "output_tokens": 59,
+        "cached_tokens": 0,
+        "text_preview": "[\"Lãi suất gửi tiết kiệm kỳ hạn 6 tháng và 12 tháng tại Vietcombank\", \"Lãi suất gửi tiết kiệm kỳ hạn 6 tháng và 12 tháng"
+      },
+      {
+        "query_index": 2,
+        "ttft_ms": 1086.5209170005983,
+        "ttlt_ms": 1439.866417000303,
+        "input_tokens": 1356,
+        "output_tokens": 76,
+        "cached_tokens": 0,
+        "text_preview": "[\"Các gói bảo hiểm nhân thọ và quyền lợi bồi thường của Prudential Việt Nam\", \"Các gói bảo hiểm nhân thọ và quyền lợi bồ"
+      },
+      {
+        "query_index": 3,
+        "ttft_ms": 1082.8880830085836,
+        "ttlt_ms": 1440.9254160127603,
+        "input_tokens": 1359,
+        "output_tokens": 85,
+        "cached_tokens": 0,
+        "text_preview": "[\"Ưu điểm và rủi ro khi đầu tư vàng với số vốn 100 triệu tại Việt Nam\", \"Đặc điểm và tiềm năng của nhóm cổ phiếu VN30 ch"
+      },
+      {
+        "query_index": 4,
+        "ttft_ms": 1234.1784589953022,
+        "ttlt_ms": 1458.3811249904102,
+        "input_tokens": 1358,
+        "output_tokens": 72,
+        "cached_tokens": 0,
+        "text_preview": "[\"Tỷ giá USD/VND ảnh hưởng như thế nào đến lãi suất vay của ngân hàng tại Việt Nam\", \"Lãi suất cơ bản của Ngân hàng Nhà "
+      }
+    ]
+  },
+  {
+    "model": "Gemini-3.1-Flash-Lite",
+    "scenario": "Implicit Cache",
+    "stats": {
+      "ttlt_mean_ms": 1331.0,
+      "ttlt_min_ms": 1048.0,
+      "ttlt_max_ms": 1679.0,
+      "ttlt_median_ms": 1258.0,
+      "ttft_mean_ms": 962.0,
+      "ttft_min_ms": 735.0,
+      "ttft_max_ms": 1191.0,
+      "ttft_available": true,
+      "avg_cached_tokens": 0,
+      "avg_input_tokens": 1357.0,
+      "avg_output_tokens": 79.0
+    },
+    "queries": [
+      {
+        "query_index": 0,
+        "ttft_ms": 935.0562920008088,
+        "ttlt_ms": 1257.7082089992473,
+        "input_tokens": 1356,
+        "output_tokens": 64,
+        "cached_tokens": 0,
+        "text_preview": "[\"Lãi suất và ngân hàng cho vay mua xe ô tô tốt nhất hiện nay\", \"Lãi suất và ngân hàng cho vay mua nhà tốt nhất hiện nay"
+      },
+      {
+        "query_index": 1,
+        "ttft_ms": 1191.2936250009807,
+        "ttlt_ms": 1678.5437920043478,
+        "input_tokens": 1354,
+        "output_tokens": 98,
+        "cached_tokens": 0,
+        "text_preview": "[\"Lãi suất tiết kiệm kỳ hạn 6 tháng tại ngân hàng Vietcombank\", \"Lãi suất tiết kiệm kỳ hạn 12 tháng tại ngân hàng Vietco"
+      },
+      {
+        "query_index": 2,
+        "ttft_ms": 765.3954999987036,
+        "ttlt_ms": 1130.7760420022532,
+        "input_tokens": 1356,
+        "output_tokens": 76,
+        "cached_tokens": 0,
+        "text_preview": "[\"Quyền lợi bảo hiểm nhân thọ và chính sách bồi thường của Prudential Việt Nam\", \"Quyền lợi bảo hiểm nhân thọ và chính s"
+      },
+      {
+        "query_index": 3,
+        "ttft_ms": 1182.6314999925671,
+        "ttlt_ms": 1540.9183330048108,
+        "input_tokens": 1359,
+        "output_tokens": 87,
+        "cached_tokens": 0,
+        "text_preview": "[\"Lợi nhuận và rủi ro khi đầu tư 100 triệu vào vàng tại Việt Nam\", \"Lợi nhuận và rủi ro khi đầu tư 100 triệu vào cổ phiế"
+      },
+      {
+        "query_index": 4,
+        "ttft_ms": 735.4487080010585,
+        "ttlt_ms": 1047.7484580042074,
+        "input_tokens": 1358,
+        "output_tokens": 71,
+        "cached_tokens": 0,
+        "text_preview": "[\"Tỷ giá USD/VND ảnh hưởng đến lãi suất vay ngân hàng tại Việt Nam như thế nào\", \"Mối quan hệ giữa lãi suất cơ bản của N"
+      }
+    ]
+  },
+  {
+    "model": "Gemini-3.1-Flash-Lite",
+    "scenario": "Explicit Cache",
+    "stats": {
+      "ttlt_mean_ms": 1543.0,
+      "ttlt_min_ms": 1378.0,
+      "ttlt_max_ms": 1714.0,
+      "ttlt_median_ms": 1542.0,
+      "ttft_mean_ms": 1240.0,
+      "ttft_min_ms": 1112.0,
+      "ttft_max_ms": 1351.0,
+      "ttft_available": true,
+      "avg_cached_tokens": 1339,
+      "avg_input_tokens": 1365.0,
+      "avg_output_tokens": 68
+    },
+    "queries": [
+      {
+        "query_index": 0,
+        "ttft_ms": 1351.108499991824,
+        "ttlt_ms": 1713.5138339945115,
+        "input_tokens": 1364,
+        "output_tokens": 76,
+        "cached_tokens": 1339,
+        "text_preview": "[\"Lãi suất và ngân hàng cho vay mua xe ô tô tốt nhất hiện nay tại Việt Nam\", \"Lãi suất và ngân hàng cho vay mua nhà tốt "
+      },
+      {
+        "query_index": 1,
+        "ttft_ms": 1268.1752500066068,
+        "ttlt_ms": 1508.088750008028,
+        "input_tokens": 1362,
+        "output_tokens": 59,
+        "cached_tokens": 1339,
+        "text_preview": "[\"Lãi suất gửi tiết kiệm kỳ hạn 6 tháng và 12 tháng tại Vietcombank\", \"Lãi suất gửi tiết kiệm kỳ hạn 6 tháng và 12 tháng"
+      },
+      {
+        "query_index": 2,
+        "ttft_ms": 1112.3984159930842,
+        "ttlt_ms": 1378.491915995255,
+        "input_tokens": 1364,
+        "output_tokens": 50,
+        "cached_tokens": 1339,
+        "text_preview": "[\"Phí và quyền lợi bảo hiểm nhân thọ Prudential\", \"Phí và quyền lợi bảo hiểm nhân thọ Manulife\", \"So sánh phí và quyền l"
+      },
+      {
+        "query_index": 3,
+        "ttft_ms": 1157.173250001506,
+        "ttlt_ms": 1541.511540999636,
+        "input_tokens": 1367,
+        "output_tokens": 93,
+        "cached_tokens": 1339,
+        "text_preview": "[\"Lợi nhuận và rủi ro khi đầu tư vàng với số vốn 100 triệu tại Việt Nam\", \"Lợi nhuận và rủi ro khi đầu tư cổ phiếu VN30 "
+      },
+      {
+        "query_index": 4,
+        "ttft_ms": 1309.195499998168,
+        "ttlt_ms": 1572.1387500088895,
+        "input_tokens": 1366,
+        "output_tokens": 62,
+        "cached_tokens": 1339,
+        "text_preview": "[\"Tác động của tỷ giá USD/VND đến lãi suất vay ngân hàng tại Việt Nam\", \"Ảnh hưởng của lãi suất cơ bản của Ngân hàng Nhà"
+      }
+    ]
+  },
+  {
+    "model": "Gemini-3.1-Flash-Lite",
+    "scenario": "No Thinking + No Streaming",
+    "stats": {
+      "ttlt_mean_ms": 1309.0,
+      "ttlt_min_ms": 981.0,
+      "ttlt_max_ms": 1463.0,
+      "ttlt_median_ms": 1366.0,
+      "ttft_mean_ms": null,
+      "ttft_min_ms": null,
+      "ttft_max_ms": null,
+      "ttft_available": false,
+      "avg_cached_tokens": 0,
+      "avg_input_tokens": 1357.0,
+      "avg_output_tokens": 67.0
+    },
+    "queries": [
+      {
+        "query_index": 0,
+        "ttft_ms": null,
+        "ttlt_ms": 1462.844749999931,
+        "input_tokens": 1356,
+        "output_tokens": 64,
+        "cached_tokens": 0,
+        "text_preview": "[\"Lãi suất và ngân hàng vay mua xe ô tô tốt nhất hiện nay\", \"Lãi suất và ngân hàng vay mua nhà tốt nhất hiện nay\", \"Hồ s"
+      },
+      {
+        "query_index": 1,
+        "ttft_ms": null,
+        "ttlt_ms": 1371.8616670084884,
+        "input_tokens": 1354,
+        "output_tokens": 60,
+        "cached_tokens": 0,
+        "text_preview": "[\"Lãi suất gửi tiết kiệm kỳ hạn 6 tháng và 12 tháng tại Vietcombank\", \"Lãi suất gửi tiết kiệm kỳ hạn 6 tháng và 12 tháng"
+      },
+      {
+        "query_index": 2,
+        "ttft_ms": null,
+        "ttlt_ms": 1363.0940419971012,
+        "input_tokens": 1356,
+        "output_tokens": 61,
+        "cached_tokens": 0,
+        "text_preview": "[\"Phí bảo hiểm và quyền lợi bồi thường các gói bảo hiểm nhân thọ Prudential\", \"Phí bảo hiểm và quyền lợi bồi thường các "
+      },
+      {
+        "query_index": 3,
+        "ttft_ms": null,
+        "ttlt_ms": 981.1308339994866,
+        "input_tokens": 1359,
+        "output_tokens": 86,
+        "cached_tokens": 0,
+        "text_preview": "[\"Đặc điểm và rủi ro khi đầu tư vàng với số tiền 100 triệu tại Việt Nam\", \"Lợi nhuận và rủi ro khi đầu tư vào nhóm cổ ph"
+      },
+      {
+        "query_index": 4,
+        "ttft_ms": null,
+        "ttlt_ms": 1365.6700829887995,
+        "input_tokens": 1358,
+        "output_tokens": 65,
+        "cached_tokens": 0,
+        "text_preview": "[\"Ảnh hưởng của tỷ giá USD/VND đến lãi suất vay ngân hàng tại Việt Nam\", \"Ảnh hưởng của lãi suất cơ bản của Ngân hàng Nh"
+      }
+    ]
+  }
+]

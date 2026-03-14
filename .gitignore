@@ -21,3 +21,6 @@ yarn-error.log*
 
 # Jetbrains
 .idea/
+
+# Environment variables with secrets
+.env
