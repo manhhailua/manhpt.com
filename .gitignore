@@ -24,3 +24,9 @@ yarn-error.log*
 
 # Environment variables with secrets
 .env
+
+# Python artifacts
+__pycache__/
+*.pyc
+*.pyo
+.venv/
