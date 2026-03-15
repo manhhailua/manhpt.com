@@ -178,7 +178,7 @@ Improvement = (200 - 10) / 600 = 190 / 600 = 31.7%
 | **JSON API** | ⭐⭐ (quick start) | ⭐⭐⭐⭐ (complete response) | Moderate (mixed) |
 
 ### Benchmark Thực Tế
-Từ [bài benchmark trước](https://manhpt.com/blog/benchmark-cache-qwen35-vs-gemini31):
+Từ [bài benchmark trước](/2026/03/13/benchmark-cache-qwen35-vs-gemini31):
 
 | Model | Scenario | TTFT Reduction | TTLT Reduction | Notes |
 |-------|----------|----------------|----------------|-------|
@@ -335,7 +335,7 @@ Cache không phải silver bullet, nhưng khi dùng đúng, nó có thể giảm
 1. [Anthropic Cache Documentation](https://docs.anthropic.com/claude/docs/cache-control)
 2. [Google Gemini CachedContent Guide](https://ai.google.dev/gemini-api/docs/cached-content)
 3. [DashScope Qwen Cache Features](https://help.aliyun.com/zh/model-studio/developer-reference/compatibility-of-dashscope-with-openai)
-4. [Benchmark: Implicit vs Explicit Cache - Qwen3.5 vs Gemini](https://manhpt.com/blog/benchmark-cache-qwen35-vs-gemini31)
+4. [Benchmark: Implicit vs Explicit Cache - Qwen3.5 vs Gemini](/2026/03/13/benchmark-cache-qwen35-vs-gemini31)
 5. [LLM Inference Optimization Survey](https://arxiv.org/abs/2501.01234)
 
 *Bài viết được tổng hợp từ documentation chính thức, benchmark thực tế, và kinh nghiệm production. Cập nhật lần cuối: 15/3/2026.*
