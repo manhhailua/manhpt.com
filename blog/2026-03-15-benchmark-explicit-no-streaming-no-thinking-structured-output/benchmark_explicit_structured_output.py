@@ -83,7 +83,9 @@ Q:Điều kiện vay mua xe tại Vietcombank"""
 
 
 def build_prompt(fmt: str) -> str:
-    return f"{BASE_PROMPT}\n{PADDING}\n{fmt}"
+    # Thêm extra padding để đảm bảo >1024 tokens cho Gemini
+    EXTRA_PADDING = "\n" + "Thêm chi tiết về các khía cạnh tài chính cá nhân và doanh nghiệp tại Việt Nam bao gồm quản lý dòng tiền, phân tích rủi ro, kế hoạch đầu tư dài hạn, đa dạng hóa danh mục, tối ưu thuế, bảo hiểm rủi ro, quỹ hưu trí, giáo dục tài chính, fintech và ngân hàng số, blockchain và tiền điện tử, bất động sản, chứng khoán, trái phiếu, quỹ mở, ETF, và các công cụ tài chính phái sinh." * 2
+    return f"{BASE_PROMPT}\n{PADDING}{EXTRA_PADDING}\n{fmt}"
 
 
 @dataclass
