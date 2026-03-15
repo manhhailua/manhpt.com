@@ -1,6 +1,5 @@
 ---
 title: "Benchmark No Streaming + No Thinking: JSON vs QP-Lines (Gemini + Qwen)"
-slug: benchmark-explicit-no-streaming-no-thinking-structured-output
 authors: [manhpt]
 tags: [benchmark, gemini, qwen, vietnamese, cache, llm, cost-optimization]
 date: 2026-03-15
@@ -9,7 +8,7 @@ description: "Benchmark no streaming + no thinking + explicit cache cho Gemini v
 
 **Bài benchmark trước dùng JSON array cho structured output nhưng chưa đo tác động của format lên TTLT.** Bài này tách riêng một điều kiện chuẩn hóa — **no streaming + no thinking + explicit cache** — rồi so sánh **JSON array vs QP-Lines** trên cả **Gemini** và **Qwen** để trả lời câu hỏi: format nào nhanh hơn và ổn định hơn cho pipeline query breaking?
 
-Tham chiếu bài trước: [Implicit Cache vs Explicit Cache: Qwen3.5-Flash và Gemini-3.1-Flash-Lite-Preview — Đo Thực Tế TTLT](/blog/benchmark-cache-qwen35-vs-gemini31).
+Tham chiếu bài trước: [Implicit Cache vs Explicit Cache: Qwen3.5-Flash và Gemini-3.1-Flash-Lite-Preview — Đo Thực Tế TTLT](/2026/03/13/benchmark-cache-qwen35-vs-gemini31).
 
 <!-- truncate -->
 
@@ -193,7 +192,7 @@ DASHSCOPE_API_KEY=...
 
 ## Tài nguyên
 
-- [Bài benchmark cũ — Implicit vs Explicit Cache: TTLT thực tế](/blog/benchmark-cache-qwen35-vs-gemini31)
+- [Bài benchmark cũ — Implicit vs Explicit Cache: TTLT thực tế](/2026/03/13/benchmark-cache-qwen35-vs-gemini31)
 - [DashScope Context Cache — Explicit Cache với cache_control marker](https://www.alibabacloud.com/help/en/model-studio/context-cache)
 - [Gemini API Context Caching](https://ai.google.dev/gemini-api/docs/caching)
 - [Gemini API Thinking](https://ai.google.dev/gemini-api/docs/thinking)
