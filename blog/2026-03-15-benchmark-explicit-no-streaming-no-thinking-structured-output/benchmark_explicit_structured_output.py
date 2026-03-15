@@ -54,17 +54,17 @@ BASE_PROMPT = """Bạn là AI agent query breaking cho RAG tài chính Việt Na
 Tách câu hỏi thành các sub-query độc lập, tối đa 5, giữ nguyên tiếng Việt, không giải thích thêm."""
 
 PADDING = """
-Các domain phổ biến cần xử lý:
-- Vay mua nhà: lãi suất, hạn mức, hồ sơ, ngân hàng phù hợp, thời gian xét duyệt.
-- Vay mua xe: điều kiện, thủ tục, lãi suất, ngân hàng phù hợp, hồ sơ cần thiết.
-- Bảo hiểm nhân thọ: phí, điều khoản, quyền lợi bồi thường, so sánh nhà cung cấp.
-- Đầu tư: vàng, cổ phiếu, trái phiếu, gửi tiết kiệm, rủi ro, lợi nhuận kỳ vọng.
-- Thẻ tín dụng: phí thường niên, ưu đãi, điều kiện mở thẻ, so sánh ngân hàng.
-- Ngoại tệ: tỷ giá USD/VND, EUR/VND, biến động ngắn hạn, thời điểm mua bán.
-- Thuế thu nhập cá nhân: quyết toán, khấu trừ, ngưỡng chịu thuế, đa nguồn thu nhập.
-- Kế hoạch tài chính: ngân sách, tiết kiệm, dự phòng, phân bổ thu nhập.
-- Tín dụng CIC: tra cứu, điểm tín dụng, ảnh hưởng đến vay vốn, cải thiện điểm.
-- Bảo hiểm xã hội và hưu trí: quyền lợi, mức lương hưu, quỹ tự nguyện so sánh.
+Domain tài chính Việt Nam cần xử lý bao gồm các lĩnh vực chính sau đây với các khía cạnh quan trọng cần được phân tích và xử lý trong quá trình query breaking để đảm bảo độ chính xác và đầy đủ thông tin cho người dùng cuối cùng trong hệ thống RAG tài chính thông minh. Các domain này bao gồm nhiều khía cạnh phức tạp cần được tách thành các sub-query nguyên tử để tối ưu hóa quá trình truy vấn và retrieval trong pipeline RAG hiện đại với độ trễ thấp và độ chính xác cao:
+- Vay mua nhà đất bất động sản: lãi suất ưu đãi các ngân hàng, hạn mức tín dụng tối đa, hồ sơ thủ tục pháp lý, ngân hàng hỗ trợ tốt nhất, thời gian xét duyệt khoản vay trung bình, điều kiện đảm bảo tài sản thế chấp, chương trình hỗ trợ lãi suất của chính phủ, so sánh ngân hàng thương mại và ngân hàng chính sách.
+- Vay mua xe ô tô xe máy: điều kiện vay vốn cơ bản, thủ tục đăng ký đăng kiểm, lãi suất ngân hàng cạnh tranh, hồ sơ cần thiết đầy đủ, thời gian giải ngân nhanh chóng, chương trình ưu đãi đặc biệt theo mùa, bảo hiểm xe bắt buộc và tự nguyện, phí trước bạ và đăng ký.
+- Bảo hiểm nhân thọ và phi nhân thọ: phí bảo hiểm hàng năm chi tiết, điều khoản hợp đồng quan trọng, quyền lợi bồi thường tối đa, so sánh nhà cung cấp uy tín, thủ tục khiếu nại và giải quyết, loại trừ trách nhiệm bảo hiểm, thời gian chờ và khám sức khỏe.
+- Đầu tư tài chính cá nhân: vàng miếng SJC và PNJ, cổ phiếu VN30 và HNX30, trái phiếu chính phủ và doanh nghiệp, gửi tiết kiệm ngân hàng kỳ hạn, rủi ro thị trường biến động, lợi nhuận kỳ vọng hàng năm, chiến lược phân bổ tài sản, thuế thu nhập từ đầu tư.
+- Thẻ tín dụng quốc tế: phí thường niên các hạng thẻ, ưu đãi tích điểm và hoàn tiền, điều kiện mở thẻ chi tiết, so sánh ngân hàng phát hành, hạn mức chi tiêu tối đa, lãi suất quá hạn và phí phạt, bảo mật và bảo hiểm thẻ, chương trình khách hàng thân thiết.
+- Ngoại tệ và tỷ giá hối đoái: tỷ giá USD/VND và EUR/VND cập nhật, biến động ngắn hạn và dài hạn, thời điểm mua bán tối ưu trong ngày, dự báo thị trường ngoại hối, phí giao dịch ngân hàng, hạn mức mua ngoại tệ, quy định của ngân hàng nhà nước.
+- Thuế thu nhập cá nhân: quyết toán thuế năm cuối cùng, khấu trừ tại nguồn từ lương, ngưỡng chịu thuế theo bậc, đa nguồn thu nhập phức tạp, giảm trừ gia cảnh bản thân và người phụ thuộc, thuế thu nhập từ đầu tư và chuyển nhượng, thủ tục hoàn thuế và nộp thuế.
+- Kế hoạch tài chính cá nhân: ngân sách hàng tháng chi tiết, tiết kiệm dài hạn cho mục tiêu, quỹ dự phòng khẩn cấp tối thiểu, phân bổ thu nhập hợp lý các khoản, đầu tư giáo dục và sức khỏe, bảo hiểm và phòng ngừa rủi ro, kế hoạch nghỉ hưu sớm.
+- Tín dụng CIC và điểm tín dụng: tra cứu lịch sử tín dụng trực tuyến, điểm tín dụng cá nhân hiện tại, ảnh hưởng đến vay vốn ngân hàng trực tiếp, cách cải thiện điểm số nhanh chóng, xóa nợ xấu và cập nhật thông tin, thời gian lưu trữ thông tin tín dụng, dịch vụ tư vấn tín dụng chuyên nghiệp.
+- Bảo hiểm xã hội và hưu trí: quyền lợi bảo hiểm y tế và thất nghiệp, mức lương hưu tính toán theo thâm niên, quỹ hưu trí tự nguyện linh hoạt, so sánh phương án đầu tư hưu trí, đóng bảo hiểm tự nguyện và bắt buộc, thủ tục hưởng chế độ ốm đau và thai sản, chính sách hỗ trợ người cao tuổi.
 """
 
 FORMAT_JSON = """Output format (bắt buộc):
@@ -83,7 +83,7 @@ Q:Điều kiện vay mua xe tại Vietcombank"""
 
 
 def build_prompt(fmt: str) -> str:
-    return f"{BASE_PROMPT}\n{PADDING * 12}\n{fmt}"
+    return f"{BASE_PROMPT}\n{PADDING}\n{fmt}"
 
 
 @dataclass
