@@ -10,7 +10,7 @@ import { themes as prismThemes } from "prism-react-renderer";
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "ManhPT's Engineering Blog",
+  title: "ManhPT's Engineering Blog — IT & AI Knowledge Hub",
   tagline:
     "IT Engineering Knowledges and Experiences. Lưu trữ kiến thức, kinh nghiệm và đôi khi là góc nhìn về công nghệ.",
   favicon: "img/favicon.ico",
@@ -45,6 +45,9 @@ const config = {
         docs: false, // Disable the docs plugin
         blog: {
           routeBasePath: "/", // Serve the blog at the site's root
+          blogTitle: "ManhPT's Engineering Blog — IT & AI Knowledge Hub",
+          blogDescription:
+            "IT Engineering Knowledges and Experiences. Lưu trữ kiến thức, kinh nghiệm và đôi khi là góc nhìn về công nghệ.",
           showReadingTime: true,
           feedOptions: {
             type: ["rss", "atom"],
@@ -73,6 +76,9 @@ const config = {
          * Required for any multi-instance plugin
          */
         id: "news",
+        blogTitle: "ManhPT's Short Tech News — Tin tức IT & AI ngắn gọn",
+        blogDescription:
+          "Cập nhật nhanh các tin tức ngắn gọn về công nghệ, AI và kỹ thuật phần mềm từ góc nhìn thực chiến của một kỹ sư IT.",
         /**
          * URL route for the blog section of your site.
          * *DO NOT* include a trailing slash.
