@@ -1,6 +1,5 @@
 ---
 title: "Context Cache trong LLM: Prefix Cache vs KV Cache, Implicit vs Explicit - Phân Tích Claude, Gemini, GPT, Qwen3.5"
-slug: llm-context-cache-prefix-kv-cache-analysis
 authors: [manhpt]
 tags: [llm, cache, optimization, latency, claude, gemini, gpt, qwen, vietnamese, technical]
 date: 2026-03-15
