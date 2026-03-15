@@ -1,6 +1,5 @@
 ---
 title: "Implicit Cache vs Explicit Cache: Qwen3.5-Flash và Gemini-3.1-Flash-Lite-Preview — Đo Thực Tế TTLT"
-slug: benchmark-cache-qwen35-vs-gemini31
 authors: [manhpt]
 tags: [benchmark, qwen, gemini, vietnamese, cache, llm, cost-optimization]
 date: 2026-03-13
