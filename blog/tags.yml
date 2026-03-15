@@ -497,3 +497,23 @@ rag:
   label: Retrieval-Augmented Generation (RAG)
   permalink: /rag
   description: Retrieval-Augmented Generation (RAG) là kỹ thuật kết hợp truy xuất dữ liệu ngoài với mô hình ngôn ngữ để tạo phản hồi chính xác và cập nhật hơn.
+
+optimization:
+  label: Optimization
+  permalink: /optimization
+  description: Kỹ thuật tối ưu hóa performance, cost, và resource usage trong hệ thống AI.
+
+latency:
+  label: Latency
+  permalink: /latency  
+  description: Độ trễ trong hệ thống AI, từ TTFT (Time To First Token) đến TTLT (Time To Last Token).
+
+gpt:
+  label: GPT
+  permalink: /gpt
+  description: GPT (Generative Pre-trained Transformer) models từ OpenAI.
+
+technical:
+  label: Technical
+  permalink: /technical
+  description: Bài viết kỹ thuật sâu về architecture, implementation, và best practices.
