@@ -1,0 +1,14 @@
+[project]
+name = "benchmark-cache-qwen-vs-gemini"
+version = "0.1.0"
+description = "Reproducible benchmark environment for cache/latency measurements."
+readme = "index.md"
+requires-python = ">=3.10"
+dependencies = [
+  "google-genai",
+  "python-dotenv",
+  "requests",
+]
+
+[tool.uv]
+package = false
