@@ -1,13 +1,13 @@
 ---
-title: "[2026-03-15] Context Cache trong LLM: Prefix Cache vs KV Cache, Implicit vs Explicit - Phân Tích Claude, Gemini, GPT, Qwen3.5"
+title: "Context Cache trong LLM: Prefix Cache vs KV Cache, Implicit vs Explicit - Phân Tích Claude, Gemini, GPT, Qwen3.5"
 slug: llm-context-cache-prefix-kv-cache-analysis
 authors: [manhpt]
 tags: [llm, cache, optimization, latency, claude, gemini, gpt, qwen, vietnamese, technical]
 date: 2026-03-15
-description: "[2026-03-15] Phân tích sâu về context cache (prefix cache/KV cache) trong các model LLM hiện đại: Claude, Gemini, GPT, Qwen3.5. So sánh implicit vs explicit cache, ảnh hưởng đến TTFT và TTLT, và thực tiễn triển khai trong production."
+description: "Phân tích sâu về context cache (prefix cache/KV cache) trong các model LLM hiện đại: Claude, Gemini, GPT, Qwen3.5. So sánh implicit vs explicit cache, ảnh hưởng đến TTFT và TTLT, và thực tiễn triển khai trong production."
 ---
 
-# [2026-03-15] Context Cache trong LLM: Prefix Cache vs KV Cache, Implicit vs Explicit
+# Context Cache trong LLM: Prefix Cache vs KV Cache, Implicit vs Explicit
 
 **Context cache** (còn gọi là prefix cache hoặc KV cache) là kỹ thuật tối ưu quan trọng trong các LLM API hiện đại, giúp giảm latency và cost khi xử lý các request có phần context lặp lại. Bài viết này phân tích sâu kiến trúc cache của 4 model LLM hàng đầu (Claude, Gemini, GPT, Qwen3.5), so sánh implicit vs explicit cache, và đặc biệt tập trung vào trade-off giữa **TTFT (Time-To-First-Token)** và **TTLT (Time-To-Last-Token)** - vấn đề then chốt trong optimization thực tế.
 
