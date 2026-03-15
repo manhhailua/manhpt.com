@@ -1,0 +1,291 @@
+{
+  "meta": {
+    "providers": [
+      "gemini",
+      "qwen"
+    ],
+    "queries": 5,
+    "warmup_runs_per_scenario": 2,
+    "streaming": false,
+    "thinking": "disabled",
+    "cache_mode": {
+      "gemini": "CachedContent API (explicit)",
+      "qwen": "cache_control marker in system message (explicit, OpenAI-compat)"
+    },
+    "missing_keys": []
+  },
+  "scenarios": [
+    {
+      "summary": {
+        "provider": "gemini",
+        "model": "gemini-3.1-flash-lite-preview",
+        "name": "Explicit + No Streaming + No Thinking + JSON",
+        "cache_mode": "explicit",
+        "warmup_runs": 2,
+        "ttlt_mean_ms": 1724.9,
+        "ttlt_min_ms": 1270.4,
+        "ttlt_max_ms": 2006.5,
+        "avg_input_tokens": 3241.6,
+        "avg_output_tokens": 76.4,
+        "avg_cached_tokens": 3216,
+        "parse_success_rate": 100.0
+      },
+      "queries": [
+        {
+          "idx": 0,
+          "ttlt_ms": 1747.1527909947326,
+          "input_tokens": 3241,
+          "output_tokens": 77,
+          "cached_tokens": 3216,
+          "parse_ok": true,
+          "parsed_count": 4,
+          "text_preview": "[\"Ngân hàng nào có gói vay mua nhà và vay mua xe ưu đãi nhất hiện nay?\", \"Hồ sơ và giấy tờ cần chuẩn bị để vay mua nhà là gì?\", \"Hồ sơ và giấy tờ cần chuẩn bị để vay mua xe là gì?\""
+        },
+        {
+          "idx": 1,
+          "ttlt_ms": 1728.1110000039916,
+          "input_tokens": 3239,
+          "output_tokens": 81,
+          "cached_tokens": 3216,
+          "parse_ok": true,
+          "parsed_count": 5,
+          "text_preview": "[\"Lãi suất tiết kiệm kỳ hạn 6 tháng tại Vietcombank\", \"Lãi suất tiết kiệm kỳ hạn 12 tháng tại Vietcombank\", \"Lãi suất tiết kiệm kỳ hạn 6 tháng tại Techcombank\", \"Lãi suất tiết kiệm"
+        },
+        {
+          "idx": 2,
+          "ttlt_ms": 1270.4247910005506,
+          "input_tokens": 3241,
+          "output_tokens": 73,
+          "cached_tokens": 3216,
+          "parse_ok": true,
+          "parsed_count": 4,
+          "text_preview": "[\"So sánh phí bảo hiểm nhân thọ giữa Prudential và Manulife\", \"So sánh quyền lợi bồi thường của bảo hiểm Prudential và Manulife\", \"Các yếu tố ảnh hưởng đến phí bảo hiểm nhân thọ Pr"
+        },
+        {
+          "idx": 3,
+          "ttlt_ms": 2006.5487089887029,
+          "input_tokens": 3244,
+          "output_tokens": 79,
+          "cached_tokens": 3216,
+          "parse_ok": true,
+          "parsed_count": 3,
+          "text_preview": "[\"So sánh lợi nhuận kỳ vọng của đầu tư vàng, cổ phiếu VN30 và gửi tiết kiệm ngân hàng\", \"Các rủi ro khi đầu tư 100 triệu vào vàng, cổ phiếu VN30 và gửi tiết kiệm\", \"Chiến lược phân"
+        },
+        {
+          "idx": 4,
+          "ttlt_ms": 1872.2286250122124,
+          "input_tokens": 3243,
+          "output_tokens": 72,
+          "cached_tokens": 3216,
+          "parse_ok": true,
+          "parsed_count": 4,
+          "text_preview": "[\"Tỷ giá USD/VND hiện tại là bao nhiêu\", \"Lãi suất cơ bản của Ngân hàng Nhà nước hiện nay là bao nhiêu\", \"Mối quan hệ giữa tỷ giá USD/VND và lãi suất vay ngân hàng\", \"Ảnh hưởng của"
+        }
+      ]
+    },
+    {
+      "summary": {
+        "provider": "gemini",
+        "model": "gemini-3.1-flash-lite-preview",
+        "name": "Explicit + No Streaming + No Thinking + QP-Lines",
+        "cache_mode": "explicit",
+        "warmup_runs": 2,
+        "ttlt_mean_ms": 1615.2,
+        "ttlt_min_ms": 1210.7,
+        "ttlt_max_ms": 2096.1,
+        "avg_input_tokens": 3284.6,
+        "avg_output_tokens": 62.6,
+        "avg_cached_tokens": 3259,
+        "parse_success_rate": 100.0
+      },
+      "queries": [
+        {
+          "idx": 0,
+          "ttlt_ms": 1623.4213749994524,
+          "input_tokens": 3284,
+          "output_tokens": 74,
+          "cached_tokens": 3259,
+          "parse_ok": true,
+          "parsed_count": 4,
+          "text_preview": "COUNT:4\nQ:Ngân hàng nào có gói vay ưu đãi cho mua nhà và mua xe cùng lúc\nQ:Giấy tờ cần thiết để vay mua nhà ngân hàng\nQ:Hồ sơ thủ tục cần chuẩn bị khi vay mua xe ngân hàng\nQ:Cách đ"
+        },
+        {
+          "idx": 1,
+          "ttlt_ms": 1210.6589159957366,
+          "input_tokens": 3282,
+          "output_tokens": 47,
+          "cached_tokens": 3259,
+          "parse_ok": true,
+          "parsed_count": 2,
+          "text_preview": "COUNT:2\nQ:Lãi suất tiết kiệm kỳ hạn 6 tháng và 12 tháng tại Vietcombank\nQ:Lãi suất tiết kiệm kỳ hạn 6 tháng và 12 tháng tại Techcombank"
+        },
+        {
+          "idx": 2,
+          "ttlt_ms": 1718.988749998971,
+          "input_tokens": 3284,
+          "output_tokens": 59,
+          "cached_tokens": 3259,
+          "parse_ok": true,
+          "parsed_count": 3,
+          "text_preview": "COUNT:3\nQ:Phí bảo hiểm nhân thọ Prudential so với Manulife\nQ:Quyền lợi bồi thường bảo hiểm nhân thọ của Prudential và Manulife\nQ:So sánh điều khoản bồi thường bảo hiểm nhân thọ Pru"
+        },
+        {
+          "idx": 3,
+          "ttlt_ms": 2096.1414159974083,
+          "input_tokens": 3287,
+          "output_tokens": 65,
+          "cached_tokens": 3259,
+          "parse_ok": true,
+          "parsed_count": 3,
+          "text_preview": "COUNT:3\nQ:Ưu và nhược điểm khi đầu tư 100 triệu vào vàng\nQ:Lợi nhuận kỳ vọng và rủi ro khi đầu tư cổ phiếu VN30\nQ:Lãi suất và ưu điểm của việc gửi tiết kiệm ngân hàng với 100 triệu"
+        },
+        {
+          "idx": 4,
+          "ttlt_ms": 1426.8862919998355,
+          "input_tokens": 3286,
+          "output_tokens": 68,
+          "cached_tokens": 3259,
+          "parse_ok": true,
+          "parsed_count": 3,
+          "text_preview": "COUNT:3\nQ:Tỷ giá USD/VND ảnh hưởng như thế nào đến lãi suất vay ngân hàng\nQ:Tác động của lãi suất cơ bản của Ngân hàng Nhà nước đến lãi suất cho vay\nQ:Mối quan hệ giữa chính sách t"
+        }
+      ]
+    },
+    {
+      "summary": {
+        "provider": "qwen",
+        "model": "qwen3.5-flash",
+        "name": "Explicit + No Streaming + No Thinking + JSON",
+        "cache_mode": "explicit",
+        "warmup_runs": 2,
+        "ttlt_mean_ms": 1154.3,
+        "ttlt_min_ms": 1049.7,
+        "ttlt_max_ms": 1230.2,
+        "avg_input_tokens": 3090.8,
+        "avg_output_tokens": 59,
+        "avg_cached_tokens": 3054,
+        "parse_success_rate": 100.0
+      },
+      "queries": [
+        {
+          "idx": 0,
+          "ttlt_ms": 1214.0291250107111,
+          "input_tokens": 3091,
+          "output_tokens": 62,
+          "cached_tokens": 3054,
+          "parse_ok": true,
+          "parsed_count": 4,
+          "text_preview": "[\"Vay mua xe: ngân hàng nào phù hợp và điều kiện cần thiết?\", \"Vay mua xe: hồ sơ giấy tờ cần chuẩn bị\", \"Vay mua nhà: ngân hàng nào phù hợp và điều kiện cần thiết?\", \"Vay mua nhà: "
+        },
+        {
+          "idx": 1,
+          "ttlt_ms": 1230.1522500056308,
+          "input_tokens": 3087,
+          "output_tokens": 76,
+          "cached_tokens": 3054,
+          "parse_ok": true,
+          "parsed_count": 5,
+          "text_preview": "[\"Lãi suất tiết kiệm 6 tháng tại Vietcombank\", \"Lãi suất tiết kiệm 12 tháng tại Vietcombank\", \"Lãi suất tiết kiệm 6 tháng tại Techcombank\", \"Lãi suất tiết kiệm 12 tháng tại Techcom"
+        },
+        {
+          "idx": 2,
+          "ttlt_ms": 1049.6681250078836,
+          "input_tokens": 3090,
+          "output_tokens": 37,
+          "cached_tokens": 3054,
+          "parse_ok": true,
+          "parsed_count": 2,
+          "text_preview": "[\"So sánh phí bảo hiểm nhân thọ giữa Prudential và Manulife\", \"So sánh quyền lợi bồi thường bảo hiểm nhân thọ giữa Prudential và Manulife\"]"
+        },
+        {
+          "idx": 3,
+          "ttlt_ms": 1198.9983749954263,
+          "input_tokens": 3094,
+          "output_tokens": 57,
+          "cached_tokens": 3054,
+          "parse_ok": true,
+          "parsed_count": 3,
+          "text_preview": "[\"Lãi suất và rủi ro khi gửi tiết kiệm ngân hàng với số tiền 100 triệu\", \"Biến động giá và lợi nhuận kỳ vọng khi đầu tư vào vàng\", \"Triển vọng lợi nhuận và rủi ro khi đầu tư vào cổ"
+        },
+        {
+          "idx": 4,
+          "ttlt_ms": 1078.5257090028608,
+          "input_tokens": 3092,
+          "output_tokens": 63,
+          "cached_tokens": 3054,
+          "parse_ok": true,
+          "parsed_count": 3,
+          "text_preview": "[\"Tỷ giá USD/VND ảnh hưởng thế nào đến lãi suất vay ngân hàng tại Việt Nam?\", \"Lãi suất cơ bản của Ngân hàng Nhà nước ảnh hưởng thế nào đến lãi suất vay ngân hàng?\", \"Mối quan hệ g"
+        }
+      ]
+    },
+    {
+      "summary": {
+        "provider": "qwen",
+        "model": "qwen3.5-flash",
+        "name": "Explicit + No Streaming + No Thinking + QP-Lines",
+        "cache_mode": "explicit",
+        "warmup_runs": 2,
+        "ttlt_mean_ms": 1129.9,
+        "ttlt_min_ms": 908.9,
+        "ttlt_max_ms": 1321.2,
+        "avg_input_tokens": 3131.8,
+        "avg_output_tokens": 53.2,
+        "avg_cached_tokens": 3095,
+        "parse_success_rate": 80.0
+      },
+      "queries": [
+        {
+          "idx": 0,
+          "ttlt_ms": 1321.1741659906693,
+          "input_tokens": 3132,
+          "output_tokens": 74,
+          "cached_tokens": 3095,
+          "parse_ok": false,
+          "parsed_count": 3,
+          "text_preview": "COUNT:4\nQ:Nên vay ngân hàng nào để mua nhà với lãi suất tốt nhất năm nay?\nQ:Hồ sơ cần chuẩn bị gì khi vay mua nhà tại Việt Nam?\nQ:Nên vay ngân hàng nào để mua xe với điều kiện thuậ"
+        },
+        {
+          "idx": 1,
+          "ttlt_ms": 908.8565000129165,
+          "input_tokens": 3128,
+          "output_tokens": 36,
+          "cached_tokens": 3095,
+          "parse_ok": true,
+          "parsed_count": 2,
+          "text_preview": "COUNT:2\nQ:Lãi suất tiết kiệm 6 tháng tại Vietcombank và Techcombank\nQ:Lãi suất tiết kiệm 12 tháng tại Vietcombank và Techcombank"
+        },
+        {
+          "idx": 2,
+          "ttlt_ms": 1137.660832988331,
+          "input_tokens": 3131,
+          "output_tokens": 42,
+          "cached_tokens": 3095,
+          "parse_ok": true,
+          "parsed_count": 2,
+          "text_preview": "COUNT:2\nQ:So sánh phí bảo hiểm nhân thọ giữa Prudential và Manulife\nQ:So sánh quyền lợi bồi thường bảo hiểm nhân thọ giữa Prudential và Manulife"
+        },
+        {
+          "idx": 3,
+          "ttlt_ms": 1319.9742089927895,
+          "input_tokens": 3135,
+          "output_tokens": 70,
+          "cached_tokens": 3095,
+          "parse_ok": true,
+          "parsed_count": 3,
+          "text_preview": "COUNT:3\nQ:Lợi nhuận kỳ vọng và rủi ro khi đầu tư vàng với 100 triệu đồng\nQ:Lợi nhuận kỳ vọng và rủi ro khi đầu tư cổ phiếu VN30 với 100 triệu đồng\nQ:Lãi suất gửi tiết kiệm ngân hàn"
+        },
+        {
+          "idx": 4,
+          "ttlt_ms": 961.8707920017187,
+          "input_tokens": 3133,
+          "output_tokens": 44,
+          "cached_tokens": 3095,
+          "parse_ok": true,
+          "parsed_count": 2,
+          "text_preview": "COUNT:2\nQ:Tỷ giá USD/VND ảnh hưởng thế nào đến lãi suất vay ngân hàng tại Việt Nam\nQ:Lãi suất cơ bản của NHNN ảnh hưởng thế nào đến lãi suất vay ngân hàng"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+[project]
+name = "benchmark-explicit-structured-output"
+version = "0.1.0"
+description = "Explicit cache benchmark for no-streaming no-thinking structured output formats."
+readme = "index.md"
+requires-python = ">=3.10"
+dependencies = [
+  "google-genai",
+  "python-dotenv",
+  "requests",
+]
+
+[tool.uv]
+package = false
