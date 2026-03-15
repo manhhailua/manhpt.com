@@ -1,8 +1,7 @@
 ---
 title: "Agentic Retrieval-Augmented Generation: A Survey on Agentic RAG"
-slug: agentic-rag-survey
 authors: [manhpt]
-tags: [rag, llm, ai-agent, langgraph]
+tags: [rag, llm, ai-agent, langgraph, vietnamese]
 date: 2026-03-15
 description: "Bài viết đầu tiên trong series RAG Papers: tổng hợp paper survey Agentic RAG, tóm tắt taxonomy, workflow patterns, benchmark và các điểm quan trọng để áp dụng thực tế."
 ---
