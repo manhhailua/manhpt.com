@@ -1,9 +1,20 @@
 ---
 title: Cách lưu trữ mật khẩu git trên linux terminal
-description: Cách lưu trữ mật khẩu git trên linux terminal. Tự động ghi nhớ mật khẩu git trên Ubuntu và linux. Git Credential Storage. Store và Cache.
-authors: [manhpt]
-tags: [git, git password, gitlab, remember password]
-image: ./5_password-best-practices_unique-passwords_authentication-100768646-large.jpg
+description: >-
+  Cách lưu trữ mật khẩu git trên linux terminal. Tự động ghi nhớ mật khẩu git
+  trên Ubuntu và linux. Git Credential Storage. Store và Cache.
+authors:
+  - manhpt
+tags:
+  - git
+  - git password
+  - gitlab
+  - remember password
+image: >-
+  ./5_password-best-practices_unique-passwords_authentication-100768646-large.jpg
+date: '2019-08-09'
+last_modified: '2026-03-23'
+last_modified_note: Nội dung có thể đã lỗi thời. Vui lòng kiểm tra thông tin trước khi sử dụng.
 ---
 
 ![](./5_password-best-practices_unique-passwords_authentication-100768646-large.jpg)

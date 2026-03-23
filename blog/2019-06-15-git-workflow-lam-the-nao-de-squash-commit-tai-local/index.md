@@ -1,9 +1,18 @@
 ---
 title: Làm thế nào để squash commit tại local?
-description: Sử dụng rebase để squash commit. Squash commit để loại bớt những dumb commit hoặc nhiều commit trùng tên hay cùng làm một nhiệm vụ nhau.
-authors: [manhpt]
-tags: [git, squash, squash commit]
+description: >-
+  Sử dụng rebase để squash commit. Squash commit để loại bớt những dumb commit
+  hoặc nhiều commit trùng tên hay cùng làm một nhiệm vụ nhau.
+authors:
+  - manhpt
+tags:
+  - git
+  - squash
+  - squash commit
 image: ./git-history.jpeg
+date: '2019-06-15'
+last_modified: '2026-03-23'
+last_modified_note: Nội dung có thể đã lỗi thời. Vui lòng kiểm tra thông tin trước khi sử dụng.
 ---
 
 ![](./git-history.jpeg)

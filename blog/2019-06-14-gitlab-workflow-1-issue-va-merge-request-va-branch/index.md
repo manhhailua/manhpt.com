@@ -1,7 +1,9 @@
 ---
+date: 2019-06-14
+last_modified: 2026-03-23
 title: "[Gitlab Flow] issue và merge request và branch"
 description: Giới thiệu Gitlab Flow. Áp dụng Gitlab Flow vào quy trình phát triển phần mềm. Các bước để tạo issue, merge request và branch tự động.
-authors: manhpt
+authors: [manhpt]
 tags: [branch, git, gitlab, issue, merge request]
 image: ./gitlab-first-look-twitter-card-1200x627.png
 ---

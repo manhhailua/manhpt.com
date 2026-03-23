@@ -1,9 +1,21 @@
 ---
 title: Thay đổi IP/DNS trên Ubuntu Desktop sử dụng Terminal
-description: Để thay đổi IP/DNS của máy trạm chỉ có thể thao tác qua Terminal sau khi forward và kết nối đến SSH port của máy trạm từ máy làm việc.
-authors: [manhpt]
-tags: [dns, linux, network, ubuntu, workstation]
-image: ./dns-concept-domain-name-system-decentralized-naming-system-computers-devices-services-other-resources-dns-concept-domain-109460557.jpg
+description: >-
+  Để thay đổi IP/DNS của máy trạm chỉ có thể thao tác qua Terminal sau khi
+  forward và kết nối đến SSH port của máy trạm từ máy làm việc.
+authors:
+  - manhpt
+tags:
+  - dns
+  - linux
+  - network
+  - ubuntu
+  - workstation
+image: >-
+  ./dns-concept-domain-name-system-decentralized-naming-system-computers-devices-services-other-resources-dns-concept-domain-109460557.jpg
+date: '2020-11-25'
+last_modified: '2026-03-23'
+last_modified_note: Nội dung có thể đã lỗi thời. Vui lòng kiểm tra thông tin trước khi sử dụng.
 ---
 
 ![](./dns-concept-domain-name-system-decentralized-naming-system-computers-devices-services-other-resources-dns-concept-domain-109460557.jpg)

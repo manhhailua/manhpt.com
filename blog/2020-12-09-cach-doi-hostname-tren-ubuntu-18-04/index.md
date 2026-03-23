@@ -1,8 +1,15 @@
 ---
 title: Cách đổi hostname trên Ubuntu 18.04
-authors: [manhpt]
-tags: [devops, linux, ubuntu]
+authors:
+  - manhpt
+tags:
+  - devops
+  - linux
+  - ubuntu
 image: ./lancado-ubuntu-18-04-lts-bionic-beaver-e1542050929191.png
+date: '2020-12-09'
+last_modified: '2026-03-23'
+last_modified_note: Nội dung có thể đã lỗi thời. Vui lòng kiểm tra thông tin trước khi sử dụng.
 ---
 
 ![](./lancado-ubuntu-18-04-lts-bionic-beaver-e1542050929191.png)

@@ -1,9 +1,18 @@
 ---
-title: "[Gitlab] Cài đặt gitlab-runner sử dụng môi trường docker"
-description: Cài đặt và cấu hình gitlab-runner trên môi trường docker. Cài đặt gitlab-runner thành công nhưng job không được kích hoạt.
-authors: [manhpt]
-tags: [gitlab, gitlab-ci, gitlab-runner]
+title: '[Gitlab] Cài đặt gitlab-runner sử dụng môi trường docker'
+description: >-
+  Cài đặt và cấu hình gitlab-runner trên môi trường docker. Cài đặt
+  gitlab-runner thành công nhưng job không được kích hoạt.
+authors:
+  - manhpt
+tags:
+  - gitlab
+  - gitlab-ci
+  - gitlab-runner
 image: ./docker-build-push-gitlab-ci-1200x675.png
+date: '2019-06-21'
+last_modified: '2026-03-23'
+last_modified_note: Nội dung có thể đã lỗi thời. Vui lòng kiểm tra thông tin trước khi sử dụng.
 ---
 
 ![](./docker-build-push-gitlab-ci-1200x675.png)

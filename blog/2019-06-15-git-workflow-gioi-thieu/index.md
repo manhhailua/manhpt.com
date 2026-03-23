@@ -1,4 +1,6 @@
 ---
+date: 2019-06-15
+last_modified: 2026-03-23
 title: "[Git Workflow] Giới thiệu"
 description: Áp dụng Git Workflow vào quy trình phát triển phần mềm. Giới thiệu về Git Workflow đã và đang được sử dụng cho team agile.
 authors: [manhpt]

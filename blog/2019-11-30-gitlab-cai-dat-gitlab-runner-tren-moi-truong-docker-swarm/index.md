@@ -1,9 +1,20 @@
 ---
-title: "[Gitlab] Cài đặt gitlab-runner trên môi trường docker swarm"
-description: Cài đặt và cấu hình gitlab-runner trên môi trường docker swarm. Triển khai CI/CD cho project với gitlab-runner và docker swarm cluster.
-authors: [manhpt]
-tags: [docker, gitlab, gitlab-ci, gitlab-runner, swarm]
+title: '[Gitlab] Cài đặt gitlab-runner trên môi trường docker swarm'
+description: >-
+  Cài đặt và cấu hình gitlab-runner trên môi trường docker swarm. Triển khai
+  CI/CD cho project với gitlab-runner và docker swarm cluster.
+authors:
+  - manhpt
+tags:
+  - docker
+  - gitlab
+  - gitlab-ci
+  - gitlab-runner
+  - swarm
 image: ./Add-gitlab-run-in-docker-swarm-mode.jpg
+date: '2019-11-30'
+last_modified: '2026-03-23'
+last_modified_note: Nội dung có thể đã lỗi thời. Vui lòng kiểm tra thông tin trước khi sử dụng.
 ---
 
 ![](./Add-gitlab-run-in-docker-swarm-mode.jpg)

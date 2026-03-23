@@ -1,4 +1,5 @@
 ---
+date: 2025-03-22
 title: Tương lai của Model Context Protocol (MCP)
 description: Model Context Protocol (MCP) đang thu hút sự chú ý trong cộng đồng AI. Bài viết thảo luận về việc MCP có thực sự hữu ích hay chỉ là một xu hướng nhất thời.
 authors: [manhpt]

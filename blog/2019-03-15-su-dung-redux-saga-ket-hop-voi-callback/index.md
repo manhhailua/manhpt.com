@@ -1,4 +1,6 @@
 ---
+date: 2019-03-15
+last_modified: 2026-03-23
 title: Sử dụng redux-saga kết hợp với callback
 description: Sử dụng redux-saga xử lý async action và kết hợp với callback nhằm hạn chế lạm dụng redux. Cập nhật state theo action mà không cần redux.
 authors: [manhpt]

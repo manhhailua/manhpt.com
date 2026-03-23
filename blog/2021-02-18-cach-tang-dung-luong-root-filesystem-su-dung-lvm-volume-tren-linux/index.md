@@ -1,9 +1,22 @@
 ---
 title: Cách tăng dung lượng root filesystem sử dụng LVM volume trên linux
-description: LVM tự động tăng dung lượng sau khi sizing nên ta phải thực hiện thêm dung lượng cho LVM từ phân vùng (partition).
-authors: [manhpt]
-tags: [disk, drive, logical volume manager, lvm, lvm volume, partition, volume]
+description: >-
+  LVM tự động tăng dung lượng sau khi sizing nên ta phải thực hiện thêm dung
+  lượng cho LVM từ phân vùng (partition).
+authors:
+  - manhpt
+tags:
+  - disk
+  - drive
+  - logical volume manager
+  - lvm
+  - lvm volume
+  - partition
+  - volume
 image: ./istock-1061856176.jpg
+date: '2021-02-18'
+last_modified: '2026-03-23'
+last_modified_note: Nội dung có thể đã lỗi thời. Vui lòng kiểm tra thông tin trước khi sử dụng.
 ---
 
 ![](./istock-1061856176.jpg)

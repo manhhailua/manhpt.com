@@ -1,9 +1,20 @@
 ---
 title: Quản trị Kubernetes cluster với Lens
-description: Lens là một phần mềm nguồn mở cung cấp giao diện thân thiện để làm việc với nhiều kubernetes cluster.
-authors: [manhpt]
-tags: [cluster, k8s, kubernetes, lens, management]
+description: >-
+  Lens là một phần mềm nguồn mở cung cấp giao diện thân thiện để làm việc với
+  nhiều kubernetes cluster.
+authors:
+  - manhpt
+tags:
+  - cluster
+  - k8s
+  - kubernetes
+  - lens
+  - management
 image: ./ship_captain_devops_kubernetes_steer.png
+date: '2020-11-19'
+last_modified: '2026-03-23'
+last_modified_note: Nội dung có thể đã lỗi thời. Vui lòng kiểm tra thông tin trước khi sử dụng.
 ---
 
 ![](./ship_captain_devops_kubernetes_steer.png)

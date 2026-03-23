@@ -1,9 +1,22 @@
 ---
 title: Apply HTTPS cho ingress-nginx sử dụng cert-manager
-description: Apply HTTPS cho ingress-nginx sử dụng cert-manager. Cài đặt và cấu hình cert-manager với ingress-nginx và letsencrypt.
-authors: [manhpt]
-tags: [cert-manager, https, ingress, kubernetes, letsencrypt, nginx, ssl]
+description: >-
+  Apply HTTPS cho ingress-nginx sử dụng cert-manager. Cài đặt và cấu hình
+  cert-manager với ingress-nginx và letsencrypt.
+authors:
+  - manhpt
+tags:
+  - cert-manager
+  - https
+  - ingress
+  - kubernetes
+  - letsencrypt
+  - nginx
+  - ssl
 image: ./Lets-Encrypt.png
+date: '2020-10-21'
+last_modified: '2026-03-23'
+last_modified_note: Nội dung có thể đã lỗi thời. Vui lòng kiểm tra thông tin trước khi sử dụng.
 ---
 
 ![](./Lets-Encrypt.png)

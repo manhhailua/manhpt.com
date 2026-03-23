@@ -1,9 +1,20 @@
 ---
 title: Sử dụng Commitizen để commit đúng chuẩn
-description: Cách lưu trữ mật khẩu git trên linux terminal. Tự động ghi nhớ mật khẩu git trên Ubuntu và linux. Git Credential Storage. Store và Cache.
-authors: [manhpt]
-tags: [commit, commitizen, git, versioning, workflow]
+description: >-
+  Cách lưu trữ mật khẩu git trên linux terminal. Tự động ghi nhớ mật khẩu git
+  trên Ubuntu và linux. Git Credential Storage. Store và Cache.
+authors:
+  - manhpt
+tags:
+  - commit
+  - commitizen
+  - git
+  - versioning
+  - workflow
 image: ./terminal-screen-1200x591.png
+date: '2020-02-17'
+last_modified: '2026-03-23'
+last_modified_note: Nội dung có thể đã lỗi thời. Vui lòng kiểm tra thông tin trước khi sử dụng.
 ---
 
 ![](./terminal-screen-1200x591.png)
