@@ -517,3 +517,13 @@ technical:
   label: Technical
   permalink: /technical
   description: Bài viết kỹ thuật sâu về architecture, implementation, và best practices.
+
+minimax:
+  label: MiniMax
+  permalink: /minimax
+  description: MiniMax là công ty AI startup của Trung Quốc, nổi tiếng với các mô hình ngôn ngữ lớn hiệu suất cao và context window khổng lồ.
+
+context-window:
+  label: Context Window
+  permalink: /context-window
+  description: Context window là số lượng token mà một LLM có thể xử lý trong một lần gọi, ảnh hưởng trực tiếp đến khả năng hiểu ngữ cảnh và tạo phản hồi chính xác.
