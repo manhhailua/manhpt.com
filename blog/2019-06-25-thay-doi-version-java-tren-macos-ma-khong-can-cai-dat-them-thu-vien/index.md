@@ -1,9 +1,19 @@
 ---
 title: Thay đổi version java trên macos mà không cần cài đặt thêm thư viện
-description: Thay đổi Java version mà không cần cài đặt thêm plugin hay thư viện. Chuyển đổi giữa các phiên bản Java trên cùng môi trường MacOS.
-authors: [manhpt]
-tags: [java, java_home, jenv, macos]
+description: >-
+  Thay đổi Java version mà không cần cài đặt thêm plugin hay thư viện. Chuyển
+  đổi giữa các phiên bản Java trên cùng môi trường MacOS.
+authors:
+  - manhpt
+tags:
+  - java
+  - java_home
+  - jenv
+  - macos
 image: ./java-logo-1200x671.png
+date: '2019-06-25'
+last_modified: '2026-03-23'
+last_modified_note: Nội dung có thể đã lỗi thời. Vui lòng kiểm tra thông tin trước khi sử dụng.
 ---
 
 ![](./java-logo-1200x671.png)

@@ -1,9 +1,20 @@
 ---
 title: Các thủ thuật cấu hình khi cài đặt K3S
-description: Thủ thuật cấu hình và cài đặt k3s. Cấu hình kubernetes. Cài đặt k3s với nhiều nodes. K3S là một phiên bản nhỏ nhẹ của Kubernetes.
-authors: [manhpt]
-tags: [cluster, install, k3s, kubernetes, rancher]
+description: >-
+  Thủ thuật cấu hình và cài đặt k3s. Cấu hình kubernetes. Cài đặt k3s với nhiều
+  nodes. K3S là một phiên bản nhỏ nhẹ của Kubernetes.
+authors:
+  - manhpt
+tags:
+  - cluster
+  - install
+  - k3s
+  - kubernetes
+  - rancher
 image: ./k3s-logo-square.png
+date: '2020-09-10'
+last_modified: '2026-03-23'
+last_modified_note: Nội dung có thể đã lỗi thời. Vui lòng kiểm tra thông tin trước khi sử dụng.
 ---
 
 ![](./k3s-logo-square.png)

@@ -23,7 +23,7 @@ This is a [Docusaurus v3](https://docusaurus.io/) personal engineering blog by M
 **Key config**: `docusaurus.config.js`
 - The `docs` preset plugin is **disabled**; the `blog` preset takes the root route
 - Default locale is `vi` (Vietnamese)
-- `src/pages/index.js` exists but causes a duplicate route warning with the blog root — this is a known issue in the repo
+- `src/pages/index.js` was removed to fix duplicate route warning. The blog now serves as the homepage without conflicts.
 
 ## Blog Post Conventions
 

@@ -1,10 +1,12 @@
 ---
+date: 2025-03-22
 title: Model Context Protocol (MCP) là gì?
 description: Model Context Protocol (MCP) là một giao thức chuẩn mở giúp kết nối mô hình ngôn ngữ lớn với dữ liệu và công cụ bên ngoài một cách liền mạch. Bài viết này giải thích khái niệm cốt lõi của MCP dựa trên bài viết từ Anthropic.
 authors: [manhpt]
 tags: [llm, mcp, anthropic, claude]
 image: ./mcp-architecture.png
 ---
+date: 2025-03-22
 
 ![MCP Architecture](./mcp-architecture.png)
 

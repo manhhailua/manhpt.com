@@ -1,9 +1,18 @@
 ---
 title: Sử dụng kiểu xuống dòng LF thay vì CRLF trong Git
-description: Loại bỏ sự đau đầu khi làm việc với git auto CRLF. Sử dụng LF làm mặc định thay vì CRLF và ngăn cản tự động chuyển LF thành CRLF.
-authors: [manhpt]
-tags: [git, crlf, lf]
+description: >-
+  Loại bỏ sự đau đầu khi làm việc với git auto CRLF. Sử dụng LF làm mặc định
+  thay vì CRLF và ngăn cản tự động chuyển LF thành CRLF.
+authors:
+  - manhpt
+tags:
+  - git
+  - crlf
+  - lf
 image: ./crlf.png
+date: '2019-02-25'
+last_modified: '2026-03-23'
+last_modified_note: Nội dung có thể đã lỗi thời. Vui lòng kiểm tra thông tin trước khi sử dụng.
 ---
 
 ![](./crlf.png)

@@ -1,9 +1,20 @@
 ---
 title: Backup và Restore Elasticsearch snapshot với AWS S3 trong Kubernetes
-description: Tạo snapshot backup trên single-node cũ và restore snapshot đó trên cluster mới. Chuyển dữ liệu elasticsearch.
-authors: [manhpt]
-tags: [backup, cluster, elasticsearch, restore, snapshot]
+description: >-
+  Tạo snapshot backup trên single-node cũ và restore snapshot đó trên cluster
+  mới. Chuyển dữ liệu elasticsearch.
+authors:
+  - manhpt
+tags:
+  - backup
+  - cluster
+  - elasticsearch
+  - restore
+  - snapshot
 image: ./zb0oftdluae80s2n3s7e-800x336.png
+date: '2020-12-30'
+last_modified: '2026-03-23'
+last_modified_note: Nội dung có thể đã lỗi thời. Vui lòng kiểm tra thông tin trước khi sử dụng.
 ---
 
 ![](./zb0oftdluae80s2n3s7e-800x336.png)

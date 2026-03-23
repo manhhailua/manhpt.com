@@ -1,10 +1,12 @@
 ---
+date: 2025-04-19
 title: AI Agent Cá Nhân Hóa - Bước Tiến Tới Tương Lai Nơi Mỗi Người Có Một "Trợ Lý Số" Riêng
 description: AI Agent cá nhân hóa đang trở thành xu hướng trong kỷ nguyên số hóa. Bài viết khám phá tiềm năng và thách thức của AI Agent cá nhân hóa, cùng với vai trò của Model Context Protocol (MCP) trong việc tích hợp các công cụ.
 authors: [manhpt]
 tags: [mcp, ai-agent, personalization]
 image: ./ai-agent-personalization.jpg
 ---
+date: 2025-04-19
 
 [![AI Agent Cá Nhân Hóa](./ai-agent-personalization.jpg)](./ai-agent-personalization.jpg)
 

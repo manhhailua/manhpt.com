@@ -1,9 +1,19 @@
 ---
 title: Cách cài đặt và sử dụng cùng lúc nhiều version nodejs trên windows
-description: Cài đặt và cấu hình nhiều version nodejs trên windows. Cài đặt bằng chocolatey. Cài đặt yarn. Lập trình nodejs trên windows.
-authors: [manhpt]
-tags: [multi-nodejs, nodejs, nvm, windows]
+description: >-
+  Cài đặt và cấu hình nhiều version nodejs trên windows. Cài đặt bằng
+  chocolatey. Cài đặt yarn. Lập trình nodejs trên windows.
+authors:
+  - manhpt
+tags:
+  - multi-nodejs
+  - nodejs
+  - nvm
+  - windows
 image: ./node_nvm_tw-1200x514.jpg
+date: '2020-04-02'
+last_modified: '2026-03-23'
+last_modified_note: Nội dung có thể đã lỗi thời. Vui lòng kiểm tra thông tin trước khi sử dụng.
 ---
 
 ![](./node_nvm_tw-1200x514.jpg)

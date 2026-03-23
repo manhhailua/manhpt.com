@@ -1,9 +1,21 @@
 ---
 title: Thêm tính năng git autocomplete cho powershell trên windows
-description: Post-git là một module Powershell cho phép tích hợp Git với Powershell. Hỗ trợ hiển thị các thông tin cơ bản và git autocomplete.
-authors: [manhpt]
-tags: [autocomplete, git, git autocomplete, posh, posh-git, powershell]
+description: >-
+  Post-git là một module Powershell cho phép tích hợp Git với Powershell. Hỗ trợ
+  hiển thị các thông tin cơ bản và git autocomplete.
+authors:
+  - manhpt
+tags:
+  - autocomplete
+  - git
+  - git autocomplete
+  - posh
+  - posh-git
+  - powershell
 image: ./powershell-posh-git-oh-my-posh.png
+date: '2021-04-05'
+last_modified: '2026-03-23'
+last_modified_note: Nội dung có thể đã lỗi thời. Vui lòng kiểm tra thông tin trước khi sử dụng.
 ---
 
 Post-git là một module Powershell cho phép tích hợp Git với Powershell hỗ trợ git autocomplete. Posh-git có vài tính năng quan trọng như:

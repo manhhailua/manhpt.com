@@ -27,7 +27,11 @@ const config = {
   projectName: "manhpt.com", // Usually your repo name.
 
   onBrokenLinks: "throw",
-  onBrokenMarkdownLinks: "warn",
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: "warn",
+    },
+  },
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
@@ -69,6 +73,15 @@ const config = {
   ],
 
   plugins: [
+    [
+      "@docusaurus/plugin-sitemap",
+      {
+        changefreq: "weekly",
+        priority: 0.5,
+        ignorePatterns: ["/tags/**", "/news/**"],
+        filename: "sitemap.xml",
+      },
+    ],
     [
       "@docusaurus/plugin-content-blog",
       {

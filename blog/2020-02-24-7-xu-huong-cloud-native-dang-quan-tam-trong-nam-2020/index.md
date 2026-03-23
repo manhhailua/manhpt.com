@@ -1,9 +1,19 @@
 ---
 title: 7 xu hướng Cloud Native đáng quan tâm trong năm 2020
-description: Cloud Native tiếp tục đà phát triển mạnh mẽ trong cộng đồng, ngày càng nhiều tổ chức áp dụng nó. Đây là những gì được mong đợi sẽ diễn ra trong năm 2020.
-authors: [manhpt]
-tags: [cloud native, devops, gitops, kubernetes]
+description: >-
+  Cloud Native tiếp tục đà phát triển mạnh mẽ trong cộng đồng, ngày càng nhiều
+  tổ chức áp dụng nó. Đây là những gì được mong đợi sẽ diễn ra trong năm 2020.
+authors:
+  - manhpt
+tags:
+  - cloud native
+  - devops
+  - gitops
+  - kubernetes
 image: ./Azure_Arc_Infographic-1200x675.jpg
+date: '2020-02-24'
+last_modified: '2026-03-23'
+last_modified_note: Nội dung có thể đã lỗi thời. Vui lòng kiểm tra thông tin trước khi sử dụng.
 ---
 
 ![](./Azure_Arc_Infographic-1200x675.jpg)
