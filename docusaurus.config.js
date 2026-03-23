@@ -74,15 +74,6 @@ const config = {
 
   plugins: [
     [
-      "@docusaurus/plugin-sitemap",
-      {
-        changefreq: "weekly",
-        priority: 0.5,
-        ignorePatterns: ["/tags/**", "/news/**"],
-        filename: "sitemap.xml",
-      },
-    ],
-    [
       "@docusaurus/plugin-content-blog",
       {
         /**
