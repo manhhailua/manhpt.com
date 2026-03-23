@@ -6,7 +6,6 @@ authors: [manhpt]
 tags: [mcp, ai-agent, personalization]
 image: ./ai-agent-personalization.jpg
 ---
-date: 2025-04-19
 
 [![AI Agent Cá Nhân Hóa](./ai-agent-personalization.jpg)](./ai-agent-personalization.jpg)
 

@@ -6,7 +6,6 @@ authors: [manhpt]
 tags: [llm, mcp, anthropic, claude]
 image: ./mcp-architecture.png
 ---
-date: 2025-03-22
 
 ![MCP Architecture](./mcp-architecture.png)
 

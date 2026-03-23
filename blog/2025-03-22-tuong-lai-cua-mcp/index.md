@@ -6,7 +6,6 @@ authors: [manhpt]
 tags: [mcp, langchain, langgraph, anthropic]
 image: ./mcp_explained_1086x1280.gif
 ---
-date: 2025-03-22
 
 [![MCP](./mcp_explained_1086x1280.gif)](./mcp_explained_1086x1280.gif)
 

@@ -7,8 +7,6 @@ authors: [manhpt]
 tags: [redux-action, async, react, redux, redux-saga]
 image: ./redux-saga.jpeg
 ---
-date: 2019-03-15
-last_modified: 2026-03-23
 
 ![](./redux-saga.jpeg)
 
