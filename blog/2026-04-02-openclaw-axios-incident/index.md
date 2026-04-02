@@ -8,8 +8,6 @@ date: 2026-04-02
 
 Nếu bạn đang chạy **OpenClaw** theo kiểu tự host và có bật **auto-update** hoặc một cơ chế cập nhật định kỳ tương tự, bạn nên **kiểm tra máy ngay lập tức**.
 
-Với tôi, đây cũng không phải một rủi ro "của người khác": chính setup OpenClaw self-hosted của tôi cũng nằm trong nhóm cần audit và rà lại lịch sử cài đặt trong cửa sổ sự cố. Điều đó không tự động chứng minh máy của tôi đã bị compromise, nhưng đủ để biến việc này thành một cuộc kiểm tra bắt buộc chứ không còn là cảnh báo mang tính lý thuyết.
-
 Bài này **không khẳng định official `openclaw` package đã được công khai xác nhận là độc hại**. Điểm cần quan tâm là khác: trong cửa sổ sự cố **Axios compromise** cuối tháng 3/2026, các hệ thống tự động cập nhật dependency có thể đã kéo phải package độc hại trong chuỗi phụ thuộc. Với một agent stack giữ nhiều secret và integration, đó là tình huống cần điều tra theo hướng forensic chứ không nên nhìn current state rồi kết luận vội.
 
 <!-- truncate -->
