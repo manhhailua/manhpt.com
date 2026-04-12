@@ -517,3 +517,13 @@ technical:
   label: Technical
   permalink: /technical
   description: Bài viết kỹ thuật sâu về architecture, implementation, và best practices.
+
+embedding:
+  label: Embedding
+  permalink: /embedding
+  description: Các bài viết về text embedding, vector representation, và hệ thống semantic search.
+
+rerank:
+  label: Rerank
+  permalink: /rerank
+  description: Các bài viết về reranker, cross-encoder, và bước xếp hạng lại trong retrieval pipeline.
