@@ -131,6 +131,12 @@ Bên vLLM, embedding được support qua:
 
 Nói cách khác, **vLLM thắng ở sự hợp nhất**, không phải vì embedding là trọng tâm duy nhất của nó. Nếu anh đang hỏi theo hướng performance thuần cho embedding service, đây là một khác biệt rất lớn.
 
+Có một nuance kỹ thuật đáng nói thêm ở đây: **vector do TEI và vLLM sinh ra sẽ không giống nhau hoàn toàn theo kiểu bit-by-bit identical**, ngay cả khi anh dùng cùng một embedding model. Lý do nằm ở chi tiết triển khai như kernel, dtype, batching path, hoặc cách runtime thực hiện pooling và suy luận số học.
+
+Nhưng trong thực tế, với điều kiện **cùng model, cùng preprocessing, cùng pooling contract và cùng normalization expectation**, khác biệt đó thường chỉ là **sai số số học rất nhỏ**. Nghĩa là ở level vận hành, anh hoàn toàn có thể xem chúng là **đủ gần để thay thế nhau** cho đa số use case retrieval thông thường.
+
+Tôi vẫn sẽ giữ một lưu ý nhỏ: nếu anh cần tính tái lập tuyệt đối hoặc đang tối ưu benchmark rất sát biên, tốt nhất nên rebuild lại index bằng đúng engine sẽ dùng ở production. Nhưng nếu câu hỏi là “có thể thay TEI bằng vLLM hoặc ngược lại mà không làm semantic behavior lệch đáng kể không?”, thì trong đa số trường hợp thực tế, câu trả lời là **có**.
+
 ## Với rerank, TEI hiện cho cảm giác “native” hơn
 
 ### TEI gọi đúng tên use case này
