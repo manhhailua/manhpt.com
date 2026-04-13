@@ -59,7 +59,7 @@ const config = {
           },
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: "https://github.com/manhhailua/manhpt.com/tree/master/blog",
+          editUrl: "https://github.com/manhhailua/manhpt.com/tree/main/blog",
           // Useful options to enforce blogging best practices
           onInlineTags: "warn",
           onInlineAuthors: "warn",

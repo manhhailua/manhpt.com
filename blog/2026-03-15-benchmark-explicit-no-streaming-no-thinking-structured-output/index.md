@@ -213,4 +213,4 @@ Sau khi public bài viết, chúng tôi đã tối ưu system prompt để giả
 - [DashScope Context Cache — Explicit Cache với cache_control marker](https://www.alibabacloud.com/help/en/model-studio/context-cache)
 - [Gemini API Context Caching](https://ai.google.dev/gemini-api/docs/caching)
 - [Gemini API Thinking](https://ai.google.dev/gemini-api/docs/thinking)
-- [Script benchmark](https://github.com/manhhailua/manhpt.com/blob/master/blog/2026-03-15-benchmark-explicit-no-streaming-no-thinking-structured-output/benchmark_explicit_structured_output.py) | [Kết quả raw](https://github.com/manhhailua/manhpt.com/blob/master/blog/2026-03-15-benchmark-explicit-no-streaming-no-thinking-structured-output/benchmark_results.json)
+- [Script benchmark](https://github.com/manhhailua/manhpt.com/blob/main/blog/2026-03-15-benchmark-explicit-no-streaming-no-thinking-structured-output/benchmark_explicit_structured_output.py) | [Kết quả raw](https://github.com/manhhailua/manhpt.com/blob/main/blog/2026-03-15-benchmark-explicit-no-streaming-no-thinking-structured-output/benchmark_results.json)
