@@ -146,6 +146,8 @@ Một tổ chức không chỉ muốn model “giỏi”. Họ muốn model hàn
 
 Những thứ này không nên train vào base model như một chân lý chung, vì nó khác nhau giữa từng tổ chức, từng repo, từng thời điểm.
 
+Ví dụ rất đời là có team cho agent mở pull request nhưng cấm push thẳng vào `main`, có team cho đọc log production nhưng cấm chạm dữ liệu khách hàng, và có team bắt buộc mọi hành động như gửi email hay chạy lệnh nhạy cảm đều phải qua một bước approval riêng. Những boundary kiểu đó không phải tri thức phổ quát, mà là policy cục bộ.
+
 Nói cách khác, **policy không phải là kiến thức phổ quát**. Nó là cấu hình vận hành. Và cấu hình vận hành thì hợp sống ngoài model hơn nhiều.
 
 ### 3. Skills gắn với organizational memory
@@ -236,6 +238,7 @@ Còn phần cục bộ, rủi ro, thay đổi liên tục, và cần audit, tố
 ## Nguồn tham khảo
 
 - OpenAI, *Introducing Codex*: [https://openai.com/index/introducing-codex/](https://openai.com/index/introducing-codex/)
-- OpenAI, Codex product/docs overview: [https://platform.openai.com/docs/codex](https://platform.openai.com/docs/codex)
+- OpenAI Developers, *Delegate to Codex in the cloud*: [https://developers.openai.com/codex/cloud](https://developers.openai.com/codex/cloud)
 - Anthropic, *Claude Code Subagents*: [https://code.claude.com/docs/en/sub-agents](https://code.claude.com/docs/en/sub-agents)
-- OpenClaw docs: [https://docs.openclaw.ai](https://docs.openclaw.ai)
+- OpenClaw docs, *Standing orders*: [https://docs.openclaw.ai/automation/standing-orders](https://docs.openclaw.ai/automation/standing-orders)
+- OpenClaw docs, *Hooks*: [https://docs.openclaw.ai/automation/hooks](https://docs.openclaw.ai/automation/hooks)
