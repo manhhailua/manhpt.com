@@ -29,7 +29,7 @@ Bức tranh AI toàn cầu hiện tại chia thành hai triết lý rõ rệt:
 
 OpenAI không thể cho không ChatGPT mãi được vì họ đốt hàng tỷ đô mỗi năm. Anthropic cũng vậy. Họ **phải** có doanh thu. Còn phía Trung Quốc, các công ty này vận hành theo logic hoàn toàn khác.
 
-## DeepSeek: Con dao 3 lưỡi của quỹ đầu cơ
+## DeepSeek: Sản phẩm phụ của một quỹ đầu cơ
 
 DeepSeek được sinh ra từ High-Flyer, quỹ đầu cơ định lượng do thiên tài toán học Lương Văn Phong sáng lập năm 2016. Đây không phải công ty khởi nghiệp AI thông thường — đây là một quỹ đầu cơ dùng AI để giao dịch, và công khai thành quả nghiên cứu thừa ra cho thế giới.
 
