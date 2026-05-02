@@ -527,3 +527,18 @@ rerank:
   label: Rerank
   permalink: /rerank
   description: Các bài viết về reranker, cross-encoder, và bước xếp hạng lại trong retrieval pipeline.
+
+china-ai:
+  label: China AI
+  permalink: /china-ai
+  description: Phân tích về hệ sinh thái AI Trung Quốc, từ DeepSeek, Qwen đến chiến lược quốc gia và cạnh tranh địa chính trị.
+
+ai-strategy:
+  label: AI Strategy
+  permalink: /ai-strategy
+  description: Phân tích chiến lược trong ngành AI, bao gồm mô hình kinh doanh, cạnh tranh thị trường, và xu hướng toàn cầu.
+
+open-source:
+  label: Open Source
+  permalink: /open-source
+  description: Các bài viết về mô hình mã nguồn mở, triết lý open-source trong AI, và tác động của open-source đến ngành công nghiệp.
