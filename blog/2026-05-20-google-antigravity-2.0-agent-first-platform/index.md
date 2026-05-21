@@ -3,109 +3,109 @@ title: "Google Antigravity 2.0: Từ IDE đơn lẻ thành nền tảng agent-fi
 authors: [manhpt]
 tags: [google, antigravity, agentic-ai, google-io, coding-agent, multi-agent, gemini, ai-tools, vietnamese]
 date: 2026-05-20
-description: "Google ra mắt Antigravity 2.0 tại I/O 2026 với desktop app, CLI, SDK, Managed Agents API, và enterprise platform. Đây không còn là một IDE — mà là cả hệ sinh thái multi-agent orchestration."
+description: "Google ra mắt Antigravity 2.0 tại I/O 2026 với ứng dụng desktop, CLI, SDK, Managed Agents API, và nền tảng doanh nghiệp. Đây không còn là một IDE — mà là cả hệ sinh thái điều phối đa tác nhân."
 ---
 
-Google vừa có một cú "lột xác" đáng gờm với Antigravity. Nếu phiên bản 1.0 ra mắt tháng 11/2025 chỉ là một IDE hỗ trợ coding bằng AI, thì Antigravity 2.0 là cả một hệ sinh thái phát triển xoay quanh **multi-agent orchestration**. Đây không còn là một công cụ — mà là một nền tảng.
+Google vừa có một cú "lột xác" đáng gờm với Antigravity. Nếu phiên bản 1.0 ra mắt tháng 11/2025 chỉ là một IDE hỗ trợ viết mã bằng AI, thì Antigravity 2.0 là cả một hệ sinh thái phát triển xoay quanh **điều phối đa tác nhân (multi-agent orchestration)**. Đây không còn là một công cụ — mà là một nền tảng.
 
-Điều đáng chú ý: Google đã dùng chính Antigravity để đồng phát triển Gemini 3.5 Flash — model mặc định của nền tảng này. "Eat your own dog food" ở cấp độ cao nhất.
+Điều đáng chú ý: Google đã dùng chính Antigravity để đồng phát triển Gemini 3.5 Flash — mô hình mặc định của nền tảng này. "Ăn cơm nhà nấu" ở cấp độ cao nhất.
 
 <!-- truncate -->
 
 ## Antigravity 2.0 thực sự là gì?
 
-Đừng nhầm: Antigravity 2.0 không phải là một app. Nó là **5 thành phần** được Google đóng gói thành một nền tảng thống nhất:
+Đừng nhầm: Antigravity 2.0 không phải là một ứng dụng. Nó là **5 thành phần** được Google đóng gói thành một nền tảng thống nhất:
 
 | Thành phần | Vai trò | Đối tượng |
 |---|---|---|
-| **Desktop App 2.0** | IDE standalone với multi-agent orchestration | Developer cá nhân |
-| **Antigravity CLI** | Terminal-based, viết bằng Go | Power user, automation, CI/CD |
-| **Antigravity SDK** | Truy cập programmatic vào agent harness | Team muốn host agent riêng |
-| **Managed Agents API** | Serverless agents qua Gemini API | Ai đang dùng Gemini API |
-| **Enterprise Agent Platform** | Triển khai enterprise qua Google Cloud | Tổ chức, doanh nghiệp |
+| **Desktop App 2.0** | IDE độc lập với điều phối đa tác nhân | Lập trình viên cá nhân |
+| **Antigravity CLI** | Chạy trên terminal, viết bằng Go | Người dùng thành thạo, tự động hóa, CI/CD |
+| **Antigravity SDK** | Truy cập lập trình vào bộ khung tác nhân | Nhóm muốn tự vận hành AI Agent |
+| **Managed Agents API** | Tác nhân phi máy chủ qua Gemini API | Ai đang dùng Gemini API |
+| **Enterprise Agent Platform** | Triển khai doanh nghiệp qua Google Cloud | Tổ chức, doanh nghiệp |
 
-Lượng surface sản phẩm trong một lần release này nhiều hơn phần lớn những gì Google ship trong cả năm.
+Lượng sản phẩm trong một đợt phát hành này nhiều hơn phần lớn những gì Google tung ra trong cả năm.
 
 ---
 
 ## 1. Desktop App 2.0 — Trái tim của nền tảng
 
-Desktop app là flagship. Ở 2.0, nó được xây lại từ đầu với những cải tiến cốt lõi:
+Desktop app là sản phẩm chủ lực. Ở 2.0, nó được xây lại từ đầu với những cải tiến cốt lõi:
 
 ### 🧩 Dynamic Subagents — Chia việc, chạy song song
 
-Đây là tính năng quan trọng nhất. Ở 1.0, Manager Surface chỉ cho phép theo dõi từng agent một. Ở 2.0, agent chính có thể **tự spawn subagents** để song song hóa công việc.
+Đây là tính năng quan trọng nhất. Ở 1.0, Manager Surface chỉ cho phép theo dõi từng tác nhân một. Ở 2.0, AI Agent chính có thể **tự sinh tác nhân con (subagent)** để song song hóa công việc.
 
-Ví dụ: bạn bảo agent "audit auth flow across all microservices". Nó tự chia thành một cây subagents, mỗi agent lo một service, tất cả chạy đồng thời. Kết quả stream ngược về Manager Surface.
+Ví dụ: bạn bảo AI Agent "kiểm tra luồng xác thực trên tất cả microservice". Nó tự chia thành một cây tác nhân con, mỗi tác nhân lo một dịch vụ, tất cả chạy đồng thời. Kết quả được truyền ngược về Manager Surface.
 
-Practical limit: khoảng 4-5 parallel agents trước khi performance degradation xuất hiện. Với máy hạn chế RAM, set `parallelAgents: 1` để chạy tuần tự.
+Giới hạn thực tế: khoảng 4-5 tác nhân song song trước khi hiệu năng suy giảm. Với máy hạn chế RAM, đặt `parallelAgents: 1` để chạy tuần tự.
 
-### ⏰ Scheduled Tasks — Agent chạy nền tự động
+### ⏰ Scheduled Tasks — Tác nhân chạy nền tự động
 
-Background automation giờ là first-class citizen. Định nghĩa cron-like schedule, agent tự chạy mà không cần mở app. Use case điển hình:
+Tự động hóa nền giờ được hỗ trợ đầy đủ. Định nghĩa lịch dạng cron, AI Agent tự chạy mà không cần mở ứng dụng. Trường hợp điển hình:
 
-- Nâng cấp dependencies hàng đêm
-- Security scan định kỳ
-- Refactoring sweep mỗi khi push release tag
+- Nâng cấp thư viện phụ thuộc hàng đêm
+- Quét bảo mật định kỳ
+- Dọn dẹp tái cấu trúc mỗi khi đẩy thẻ phát hành
 
-Quan trọng: thiết kế idempotent — cron-like có thể misfire và chạy 2 lần.
+Lưu ý quan trọng: thiết kế có tính lặp lại an toàn (idempotent) — lịch dạng cron có thể kích hoạt nhầm và chạy 2 lần.
 
-### 🎙️ Native Voice Commands
+### 🎙️ Lệnh bằng giọng nói
 
-Dictate code, yêu cầu diff, chạy test bằng giọng nói. Nhất quán với chiến lược voice rollout của Google trên Gmail, Docs. Nhanh cho short prompt, tệ cho multi-line specs — dùng kết hợp.
+Đọc mã, yêu cầu xem khác biệt, chạy kiểm thử bằng giọng nói. Nhất quán với chiến lược triển khai giọng nói của Google trên Gmail, Docs. Nhanh cho lệnh ngắn, không hợp cho đặc tả nhiều dòng — dùng kết hợp cả hai.
 
-### 🖥️ Browser Agent — Differentiator lớn nhất
+### 🖥️ Browser Agent — Điểm khác biệt lớn nhất
 
-Đây là **điểm khác biệt quan trọng nhất** so với Claude Code và Cursor. Antigravity 2.0 có một Chromium browser tích hợp sẵn, không phải plugin, cho phép agent:
+Đây là **điểm khác biệt quan trọng nhất** so với Claude Code và Cursor. Antigravity 2.0 có một trình duyệt Chromium tích hợp sẵn, không phải tiện ích gắn thêm, cho phép AI Agent:
 
-- Navigate pages
-- Click buttons
-- Toggle devtools
-- Switch mobile viewport
-- Visual QA frontend changes mà không cần viết Playwright tests
+- Duyệt trang web
+- Nhấn nút
+- Bật/tắt công cụ lập trình
+- Chuyển khung nhìn di động
+- Kiểm tra trực quan thay đổi frontend mà không cần viết kiểm thử Playwright
 
-Frontend-heavy teams: đây là lý do để switch. Backend/infra teams: không quan trọng lắm.
+Nhóm nặng frontend: đây là lý do để chuyển sang. Nhóm backend/hạ tầng: không quan trọng lắm.
 
 ### 🔗 Tích hợp hệ sinh thái Google
 
-- **Google AI Studio**: Export project qua lại với một click
-- **Android**: Build mobile apps với native agent loops
-- **Firebase**: Deploy không cần context switch
-- **Google Workspace**: Agent gọi trực tiếp Docs, Sheets, Calendar APIs
+- **Google AI Studio**: Xuất dự án qua lại với một nhấp chuột
+- **Android**: Dựng ứng dụng di động với vòng lặp tác nhân gốc
+- **Firebase**: Triển khai không cần chuyển ngữ cảnh
+- **Google Workspace**: AI Agent gọi trực tiếp API Docs, Sheets, Calendar
 
 ---
 
-## 2. Antigravity CLI — Terminal-first, Go-powered
+## 2. Antigravity CLI — Ưu tiên terminal, viết bằng Go
 
 CLI được viết lại bằng **Go** — nhanh hơn, nhẹ hơn Gemini CLI cũ. Điểm đáng giá:
 
-- Cùng một agent harness với desktop app → mọi cải tiến core agents tự động áp dụng cho cả hai
-- Preferences sync bidirectional với desktop app
-- SSH-ready — hoạt động mượt qua remote sessions
-- Hỗ trợ dynamic subagents ngay từ terminal
-- Wire vào pre-commit hooks, CI pipelines, pre-deploy gates
+- Cùng một bộ khung tác nhân với desktop app → mọi cải tiến tác nhân lõi tự động áp dụng cho cả hai
+- Tùy chọn đồng bộ hai chiều với desktop app
+- Sẵn sàng SSH — hoạt động mượt qua phiên từ xa
+- Hỗ trợ tác nhân con động ngay từ terminal
+- Gắn vào móc kiểm tra trước khi commit, đường ống CI, cổng kiểm tra trước triển khai
 
 ```bash
-# Install
+# Cài đặt
 curl -fsSL https://antigravity.google/cli/install.sh | bash
 
-# Usage
-antigravity agent run "refactor the rate-limit middleware" \
+# Sử dụng
+antigravity agent run "tái cấu trúc middleware giới hạn tốc độ" \
   --repo ./services/api \
   --model gemini-3.5-flash
 ```
 
-### ⚠️ Deadline: Gemini CLI chết ngày 18/06/2026
+### ⚠️ Hạn chót: Gemini CLI ngừng hoạt động ngày 18/06/2026
 
-Nếu bạn đang dùng Gemini CLI hoặc Gemini Code Assist IDE extensions trên free/AI Pro/AI Ultra plan → **phải migrate trước 18/06**. API sẽ ngừng phục vụ request. Enterprise users trên Standard/Enterprise licenses không bị ảnh hưởng.
+Nếu bạn đang dùng Gemini CLI hoặc tiện ích mở rộng Gemini Code Assist IDE trên gói miễn phí/AI Pro/AI Ultra → **phải di chuyển trước 18/06**. API sẽ ngừng phục vụ yêu cầu. Người dùng doanh nghiệp trên giấy phép Standard/Enterprise không bị ảnh hưởng.
 
-Các tính năng được giữ lại: Agent Skills, Hooks, Subagents, và Extensions (giờ gọi là Antigravity plugins). Nhưng không phải 1:1 feature parity — một số edge-case workflows cần điều chỉnh.
+Các tính năng được giữ lại: Agent Skill, Hooks, Subagents, và Extensions (nay gọi là Antigravity plugin). Nhưng không tương đương hoàn toàn về tính năng — một số quy trình ở trường hợp biên cần điều chỉnh.
 
 ---
 
-## 3. Antigravity SDK — Tự build agent, tự host
+## 3. Antigravity SDK — Tự dựng AI Agent, tự vận hành
 
-SDK mở quyền truy cập programmatic vào agent harness của Google:
+SDK mở quyền truy cập lập trình vào bộ khung tác nhân của Google:
 
 ```python
 from antigravity import Agent, Tool
@@ -113,97 +113,97 @@ from antigravity import Agent, Tool
 agent = Agent(
     model="gemini-3.5-flash",
     tools=[Tool.shell, Tool.code_edit, Tool.web_search],
-    system="You are a backend code reviewer. Block any PR that ships SQL without an index.",
+    system="Bạn là người duyệt mã backend. Từ chối mọi PR gửi SQL mà không có chỉ mục.",
 )
-result = agent.run("review PR #421")
+result = agent.run("duyệt PR #421")
 print(result.artifacts)
 ```
 
-Cài đặt: `pip install google-antigravity`. SDK được tối ưu cho Gemini models → latency thấp hơn, cost thấp hơn khi dùng Google's family. Host ở bất kỳ đâu: EC2, Vertex AI, on-prem.
+Cài đặt: `pip install google-antigravity`. SDK được tối ưu cho các mô hình Gemini → độ trễ thấp hơn, chi phí thấp hơn khi dùng họ mô hình của Google. Tự vận hành ở bất kỳ đâu: EC2, Vertex AI, tại chỗ.
 
 ---
 
-## 4. Managed Agents API — Serverless Agents
+## 4. Managed Agents API — Tác nhân phi máy chủ
 
-Đây là mảnh ghép quan trọng nhất cho API consumers. Một API call duy nhất → spin up một agent tự động trong **isolated Linux environment**, với:
+Đây là mảnh ghép quan trọng nhất cho người dùng API. Một lần gọi API duy nhất → khởi tạo một AI Agent tự động trong **môi trường Linux riêng biệt**, với:
 
-- **Persistent state** qua các multi-turn sessions — files và state được giữ nguyên giữa các lần gọi
-- Agent tự reasoning, dùng tools, chạy code, browse web
-- Không cần tự viết orchestration code
-- Pay-per-run (không phải per-token)
+- **Trạng thái bền vững** qua các phiên nhiều lượt — tệp và trạng thái được giữ nguyên giữa các lần gọi
+- AI Agent tự suy luận, dùng công cụ, chạy mã, duyệt web
+- Không cần tự viết mã điều phối
+- Trả tiền theo lần chạy (không phải theo token)
 
-Vị trí của Managed Agents trong stack:
+Vị trí của Managed Agents trong ngăn xếp:
 
-| Approach | Ai lo loop? | Khi nào dùng? |
+| Cách tiếp cận | Ai lo vòng lặp? | Khi nào dùng? |
 |---|---|---|
-| **Direct model calls** | Bạn | High-volume, single-step inference |
-| **Managed Agents** | Google | Long-running tasks, reliability quan trọng |
-| **Desktop / CLI / SDK** | Bạn (local) | Sensitive workloads không thể rời VPC |
+| **Gọi trực tiếp mô hình** | Bạn | Suy luận khối lượng lớn, một bước |
+| **Managed Agents** | Google | Tác vụ chạy dài, độ tin cậy quan trọng |
+| **Desktop / CLI / SDK** | Bạn (cục bộ) | Tải nhạy cảm không thể rời VPC |
 
-Team production sẽ mix cả ba. Direct calls cho high-volume inference. Managed Agents cho long-running tasks. SDK cho sensitive workloads.
+Nhóm vận hành thực tế sẽ pha trộn cả ba. Gọi trực tiếp cho suy luận khối lượng lớn. Managed Agents cho tác vụ chạy dài. SDK cho tải nhạy cảm.
 
 ---
 
-## 5. Enterprise — Gemini Enterprise Agent Platform
+## 5. Doanh nghiệp — Gemini Enterprise Agent Platform
 
 Cho tổ chức trên Google Cloud, Antigravity 2.0 tích hợp trực tiếp:
 
 - **SSO** qua Google Workspace
-- **Audit logs** mọi agent action
-- **VPC Service Controls** scoping
-- **BigQuery** cho run analytics
-- **Cloud KMS** cho tool credential storage
+- **Nhật ký kiểm toán** mọi hành động của AI Agent
+- **VPC Service Controls** giới hạn phạm vi
+- **BigQuery** cho phân tích lần chạy
+- **Cloud KMS** cho lưu trữ thông tin xác thực công cụ
 
-Điểm thú vị: cùng một agent definition chạy được trên SDK (dev-hosted) và Enterprise Platform (Google-hosted). Build local, ship lên platform, security team có controls họ cần — không cần rewrite agent.
+Điểm thú vị: cùng một định nghĩa AI Agent chạy được trên SDK (tự vận hành) và Enterprise Platform (Google vận hành). Dựng cục bộ, đưa lên nền tảng, đội bảo mật có các kiểm soát họ cần — không cần viết lại AI Agent.
 
 ---
 
-## Gemini 3.5 Flash — Model mặc định
+## Gemini 3.5 Flash — Mô hình mặc định
 
-Toàn bộ nền tảng chạy trên **Gemini 3.5 Flash** làm model mặc định. Theo Google:
+Toàn bộ nền tảng chạy trên **Gemini 3.5 Flash** làm mô hình mặc định. Theo Google:
 
-- Vượt Gemini 3.1 Pro trên hầu hết benchmarks
-- **Nhanh gấp 4 lần** các frontier models khác
+- Vượt Gemini 3.1 Pro trên hầu hết bài đánh giá chuẩn
+- **Nhanh gấp 4 lần** các mô hình tiên phong khác
 - Được đồng phát triển cùng chính Antigravity
 
-Tốc độ cực kỳ quan trọng khi nhiều agents chạy song song — latency compound qua các concurrent agent calls.
+Tốc độ cực kỳ quan trọng khi nhiều tác nhân chạy song song — độ trễ tích lũy qua các lần gọi tác nhân đồng thời.
 
 Hỗ trợ thêm: Claude Sonnet 4.5 và GPT-OSS.
 
 ### SWE-bench Verified: 76.2%
 
-Antigravity 2.0 đạt 76.2% trên SWE-bench Verified — chỉ kém ~1% so với top score của Claude Sonnet 4.5. Một con số Google có quyền tự hào.
+Antigravity 2.0 đạt 76.2% trên SWE-bench Verified — chỉ kém ~1% so với điểm cao nhất của Claude Sonnet 4.5. Một con số Google có quyền tự hào.
 
 ---
 
-## AI Studio Expansion
+## AI Studio mở rộng
 
-Không chỉ Antigravity, Google còn mở rộng toàn bộ developer surface:
+Không chỉ Antigravity, Google còn mở rộng toàn bộ bề mặt nhà phát triển:
 
-- **AI Studio mobile app**: Pre-register tuần này. Chụp ý tưởng trên điện thoại, có prototype khi về desktop
-- **Export to Antigravity**: Một click — toàn bộ project từ AI Studio sang local development, bao gồm context
-- **Android support**: Build Android app chỉ với prompt
-- **Google Play Console**: Publish app lên test track ngay trong AI Studio
+- **AI Studio ứng dụng di động**: Đăng ký trước tuần này. Chụp ý tưởng trên điện thoại, có nguyên mẫu khi về desktop
+- **Xuất sang Antigravity**: Một nhấp chuột — toàn bộ dự án từ AI Studio sang phát triển cục bộ, bao gồm ngữ cảnh
+- **Hỗ trợ Android**: Dựng ứng dụng Android chỉ với lời nhắc
+- **Google Play Console**: Xuất bản ứng dụng lên kênh kiểm thử ngay trong AI Studio
 
 ---
 
-## Pricing — Ba tier mới
+## Giá — Ba bậc mới
 
-| Plan | Giá/tháng | Limits |
+| Gói | Giá/tháng | Hạn mức |
 |---|---|---|
-| **Pro** | Miễn phí (trong AI Pro) | Baseline, ~20 req/ngày |
-| **AI Ultra** 🆕 | $100 | 5x Pro limits |
-| **AI Ultra Premium** | $200 (giảm từ $250) | 20x Pro limits |
+| **Pro** | Miễn phí (trong AI Pro) | Cơ bản, ~20 yêu cầu/ngày |
+| **AI Ultra** 🆕 | $100 | Gấp 5 lần hạn mức Pro |
+| **AI Ultra Premium** | $200 (giảm từ $250) | Gấp 20 lần hạn mức Pro |
 
-Heavy users (multi-repo refactors, scheduled sweeps, voice-driven sessions) sẽ nhanh chóng chạm trần Pro. $100 mua headroom; $200 thực chất là team plan.
+Người dùng nặng (tái cấu trúc đa kho, dọn dẹp theo lịch, phiên điều khiển bằng giọng nói) sẽ nhanh chóng chạm trần Pro. $100 mua dư địa; $200 thực chất là gói nhóm.
 
 ---
 
-## AGENTS.md — Cấu hình Multi-Agent
+## AGENTS.md — Cấu hình đa tác nhân
 
-Multi-agent system được cấu hình qua file `AGENTS.md` — tương tự `CLAUDE.md` của Claude Code. Định nghĩa agent roles, communication patterns, và orchestration rules bằng plain text. Antigravity đọc file này và thiết lập topology agent tương ứng.
+Hệ thống đa tác nhân được cấu hình qua tệp `AGENTS.md` — tương tự `CLAUDE.md` của Claude Code. Định nghĩa vai trò tác nhân, mẫu giao tiếp, và quy tắc điều phối bằng văn bản thuần. Antigravity đọc tệp này và thiết lập cấu trúc tác nhân tương ứng.
 
-Managed Agents API mở rộng thêm: định nghĩa behavior trong `AGENTS.md` + `SKILL.md`, đăng ký làm managed agent, gọi qua Gemini API.
+Managed Agents API mở rộng thêm: định nghĩa hành vi trong `AGENTS.md` + `SKILL.md`, đăng ký làm managed agent, gọi qua Gemini API.
 
 ---
 
@@ -211,22 +211,22 @@ Managed Agents API mở rộng thêm: định nghĩa behavior trong `AGENTS.md` 
 
 | | Antigravity 2.0 | Claude Code | Cursor |
 |---|---|---|---|
-| **Desktop IDE** | ✅ Standalone | ❌ | ✅ VS Code fork |
-| **CLI** | ✅ (Go, SSH-ready) | ✅ | ❌ |
+| **Desktop IDE** | ✅ Độc lập | ❌ | ✅ Nhánh VS Code |
+| **CLI** | ✅ (Go, SSH) | ✅ | ❌ |
 | **SDK** | ✅ | ✅ Agent SDK | ❌ |
-| **Multi-agent** | ✅ Dynamic subagents | Subagents | Single agent |
-| **Scheduled tasks** | ✅ | Continuous mode | ❌ |
-| **Voice** | ✅ | ❌ | ❌ |
-| **Browser agent** | ✅ Built-in | ❌ | ❌ |
-| **Managed API** | ✅ Gemini API | ✅ Claude Managed | ❌ |
-| **Default model** | Gemini 3.5 Flash | Claude Sonnet 4.5 | Claude Sonnet 4.5 |
-| **Giá khởi điểm** | Free | ~$100/tháng | ~$20/tháng |
+| **Đa tác nhân** | ✅ Tác nhân con động | Tác nhân con | Tác nhân đơn |
+| **Tác vụ định kỳ** | ✅ | Chế độ liên tục | ❌ |
+| **Giọng nói** | ✅ | ❌ | ❌ |
+| **Trình duyệt** | ✅ Tích hợp sẵn | ❌ | ❌ |
+| **API quản lý** | ✅ Gemini API | ✅ Claude Managed | ❌ |
+| **Mô hình mặc định** | Gemini 3.5 Flash | Claude Sonnet 4.5 | Claude Sonnet 4.5 |
+| **Giá khởi điểm** | Miễn phí | ~$100/tháng | ~$20/tháng |
 
-**Chọn Antigravity nếu:** frontend-heavy, cần visual verification, prototyping/greenfield, muốn parallel agents không cần viết orchestration code, hoặc đang dùng Gemini CLI (không có lựa chọn).
+**Chọn Antigravity nếu:** nặng frontend, cần kiểm tra trực quan, dựng nguyên mẫu/dự án mới, muốn tác nhân song song không cần viết mã điều phối, hoặc đang dùng Gemini CLI (không có lựa chọn khác).
 
-**Ở lại Claude Code nếu:** terminal-first, CI/CD-heavy, complex production repos.
+**Ở lại Claude Code nếu:** ưu tiên terminal, nặng CI/CD, kho vận hành phức tạp.
 
-**Ở lại Cursor nếu:** muốn IDE polished nhất với community lớn nhất.
+**Ở lại Cursor nếu:** muốn IDE trau chuốt nhất với cộng đồng lớn nhất.
 
 ---
 
@@ -234,29 +234,29 @@ Managed Agents API mở rộng thêm: định nghĩa behavior trong `AGENTS.md` 
 
 Thẳng thắn: Antigravity 2.0 không hoàn hảo ở ngày đầu.
 
-- **Installer conflicts** trên Windows được báo cáo
-- **Stability issues** trong complex repositories (Hacker News threads xác nhận)
-- Google đã phải ship **Logic Patch v2.1.4** sau khi agent revert những thay đổi của con người mà nó phân loại là "inefficiencies" — vấn đề không nên cần hotfix sớm như vậy
-- **CLI preview-quality trên Linux** — macOS và Windows mượt hơn
-- Nếu đang trên production systems → **đợi 30 ngày**. Nếu đang build thứ mới → **bắt đầu hôm nay**
+- **Xung đột trình cài đặt** trên Windows được báo cáo
+- **Vấn đề ổn định** trong kho mã phức tạp (bài đăng trên Hacker News xác nhận)
+- Google đã phải tung **Bản vá Logic v2.1.4** sau khi AI Agent hoàn tác những thay đổi của con người mà nó phân loại là "kém hiệu quả" — vấn đề không nên cần vá khẩn cấp sớm như vậy
+- **CLI chất lượng xem trước trên Linux** — macOS và Windows mượt hơn
+- Nếu đang trên hệ thống vận hành thực tế → **đợi 30 ngày**. Nếu đang dựng thứ mới → **bắt đầu hôm nay**
 
 ---
 
 ## Tổng kết
 
-Antigravity 2.0 là một cú bet lớn của Google: tương lai của developer surface không phải là một editor đơn lẻ, mà là một **chòm sao các công cụ agent-orchestration**:
+Antigravity 2.0 là một canh bạc lớn của Google: tương lai của bề mặt nhà phát triển không phải là một trình soạn thảo đơn lẻ, mà là một **chòm sao các công cụ điều phối tác nhân**:
 
-- **Desktop** cho craft
-- **CLI** cho automation
-- **SDK** cho customization
-- **Managed API** cho production
-- **Enterprise platform** cho scale
+- **Desktop** cho tinh chỉnh
+- **CLI** cho tự động hóa
+- **SDK** cho tùy biến
+- **Managed API** cho vận hành thực tế
+- **Nền tảng doanh nghiệp** cho quy mô lớn
 
-Browser agent là lãnh thổ mới thực sự. Managed Agents API trừu tượng hóa độ phức tạp orchestration mà developer hiện phải tự wire bằng tay. CLI viết bằng Go, SSH-ready, là một công cụ thực thụ — không phải afterthought.
+Trình duyệt tích hợp là lãnh thổ mới thực sự. Managed Agents API trừu tượng hóa độ phức tạp điều phối mà lập trình viên hiện phải tự gắn nối bằng tay. CLI viết bằng Go, sẵn sàng SSH, là một công cụ thực thụ — không phải thứ phụ nghĩ ra sau cùng.
 
-Nhưng đây không phải là no-brainer switch cho tất cả. Claude Code vẫn thống trị terminal-first, CI/CD-heavy workflows. Cursor vẫn có lợi thế community và polish. Antigravity thắng ở visual work, parallelism, và — với Gemini CLI users — là mandatory.
+Nhưng đây không phải là lựa chọn hiển nhiên cho tất cả. Claude Code vẫn thống trị quy trình ưu tiên terminal, nặng CI/CD. Cursor vẫn có lợi thế cộng đồng và độ trau chuốt. Antigravity thắng ở công việc trực quan, xử lý song song, và — với người dùng Gemini CLI — là bắt buộc.
 
-**Thử nó trên project mới trước khi commit. Và migrate Gemini CLI trước 18/06.**
+**Thử nó trên dự án mới trước khi cam kết. Và di chuyển Gemini CLI trước 18/06.**
 
 ---
 
