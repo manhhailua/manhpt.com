@@ -52,7 +52,7 @@ Lưu ý quan trọng: thiết kế có tính lặp lại an toàn (idempotent) �
 
 ### 🎙️ Lệnh bằng giọng nói
 
-Đọc mã, yêu cầu xem khác biệt, chạy kiểm thử bằng giọng nói. Nhất quán với chiến lược triển khai giọng nói của Google trên Gmail, Docs. Nhanh cho lệnh ngắn, không hợp cho đặc tả nhiều dòng — dùng kết hợp cả hai.
+Đọc mã, yêu cầu xem khác biệt, chạy kiểm thử bằng giọng nói. Nhất quán với chiến lược triển khai giọng nói của Google trên Gmail, Docs. Nhanh với lệnh ngắn, không phù hợp với đặc tả nhiều dòng — dùng kết hợp cả hai.
 
 ### 🖥️ Browser Agent — Điểm khác biệt lớn nhất
 
@@ -224,21 +224,21 @@ Managed Agents API mở rộng thêm: định nghĩa hành vi trong `AGENTS.md` 
 
 **Chọn Antigravity nếu:** nặng frontend, cần kiểm tra trực quan, dựng nguyên mẫu/dự án mới, muốn tác nhân song song không cần viết mã điều phối, hoặc đang dùng Gemini CLI (không có lựa chọn khác).
 
-**Ở lại Claude Code nếu:** ưu tiên terminal, nặng CI/CD, kho vận hành phức tạp.
+**Ở lại Claude Code nếu:** ưu tiên terminal, nặng CI/CD, kho mã phức tạp.
 
 **Ở lại Cursor nếu:** muốn IDE trau chuốt nhất với cộng đồng lớn nhất.
 
 ---
 
-## Những góc cạnh cần lưu ý
+## Những khía cạnh cần lưu ý
 
 Thẳng thắn: Antigravity 2.0 không hoàn hảo ở ngày đầu.
 
 - **Xung đột trình cài đặt** trên Windows được báo cáo
 - **Vấn đề ổn định** trong kho mã phức tạp (bài đăng trên Hacker News xác nhận)
 - Google đã phải tung **Bản vá Logic v2.1.4** sau khi AI Agent hoàn tác những thay đổi của con người mà nó phân loại là "kém hiệu quả" — vấn đề không nên cần vá khẩn cấp sớm như vậy
-- **CLI chất lượng xem trước trên Linux** — macOS và Windows mượt hơn
-- Nếu đang trên hệ thống vận hành thực tế → **đợi 30 ngày**. Nếu đang dựng thứ mới → **bắt đầu hôm nay**
+- **CLI bản xem trước trên Linux** — macOS và Windows mượt hơn
+- Nếu đang vận hành hệ thống thực tế → **đợi 30 ngày**. Nếu đang dựng thứ mới → **bắt đầu hôm nay**
 
 ---
 
