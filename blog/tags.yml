@@ -542,3 +542,38 @@ open-source:
   label: Open Source
   permalink: /open-source
   description: Các bài viết về mô hình mã nguồn mở, triết lý open-source trong AI, và tác động của open-source đến ngành công nghiệp.
+
+google:
+  label: Google
+  permalink: /google
+  description: Các bài viết về Google, từ sản phẩm, công nghệ đến chiến lược của gã khổng lồ công nghệ.
+
+antigravity:
+  label: Antigravity
+  permalink: /antigravity
+  description: Google Antigravity là nền tảng phát triển agent-first của Google, ra mắt tháng 11/2025, cho phép orchestrate nhiều autonomous agents làm việc song song.
+
+agentic-ai:
+  label: Agentic AI
+  permalink: /agentic-ai
+  description: Các bài viết về Agentic AI — hệ thống AI có khả năng tự động lập kế hoạch, ra quyết định và thực thi tác vụ phức tạp một cách độc lập.
+
+google-io:
+  label: Google I/O
+  permalink: /google-io
+  description: Tin tức và phân tích từ sự kiện Google I/O — hội nghị nhà phát triển thường niên của Google.
+
+coding-agent:
+  label: Coding Agent
+  permalink: /coding-agent
+  description: Các công cụ và nền tảng AI agent hỗ trợ lập trình, từ code generation đến autonomous software engineering.
+
+multi-agent:
+  label: Multi-Agent
+  permalink: /multi-agent
+  description: Hệ thống multi-agent — orchestration nhiều AI agents làm việc song song, phân chia công việc và phối hợp để giải quyết tác vụ phức tạp.
+
+ai-tools:
+  label: AI Tools
+  permalink: /ai-tools
+  description: Các công cụ và nền tảng AI dành cho developer, từ IDE tích hợp AI đến CLI, SDK và API cho agentic workflows.
