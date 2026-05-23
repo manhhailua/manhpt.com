@@ -577,3 +577,8 @@ ai-tools:
   label: AI Tools
   permalink: /ai-tools
   description: Các công cụ và nền tảng AI dành cho developer, từ IDE tích hợp AI đến CLI, SDK và API cho agentic workflows.
+
+architecture:
+  label: Architecture
+  permalink: /architecture
+  description: Các bài viết về kiến trúc phần mềm, system design, và vai trò của kiến trúc sư trong kỷ nguyên AI.
