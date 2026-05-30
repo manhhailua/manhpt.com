@@ -3,7 +3,7 @@ title: "Domain-Aware RAG: Khi Retrieval-Augmented Generation Rời Phòng Lab B�
 authors: [manhpt]
 tags: [rag, llm, ai-agent, multi-agent, benchmark, technical, vietnamese]
 date: 2026-05-30
-description: "Khảo sát 16 paper về domain-aware RAG trên 8 lĩnh vực: từ tài chính, y tế, pháp luật đến nông nghiệp, thiên văn và an ninh mạng. Tổng hợp xu hướng, insight và bài học cho doanh nghiệp."
+description: "Khảo sát 22 paper về domain-aware RAG trên 8 lĩnh vực: từ tài chính, y tế, pháp luật đến nông nghiệp, thiên văn và an ninh mạng. Tổng hợp xu hướng, insight và bài học cho doanh nghiệp."
 ---
 
 # Domain-Aware RAG: Khi Retrieval-Augmented Generation Rời Phòng Lab Bước Vào Thực Tiễn
@@ -366,7 +366,7 @@ Từ tài chính (agentic RAG với sub-query decomposition) đến pháp luật
 
 ### 1. Bắt Đầu Với Utility Evaluation — Không Phải Accuracy
 
-Hầu hết team build RAG bắt đầu bằng việc chọn embedding model, chunk size, vector DB. Nhưng insight từ 16 paper cho thấy: **hãy bắt đầu bằng việc định nghĩa "thế nào là document hữu ích" cho domain của bạn.** Một document hoàn toàn relevant về semantic có thể vô dụng — và ngược lại.
+Hầu hết team build RAG bắt đầu bằng việc chọn embedding model, chunk size, vector DB. Nhưng insight từ 22 paper cho thấy: **hãy bắt đầu bằng việc định nghĩa "thế nào là document hữu ích" cho domain của bạn.** Một document hoàn toàn relevant về semantic có thể vô dụng — và ngược lại.
 
 ### 2. Đừng Bỏ Qua Structured Data
 
@@ -382,7 +382,7 @@ AstroRAG và các hệ thống tài chính on-premise cho thấy: bạn không c
 
 ### 5. Đo Lường Bằng Operational Metrics, Không Chỉ Academic Metrics
 
-Paper 15 (Manufacturing QC) là ví dụ điển hình: ngoài Context Precision và Recall, hãy đo **time-to-correct-answer** và **error rate trong production**. Một hệ thống RAG có accuracy 95% nhưng mất 30 giây để trả lời có thể vô dụng trong môi trường manufacturing — nơi operator cần câu trả lời trong 5 giây.
+Paper 20 (Manufacturing QC) là ví dụ điển hình: ngoài Context Precision và Recall, hãy đo **time-to-correct-answer** và **error rate trong production**. Một hệ thống RAG có accuracy 95% nhưng mất 30 giây để trả lời có thể vô dụng trong môi trường manufacturing — nơi operator cần câu trả lời trong 5 giây.
 
 ---
 
@@ -400,27 +400,27 @@ Với doanh nghiệp, câu hỏi không còn là "có nên dùng RAG không", m�
 
 ## Tài Liệu Tham Khảo
 
-1. "Retrieval Augmented Generation (RAG) for Fintech: Agentic Design and Evaluation." arXiv 2510.25518, 2025.
+1. "Retrieval Augmented Generation (RAG) for Fintech: Agentic Design and Evaluation." [arXiv 2510.25518](https://arxiv.org/abs/2510.25518), 2025.
 2. "RAGPerf: Benchmarking Financial RAG Systems." 2025-2026.
 3. "Two-Phase Retrieval for Financial Documents." 2025.
 4. "QCEA: Query-Conditioned Evidence Alignment for Medical RAG." 2025.
 5. "Claim-Selective Certification for Medical RAG." 2025.
-6. Yang, R. et al. "Retrieval-Augmented Generation in Medicine: A Scoping Review." arXiv 2511.05901, 2025.
+6. Yang, R. et al. "Retrieval-Augmented Generation in Medicine: A Scoping Review." [arXiv 2511.05901](https://arxiv.org/abs/2511.05901), 2025.
 7. "ClaimRAG-LAW: Claim-Level Benchmark for Legal RAG." 2025.
-8. Lan, Q. et al. "Legal-DC: Benchmarking RAG for Legal Documents." arXiv 2603.11772, 2026.
-9. Li, H. et al. "LexRAG: Benchmarking RAG in Multi-Turn Legal Consultation." arXiv 2502.20640, 2025.
-10. Ravindran, D.J.S. et al. "AgroLLM: Connecting Farmers through LLMs." arXiv 2503.04788, 2025.
-11. Hasan, M.T. "AgriHubi — Domain-Adapted RAG for Finnish Agriculture." arXiv 2602.02208, 2026.
+8. Lan, Q. et al. "Legal-DC: Benchmarking RAG for Legal Documents." [arXiv 2603.11772](https://arxiv.org/abs/2603.11772), 2026.
+9. Li, H. et al. "LexRAG: Benchmarking RAG in Multi-Turn Legal Consultation." [arXiv 2502.20640](https://arxiv.org/abs/2502.20640), 2025.
+10. Ravindran, D.J.S. et al. "AgroLLM: Connecting Farmers through LLMs." [arXiv 2503.04788](https://arxiv.org/abs/2503.04788), 2025.
+11. Hasan, M.T. "AgriHubi — Domain-Adapted RAG for Finnish Agriculture." [arXiv 2602.02208](https://arxiv.org/abs/2602.02208), 2026.
 12. Uy, C.A.H. et al. "Domain-Specific vs. General Purpose LLMs in Agriculture." University of Southern Mindanao, 2025.
 13. "Hybrid ICL + RAG for Automatic Question Generation in Education." ACM FIRE, 2025.
 14. "Dialogical Learning Support in RAG-Based E-Learning." MDPI Information, 2026.
 15. Xu, X. et al. "CosmoPaperQA: Evaluating RAG Agents for Astrophysics." ICML 2025.
-16. Wang, Z. et al. "AstroRAG — PageRank-Based RAG for Astronomy QA." arXiv 2605.25039, IEEE CAI 2026.
+16. Wang, Z. et al. "AstroRAG — PageRank-Based RAG for Astronomy QA." [arXiv 2605.25039](https://arxiv.org/abs/2605.25039), IEEE CAI 2026.
 17. Beznosko, D. et al. "RAG in Physics and Astronomy Instruction." ICRC 2025.
-18. Islam, M.N.B., Saha, S. "From Detection to Response: DL and RAG for Network Intrusion Mitigation." arXiv 2605.17960, 2026.
-19. Li, Y. et al. "ManuRAG: Multi-modal RAG for Manufacturing QA." arXiv 2601.15434, 2026.
+18. Islam, M.N.B., Saha, S. "From Detection to Response: DL and RAG for Network Intrusion Mitigation." [arXiv 2605.17960](https://arxiv.org/abs/2605.17960), 2026.
+19. Li, Y. et al. "ManuRAG: Multi-modal RAG for Manufacturing QA." [arXiv 2601.15434](https://arxiv.org/abs/2601.15434), 2026.
 20. Qian, J. et al. "FAB-Bench: Adaptive RAG Benchmarking in Semiconductor Manufacturing." arXiv, May 2026.
-21. Molinari, G. et al. "EngiAI — Multi-Agent Framework for Engineering Design." arXiv 2605.19743, 2026.
+21. Molinari, G. et al. "EngiAI — Multi-Agent Framework for Engineering Design." [arXiv 2605.19743](https://arxiv.org/abs/2605.19743), 2026.
 22. "RAG for Manufacturing Quality Control." Politecnico di Torino, 2025.
 23. Gan et al. "RAG for Automotive Technical Documentation." 2026.
 
