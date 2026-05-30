@@ -85,7 +85,7 @@ Mức lương cho senior AI researcher tại các phòng lab hàng đầu đã v
 | Meta | Open-source (Llama) + hạ tầng quảng cáo khổng lồ |
 | xAI | Hạ tầng riêng (Colossus cluster) + quan hệ Tesla/SpaceX |
 
-### Nhóm 2: Kẻ Bám Đuổi Thông Minh (<5 tỷ USD/năm CapEx)
+### Nhóm 2: Kẻ Bám Đuổi Thông Minh (&lt;5 tỷ USD/năm CapEx)
 
 | Công ty | Chiến lược |
 |---------|------------|
