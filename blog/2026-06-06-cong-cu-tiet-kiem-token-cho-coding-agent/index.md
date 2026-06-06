@@ -10,11 +10,13 @@ Coding agent đang bước vào giai đoạn mà chi phí không chỉ nằm ở
 
 Vì vậy, vài tháng gần đây xuất hiện một lớp công cụ mới: không thay model, không thay IDE, mà đứng giữa agent và context để cắt bớt token. Bài này tập trung vào đúng nhóm đó: **Headroom, RTK, Caveman**, kèm một số tool lân cận như Save The Tokens và Claw Compactor.
 
+**Tóm tắt giải pháp**: nếu agent tốn token vì test/log/git output, bắt đầu với **RTK hoặc sqz**. Nếu agent đọc file quá rộng trong repo lớn, thử **LeanCTX, jCodeMunch hoặc TokToken**. Nếu workflow có nhiều RAG/API/log/multi-agent context, nghiên cứu **Headroom**. Nếu agent dài dòng, dùng **Caveman hoặc Save The Tokens**. Nếu đang xây platform riêng, xem **Claw Compactor** như primitive nén context. Và luôn nhớ: với security audit, repo không tin cậy, hoặc lỗi khó debug, hãy quay về raw output.
+
 <!-- truncate -->
 
 ## Tóm Tắt Nhanh
 
-Nếu chỉ muốn chọn nhanh:
+Nếu chỉ muốn chọn nhanh, dùng bảng này:
 
 | Công cụ | Tối ưu lớp nào | Hợp nhất khi | Cẩn thận với |
 |---|---|---|---|
