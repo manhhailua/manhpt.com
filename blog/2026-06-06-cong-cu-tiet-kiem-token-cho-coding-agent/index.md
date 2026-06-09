@@ -3,14 +3,14 @@ title: "Headroom, RTK, Caveman: Các Công Cụ Tiết Kiệm Token Cho Coding A
 authors: [manhpt]
 tags: [coding-agent, cost-optimization, ai-tools, llm, optimization, vietnamese, technical]
 date: 2026-06-06
-description: "Phân tích các công cụ tiết kiệm token cho coding agent như Headroom, RTK, Caveman, Save The Tokens và Claw Compactor: dùng ở đâu, lợi ích, rủi ro."
+description: "Phân tích các công cụ tiết kiệm token cho coding agent như Headroom, RTK, LeanCTX và Caveman: dùng ở đâu, lợi ích, rủi ro."
 ---
 
 Coding agent đang bước vào giai đoạn mà chi phí không chỉ nằm ở model nào rẻ hơn, mà ở việc **agent nhìn thấy bao nhiêu thứ không cần thiết**. Một lần `pytest` dài, một `git diff` quá rộng, một log Kubernetes ồn ào, một file `CLAUDE.md` phình dần qua nhiều tháng — tất cả đều biến thành input tokens, rồi tiếp tục bị kéo theo ở các vòng sau.
 
-Vì vậy, vài tháng gần đây xuất hiện một lớp công cụ mới: không thay model, không thay IDE, mà đứng giữa agent và context để cắt bớt token. Bài này tập trung vào đúng nhóm đó: **Headroom, RTK, Caveman**, kèm một số tool lân cận như Save The Tokens và Claw Compactor.
+Vì vậy, vài tháng gần đây xuất hiện một lớp công cụ mới: không thay model, không thay IDE, mà đứng giữa agent và context để cắt bớt token. Bài này tập trung vào đúng nhóm đó: **Headroom, RTK, LeanCTX và Caveman**.
 
-**Tóm tắt giải pháp**: nếu agent tốn token vì test/log/git output, bắt đầu với **RTK hoặc sqz**. Nếu agent đọc file quá rộng trong repo lớn, thử **LeanCTX, jCodeMunch hoặc TokToken**. Nếu workflow có nhiều RAG/API/log/multi-agent context, nghiên cứu **Headroom**. Nếu agent dài dòng, dùng **Caveman hoặc Save The Tokens**. Nếu đang xây platform riêng, xem **Claw Compactor** như primitive nén context. Và luôn nhớ: với security audit, repo không tin cậy, hoặc lỗi khó debug, hãy quay về raw output.
+**Tóm tắt giải pháp**: nếu agent tốn token vì test/log/git output, bắt đầu với **RTK**. Nếu agent đọc file quá rộng trong repo lớn, thử **LeanCTX hoặc jCodeMunch**. Nếu workflow có nhiều RAG/API/log/multi-agent context, nghiên cứu **Headroom**. Nếu agent dài dòng, dùng **Caveman**. Và luôn nhớ: với security audit, repo không tin cậy, hoặc lỗi khó debug, hãy quay về raw output.
 
 <!-- truncate -->
 
@@ -24,9 +24,7 @@ Nếu chỉ muốn chọn nhanh, dùng bảng này:
 | **Headroom** | Tool output, logs, JSON, RAG, file reads, proxy/MCP | Session nhiều tool output, nhiều agent, nhiều context lặp | Thêm proxy/runtime; không phải request nào cũng giảm mạnh |
 | **Caveman** | Output style, context/memory files, coding-agent CLI riêng | Agent quá dài dòng; muốn giảm assistant output và nén rules | Không giảm reasoning/tool/input tokens nhiều như headline |
 | **LeanCTX** | MCP/context layer: reads, shell, search, memory | Repo vừa/lớn, cần một context layer tổng hợp | Surface area lớn, docs thay đổi nhanh |
-| **sqz / jCodeMunch / TokToken** | File/shell compression, symbol retrieval | Agent đọc file quá rộng hoặc lặp lại | Tool mới, phải đo trên repo thật |
-| **Save The Tokens** | Skill guardrail/context discipline | Muốn drop-in skill nhẹ, ít config | Savings khiêm tốn hơn, phụ thuộc agent |
-| **Claw Compactor** | Deterministic context compression | Muốn compression engine local/reversible | Cần kiểm thử với code/security context, không dùng mù |
+| **jCodeMunch MCP** | Symbol-level retrieval, repo maps, AST/search bundles | Repo lớn, agent hay đọc nguyên file | Có thể miss context ngoài symbol; setup phức tạp hơn |
 
 Điểm chung: các tool này **không làm agent thông minh hơn**. Chúng làm agent ăn ít context rác hơn. Cũng giống ăn kiêng: có thể khỏe hơn, nhưng nếu cắt nhầm chất dinh dưỡng thì ngất.
 
@@ -279,7 +277,7 @@ Dùng LeanCTX nếu bạn muốn một context layer tổng hợp cho repo vừa
 - cần memory qua nhiều session;
 - cần dashboard/budget.
 
-Nếu chỉ có một pain point hẹp, ví dụ `pytest` output quá dài, RTK/sqz có thể đơn giản hơn.
+Nếu chỉ có một pain point hẹp, ví dụ `pytest` output quá dài, RTK hoặc một script lọc output tự viết có thể đơn giản hơn.
 
 ## 4. Caveman: Giảm Lời Thừa Của Agent
 
@@ -357,72 +355,16 @@ Dùng Caveman nếu:
 
 Đừng kỳ vọng Caveman thay thế RTK/Headroom. Nó xử lý **miệng agent**, không xử lý toàn bộ **đường tiêu hóa context**.
 
-## 5. Save The Tokens: Skill Nhẹ Cho Context Discipline
+## 5. Các Tool Đáng Theo Dõi Khác
 
-**Save The Tokens** là một open-source skill nhắm tới Claude Code, Cursor và các coding agent tương tự. Website claim giảm khoảng 13.9% total usage và 17.7% message tokens trong benchmark của họ, với skill size chỉ 83 tokens.
-
-Cài đặt:
-
-```bash
-npx skills add Redclawww/savethetokens -g
-```
-
-Nó tập trung vào:
-
-- smart guardrails: giữ agent trong scope;
-- context compression/checkpoint;
-- fewer retries: batch fixes, tránh lặp;
-- drop-in install.
-
-### Ưu Điểm
-
-- Nhẹ, ít setup.
-- Không cần proxy/hook phức tạp.
-- Hợp với người muốn cải thiện discipline hơn là thay pipeline.
-
-### Nhược Điểm
-
-- Savings khiêm tốn hơn RTK/Headroom trong heavy tool sessions.
-- Phụ thuộc agent có tuân thủ skill hay không.
-- Khó kiểm chứng độc lập nếu không đo token trước/sau trên cùng task.
-
-Nói ngắn: Save The Tokens giống "thói quen tốt được đóng gói thành skill"; không phải compression engine.
-
-## 6. Claw Compactor: Compression Engine Local/Reversible
-
-**Claw Compactor** là engine nén context/token mã nguồn mở, dùng pipeline nhiều stage. Các trang giới thiệu mô tả nó có 14-stage Fusion Pipeline, compression 15-82% tùy nội dung, zero LLM inference cost, reversible, có test suite lớn.
-
-Nó không phải coding agent UX như Caveman, cũng không phải shell wrapper như RTK. Nó là **compression primitive** có thể nhúng vào hệ thống agent/context pipeline.
-
-### Ưu Điểm
-
-- Local/deterministic, không cần gọi model khác để nén.
-- Có hướng reversible, phù hợp context cần khôi phục.
-- Hợp với JSON, logs, structured context.
-
-### Nhược Điểm
-
-- Cần tích hợp kỹ thuật nhiều hơn.
-- Không phải "cài là Claude Code tự tiết kiệm".
-- Với code/security/schema, compression phải được kiểm thử rất kỹ.
-
-Claw Compactor hợp với platform team hơn solo developer.
-
-## 7. Các Tool Đáng Theo Dõi Khác
-
-Ngoài ba cái tên chính, nhóm token-saving tools đang mọc rất nhanh. Một số tool đáng để theo dõi:
+Ngoài các nhóm chính, nhóm token-saving tools đang mọc rất nhanh. Một số tool đáng để theo dõi:
 
 | Tool | Tầng tối ưu | Điểm mạnh | Caveat |
 |---|---|---|---|
-| **sqz** | Shell/file output, dedup cache, MCP | Mental model đơn giản, mạnh với repeated reads, có raw escape hatch | Best-case phụ thuộc repetition; dedup refs có thể làm model bối rối |
 | **jCodeMunch MCP** | Symbol-level retrieval, repo maps, AST/search bundles | Hợp repo lớn, nơi agent hay đọc nguyên file | Có thể miss context ngoài symbol; setup phức tạp hơn |
-| **TokToken** | Local code index bằng ctags + SQLite FTS5 + MCP | Nhanh, deterministic, local, tốt cho symbol lookup | Beta, phụ thuộc Universal Ctags |
-| **tokensave** | Code-intelligence MCP, graph index, hooks, cost tracking | Tập trung vào Claude Code, có hooks chặn exploration lãng phí | Tool mới, cần kiểm tra privacy/counter settings |
-| **CtxSift** | Command-output distillation, cached recall sau compaction | Tập trung vào log/system/git/docker output | Nếu dùng model để distill, reliability phụ thuộc compressor |
-| **distill** | CLI output summarization | Rất đơn giản cho logs/test output | LLM-based summarization có thể bỏ chi tiết |
 | **ccusage / tokentop** | Observability | Không giảm token trực tiếp, nhưng đo spend/burn/cache | Không thay thế compression/filtering |
 
-Pattern chung: nếu agent đang **đọc quá nhiều file**, thử symbol/index tools như jCodeMunch hoặc TokToken. Nếu agent đang **đọc lại cùng context**, thử sqz/LeanCTX. Nếu bạn chưa biết token đi đâu, đo bằng ccusage/tokentop trước. Chữa bệnh bằng số liệu vẫn đỡ hơn chữa bằng cảm giác, dù cảm giác đôi khi rất tự tin.
+Pattern chung: nếu agent đang **đọc quá nhiều file**, thử context layer như LeanCTX hoặc symbol/index tools như jCodeMunch. Nếu bạn chưa biết token đi đâu, đo bằng ccusage/tokentop trước. Chữa bệnh bằng số liệu vẫn đỡ hơn chữa bằng cảm giác, dù cảm giác đôi khi rất tự tin.
 
 ## Ba Lớp Token Saving
 
@@ -430,7 +372,7 @@ Pattern chung: nếu agent đang **đọc quá nhiều file**, thử symbol/inde
 
 ### Lớp 1: Output Discipline
 
-Tool: Caveman, Save The Tokens, custom `AGENTS.md` rules.
+Tool: Caveman, custom `AGENTS.md` rules.
 
 Tối ưu:
 
@@ -464,7 +406,7 @@ Rủi ro:
 
 ### Lớp 3: Context Compression/Proxy
 
-Tool: Headroom, Claw Compactor, custom compression middleware.
+Tool: Headroom, custom compression middleware.
 
 Tối ưu:
 
@@ -486,10 +428,10 @@ Rủi ro:
 |---|---|---|
 | Claude Code/Codex hay đốt token ở test/log/git | RTK | Shell output là nguồn noise lớn nhất |
 | Multi-agent workflow, nhiều RAG/API/log | Headroom | Proxy/MCP/SDK bao phủ rộng hơn |
-| Repo lớn, agent hay đọc file quá rộng | LeanCTX, jCodeMunch, TokToken | Dùng signatures/map/symbol thay vì full file |
-| Agent đọc lại cùng file/output nhiều lần | sqz, LeanCTX | Cache/dedup giúp repeated reads rất rẻ |
-| Agent trả lời quá dài, khó đọc | Caveman hoặc Save The Tokens | Giảm output và retry overhead |
-| Muốn build agent platform riêng | Headroom + Claw Compactor | Có primitive/proxy để nhúng vào pipeline |
+| Repo lớn, agent hay đọc file quá rộng | LeanCTX, jCodeMunch | Dùng signatures/map/symbol thay vì full file |
+| Agent đọc lại cùng file/output nhiều lần | LeanCTX | Cache/dedup giúp repeated reads rẻ hơn |
+| Agent trả lời quá dài, khó đọc | Caveman | Giảm output và retry overhead |
+| Muốn build agent platform riêng | Headroom | Có proxy/SDK/MCP để nhúng vào pipeline |
 | Chưa biết token rò ở đâu | ccusage, tokentop, `rtk gain` | Đo trước khi tối ưu |
 | Security audit | Raw output + đo token thủ công | Token optimizer có thể che tín hiệu quan trọng |
 | Repo không tin cậy | Tắt project-local filters | Đừng để repo quyết định agent nhìn thấy gì |
@@ -526,8 +468,6 @@ Các tool này thường công bố số lớn:
 - RTK: 60-90% trên dev command output.
 - Headroom: 60-95% trên logs/JSON/RAG/tool output; median thực tế có thể thấp hơn nhiều khi request ngắn.
 - Caveman: 65-75% output tokens trong benchmark riêng; không đồng nghĩa giảm 75% tổng bill.
-- Save The Tokens: khoảng 14-18% trong benchmark website.
-- Claw Compactor: 15-82% tùy nội dung.
 
 Cách đọc đúng:
 
@@ -551,7 +491,7 @@ cost_per_successful_task =
 
 ### Solo Developer
 
-- Bật Caveman/Save The Tokens nếu agent quá dài dòng.
+- Bật Caveman nếu agent quá dài dòng.
 - Dùng RTK cho test/log/git output.
 - Dùng raw output khi debug khó.
 - Đo bằng `/usage`, `rtk gain`, hoặc usage report của agent.
@@ -566,7 +506,7 @@ cost_per_successful_task =
 
 ### Platform/Enterprise
 
-- Headroom/Claw Compactor ở gateway/context layer.
+- Headroom ở gateway/context layer.
 - RTK-style filtering cho terminal agent sandbox.
 - Audit logs có redaction.
 - Policy rõ: security/compliance tasks dùng raw output.
@@ -581,7 +521,7 @@ Headroom, RTK, LeanCTX và Caveman đại diện cho bốn hướng tối ưu kh
 - **LeanCTX**: biến file reads/search/shell/memory thành context layer có cache.
 - **Caveman**: ép agent nói ít hơn và nén một phần context files.
 
-Nếu phải chọn một thứ để bắt đầu, tôi sẽ chọn **RTK hoặc sqz** cho coding workflow thuần terminal, vì test/log/git output là nguồn rò token rõ nhất. Nếu repo lớn và agent hay đọc file quá rộng, hãy nhìn sang **LeanCTX, jCodeMunch hoặc TokToken**. Nếu đang xây platform agent hoặc multi-agent workflow, **Headroom** đáng nghiên cứu hơn. Nếu vấn đề là agent dài dòng và lặp lại văn mẫu, **Caveman** hoặc Save The Tokens đủ nhẹ để thử.
+Nếu phải chọn một thứ để bắt đầu, tôi sẽ chọn **RTK** cho coding workflow thuần terminal, vì test/log/git output là nguồn rò token rõ nhất. Nếu repo lớn và agent hay đọc file quá rộng, hãy nhìn sang **LeanCTX hoặc jCodeMunch**. Nếu đang xây platform agent hoặc multi-agent workflow, **Headroom** đáng nghiên cứu hơn. Nếu vấn đề là agent dài dòng và lặp lại văn mẫu, **Caveman** đủ nhẹ để thử.
 
 Nhưng nguyên tắc cuối cùng vẫn là: **đo trước, tối ưu sau, và luôn giữ đường quay về raw context**. Coding agent không cần đọc mọi thứ, nhưng nó phải được đọc đúng thứ. Đừng đổi một hóa đơn thấp hơn lấy một bug production khó hơn.
 
@@ -597,12 +537,5 @@ Nhưng nguyên tắc cuối cùng vẫn là: **đo trước, tối ưu sau, và 
 - Caveman: [github.com/JuliusBrussee/caveman](https://github.com/JuliusBrussee/caveman)
 - Caveman ecosystem: [getcaveman.dev](https://getcaveman.dev/)
 - Caveman Code: [github.com/JuliusBrussee/caveman-code](https://github.com/JuliusBrussee/caveman-code)
-- Save The Tokens: [savethetokens.xyz](https://www.savethetokens.xyz/)
-- Claw Compactor: [open-compress/claw-compactor](https://github.com/open-compress/claw-compactor)
-- sqz: [github.com/ojuschugh1/sqz](https://github.com/ojuschugh1/sqz)
 - jCodeMunch MCP: [github.com/jgravelle/jcodemunch-mcp](https://github.com/jgravelle/jcodemunch-mcp)
-- TokToken: [github.com/mauriziofonte/toktoken](https://github.com/mauriziofonte/toktoken)
-- tokensave: [github.com/aovestdipaperino/tokensave](https://github.com/aovestdipaperino/tokensave)
-- CtxSift: [ctxsift.dev](https://ctxsift.dev/)
-- distill: [github.com/samuelfaj/distill](https://github.com/samuelfaj/distill)
 - Token consumption study: [How Do AI Agents Spend Your Money?](https://arxiv.org/abs/2604.22750)
