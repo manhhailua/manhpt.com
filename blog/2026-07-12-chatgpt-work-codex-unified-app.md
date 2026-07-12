@@ -4,6 +4,7 @@ slug: "chatgpt-work-codex-unified-app"
 description: "Vì sao việc ChatGPT đưa Chat, Work và Codex về cùng một desktop app có thể thay đổi cách developer và knowledge worker dùng AI mỗi ngày."
 date: "2026-07-12"
 authors: [manhpt]
+image: /img/blog/chatgpt-work-codex-agent-competition-cover.svg
 tags:
   - ai-agent
   - coding-agent
@@ -131,21 +132,3 @@ Tôi tin đây là bước đi có thể giúp ChatGPT lấy lại sự chú ý 
 Trong kỷ nguyên agentic software, sản phẩm thắng không chỉ là sản phẩm có model mạnh nhất. Sản phẩm thắng là sản phẩm giữ được bối cảnh, làm việc tự nhiên với thói quen của người dùng, mở dần quyền chọn hạ tầng phù hợp, và giúp người dùng cảm thấy họ đang có một cộng sự thật sự chứ không phải đang điều phối nhiều công cụ rời rạc.
 
 Release này đi rất gần vào hướng đó.
-
----
-
-## LinkedIn Summary
-
-ChatGPT vừa có một release rất đáng chú ý: Chat, Work và Codex được đưa về cùng một ChatGPT desktop app.
-
-Đây không chỉ là chuyện gộp app. Đây là bước tiến lớn về trải nghiệm làm việc với AI.
-
-Trước đây, nhiều người dùng ChatGPT để suy nghĩ, phân tích, viết tài liệu, brainstorm; nhưng khi bắt đầu coding lại phải chuyển sang Claude Code, Cursor, OpenClaw, Hermes hoặc một agent tool khác. Ý tưởng nằm ở một nơi, thực thi nằm ở một nơi khác.
-
-Khi Chat, Work và Codex nằm trong cùng một app, mạch làm việc liền hơn: hỏi nhanh, làm research, tạo deliverable, rồi chuyển sang repo, terminal, diff và pull request.
-
-Một điểm cần theo dõi: ChatGPT Work/Codex hiện chưa cho chọn model ngoài như GLM-5.2, Qwen, Kimi hay DeepSeek ngay trong trải nghiệm sản phẩm. Codex local clients có tài liệu về custom model providers, nhưng đó vẫn là lớp cấu hình kỹ thuật, chưa phải model picker mở.
-
-Nếu OpenAI mở rõ hơn hướng này, đây sẽ là lợi thế rất lớn với dân lập trình, nhất là trong bối cảnh developer ngày càng nhạy cảm với quota và giới hạn sử dụng của Claude Code.
-
-Cuộc chơi coding agent sẽ không chỉ là model nào viết code tốt hơn. Nó sẽ là ai giữ được bối cảnh, cho developer nhiều quyền lựa chọn hơn, và đồng hành tốt hơn từ ý tưởng đến shipping.
