@@ -498,6 +498,11 @@ rag:
   permalink: /rag
   description: Retrieval-Augmented Generation (RAG) là kỹ thuật kết hợp truy xuất dữ liệu ngoài với mô hình ngôn ngữ để tạo phản hồi chính xác và cập nhật hơn.
 
+retrieval:
+  label: Retrieval
+  permalink: /retrieval
+  description: Retrieval — giai đoạn đi tìm và truy xuất thông tin liên quan trong hệ thống RAG, bao gồm vector search, keyword/SQL, graph và agentic retrieval.
+
 optimization:
   label: Optimization
   permalink: /optimization
