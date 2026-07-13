@@ -4,7 +4,7 @@ slug: "chatgpt-work-codex-unified-app"
 description: "Vì sao việc ChatGPT đưa Chat, Work và Codex về cùng một desktop app có thể thay đổi cách developer và knowledge worker dùng AI mỗi ngày."
 date: "2026-07-12"
 authors: [manhpt]
-image: /img/blog/chatgpt-work-codex-agent-competition-cover.svg
+image: ./chatgpt-work-codex-agent-competition-cover.svg
 tags:
   - ai-agent
   - coding-agent
@@ -15,7 +15,7 @@ tags:
   - ai-strategy
 ---
 
-# ChatGPT Gộp Chat, Work Và Codex: Một Bước Tiến Lớn Về Trải Nghiệm Làm Việc Với AI
+![ChatGPT gộp Chat, Work và Codex vào cùng một desktop app](./chatgpt-work-codex-agent-competition-cover.svg)
 
 Trong vài năm qua, ChatGPT đã trở thành nơi nhiều người bắt đầu suy nghĩ: hỏi nhanh, phân tích vấn đề, viết tài liệu, thiết kế hệ thống. Nhưng khi bước sang phần thực thi, nhất là viết code, nhiều người lại mở công cụ khác như Claude Code, Cursor, OpenClaw, Hermes hoặc một coding agent trong terminal.
 
