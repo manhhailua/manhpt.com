@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">AI coding agent competition cover</title>
+  <desc id="desc">A four-way competition between ChatGPT, Claude, Cursor, and open agents around a central code workspace.</desc>
+  <defs>
+    <radialGradient id="bgGlow" cx="50%" cy="45%" r="70%">
+      <stop offset="0%" stop-color="#1f3b5f"/>
+      <stop offset="45%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#070b13"/>
+    </radialGradient>
+    <linearGradient id="screen" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#10213a"/>
+      <stop offset="100%" stop-color="#0a1020"/>
+    </linearGradient>
+    <linearGradient id="green" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#54e28b"/>
+      <stop offset="100%" stop-color="#16a34a"/>
+    </linearGradient>
+    <linearGradient id="purple" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#c084fc"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#60a5fa"/>
+      <stop offset="100%" stop-color="#2563eb"/>
+    </linearGradient>
+    <linearGradient id="orange" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fb923c"/>
+      <stop offset="100%" stop-color="#ec4899"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="24" stdDeviation="24" flood-color="#000" flood-opacity="0.35"/>
+    </filter>
+    <filter id="softGlow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bgGlow)"/>
+  <g opacity="0.16" stroke="#94a3b8" stroke-width="1">
+    <path d="M0 150H1600M0 300H1600M0 450H1600M0 600H1600M0 750H1600"/>
+    <path d="M160 0V900M320 0V900M480 0V900M640 0V900M800 0V900M960 0V900M1120 0V900M1280 0V900M1440 0V900"/>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="448" y="170" width="704" height="410" rx="28" fill="url(#screen)" stroke="#6b7280" stroke-width="2"/>
+    <rect x="476" y="202" width="648" height="48" rx="12" fill="#111827"/>
+    <circle cx="504" cy="226" r="7" fill="#ef4444"/>
+    <circle cx="528" cy="226" r="7" fill="#f59e0b"/>
+    <circle cx="552" cy="226" r="7" fill="#22c55e"/>
+    <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="22" fill="#cbd5e1">
+      <text x="500" y="306">agent.task(&quot;review-diff&quot;)</text>
+      <text x="500" y="354" fill="#86efac">+ unify chat, work, code</text>
+      <text x="500" y="402" fill="#93c5fd">+ preserve context</text>
+      <text x="500" y="450" fill="#f0abfc">+ compare agent workflows</text>
+      <text x="500" y="498" fill="#fdba74">- fragmented tools</text>
+    </g>
+  </g>
+
+  <g transform="translate(95 120)" filter="url(#shadow)">
+    <rect width="330" height="230" rx="32" fill="#08151d" stroke="#34d399" stroke-width="3"/>
+    <circle cx="82" cy="88" r="48" fill="url(#green)" filter="url(#softGlow)"/>
+    <path d="M60 92c0-20 18-36 42-36s42 16 42 36-18 36-42 36c-8 0-15-2-21-5l-25 10 9-23c-3-5-5-11-5-18z" fill="#ecfdf5"/>
+    <text x="158" y="82" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="800" fill="#ecfdf5">ChatGPT</text>
+    <text x="158" y="125" font-family="Inter, Arial, sans-serif" font-size="20" fill="#a7f3d0">chat + work + codex</text>
+    <path d="M246 230L448 420" stroke="#34d399" stroke-width="4" stroke-dasharray="10 12" opacity="0.75"/>
+  </g>
+
+  <g transform="translate(95 560)" filter="url(#shadow)">
+    <rect width="330" height="230" rx="32" fill="#160b22" stroke="#a855f7" stroke-width="3"/>
+    <circle cx="82" cy="88" r="48" fill="url(#purple)" filter="url(#softGlow)"/>
+    <path d="M82 42l42 76H40L82 42zm0 26L62 104h40L82 68z" fill="#f5f3ff"/>
+    <text x="158" y="82" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="800" fill="#faf5ff">Claude</text>
+    <text x="158" y="125" font-family="Inter, Arial, sans-serif" font-size="20" fill="#d8b4fe">terminal-native agent</text>
+    <path d="M250 0L448 -170" stroke="#a855f7" stroke-width="4" stroke-dasharray="10 12" opacity="0.75"/>
+  </g>
+
+  <g transform="translate(1175 120)" filter="url(#shadow)">
+    <rect width="330" height="230" rx="32" fill="#08111f" stroke="#60a5fa" stroke-width="3"/>
+    <circle cx="82" cy="88" r="48" fill="url(#blue)" filter="url(#softGlow)"/>
+    <path d="M62 48l72 42-36 8 20 36-20 11-20-37-26 26 10-86z" fill="#eff6ff"/>
+    <text x="158" y="82" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="800" fill="#eff6ff">Cursor</text>
+    <text x="158" y="125" font-family="Inter, Arial, sans-serif" font-size="20" fill="#bfdbfe">IDE-native coding</text>
+    <path d="M0 230L-270 420" stroke="#60a5fa" stroke-width="4" stroke-dasharray="10 12" opacity="0.75"/>
+  </g>
+
+  <g transform="translate(1175 560)" filter="url(#shadow)">
+    <rect width="330" height="230" rx="32" fill="#1f1010" stroke="#fb7185" stroke-width="3"/>
+    <circle cx="82" cy="88" r="48" fill="url(#orange)" filter="url(#softGlow)"/>
+    <g fill="#fff7ed">
+      <circle cx="82" cy="62" r="10"/>
+      <circle cx="54" cy="112" r="10"/>
+      <circle cx="110" cy="112" r="10"/>
+      <path d="M76 68L59 103M88 68l17 35M65 112h34" stroke="#fff7ed" stroke-width="7" stroke-linecap="round"/>
+    </g>
+    <text x="158" y="78" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="800" fill="#fff7ed">Open Agents</text>
+    <text x="158" y="122" font-family="Inter, Arial, sans-serif" font-size="20" fill="#fed7aa">OpenClaw · Hermes</text>
+    <path d="M0 0L-270 -170" stroke="#fb7185" stroke-width="4" stroke-dasharray="10 12" opacity="0.75"/>
+  </g>
+
+  <g transform="translate(650 640)" filter="url(#shadow)">
+    <rect width="300" height="92" rx="46" fill="#0f172a" stroke="#38bdf8" stroke-width="2"/>
+    <text x="150" y="38" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="800" fill="#e0f2fe">AI Coding Agents</text>
+    <text x="150" y="66" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" fill="#bae6fd">competition for workflow ownership</text>
+  </g>
+</svg>
