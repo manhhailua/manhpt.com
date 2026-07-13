@@ -23,6 +23,8 @@ Nói ngắn gọn: ý tưởng nằm ở ChatGPT, còn phần làm thật lại 
 
 OpenAI công bố desktop app mới của ChatGPT gộp Chat, Work và Codex vào cùng một ứng dụng: Chat cho hỏi đáp, Work cho nghiên cứu hoặc tạo đầu ra hoàn chỉnh, Codex cho phát triển phần mềm. Codex app cũng được đưa vào ChatGPT desktop app mới, kèm các năng lực như chỉnh sửa trực tiếp trong diff, review pull request ở side panel, computer use nhanh hơn và hỗ trợ nhiều repository trong một project. Nguồn: [OpenAI release notes](https://openai.com/products/release-notes/), [OpenAI announcement](https://openai.com/index/chatgpt-for-your-most-ambitious-work/), [migration guidance](https://help.openai.com/en/articles/20001276-moving-to-the-new-chatgpt-desktop-app).
 
+<!-- truncate -->
+
 ## Vì Sao Trải Nghiệm Này Quan Trọng?
 
 Đây không chỉ là chuyện gộp app. Đây là thay đổi về trải nghiệm làm việc với AI.
