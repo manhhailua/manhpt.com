@@ -19,7 +19,7 @@ Sự vươn lên của Anthropic quá nhanh. Nhanh đến mức họ bắt đầ
 
 Công ty tôi liên tục liên hệ với Anthropic để xử lý các trường hợp account bị chặn — không có phản hồi. Không phải phản hồi chậm. Là không có. Khi một nhà cung cấp thu tiền Enterprise mà im lặng trước sự cố chặn truy cập, đó không còn là lỗi vận hành nữa. Đó là tín hiệu rằng họ không cần bạn bằng cách bạn cần họ.
 
-Và khi vendor nghĩ họ không cần bạn, đó là lúc cần备 một cánh cửa thoát.
+Và khi vendor nghĩ họ không cần bạn, đó là lúc cần chuẩn bị một cánh cửa thoát.
 
 ## Những Gì Tôi Giữ Lại: Codex và Cursor
 
@@ -33,7 +33,7 @@ Nhưng nói "dùng Cursor" thì nghe rất tử tế. Thực tế thì: tôi m�
 
 ### Codex (desktop app) — cực kỳ hài lòng
 
-Với Codex desktop, tôi đang rất满意 với **GPT 5.6 Sol High**. Thực task cực nhanh, ổn định, ít drama. Gói Plus tạm đủ cho công việc vẽ vời, brainstorm, viết tài liệu. Coding nặng thì xác định vẫn dùng Cursor một thời gian nữa rồi đánh giá lại.
+Với Codex desktop, tôi đang rất ưng ý với **GPT 5.6 Sol High**. Thực task cực nhanh, ổn định, ít drama. Gói Plus tạm đủ cho công việc vẽ vời, brainstorm, viết tài liệu. Coding nặng thì xác định vẫn dùng Cursor một thời gian nữa rồi đánh giá lại.
 
 OpenAI hiện đang làm đúng thứ mà Anthropic đang bỏ lỡ: sản phẩm gọn, đáng tin, và không làm người dùng cảm thấy mình đang xin việc.
 
