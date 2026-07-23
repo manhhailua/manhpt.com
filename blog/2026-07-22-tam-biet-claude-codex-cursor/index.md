@@ -5,6 +5,7 @@ authors: [manhpt]
 tags: [anthropic, claude-code, codex, cursor, coding-agent, ai-strategy]
 date: 2026-07-22
 description: "Tôi quyết định dừng Claude subscription, tạm bỏ hẳn Claude Code và chuyển sang Codex, Cursor CLI để tìm công cụ AI coding phù hợp lâu dài."
+image: /img/blog/tam-biet-claude-cursor-codex-cover-v2.png
 ---
 
 Một quyết định đã ấp ủ từ lâu, giờ mới có dịp ngồi viết lại: **tôi huỷ Claude subscription và tạm dừng hoàn toàn Claude Code.** Không phải vì Claude yếu, mà vì trải nghiệm với Anthropic khiến tôi không còn muốn đặt phần lớn workflow của mình vào một nhà cung cấp duy nhất.
