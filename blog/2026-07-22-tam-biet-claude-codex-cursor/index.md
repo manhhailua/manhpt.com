@@ -15,7 +15,7 @@ Bài này không phải bài đánh giá benchmark. Đây là nhật ký vận h
 
 ## Anthropic Đang Bị Cái "Ngáo Quyền Lực" Kéo Đi
 
-Sự vươn lên của Anthropic quá nhanh. Nhanh đến mức họ bắt đầu phải chọn lọc khách hàng, dành hạ tầng cho những người "quan trọng hơn". Điều đó hiểu được về mặt kinh doanh. Nhưng cách họ support khách hàng Enterprise thì không thể hiểu nổi.
+Sự vươn lên của Anthropic quá nhanh. Nhanh đến mức họ bắt đầu phải chọn lọc khách hàng, dành hạ tầng cho những người "quan trọng hơn". Điều đó hiểu được về mặt kinh doanh. Nhưng cách họ hỗ trợ khách hàng Enterprise thì không thể hiểu nổi.
 
 Công ty tôi liên tục liên hệ với Anthropic để xử lý các trường hợp account bị chặn — không có phản hồi. Không phải phản hồi chậm. Là không có. Khi một nhà cung cấp thu tiền Enterprise mà im lặng trước sự cố chặn truy cập, đó không còn là lỗi vận hành nữa. Đó là tín hiệu rằng họ không cần bạn bằng cách bạn cần họ.
 
@@ -33,13 +33,13 @@ Nhưng nói "dùng Cursor" thì nghe rất tử tế. Thực tế thì: tôi m�
 
 ### Codex (desktop app) — cực kỳ hài lòng
 
-Với Codex desktop, tôi đang rất ưng ý với **GPT 5.6 Sol High**. Thực task cực nhanh, ổn định, ít drama. Gói Plus tạm đủ cho công việc vẽ vời, brainstorm, viết tài liệu. Coding nặng thì xác định vẫn dùng Cursor một thời gian nữa rồi đánh giá lại.
+Với Codex desktop, tôi đang rất ưng ý với **GPT 5.6 Sol High**. Chạy task cực nhanh, ổn định, ít drama. Gói Plus tạm đủ cho công việc vẽ vời, brainstorm, viết tài liệu. Coding nặng thì xác định vẫn dùng Cursor một thời gian nữa rồi đánh giá lại.
 
 OpenAI hiện đang làm đúng thứ mà Anthropic đang bỏ lỡ: sản phẩm gọn, đáng tin, và không làm người dùng cảm thấy mình đang xin việc.
 
 ## Mô Hình Trung Quốc Đang Lên Ngôi
 
-Quý vừa rồi tôi vẫn sống rất tốt với **GLM + Claude Code (free tier)**. Không chết. Không gãy mạch làm việc. Mô hình Trung Quốc như Kimi, GLM đang nhanh chóng lấp đầy khoảng trống mà Anthropic cố tình tạo ra bằng cách siết quota và nâng giá.
+Quý vừa rồi tôi vẫn sống rất tốt với **GLM + Claude Code (gói miễn phí)**. Không chết. Không gãy mạch làm việc. Mô hình Trung Quốc như Kimi, GLM đang nhanh chóng lấp đầy khoảng trống mà Anthropic cố tình tạo ra bằng cách siết quota và nâng giá.
 
 Đó là thực tế quan trọng: lựa chọn thay thế đã tồn tại, và đủ tốt. Chuyện "không có Claude thì không code được" giờ là truyền thuyết, không phải dữ kiện.
 
@@ -49,7 +49,7 @@ Nói thẳng hơn: **Claude Code + GLM vẫn là một combo rất tốt** — m
 
 Giờ tôi muốn cắt đứt Claude triệt để, không phải chỉ đổi model. Nên quyết định thử nghiệm **Cursor CLI (agent)** xem sao. Mục tiêu rõ ràng: một harness khác, không phụ thuộc Anthropic. Nếu nó tốt một nửa Cursor GUI mà không cần gọi Claude Code phía sau thì đã là thắng.
 
-Tôi không ghét Claude hay Anthropic. Tôi chỉ không muốn phụ thuộc vào một vendor nghĩ rằng quyền lực cho phép họ được phép lờ đi khách hàng trả tiền. Thị trường đang có nhiều lựa chọn hơn, rẻ hơn, và — quan trọng nhất — tôn trọng người dùng hơn.
+Tôi không ghét Claude hay Anthropic. Tôi chỉ không muốn phụ thuộc vào một vendor nghĩ rằng quyền lực cho phép họ được phép lờ đi khách hàng trả ít tiền. Thị trường đang có nhiều lựa chọn hơn, rẻ hơn, và — quan trọng nhất — tôn trọng người dùng hơn.
 
 Khi vendor nghĩ họ không cần bạn, cách tốt nhất là chứng minh họ đúng.
 
