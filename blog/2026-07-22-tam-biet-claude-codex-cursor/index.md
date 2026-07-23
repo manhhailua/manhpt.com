@@ -55,4 +55,4 @@ Khi vendor nghĩ họ không cần bạn, cách tốt nhất là chứng minh h�
 
 ---
 
-*Cập nhật tiếp theo sau khi thử Cursor CLI một thời gian. Nếu kết quả tốt, đây sẽ không chỉ là lúc Anthropic bớt ngáo quyền lực — mà là lúc họ bớt đi một khách hàng vĩnh viễn.*
+*Cập nhật tiếp theo sau khi thử Cursor CLI một thời gian. Nếu kết quả tốt, đây sẽ không chỉ là lúc Anthropic bớt ngáo quyền lực — mà là lúc họ mất đi một khách hàng vĩnh viễn.*
