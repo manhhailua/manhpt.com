@@ -1,58 +1,60 @@
 ---
-title: "Tạm Biệt Claude: Vì Sao Tôi Dừng Claude Subscription Và Giữ Lại Codex, Cursor"
+title: "Tạm Biệt Claude: Vì Sao Tôi Dừng Claude Subscription Và Chuyển Sang Codex, Cursor"
 slug: tam-biet-claude-codex-cursor
 authors: [manhpt]
-tags: [anthropic, claude, codex, cursor, openai, claude-code, coding-agent, ai-tools, ai-strategy, vietnamese]
+tags: [anthropic, claude-code, codex, cursor, coding-agent, ai-strategy]
 date: 2026-07-22
-description: "Đã đến lúc Anthropic bớt ngáo quyền lực. Tôi quyết định từ bỏ Claude subscription, giữ Codex và Cursor, và thử nghiệm Cursor CLI để rũ bỏ hoàn toàn Claude. Câu chuyện cá nhân về chọn công cụ AI trong một quý đầy biến động."
+description: "Tôi quyết định dừng Claude subscription, tạm bỏ hẳn Claude Code và chuyển sang Codex, Cursor CLI để tìm công cụ AI coding phù hợp lâu dài."
 ---
 
-Một quyết định đã ấp ủ từ lâu, giờ mới đủ bình tĩnh để viết ra: **tôi huỷ Claude subscription.** Không phải vì Claude yếu. Mà vì Anthropic đang hành xử như một kẻ đương nhiên được chọn, bất kể bạn trả bao nhiêu tiền.
+Một quyết định đã ấp ủ từ lâu, giờ mới đủ bình tĩnh để viết ra: **tôi huỷ Claude subscription và tạm dừng hoàn toàn Claude Code.** Không phải vì Claude yếu, mà vì trải nghiệm với Anthropic khiến tôi không còn muốn đặt phần lớn workflow của mình vào một nhà cung cấp duy nhất.
 
-Bài này không phải bài đánh giá benchmark. Đây là nhật ký vận hành thật của một quý dùng AI để code mỗi ngày.
+Bài này không phải bài đánh giá benchmark. Đây là nhật ký vận hành thật sau một quý dùng AI để code mỗi ngày.
 
 <!-- truncate -->
 
-## Anthropic Đang Bị Cái "Ngáo Quyền Lực" Kéo Đi
+## Vì Sao Tôi Mất Niềm Tin Vào Anthropic
 
-Sự vươn lên của Anthropic quá nhanh. Nhanh đến mức họ bắt đầu phải chọn lọc khách hàng, dành hạ tầng cho những người "quan trọng hơn". Điều đó hiểu được về mặt kinh doanh. Nhưng cách họ hỗ trợ khách hàng Enterprise thì không thể hiểu nổi.
+Anthropic vươn lên rất nhanh nhờ model tốt và Claude Code xuất sắc. Nhưng trải nghiệm hỗ trợ lại khiến tôi phải đánh giá lại mức độ phụ thuộc vào họ.
 
-Công ty tôi — một trong những tập đoàn tư nhân lớn nhất Việt Nam — liên tục liên hệ với Anthropic để xử lý các trường hợp account bị chặn — không có phản hồi. Không phải phản hồi chậm. Là không có. Khi một nhà cung cấp thu tiền Enterprise mà im lặng trước sự cố chặn truy cập, đó không còn là lỗi vận hành nữa. Đó là tín hiệu rằng họ không cần bạn bằng cách bạn cần họ.
+Trong một số trường hợp account tại tổ chức của tôi bị chặn, các yêu cầu hỗ trợ đã không nhận được phản hồi trong thời gian mong đợi. Tôi không thể kết luận vì sao Anthropic phản hồi như vậy, nhưng với một công cụ đã đi sâu vào quy trình phát triển, sự thiếu chắc chắn đó tự nó đã là một rủi ro.
 
-Và khi vendor nghĩ họ không cần bạn, đó là lúc cần chuẩn bị một cánh cửa thoát.
+Sự cố ở cấp tổ chức không trực tiếp quyết định thuê bao cá nhân, nhưng nó thay đổi cách tôi nhìn nhận rủi ro phụ thuộc vào Anthropic. Khi một công cụ trở thành điểm tựa hằng ngày, tôi cần biết mình vẫn có đường lui nếu quota, account hoặc chính sách thay đổi.
 
-## Những Gì Tôi Giữ Lại: Codex và Cursor
+Vì vậy, quyết định lần này không chỉ là huỷ một gói thuê bao. Tôi muốn kiểm chứng xem mình có thể rời cả model lẫn harness của Anthropic hay không.
+
+## Những Gì Tôi Giữ Lại: Codex Và Cursor
 
 ### Cursor — mua vội, không hối hận
 
-Từ tháng 11/2025, trong một phút cao hứng, tôi nạp luôn gói Pro 1 năm của Cursor. Bình thường thì đó là dạng mua sắm bốc đồng đáng tiếc. Nhưng lần này thì không. Đến giờ tôi vẫn thấy Cursor là công cụ **GUI coding tốt nhất** hiện tại. Giao diện mượt, agent mode ổn, codebase-aware.
+Từ tháng 11/2025, trong một phút cao hứng, tôi nạp luôn gói Pro một năm của Cursor. Bình thường đó là kiểu mua sắm bốc đồng dễ hối tiếc, nhưng lần này thì không. Đến giờ, Cursor vẫn là công cụ **GUI coding tốt nhất** đối với tôi: giao diện mượt, agent mode ổn và hiểu codebase tốt.
 
-Nhưng nói "dùng Cursor" thì nghe rất tử tế. Thực tế thì: tôi mở Cursor, rồi mở terminal ngay trong đó, rồi mở tiếp `tmux`, rồi gọi `claude code`. Một IDE xịn xò chỉ để làm khung cửa sổ cho một CLI của Anthropic. Cảm giác như mua một chiếc Porsche chỉ để chở theo chiếc xe đạp từ lúc đăng ký — tức cười, nhưng đúng là cách tôi làm việc mỗi ngày.
+Trớ trêu là lâu nay tôi thường mở Cursor, bật terminal bên trong, vào `tmux`, rồi gọi `claude code`. Một IDE xịn chỉ để làm khung cửa sổ cho CLI của Anthropic — tức cười, nhưng đúng là workflow hằng ngày của tôi.
 
-Đó cũng chính là vấn đề: muốn rũ bỏ Claude mà vẫn gọi Claude Code trong terminal thì coi như chưa thoát.
+Điều đó cũng cho thấy nếu vẫn giữ Claude Code thì tôi chưa thực sự kiểm chứng được một lựa chọn thay thế. Vì vậy, trong giai đoạn tới tôi sẽ bỏ hẳn Claude Code và dùng **Cursor CLI** cho công việc terminal.
 
-### Codex (desktop app) — cực kỳ hài lòng
+### Codex desktop — cực kỳ hài lòng
 
-Với Codex desktop, tôi đang rất ưng ý với **GPT 5.6 Sol High**. Chạy task cực nhanh, ổn định, ít drama. Gói Plus tạm đủ cho công việc vẽ vời, brainstorm, viết tài liệu. Coding nặng thì xác định vẫn dùng Cursor một thời gian nữa rồi đánh giá lại.
+Với Codex desktop, tôi đang rất ưng ý với **GPT 5.6 Sol High**: chạy task nhanh, ổn định và ít làm gián đoạn mạch làm việc. Gói Plus tạm đủ cho vẽ diagram, brainstorm và viết tài liệu; với coding nặng, tôi sẽ tiếp tục dùng Cursor rồi đánh giá lại sau.
 
-OpenAI hiện đang làm đúng thứ mà Anthropic đang bỏ lỡ: sản phẩm gọn, đáng tin, và không làm người dùng cảm thấy mình đang xin việc.
+Ít nhất ở thời điểm này, Codex cho tôi cảm giác về một sản phẩm gọn và đáng tin. Đó là điều tôi cần ở một công cụ làm việc hằng ngày.
 
-## Mô Hình Trung Quốc Đang Lên Ngôi
+## GLM Đã Đủ Tốt Cho Nhu Cầu Của Tôi
 
-Quý vừa rồi tôi vẫn sống rất tốt với **GLM + Claude Code (gói miễn phí)**. Không chết. Không gãy mạch làm việc. Mô hình Trung Quốc như Kimi, GLM đang nhanh chóng lấp đầy khoảng trống mà Anthropic cố tình tạo ra bằng cách siết quota và nâng giá.
+Quý vừa rồi, trải nghiệm dùng **GLM** cho thấy tôi không bắt buộc phải dùng Claude model mới có thể duy trì công việc. GLM vẫn có giới hạn theo gói dịch vụ, nhưng quan trọng hơn là chất lượng đã đủ để trở thành một phương án thay thế thực tế trong nhiều tác vụ coding.
 
-Đó là thực tế quan trọng: lựa chọn thay thế đã tồn tại, và đủ tốt. Chuyện "không có Claude thì không code được" giờ là truyền thuyết, không phải dữ kiện.
+Kimi, GLM và các model mới cũng cho thấy thị trường đang có thêm lựa chọn. Tôi chưa cho rằng một nhóm model nào đã “lên ngôi”, nhưng câu chuyện “không có Claude thì không code được” rõ ràng không còn đúng với workflow của tôi.
 
-Nói thẳng hơn: **Claude Code + GLM vẫn là một combo rất tốt** — miễn là bạn không cần Claude model. Harness của Claude Code vốn đã là một trong những agent terminal tốt nhất: hiểu codebase, gọi tool gọn, quản lý context sạch. Ghép với GLM-5.2 qua custom provider là tôi có một coding agent chạy mượt mà, không giới hạn quota, không phụ thuộc API key của Anthropic. Phần nhiều giá trị nằm ở harness, không chỉ ở model. Cho nên trước khi Cursor CLI chứng minh được bản thân, tôi vẫn dùng combo này làm cánh cửa thoát chính.
+## Bước Tiếp Theo: Dùng Cursor CLI Rồi Mới Chốt
 
-## Bước Tiếp Theo: Cursor CLI
+Từ bây giờ, tôi sẽ **dừng hẳn Claude Code trong một thời gian** và chuyển các tác vụ CLI sang Cursor CLI. Đây không phải một buổi thử cho biết, mà là giai đoạn sử dụng thật trên đủ loại công việc: đọc codebase, sửa lỗi, refactor, viết test và xử lý task dài.
 
-Giờ tôi muốn cắt đứt Claude triệt để, không phải chỉ đổi model. Nên quyết định thử nghiệm **Cursor CLI (agent)** xem sao. Mục tiêu rõ ràng: một harness khác, không phụ thuộc Anthropic. Nếu nó tốt một nửa Cursor GUI mà không cần gọi Claude Code phía sau thì đã là thắng.
+Trong thời gian đó, Codex desktop vẫn đảm nhiệm các task song song, brainstorm và tài liệu; Cursor GUI cùng Cursor CLI sẽ là môi trường coding chính. Sau khi có đủ trải nghiệm, tôi mới quyết định bộ công cụ nào đáng để gắn bó lâu dài.
 
-Tôi không ghét Claude hay Anthropic. Tôi chỉ không muốn phụ thuộc vào một vendor nghĩ rằng quyền lực cho phép họ được phép lờ đi khách hàng trả ít tiền. Thị trường đang có nhiều lựa chọn hơn, rẻ hơn, và — quan trọng nhất — tôn trọng người dùng hơn.
+Tôi không phủ nhận chất lượng của Claude hay Claude Code. Ngược lại, chính vì chúng từng quá tốt nên tôi mới phụ thuộc sâu đến vậy. Nhưng một công cụ tốt không đồng nghĩa với việc phải chấp nhận rủi ro phụ thuộc vô thời hạn.
 
-Khi vendor nghĩ họ không cần bạn, cách tốt nhất là chứng minh họ đúng.
+Khi niềm tin với một nhà cung cấp giảm xuống, phản ứng tốt nhất không phải tranh cãi về động cơ của họ. Đó là xây dựng lựa chọn thay thế, chuyển workload thật sang đó và để kết quả trả lời.
 
 ---
 
-*Cập nhật tiếp theo sau khi thử Cursor CLI một thời gian. Nếu kết quả tốt, đây sẽ không chỉ là lúc Anthropic bớt ngáo quyền lực — mà là lúc họ mất đi một khách hàng vĩnh viễn.*
+*Tôi sẽ cập nhật lại sau một thời gian dùng Cursor CLI hoàn toàn thay cho Claude Code. Khi đó, quyết định cuối cùng sẽ dựa trên trải nghiệm vận hành thực tế, không phải cảm xúc nhất thời.*
