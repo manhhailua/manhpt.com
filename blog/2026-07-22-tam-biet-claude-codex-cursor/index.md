@@ -43,6 +43,8 @@ Quý vừa rồi tôi vẫn sống rất tốt với **GLM + Claude Code (free t
 
 Đó là thực tế quan trọng: lựa chọn thay thế đã tồn tại, và đủ tốt. Chuyện "không có Claude thì không code được" giờ là truyền thuyết, không phải dữ kiện.
 
+Nói thẳng hơn: **Claude Code + GLM vẫn là một combo rất tốt** — miễn là bạn không cần Claude model. Harness của Claude Code vốn đã là một trong những agent terminal tốt nhất: hiểu codebase, gọi tool gọn, quản lý context sạch. Ghép với GLM-5.2 qua custom provider là tôi có một coding agent chạy mượt mà, không giới hạn quota, không phụ thuộc API key của Anthropic. Phần nhiều giá trị nằm ở harness, không chỉ ở model. Cho nên trước khi Cursor CLI chứng minh được bản thân, tôi vẫn dùng combo này làm cánh cửa thoát chính.
+
 ## Bước Tiếp Theo: Cursor CLI
 
 Giờ tôi muốn cắt đứt Claude triệt để, không phải chỉ đổi model. Nên quyết định thử nghiệm **Cursor CLI (agent)** xem sao. Mục tiêu rõ ràng: một harness khác, không phụ thuộc Anthropic. Nếu nó tốt một nửa Cursor GUI mà không cần gọi Claude Code phía sau thì đã là thắng.
