@@ -17,7 +17,7 @@ Bài này không phải bài đánh giá benchmark. Đây là nhật ký vận h
 
 Sự vươn lên của Anthropic quá nhanh. Nhanh đến mức họ bắt đầu phải chọn lọc khách hàng, dành hạ tầng cho những người "quan trọng hơn". Điều đó hiểu được về mặt kinh doanh. Nhưng cách họ hỗ trợ khách hàng Enterprise thì không thể hiểu nổi.
 
-Công ty tôi liên tục liên hệ với Anthropic để xử lý các trường hợp account bị chặn — không có phản hồi. Không phải phản hồi chậm. Là không có. Khi một nhà cung cấp thu tiền Enterprise mà im lặng trước sự cố chặn truy cập, đó không còn là lỗi vận hành nữa. Đó là tín hiệu rằng họ không cần bạn bằng cách bạn cần họ.
+Công ty tôi — một trong những tập đoàn tư nhân lớn nhất Việt Nam — liên tục liên hệ với Anthropic để xử lý các trường hợp account bị chặn — không có phản hồi. Không phải phản hồi chậm. Là không có. Khi một nhà cung cấp thu tiền Enterprise mà im lặng trước sự cố chặn truy cập, đó không còn là lỗi vận hành nữa. Đó là tín hiệu rằng họ không cần bạn bằng cách bạn cần họ.
 
 Và khi vendor nghĩ họ không cần bạn, đó là lúc cần chuẩn bị một cánh cửa thoát.
 
