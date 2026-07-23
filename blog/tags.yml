@@ -602,3 +602,53 @@ openai:
   label: OpenAI
   permalink: /openai
   description: Các bài viết về OpenAI, từ mô hình GPT, sản phẩm ChatGPT, Codex đến chiến lược kinh doanh và định hướng của công ty.
+
+security:
+  label: Security
+  permalink: /security
+  description: Các bài viết về bảo mật phần mềm, phát hiện lỗ hổng, và ứng phó sự cố an ninh mạng.
+
+npm:
+  label: npm
+  permalink: /npm
+  description: npm là trình quản lý gói mặc định cho Node.js, dùng để cài đặt và phân phối thư viện JavaScript.
+
+supply-chain:
+  label: Supply Chain
+  permalink: /supply-chain
+  description: Bảo mật chuỗi cung ứng phần mềm — rủi ro từ dependency, package registry, và mã độc trong thư viện bên thứ ba.
+
+javascript:
+  label: JavaScript
+  permalink: /javascript
+  description: JavaScript là ngôn ngữ lập trình dùng cho web, Node.js, và hệ sinh thái frontend/backend hiện đại.
+
+incident:
+  label: Incident
+  permalink: /incident
+  description: Phân tích và hướng dẫn ứng phó sự cố kỹ thuật, từ forensic đến remediation.
+
+ai:
+  label: AI
+  permalink: /ai
+  description: Các bài viết về trí tuệ nhân tạo, mô hình ngôn ngữ lớn, và ứng dụng AI trong kỹ thuật phần mềm.
+
+china:
+  label: China
+  permalink: /china
+  description: Phân tích hệ sinh thái công nghệ và AI Trung Quốc trong bối cảnh cạnh tranh toàn cầu.
+
+geopolitics:
+  label: Geopolitics
+  permalink: /geopolitics
+  description: Phân tích địa chính trị công nghệ — cạnh tranh quốc gia, chính sách, và chiến lược AI toàn cầu.
+
+pricing:
+  label: Pricing
+  permalink: /pricing
+  description: Phân tích giá cả và chi phí sử dụng các dịch vụ AI, LLM API, và công cụ developer.
+
+vietnam:
+  label: Vietnam
+  permalink: /vietnam
+  description: Góc nhìn về vị trí của Việt Nam trong bức tranh công nghệ và AI khu vực cũng như toàn cầu.
