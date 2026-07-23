@@ -587,3 +587,18 @@ architecture:
   label: Architecture
   permalink: /architecture
   description: Các bài viết về kiến trúc phần mềm, system design, và vai trò của kiến trúc sư trong kỷ nguyên AI.
+
+cursor:
+  label: Cursor
+  permalink: /cursor
+  description: Cursor là trình soạn thảo code tích hợp AI (AI code editor), kết hợp IDE truyền thống với khả năng agent coding, autocomplete và codebase-aware chat.
+
+codex:
+  label: Codex
+  permalink: /codex
+  description: Codex là công cụ coding agent của OpenAI, gồm desktop app, CLI và cloud tasks, hỗ trợ software engineering end-to-end từ sửa code đến review pull request.
+
+openai:
+  label: OpenAI
+  permalink: /openai
+  description: Các bài viết về OpenAI, từ mô hình GPT, sản phẩm ChatGPT, Codex đến chiến lược kinh doanh và định hướng của công ty.
