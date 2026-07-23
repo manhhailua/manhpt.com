@@ -7,7 +7,7 @@ date: 2026-07-22
 description: "Tôi quyết định dừng Claude subscription, tạm bỏ hẳn Claude Code và chuyển sang Codex, Cursor CLI để tìm công cụ AI coding phù hợp lâu dài."
 ---
 
-Một quyết định đã ấp ủ từ lâu, giờ mới đủ bình tĩnh để viết ra: **tôi huỷ Claude subscription và tạm dừng hoàn toàn Claude Code.** Không phải vì Claude yếu, mà vì trải nghiệm với Anthropic khiến tôi không còn muốn đặt phần lớn workflow của mình vào một nhà cung cấp duy nhất.
+Một quyết định đã ấp ủ từ lâu, giờ mới có dịp ngồi viết lại: **tôi huỷ Claude subscription và tạm dừng hoàn toàn Claude Code.** Không phải vì Claude yếu, mà vì trải nghiệm với Anthropic khiến tôi không còn muốn đặt phần lớn workflow của mình vào một nhà cung cấp duy nhất.
 
 Bài này không phải bài đánh giá benchmark. Đây là nhật ký vận hành thật sau một quý dùng AI để code mỗi ngày.
 
