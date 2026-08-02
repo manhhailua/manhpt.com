@@ -1,6 +1,6 @@
 ---
 name: write-blog
-description: Soạn mới, viết lại và biên tập bài blog kỹ thuật tiếng Việt cho repository manhpt.com theo đúng cấu trúc Docusaurus, giọng văn của tác giả và quy ước nội dung của dự án. Dùng khi cần tạo hoặc sửa bài trong blog/, chuyển ghi chú hay tài liệu nghiên cứu thành bài blog, chuẩn hóa frontmatter, chọn tag, cải thiện tiếng Việt, hoặc rà soát một bài trước khi xuất bản.
+description: Soạn mới, viết lại và biên tập bài blog kỹ thuật tiếng Việt kèm ảnh cover phù hợp cho repository manhpt.com theo đúng cấu trúc Docusaurus, giọng văn của tác giả và quy ước nội dung của dự án. Dùng khi cần tạo hoặc sửa bài trong blog/, chuyển ghi chú hay tài liệu nghiên cứu thành bài blog, tạo cover, chuẩn hóa frontmatter, chọn tag, cải thiện tiếng Việt, hoặc rà soát một bài trước khi xuất bản.
 ---
 
 # Write Blog
@@ -10,7 +10,7 @@ Viết bài như một kỹ sư giàu trải nghiệm đang chia sẻ điều h�
 ## Chuẩn bị
 
 1. Đọc `CLAUDE.md`, `blog/tags.yml` và `blog/authors.yml` trong repository.
-2. Đọc [references/house-style.md](references/house-style.md) trước khi lập dàn ý hoặc sửa văn phong.
+2. Đọc [references/house-style.md](references/house-style.md) và [references/cover-style.md](references/cover-style.md) trước khi lập dàn ý.
 3. Xác định loại bài, độc giả, mục tiêu, luận điểm chính và độ dài phù hợp. Không kéo dài bài chỉ để trông có vẻ chuyên sâu.
 4. Kiểm tra các bài gần nhất cùng chủ đề để tránh lặp nội dung và giữ cách gọi thuật ngữ nhất quán.
 5. Với thông tin có thể thay đổi như phiên bản, giá, chính sách, benchmark, sự cố bảo mật hoặc tính năng sản phẩm, kiểm chứng bằng nguồn hiện hành; ưu tiên tài liệu chính thức và nguồn sơ cấp. Phân biệt rõ dữ kiện, suy luận và trải nghiệm cá nhân.
@@ -29,7 +29,7 @@ Viết bài như một kỹ sư giàu trải nghiệm đang chia sẻ điều h�
 
 1. Tạo file tại `blog/YYYY-MM-DD-slug/index.md`.
 2. Dùng slug ASCII chữ thường, dạng kebab-case, ngắn và mô tả đúng chủ đề.
-3. Dùng frontmatter sau; chỉ thêm `image`, `last_modified` hoặc trường khác khi thật sự cần:
+3. Dùng frontmatter sau. Luôn khai báo `image`; chỉ thêm `last_modified` hoặc trường khác khi thật sự cần:
 
 ```yaml
 ---
@@ -39,15 +39,26 @@ authors: [manhpt]
 tags: [tag-da-khai-bao]
 date: YYYY-MM-DD
 description: "Một câu mô tả chính xác giá trị của bài viết."
+image: ./cover.webp
 ---
 ```
 
 4. Chỉ dùng tag đã có trong `blog/tags.yml`. Nếu chủ đề thật sự cần tag mới, thêm tag với đủ `label`, `permalink` và `description`; không tạo tag gần nghĩa với tag hiện có.
-5. Mở bài bằng 2–4 đoạn ngắn: nêu vấn đề, lý do đáng quan tâm và lời hứa cụ thể của bài. Đặt đúng một `<!-- truncate -->` sau phần mở bài và trước H2 đầu tiên.
-6. Chia thân bài bằng H2; chỉ dùng H3 khi một H2 thật sự có nhiều ý con. Không dùng H1 trong nội dung.
-7. Dùng bảng khi cần so sánh nhiều tiêu chí; dùng danh sách cho các mục song song; dùng code block có language identifier cho lệnh và mã nguồn.
-8. Kết luận bằng quyết định, nguyên tắc hoặc bước tiếp theo. Không chỉ lặp lại nguyên văn phần mở bài.
-9. Thêm mục `## Tài liệu tham khảo` cho bài dựa nhiều vào nguồn ngoài. Đặt link gần nhận định quan trọng nếu người đọc cần kiểm chứng ngay.
+5. Tạo và kiểm tra ảnh cover theo quy trình bên dưới trước khi hoàn tất bản nháp.
+6. Mở bài bằng 2–4 đoạn ngắn: nêu vấn đề, lý do đáng quan tâm và lời hứa cụ thể của bài. Đặt đúng một `<!-- truncate -->` sau phần mở bài và trước H2 đầu tiên.
+7. Chia thân bài bằng H2; chỉ dùng H3 khi một H2 thật sự có nhiều ý con. Không dùng H1 trong nội dung.
+8. Dùng bảng khi cần so sánh nhiều tiêu chí; dùng danh sách cho các mục song song; dùng code block có language identifier cho lệnh và mã nguồn.
+9. Kết luận bằng quyết định, nguyên tắc hoặc bước tiếp theo. Không chỉ lặp lại nguyên văn phần mở bài.
+10. Thêm mục `## Tài liệu tham khảo` cho bài dựa nhiều vào nguồn ngoài. Đặt link gần nhận định quan trọng nếu người đọc cần kiểm chứng ngay.
+
+## Tạo ảnh cover
+
+1. Chốt luận điểm và dàn ý trước, sau đó viết visual brief theo [references/cover-style.md](references/cover-style.md). Cover phải diễn đạt ý chính của bài, không chỉ minh họa một từ khóa chung chung.
+2. Dùng ảnh do người dùng cung cấp hoặc asset chính thức khi phù hợp và có quyền sử dụng. Nếu không có ảnh đạt yêu cầu, dùng `$imagegen` hoặc công cụ tạo ảnh khả dụng để tạo mới; không lấy ngẫu nhiên ảnh có bản quyền từ web.
+3. Tạo ảnh ngang 16:9, mục tiêu 1600×900 và tối thiểu 1200×675. Ưu tiên WebP cho ảnh raster; chấp nhận PNG, JPEG hoặc SVG khi có lý do phù hợp.
+4. Lưu ảnh cùng thư mục bài viết, ưu tiên tên `cover.webp`, rồi khai báo bằng đường dẫn tương đối như `image: ./cover.webp`. Không đổi phần mở rộng nếu chưa chuyển đổi định dạng thật.
+5. Xem lại ảnh ở kích thước đầy đủ sau khi tạo. Kiểm tra chủ thể, bố cục, chi tiết kỹ thuật, chữ, logo và mức độ khớp với luận điểm; tạo lại nếu ảnh chỉ đẹp nhưng kể sai câu chuyện.
+6. Không bàn giao bài nếu chưa có cover hợp lệ. Nếu không thể tạo hoặc sử dụng ảnh an toàn, báo rõ blocker thay vì bỏ qua trường `image`.
 
 ## Biên tập
 
@@ -75,6 +86,7 @@ npm run build
 Trước khi bàn giao, xác nhận:
 
 - frontmatter đúng và metadata khớp nội dung;
+- cover đã được xem lại, phù hợp luận điểm, đúng tỷ lệ và được khai báo trong `image`;
 - có đúng một marker `<!-- truncate -->`;
 - mọi tag và tác giả đã được khai báo;
 - link, ảnh, code block và lệnh mẫu hợp lệ;

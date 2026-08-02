@@ -1,4 +1,4 @@
 interface:
   display_name: "Write Blog"
-  short_description: "Viết bài blog kỹ thuật tiếng Việt nhất quán"
-  default_prompt: "Dùng $write-blog để soạn một bài blog kỹ thuật tiếng Việt cho repository này."
+  short_description: "Viết blog tiếng Việt kèm cover đúng chuẩn"
+  default_prompt: "Dùng $write-blog để soạn bài blog kỹ thuật tiếng Việt kèm ảnh cover phù hợp cho repository này."
