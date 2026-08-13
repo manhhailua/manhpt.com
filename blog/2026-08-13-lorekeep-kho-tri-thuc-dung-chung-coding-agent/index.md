@@ -8,6 +8,8 @@ description: "Giới thiệu Lorekeep — temporal knowledge graph mã nguồn m
 image: /img/blog/lorekeep-cover.jpeg
 ---
 
+![Lorekeep — temporal knowledge graph dùng chung cho các coding agent](/img/blog/lorekeep-cover.jpeg)
+
 Trong quá trình sử dụng coding agent, tri thức quan trọng không chỉ nằm trong câu hỏi và câu trả lời. Mỗi session còn mang theo thông tin từ mã nguồn, tài liệu, `log`, bảng dữ liệu hoặc các loại tệp khác mà người dùng đưa cho agent đọc và sử dụng. Đây cũng là nơi những quyết định, cách giải quyết vấn đề và hiểu biết mới được hình thành.
 
 Nhưng tri thức tích lũy trong các session thường bị chia cắt theo từng công cụ. Những gì Codex biết hôm nay chưa chắc Cursor biết vào ngày mai; khi đổi agent, tôi lại phải giải thích mã nguồn, quyết định kiến trúc và bối cảnh cá nhân từ đầu.
