@@ -24,7 +24,7 @@ Luồng xử lý cốt lõi khá đơn giản:
 Markdown → chunk → extract(schema) → resolve → facts.jsonl → MCP + wiki
 ```
 
-Quy trình `compile` biến Markdown từ nhiều `namespace` thành `knowledge graph` trong `facts.jsonl`. Quá trình này có tính xác định: cùng một đầu vào không đổi sẽ tạo ra cùng một kết quả. Lorekeep đồng thời sinh `wiki` dạng Markdown để đọc bằng Obsidian hoặc Tolaria. Claude Code, Cursor, Codex và opencode có thể truy vấn cùng `knowledge graph` đó qua tám công cụ MCP nhỏ gọn như `search`, `get_node`, `neighbors` và `temporal_query`.
+Quy trình `compile` biến Markdown từ nhiều `namespace` thành `knowledge graph` gồm các `facts` có cấu trúc, được xuất ra `facts.jsonl`. Quá trình này có tính xác định: cùng một đầu vào không đổi sẽ tạo ra cùng một kết quả. Lorekeep đồng thời sinh `wiki` dạng Markdown để đọc bằng Obsidian hoặc Tolaria. Claude Code, Cursor, Codex và opencode có thể truy vấn cùng `knowledge graph` đó qua tám công cụ MCP nhỏ gọn như `search`, `get_node`, `neighbors` và `temporal_query`.
 
 Điểm quan trọng là LLM chỉ được gọi trong giai đoạn `compile` hoặc khi người dùng chủ động yêu cầu `deep import`. Các thao tác thường xuyên như truy vấn `knowledge graph`, ghi `journal`, `resolve`, tạo `wiki`, `lint` hay kiểm tra trạng thái đều không gọi thêm LLM. Nhờ vậy, tầng truy vấn có độ trễ và chi phí dễ dự đoán hơn.
 
@@ -32,9 +32,9 @@ Quy trình `compile` biến Markdown từ nhiều `namespace` thành `knowledge 
 
 ### 1. Tri thức phải thuộc về người dùng
 
-Nguồn dữ liệu bền vững của Lorekeep là Markdown, `schema` và các `journal` dạng `append-only`. `Knowledge graph`, `manifest`, `wiki` và chỉ mục tìm kiếm đều là dữ liệu dẫn xuất, có thể tái tạo trên thiết bị khác.
+Nguồn dữ liệu bền vững của Lorekeep là Markdown, `schema` và các `journal` dạng `append-only`. Các thành phần `knowledge graph`, `manifest`, `wiki` và chỉ mục tìm kiếm đều là dữ liệu dẫn xuất, có thể tái tạo trên thiết bị khác.
 
-Người dùng có thể sao lưu các đầu vào này vào một Git repository riêng tư. Cấu hình, thông tin bí mật, bộ nhớ đệm và log vẫn nằm cục bộ. Nhờ vậy, các `facts` không bị khóa trong bộ nhớ riêng của một agent hoặc một dịch vụ SaaS cụ thể.
+Người dùng có thể sao lưu các đầu vào này vào một Git repository riêng tư. Cấu hình, thông tin bí mật, bộ nhớ đệm và `log` vận hành vẫn nằm cục bộ. Nhờ vậy, các `facts` không bị khóa trong bộ nhớ riêng của một agent hoặc một dịch vụ SaaS cụ thể.
 
 ### 2. Agent được dùng chung tri thức, nhưng không ghi trực tiếp vào `facts`
 
@@ -46,7 +46,7 @@ Agent có thể đề xuất thêm `facts`, liên kết thực thể hoặc cậ
 
 Không phải agent nào cũng nên thấy mọi dữ liệu. Lorekeep mặc định từ chối truy cập và phân quyền theo `namespace` qua một điểm kiểm soát duy nhất là `ScopedGraph`. Một `edge` chỉ được trả về khi `namespace` của chính `edge` và cả hai `node` ở hai đầu đều nằm trong phạm vi được phép.
 
-`Knowledge graph` cũng hỗ trợ `validity window` cùng ba chế độ truy vấn `at_time`, `history` và `changes`. Vì vậy, agent không chỉ tìm các `facts` hiện có mà còn có thể hỏi chúng có hiệu lực tại thời điểm nào hoặc đã thay đổi ra sao.
+Ngoài ra, `knowledge graph` còn hỗ trợ `validity window` cùng ba chế độ truy vấn `at_time`, `history` và `changes`. Vì vậy, agent không chỉ tìm các `facts` hiện có mà còn có thể hỏi chúng có hiệu lực tại thời điểm nào hoặc đã thay đổi ra sao.
 
 ## Dùng Thử Trong Vài Phút
 
@@ -59,7 +59,7 @@ lorekeep init
 
 `lorekeep init` sẽ tạo cấu hình, thiết lập `schema` và `namespace`, phát hiện các coding agent đang có, cấu hình MCP, nhập nhanh bộ nhớ hiện hữu, `compile` dữ liệu nếu đã có `API key` và khởi động `daemon` theo dõi thay đổi.
 
-Sau đó, chỉ cần đặt Markdown vào `raw/<namespace>/`. `Daemon` sẽ tự `compile` khi tài liệu thay đổi; `wiki` và `knowledge graph` được cập nhật trong nền.
+Sau đó, chỉ cần đặt Markdown vào `raw/<namespace>/`. Tiến trình `daemon` sẽ tự `compile` khi tài liệu thay đổi; `wiki` và `knowledge graph` được cập nhật trong nền.
 
 ## Lorekeep Chưa Phải Gì?
 
