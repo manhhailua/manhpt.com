@@ -1,6 +1,6 @@
 ---
 name: write-blog
-description: Soạn mới, viết lại và biên tập bài blog kỹ thuật tiếng Việt kèm ảnh cover phù hợp cho repository manhpt.com theo đúng cấu trúc Docusaurus, giọng văn của tác giả và quy ước nội dung của dự án. Dùng khi cần tạo hoặc sửa bài trong blog/, chuyển ghi chú hay tài liệu nghiên cứu thành bài blog, tạo cover, chuẩn hóa frontmatter, chọn tag, cải thiện tiếng Việt, hoặc rà soát một bài trước khi xuất bản.
+description: Soạn mới, viết lại và biên tập bài blog kỹ thuật tiếng Việt kèm ảnh cover phù hợp cho repository manhpt.com theo đúng cấu trúc Docusaurus, giọng văn của tác giả và quy ước nội dung của dự án; sau khi kiểm tra, tự động commit, push và tạo hoặc cập nhật pull request. Dùng khi cần tạo hoặc sửa bài trong blog/, chuyển ghi chú hay tài liệu nghiên cứu thành bài blog, tạo cover, chuẩn hóa frontmatter, chọn tag, cải thiện tiếng Việt, hoặc xuất bản bài qua pull request.
 ---
 
 # Write Blog
@@ -83,6 +83,25 @@ Sửa toàn bộ lỗi và đọc lại các cảnh báo có liên quan. Sau đ�
 npm run build
 ```
 
+## Xuất bản qua pull request
+
+Sau khi validator và build thành công, luôn hoàn tất công việc bằng pull request; không dừng ở working tree local, trừ khi yêu cầu hiện tại nói rõ không được commit, push hoặc tạo PR.
+
+1. Kiểm tra `git status --short --branch`; giữ nguyên mọi thay đổi không thuộc bài đang làm và chỉ stage các file trong phạm vi task.
+2. Chọn branch an toàn:
+   - nếu đang ở `main`, tạo branch ngắn gọn dạng `codex/blog-<slug>` từ `main` đã cập nhật;
+   - nếu branch hiện tại có PR đang mở, tiếp tục dùng branch và PR đó;
+   - nếu PR của branch đã đóng hoặc merge, tạo branch mới từ `main`; không tái sử dụng branch cũ bằng force-push.
+3. Commit bằng Conventional Commits với subject ngắn, thường là `docs(blog): <tóm tắt>`; push branch lên `origin`.
+4. Tìm PR theo head branch trước khi tạo mới:
+   - nếu có PR đang mở, cập nhật title và body để phản ánh bản mới nhất; không tạo PR trùng;
+   - nếu chưa có PR, tạo PR sẵn sàng review vào `main`.
+5. PR body phải có tối thiểu: tóm tắt nội dung, file thay đổi, kết quả validator/build, thời lượng đọc khi đo được, thông tin cover và các nguồn chính của bài.
+6. Theo dõi status check sau khi push. Sửa và push bổ sung nếu check thất bại do thay đổi trong task; nếu lỗi nằm ngoài phạm vi, báo rõ blocker cùng link check.
+7. Không tự merge PR, xóa branch hoặc sửa lịch sử bằng force-push nếu người dùng chưa yêu cầu rõ.
+
+Khi môi trường yêu cầu phê duyệt cho thao tác Git hoặc GitHub, gửi yêu cầu phê duyệt tại đúng bước cần thiết; không dùng giới hạn quyền làm lý do bỏ qua việc tạo hoặc cập nhật PR.
+
 Trước khi bàn giao, xác nhận:
 
 - frontmatter đúng và metadata khớp nội dung;
@@ -93,3 +112,4 @@ Trước khi bàn giao, xác nhận:
 - dữ kiện nhạy thời gian có nguồn và ngày kiểm chứng phù hợp;
 - bài có một luận điểm xuyên suốt, tiếng Việt tự nhiên và mức hài hước tiết chế;
 - không còn placeholder, ghi chú nội bộ hoặc tuyên bố chưa kiểm chứng.
+- branch đã được push và pull request đã được tạo hoặc cập nhật, trừ khi người dùng yêu cầu chỉ làm local.
