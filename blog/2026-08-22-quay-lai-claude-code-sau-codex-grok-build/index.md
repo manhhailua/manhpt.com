@@ -2,7 +2,7 @@
 title: "Thôi, tôi lại về dùng Claude Code"
 slug: quay-lai-claude-code-sau-codex-grok-build
 authors: [manhpt]
-tags: [anthropic, claude-code, codex, coding-agent, ai-strategy]
+tags: [anthropic, claude-code, codex, deepseek, coding-agent, ai-strategy]
 date: 2026-08-22
 description: "Trải nghiệm Codex và Grok Build cho công việc thật khiến tôi quay lại Claude Code: coding agent tốt không chỉ cần model mạnh mà còn phải ít làm gián đoạn workflow."
 image: ./cover.png
@@ -23,6 +23,8 @@ Tôi gần như không có gì để chê về chất lượng của Codex khi d
 Giới hạn của tôi nằm ở khả năng đổi model. Trong mã nguồn Codex hiện tại, `wire_api = "chat"` đã không còn được hỗ trợ; đường custom provider chỉ chấp nhận giao thức `responses`. [Phần định nghĩa `WireApi` trong repository chính thức](https://github.com/openai/codex/blob/main/codex-rs/model-provider-info/src/lib.rs) hiện chỉ còn một giá trị là `responses`, và [thảo luận của dự án](https://github.com/openai/codex/discussions/7782) cũng xác nhận việc loại bỏ Chat Completions.
 
 Điều này không có nghĩa Codex chỉ chạy model OpenAI. Model ngoài vẫn có thể dùng nếu provider hoặc gateway triển khai đủ OpenAI Responses API. Nhưng với các model chỉ hỗ trợ Chat Completions, hoặc hỗ trợ Responses API chưa trọn vẹn, việc tích hợp sẽ cần thêm lớp chuyển đổi và dễ phát sinh sai khác ở tool calling, streaming hay lịch sử hội thoại.
+
+Xét chi phí, DeepSeek là ứng cử viên tốt nhất để ghép với Codex. [Tài liệu Responses API](https://api-docs.deepseek.com/guides/responses_api) xác nhận `deepseek-v4-flash` và `deepseek-v4-pro` đều hỗ trợ; [giá](https://api-docs.deepseek.com/quick_start/pricing) từ $0,14/triệu token input chưa cache và $0,28/triệu token output. Chưa đủ mọi tính năng OpenAI, nhưng Codex vẫn chạy được.
 
 Đây là một lựa chọn kiến trúc hợp lý của Codex, không phải lỗi. Responses API giúp OpenAI thống nhất agent loop và các loại sự kiện phức tạp. Chỉ là nó không khớp với nhu cầu của tôi: thường xuyên thử nhiều model và muốn đổi provider mà không phải dựng thêm một cây cầu chỉ để qua đường.
 
@@ -62,5 +64,6 @@ Thôi, tôi lại về dùng Claude Code đây :))
 2. [Codex: thảo luận loại bỏ Chat Completions](https://github.com/openai/codex/discussions/7782).
 3. [Grok Build: tổng quan và cấu hình custom model](https://docs.x.ai/build/overview).
 4. [Claude Code: cài đặt và xác thực](https://docs.anthropic.com/en/docs/claude-code/getting-started).
+5. DeepSeek: [Responses API](https://api-docs.deepseek.com/guides/responses_api) và [giá](https://api-docs.deepseek.com/quick_start/pricing).
 
 *Thông tin sản phẩm được kiểm chứng ngày 22/8/2026; các nhận xét về độ ổn định và UX là trải nghiệm cá nhân trong workflow của tôi.*
