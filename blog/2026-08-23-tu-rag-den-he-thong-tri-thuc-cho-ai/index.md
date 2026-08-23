@@ -75,7 +75,7 @@ Tôi sẽ đi theo ba bước:
 
 1. **Xây lớp evidence:** lưu chunk nguyên văn cùng nguồn, phiên bản, quyền và checksum.
 2. **Xây procedure cho câu hỏi quan trọng:** mô hình hóa bước truy xuất, quy tắc suy luận, nhánh xử lý, cách kiểm tra và điều kiện dừng; liên kết về evidence rồi kiểm tra bằng con người.
-3. **Bổ sung theo lỗi thực tế:** chỉ mở rộng retrieval hoặc reasoning khi benchmark cho thấy cần.
+3. **Bổ sung và cải tiến trong vận hành:** liên tục bổ sung evidence từ nguồn và phiên bản mới, hoàn thiện metadata, đồng thời điều chỉnh procedure theo câu hỏi, phản hồi và lỗi thực tế; evidence gốc không bị ghi đè.
 
 So với [cách nhìn “RAG không chỉ là vector” trước đây](/2026/07/01/rag-khong-chi-la-vector), đây là bước tiếp theo: RAG đưa đúng tri thức vào ngữ cảnh; evidence cung cấp dữ kiện; procedure dẫn đường cho vòng lặp suy luận để agent tìm và kiểm chứng câu trả lời.
 
