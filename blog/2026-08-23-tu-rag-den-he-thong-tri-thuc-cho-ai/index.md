@@ -4,17 +4,17 @@ slug: tu-rag-den-he-thong-tri-thuc-cho-ai
 authors: [manhpt]
 tags: [rag, retrieval, architecture, agentic-ai, ai-strategy, ai]
 date: 2026-08-23
-description: "RAG chỉ là điểm bắt đầu. Hệ thống Tri thức cần giữ evidence ở dạng nguyên văn và xây procedure có thể truy vết để AI biết cách hành động."
+description: "RAG chỉ là điểm bắt đầu. Hệ thống Tri thức cần giữ evidence nguyên văn và xây procedure để agent suy luận, kiểm chứng câu trả lời."
 image: ./cover.webp
 ---
 
 ![Từ RAG cơ bản đến hệ thống Tri thức cho AI](./cover.webp)
 
-Nếu hỏi tôi cách xây hệ thống tri thức cho AI cách đây không lâu, câu trả lời sẽ khá gọn: chia tài liệu thành chunk, tạo embedding, lưu vào vector database rồi đưa kết quả cho LLM.
+Nếu hỏi tôi cách xây hệ thống tri thức cho AI cách đây không lâu, câu trả lời từng rất gọn: chia tài liệu thành chunk, tạo embedding, lưu vào vector database rồi đưa cho LLM.
 
 Cách đó không sai và vẫn là điểm bắt đầu tốt. Nhưng có một cái tủ hồ sơ chưa đồng nghĩa với việc đã có thư viện.
 
-Khi AI phải xử lý dữ liệu thay đổi, nguồn mâu thuẫn và quy trình nằm rải rác, câu hỏi không còn là **“tối ưu retrieval thế nào?”**. Tôi cần hai lớp tri thức: **evidence** giữ nguyên nội dung nguồn; **procedure** diễn tả cách công việc thực sự diễn ra.
+Khi AI phải xử lý dữ liệu thay đổi, nguồn mâu thuẫn và câu hỏi nhiều bước, vấn đề không còn là **“tối ưu retrieval thế nào?”**. Tôi cần hai lớp tri thức: **evidence** giữ nguyên nội dung nguồn; **procedure** hướng dẫn agent tìm, suy luận và kiểm chứng câu trả lời.
 
 <!-- truncate -->
 
@@ -26,7 +26,7 @@ Khi AI phải xử lý dữ liệu thay đổi, nguồn mâu thuẫn và quy tr�
 tài liệu → chunk → embedding → vector search → prompt → câu trả lời
 ```
 
-Pipeline này phù hợp khi đáp án nằm trong vài đoạn gần nghĩa. Hybrid search, reranking, graph hay agentic retrieval giúp tìm tốt hơn, nhưng vẫn chưa cho AI biết mục tiêu, thứ tự hành động, trách nhiệm, nhánh xử lý và ngoại lệ của một quy trình.
+Pipeline này hợp khi đáp án nằm trong vài đoạn gần nghĩa. Hybrid search, reranking hay graph giúp truy xuất tốt hơn, nhưng chưa cho agent biết vòng tiếp theo cần tìm gì, kết hợp dữ kiện ra sao và khi nào nên dừng.
 
 ## Hai lớp: evidence và procedure
 
@@ -42,44 +42,42 @@ Chunking chỉ xác định ranh giới; nội dung không được viết lại
 
 Mỗi evidence cần nguồn, phiên bản, vị trí, thời gian có hiệu lực, quyền truy cập và checksum. Nó chỉ chứng minh **“nguồn này đã nói như vậy”**; nội dung vẫn có thể cũ, sai hoặc mâu thuẫn. Nguồn thay đổi thì tạo evidence mới, không sửa bản cũ.
 
-### Procedure: để AI biết cách làm
+### Procedure: cách agent tìm câu trả lời
 
-Procedure là mô hình vận hành được hình thành từ evidence, không phải bản tóm tắt hay vài chunk thường xuất hiện cùng nhau. Nó gồm:
+Procedure mô tả cách tìm và kiểm chứng câu trả lời. Nó không chứa sẵn đáp án, mà hướng dẫn quá trình suy luận của agent trong từng vòng lặp:
 
-- mục tiêu, phạm vi, sự kiện kích hoạt và điều kiện áp dụng;
-- hành động, thứ tự, quan hệ phụ thuộc và nhánh lựa chọn;
-- vai trò, tài nguyên, thay đổi trạng thái và kết quả;
-- ngoại lệ, cách phục hồi và bước xác minh.
+- mục tiêu, phạm vi, dữ liệu đầu vào và điều kiện áp dụng;
+- bước truy xuất, nguồn hoặc công cụ cần dùng và thứ tự thực hiện;
+- quy tắc suy luận, trạng thái trung gian và nhánh lựa chọn;
+- cách kiểm tra, xử lý khi thiếu evidence và điều kiện dừng.
 
-[ProPara](https://aclanthology.org/N18-1144/) và [OpenPI](https://aclanthology.org/2020.emnlp-main.520/) theo dõi thay đổi trạng thái; [proScript](https://aclanthology.org/2021.findings-emnlp.184/) biểu diễn thứ tự sự kiện; [BPMN 2.0](https://www.omg.org/spec/BPMN/2.0/PDF/) bổ sung nhánh và trách nhiệm.
+[ProPara](https://aclanthology.org/N18-1144/) và [OpenPI](https://aclanthology.org/2020.emnlp-main.520/) biểu diễn thay đổi trạng thái; [proScript](https://aclanthology.org/2021.findings-emnlp.184/) biểu diễn thứ tự; [BPMN 2.0](https://www.omg.org/spec/BPMN/2.0/PDF/) bổ sung nhánh và điều kiện. Các thành phần này có thể mô tả đường suy luận cho agent.
 
-Tương quan giữa các chunk chỉ là tín hiệu khám phá, không chứng minh thứ tự hay quan hệ nhân quả. Mỗi phần của procedure phải trỏ về evidence; chỗ chưa có căn cứ phải được đánh dấu là suy luận.
+Tương quan giữa các chunk chỉ là tín hiệu khám phá, chưa phải procedure. Mỗi bước và nhánh phải trỏ về evidence hoặc quy tắc rõ ràng; phần agent tự suy ra phải được đánh dấu là suy luận.
 
-## Kiến trúc phải phục vụ hai lớp tri thức
+## Procedure dẫn agent qua vòng lặp suy luận
 
-Vector và keyword search phù hợp với evidence; SQL và knowledge graph phù hợp hơn với procedure. Retrieval planner chọn cách truy xuất theo câu hỏi thay vì luôn lấy một số chunk cố định.
+Vector và keyword search phù hợp với evidence; SQL hoặc knowledge graph có thể lưu trạng thái và quan hệ trong procedure. Quan trọng hơn, agent phải dùng procedure để quyết định bước tiếp theo trong mỗi vòng lặp.
 
 ```text
-tài liệu gốc
-      ↓ cắt, không viết lại
-evidence bất biến + provenance
-      ├── vector | keyword
-      └── trích xuất + kiểm chứng → procedure → graph | SQL
-
-câu hỏi → retrieval planner → evidence hoặc procedure → LLM hoặc AI agent
+câu hỏi → agent dùng procedure chọn bước → truy xuất evidence
+                ↑                              ↓
+                └── chưa đủ ← kiểm chứng ← suy luận
+                                      ↓ đủ
+                                  câu trả lời
 ```
 
-Evidence là tài sản bền vững; chỉ mục có thể xây lại. Provenance, phiên bản và quyền truy cập phải đi từ nguồn đến câu trả lời. Evidence đổi thì procedure liên quan phải được cập nhật hoặc đánh dấu đã lỗi thời.
+Trong mỗi vòng, agent lấy thêm evidence, cập nhật trạng thái suy luận rồi kiểm tra điều kiện dừng. Nếu căn cứ chưa đủ hoặc mâu thuẫn, procedure chỉ ra bước tiếp theo; nếu đã đủ, agent mới trả lời. Cơ chế này không bảo đảm agent luôn đúng, nhưng giúp đường suy luận nhất quán và có thể kiểm tra lại.
 
 ## Nâng cấp dần, không cần đập đi xây lại
 
 Tôi sẽ đi theo ba bước:
 
 1. **Xây lớp evidence:** lưu chunk nguyên văn cùng nguồn, phiên bản, quyền và checksum.
-2. **Xây procedure cho công việc quan trọng:** mô hình hóa hành động, vai trò, trạng thái và ngoại lệ; liên kết về evidence rồi kiểm tra bằng con người.
+2. **Xây procedure cho câu hỏi quan trọng:** mô hình hóa bước truy xuất, quy tắc suy luận, nhánh xử lý, cách kiểm tra và điều kiện dừng; liên kết về evidence rồi kiểm tra bằng con người.
 3. **Bổ sung theo lỗi thực tế:** chỉ thêm reranking, graph, SQL hay agentic retrieval khi benchmark cho thấy cần.
 
-So với [cách nhìn “RAG không chỉ là vector” trước đây](/2026/07/01/rag-khong-chi-la-vector), đây là bước tiếp theo: RAG đưa đúng tri thức vào ngữ cảnh; evidence cho AI căn cứ để trả lời; procedure cho AI biết phải làm gì và kiểm tra kết quả ra sao.
+So với [cách nhìn “RAG không chỉ là vector” trước đây](/2026/07/01/rag-khong-chi-la-vector), đây là bước tiếp theo: RAG đưa đúng tri thức vào ngữ cảnh; evidence cung cấp dữ kiện; procedure dẫn đường cho vòng lặp suy luận để agent tìm và kiểm chứng câu trả lời.
 
 ## Tài liệu tham khảo
 
