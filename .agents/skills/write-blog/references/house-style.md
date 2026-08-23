@@ -27,11 +27,28 @@ Không dùng giọng thông cáo báo chí, quảng cáo hoặc bản dịch má
 - Viết đủ dấu, đúng chính tả và dùng dấu câu theo cú pháp tiếng Việt.
 - Dùng sentence case cho tiêu đề và heading: chỉ viết hoa từ đầu câu, tên riêng, thương hiệu và chữ viết tắt.
 - Ưu tiên từ Việt tự nhiên: `hiệu năng`, `quy trình`, `bản phát hành`, `độ trễ`, `chi phí`, `giới hạn`.
-- Giữ thuật ngữ Anh khi đó là tên chuẩn hoặc bản dịch làm câu khó hiểu hơn: API, RAG, cache, token, prompt, benchmark, agent, framework.
+- Giữ thuật ngữ tiếng Anh khi đó là tên chuẩn, cách gọi quen thuộc trong ngành hoặc bản dịch làm sai sắc thái kỹ thuật: API, RAG, pipeline, cache, token, prompt, embedding, benchmark, agent, framework.
 - Khi cần, viết dạng `truy xuất (retrieval)` ở lần đầu rồi dùng một cách gọi nhất quán.
 - Dùng inline code cho tên file, lệnh, biến, field và đoạn mã; không dùng inline code chỉ để nhấn mạnh.
 - Viết số, đơn vị, phiên bản và tên sản phẩm nhất quán. Không tự Việt hóa tên thương hiệu.
 - Hạn chế dấu chấm than, emoji, ngoặc kép mỉa mai và các từ phóng đại như “đỉnh cao”, “cách mạng”, “hoàn hảo”.
+
+“Thuần Việt” nằm ở cấu trúc câu, cách lập luận và nhịp văn, không nằm ở việc dịch bằng hết danh từ kỹ thuật. Chọn cách gọi theo ngữ cảnh:
+
+| Trường hợp | Cách xử lý | Ví dụ |
+|---|---|---|
+| Có từ Việt chính xác, quen thuộc | Dùng tiếng Việt | `latency` → độ trễ; `cost` → chi phí; `access control` → kiểm soát truy cập |
+| Tiếng Anh là tên khái niệm quen thuộc và bản dịch dễ gượng hoặc lệch nghĩa | Giữ tiếng Anh | pipeline, prompt, token, embedding, cache, benchmark, agent |
+| Người đọc cần biết cả nghĩa lẫn từ khóa chuyên ngành | Giải thích song ngữ ở lần đầu, sau đó chọn một cách gọi | nguồn gốc dữ liệu (provenance), xếp hạng lại (reranking) |
+
+Ưu tiên danh từ kỹ thuật đúng ngành nhưng dùng động từ, liên từ và trật tự câu tiếng Việt. Một thuật ngữ có thể được giữ bằng tiếng Anh khi đóng vai trò danh từ, còn hành động tương ứng vẫn viết bằng tiếng Việt: “retrieval chưa đủ” nhưng “hệ thống sẽ truy xuất lại”. Không chèn động từ tiếng Anh chỉ để câu nghe có vẻ kỹ thuật.
+
+Không áp dụng bảng trên như một danh sách cấm dịch. `Workflow` có thể là “quy trình” khi nói về cách làm việc nói chung, nhưng nên giữ nguyên khi đó là tên một khái niệm hoặc thành phần cụ thể của sản phẩm. Sau khi đã chọn cách gọi cho một nghĩa, dùng nhất quán trong cùng bài; không đổi qua lại chỉ để tránh lặp từ.
+
+Ví dụ:
+
+- Nên: “Pipeline này lấy tài liệu, xếp hạng lại kết quả rồi đưa ngữ cảnh vào LLM.”
+- Tránh: “Đường ống này retrieve document, rerank result rồi feed context vào model.”
 
 Ưu tiên câu chủ động:
 

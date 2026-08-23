@@ -1,6 +1,6 @@
 ---
 name: write-blog
-description: Soạn mới, viết lại và biên tập bài blog kỹ thuật tiếng Việt kèm ảnh cover phù hợp cho repository manhpt.com theo đúng cấu trúc Docusaurus, giọng văn của tác giả và quy ước nội dung của dự án; sau khi kiểm tra, tự động commit, push và tạo hoặc cập nhật pull request. Dùng khi cần tạo hoặc sửa bài trong blog/, chuyển ghi chú hay tài liệu nghiên cứu thành bài blog, tạo cover, chuẩn hóa frontmatter, chọn tag, cải thiện tiếng Việt, hoặc xuất bản bài qua pull request.
+description: Soạn mới, viết lại và biên tập bài blog kỹ thuật tiếng Việt kèm ảnh cover phù hợp cho repository manhpt.com theo đúng cấu trúc Docusaurus, giọng văn của tác giả và quy ước nội dung của dự án; giữ thuật ngữ kỹ thuật tiếng Anh đúng ngữ cảnh nhưng diễn đạt bằng tiếng Việt tự nhiên; sau khi kiểm tra, tự động commit, push và tạo hoặc cập nhật pull request. Dùng khi cần tạo hoặc sửa bài trong blog/, chuyển ghi chú hay tài liệu nghiên cứu thành bài blog, tạo cover, chuẩn hóa frontmatter, chọn tag, cải thiện tiếng Việt, hoặc xuất bản bài qua pull request.
 ---
 
 # Write Blog
@@ -64,9 +64,10 @@ image: ./cover.webp
 
 1. Giữ nguyên ý định và dữ kiện đúng của tác giả; sửa cấu trúc, logic, câu chữ và nhịp bài.
 2. Loại bỏ câu mở đầu chung chung, đoạn lặp, từ đệm, lời quảng cáo và khẳng định tuyệt đối thiếu căn cứ.
-3. Chuẩn hóa thuật ngữ theo [references/house-style.md](references/house-style.md). Giải thích thuật ngữ chuyên môn ở lần xuất hiện đầu tiên khi độc giả mục tiêu có thể chưa biết.
-4. Giữ đoạn văn ngắn, mỗi đoạn tập trung một ý. Dùng câu chủ động và đưa kết luận quan trọng lên trước.
-5. Chỉ thêm chút hài hước khi câu đùa làm ý dễ nhớ hơn; bỏ ngay nếu nó làm giảm độ tin cậy hoặc lấn át thông tin.
+3. Chuẩn hóa thuật ngữ theo [references/house-style.md](references/house-style.md). “Tiếng Việt tự nhiên” không có nghĩa là dịch mọi thuật ngữ: giữ thuật ngữ tiếng Anh quen thuộc trong ngành khi bản dịch làm lệch nghĩa hoặc khiến câu gượng, rồi dùng cú pháp và động từ tiếng Việt quanh thuật ngữ đó.
+4. Rà riêng các bản dịch sát chữ và câu pha Anh–Việt. Không đổi `pipeline` thành “đường ống” trong ngữ cảnh phần mềm; cũng không viết động từ kiểu “retrieve tài liệu” khi có thể viết “truy xuất tài liệu”. Giải thích thuật ngữ ở lần xuất hiện đầu tiên nếu độc giả mục tiêu có thể chưa biết và dùng nhất quán về sau.
+5. Giữ đoạn văn ngắn, mỗi đoạn tập trung một ý. Dùng câu chủ động và đưa kết luận quan trọng lên trước.
+6. Chỉ thêm chút hài hước khi câu đùa làm ý dễ nhớ hơn; bỏ ngay nếu nó làm giảm độ tin cậy hoặc lấn át thông tin.
 
 ## Kiểm tra
 
@@ -111,5 +112,6 @@ Trước khi bàn giao, xác nhận:
 - link, ảnh, code block và lệnh mẫu hợp lệ;
 - dữ kiện nhạy thời gian có nguồn và ngày kiểm chứng phù hợp;
 - bài có một luận điểm xuyên suốt, tiếng Việt tự nhiên và mức hài hước tiết chế;
+- thuật ngữ kỹ thuật được giữ hoặc dịch theo đúng ngữ cảnh; không còn bản dịch sát chữ gây lạ tai hoặc động từ tiếng Anh chen vào câu Việt;
 - không còn placeholder, ghi chú nội bộ hoặc tuyên bố chưa kiểm chứng.
 - branch đã được push và pull request đã được tạo hoặc cập nhật, trừ khi người dùng yêu cầu chỉ làm local.
