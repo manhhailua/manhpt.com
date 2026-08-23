@@ -10,142 +10,83 @@ image: ./cover.webp
 
 ![Từ RAG cơ bản đến hệ thống Tri thức cho AI](./cover.webp)
 
-Nếu hỏi tôi cách xây một hệ thống tri thức cho AI cách đây không lâu, câu trả lời sẽ khá gọn: chia tài liệu thành các chunk, tạo embedding, lưu vào vector database, lấy top-k rồi đưa cho LLM.
+Nếu hỏi tôi cách xây hệ thống tri thức cho AI cách đây không lâu, câu trả lời sẽ khá gọn: chia tài liệu thành chunk, tạo embedding, lưu vào vector database rồi đưa kết quả cho LLM.
 
 Cách đó không sai và vẫn là điểm bắt đầu tốt. Nhưng có một cái tủ hồ sơ chưa đồng nghĩa với việc đã có thư viện.
 
-Khi AI làm việc lâu dài với dữ liệu thay đổi, nhiều nguồn mâu thuẫn, nhiều phạm vi truy cập và nhiều agent cùng sử dụng, câu hỏi không còn là **“tối ưu retrieval thế nào?”**. Câu hỏi quan trọng hơn là: **“AI cần biết điều gì, dựa vào nguồn nào, đúng ở thời điểm nào và làm sao để kiểm chứng?”**
-
-Đó là lúc tôi chuyển từ việc xây một pipeline RAG sang xây **hệ thống Tri thức cho AI** với hai lớp rõ ràng: **evidence** là các đoạn nguồn nguyên văn; **procedure** diễn tả cách công việc thực sự diễn ra để AI không chỉ trả lời mà còn biết cách hành động.
+Khi AI phải xử lý dữ liệu thay đổi, nguồn mâu thuẫn và quy trình nằm rải rác, câu hỏi không còn là **“tối ưu retrieval thế nào?”**. Tôi cần hai lớp tri thức: **evidence** giữ nguyên nội dung nguồn; **procedure** diễn tả cách công việc thực sự diễn ra.
 
 <!-- truncate -->
 
-## RAG giải một phần quan trọng, không phải toàn bộ bài toán
+## RAG chưa phải toàn bộ hệ thống tri thức
 
-[Nghiên cứu RAG ban đầu](https://arxiv.org/abs/2005.11401) kết hợp bộ nhớ tham số của mô hình với chỉ mục vector bên ngoài để cập nhật tri thức và cung cấp nguồn cho câu trả lời.
-
-Trong thực tế, cách triển khai này dần được rút gọn thành một pipeline khá cố định:
+[Nghiên cứu RAG ban đầu](https://arxiv.org/abs/2005.11401) kết hợp bộ nhớ của mô hình với chỉ mục bên ngoài. Cách triển khai quen thuộc là:
 
 ```text
 tài liệu → chunk → embedding → vector search → prompt → câu trả lời
 ```
 
-Pipeline này hợp với câu hỏi cục bộ có đáp án trong vài đoạn gần nghĩa với truy vấn. Nhưng nó bắt đầu hụt hơi khi phải trả lời những câu như:
-
-- Chính sách hay con số này đã thay đổi ra sao và còn hiệu lực tại thời điểm nào?
-- Từ các hướng dẫn nằm rải rác, quy trình hoàn chỉnh có mục tiêu gì, ai làm từng bước, theo điều kiện nào và xử lý ngoại lệ ra sao?
-- Ai được phép đọc nguồn và điều gì bị ảnh hưởng nếu nguồn đó bị thu hồi?
-
-Đây không còn là bài toán tìm đoạn văn. Đây là bài toán quản lý tri thức.
-
-## Nâng cấp tính năng chỉ là phần nhỏ
-
-Hybrid search, reranking, query routing, graph hay agentic loop đều là những thành phần hữu ích của một hệ thống Tri thức. Nhưng thêm chúng vào RAG chủ yếu giúp **AI tìm và sử dụng thông tin tốt hơn**.
-
-Cắt tài liệu thành chunk mới chỉ tạo ra lớp evidence có thể truy xuất; embedding và vector database chỉ giúp tìm trong lớp này. Hệ thống biết đoạn nào gần nghĩa với câu hỏi, nhưng chưa biết công việc phải được thực hiện theo những bước nào.
-
-Phần nâng cấp quan trọng hơn là xây procedure từ evidence: mục tiêu, điều kiện, hành động, thứ tự, vai trò, thay đổi trạng thái, nhánh xử lý và kết quả. Mỗi thành phần dẫn xuất vẫn phải trỏ ngược về evidence đã tạo ra nó.
+Pipeline này phù hợp khi đáp án nằm trong vài đoạn gần nghĩa. Hybrid search, reranking, graph hay agentic retrieval giúp tìm tốt hơn, nhưng vẫn chưa cho AI biết mục tiêu, thứ tự hành động, trách nhiệm, nhánh xử lý và ngoại lệ của một quy trình.
 
 ## Hai lớp: evidence và procedure
 
-[Dense Passage Retrieval](https://aclanthology.org/2020.emnlp-main.550/) gọi các khối 100 từ được cắt từ Wikipedia là *passage*. [ART](https://aclanthology.org/2023.tacl-1.35/) dùng *evidence passage*, nhưng [FEVER](https://aclanthology.org/N18-1074/) chỉ xem câu là evidence khi nó hỗ trợ hoặc bác bỏ một nhận định; [KILT](https://aclanthology.org/2021.naacl-main.200/) dùng *provenance* cho vị trí trong nguồn dùng để kiểm chứng đầu ra. Trong các paper này, evidence thường là vai trò theo ngữ cảnh, không mặc nhiên có nghĩa “nguyên văn”, “bất biến” hay “đúng”.
-
-Vì vậy, **evidence trong bài này là một quy ước kiến trúc**, không phải một phân loại tri thức phổ quát. Tôi dùng nó cho lớp dữ liệu trả lời câu hỏi “nguồn đã nói gì?”, còn procedure trả lời “công việc phải được thực hiện thế nào?”.
+[Dense Passage Retrieval](https://aclanthology.org/2020.emnlp-main.550/) gọi đơn vị truy xuất là *passage*; [ART](https://aclanthology.org/2023.tacl-1.35/) và [FEVER](https://aclanthology.org/N18-1074/) dùng evidence theo ngữ cảnh của câu hỏi hoặc nhận định. Còn trong bài này, evidence là một quy ước kiến trúc, không mặc nhiên có nghĩa “đúng”.
 
 ### Evidence: bản ghi nguyên văn từ nguồn
 
-Trong phạm vi bài này, evidence không đồng nghĩa với sự thật đã được xác minh. Tôi định nghĩa **evidence = chunk nguyên văn + provenance + metadata quản trị**. Chunking chỉ xác định ranh giới; nội dung không được diễn giải lại, tóm tắt hay sửa cho “đẹp”. Kết quả OCR hoặc chuẩn hóa phải là bản dẫn xuất, không được ghi đè evidence gốc.
+Evidence không đồng nghĩa với sự thật đã được xác minh:
 
-Mỗi evidence cần nguồn, phiên bản, vị trí, thời điểm thu thập, thời gian có hiệu lực, quyền truy cập và checksum. Nó chỉ chứng minh **“nguồn này đã nói như vậy”**; nội dung vẫn có thể cũ, sai hoặc mâu thuẫn với nguồn khác.
+> **evidence = chunk nguyên văn + nguồn gốc dữ liệu (provenance) + metadata quản trị**
 
-[Contextual Retrieval của Anthropic](https://www.anthropic.com/engineering/contextual-retrieval) bổ sung ngữ cảnh để truy xuất chunk tốt hơn. Phần ngữ cảnh, bản tóm tắt và embedding nên nằm bên cạnh evidence dưới dạng dữ liệu dẫn xuất. [W3C PROV-O](https://www.w3.org/TR/prov-o/) cũng phân biệt nội dung được trích từ nguồn với bản sửa đổi và dữ liệu dẫn xuất.
+Chunking chỉ xác định ranh giới; nội dung không được viết lại hay tóm tắt. Ngữ cảnh bổ sung, kết quả OCR và embedding là dữ liệu dẫn xuất, không được ghi đè evidence gốc.
+
+Mỗi evidence cần nguồn, phiên bản, vị trí, thời gian có hiệu lực, quyền truy cập và checksum. Nó chỉ chứng minh **“nguồn này đã nói như vậy”**; nội dung vẫn có thể cũ, sai hoặc mâu thuẫn. Nguồn thay đổi thì tạo evidence mới, không sửa bản cũ.
 
 ### Procedure: để AI biết cách làm
 
-Procedure không phải bản tóm tắt dài hơn hay việc phát hiện vài chunk thường xuất hiện cùng nhau. Nó là mô hình vận hành được hình thành từ một hoặc nhiều evidence để AI lập kế hoạch, thực hiện và kiểm tra kết quả.
+Procedure là mô hình vận hành được hình thành từ evidence, không phải bản tóm tắt hay vài chunk thường xuất hiện cùng nhau. Nó gồm:
 
-[ProPara](https://aclanthology.org/N18-1144/) và [OpenPI](https://aclanthology.org/2020.emnlp-main.520/) mô hình hóa quy trình qua thay đổi trạng thái của thực thể ở từng bước. [proScript](https://aclanthology.org/2021.findings-emnlp.184/) chỉ ràng buộc những sự kiện buộc phải trước hoặc sau nhau; [BPMN 2.0](https://www.omg.org/spec/BPMN/2.0/PDF/) còn mô hình hóa activity, event, gateway, dữ liệu và người chịu trách nhiệm. Từ đó, một procedure cần có:
+- mục tiêu, phạm vi, sự kiện kích hoạt và điều kiện áp dụng;
+- hành động, thứ tự, quan hệ phụ thuộc và nhánh lựa chọn;
+- vai trò, tài nguyên, thay đổi trạng thái và kết quả;
+- ngoại lệ, cách phục hồi và bước xác minh.
 
-- **Mục tiêu và phạm vi:** kết quả cần tạo ra và trường hợp áp dụng.
-- **Điều kiện:** sự kiện kích hoạt, precondition, điều kiện duy trì và tiêu chí hoàn tất.
-- **Cách thực hiện:** hành động, thứ tự, quan hệ phụ thuộc, bước song song và nhánh lựa chọn.
-- **Trách nhiệm và tài nguyên:** người thực hiện, đầu vào, công cụ, dữ liệu và quyền.
-- **Thay đổi trạng thái:** trạng thái trước, trạng thái sau và đầu ra của mỗi bước.
-- **Kiểm soát:** ngoại lệ, cách phục hồi, bước xác minh và evidence hỗ trợ từng trường.
+[ProPara](https://aclanthology.org/N18-1144/) và [OpenPI](https://aclanthology.org/2020.emnlp-main.520/) theo dõi thay đổi trạng thái; [proScript](https://aclanthology.org/2021.findings-emnlp.184/) biểu diễn thứ tự sự kiện; [BPMN 2.0](https://www.omg.org/spec/BPMN/2.0/PDF/) bổ sung nhánh và trách nhiệm.
 
-Tương quan giữa các chunk chỉ là tín hiệu khám phá, không chứng minh thứ tự, trách nhiệm hay quan hệ nhân quả. Procedure là dữ liệu dẫn xuất nên phải có phiên bản, độ tin cậy và trạng thái xác nhận; phần chưa có evidence hỗ trợ phải được đánh dấu là suy luận hoặc đề xuất.
+Tương quan giữa các chunk chỉ là tín hiệu khám phá, không chứng minh thứ tự hay quan hệ nhân quả. Mỗi phần của procedure phải trỏ về evidence; chỗ chưa có căn cứ phải được đánh dấu là suy luận.
 
-## Một kho tri thức cần nhiều cách nhìn
+## Kiến trúc phải phục vụ hai lớp tri thức
 
-Hai lớp này cần những cách truy xuất khác nhau. Vector và keyword search phù hợp với evidence; SQL và knowledge graph phù hợp hơn với điều kiện, trạng thái, vai trò và quan hệ phụ thuộc trong procedure. Tài liệu gốc vẫn phải được giữ để đối chiếu.
-
-[GraphRAG của Microsoft](https://www.microsoft.com/en-us/research/publication/from-local-to-global-a-graph-rag-approach-to-query-focused-summarization/) tạo góc nhìn toàn cục bằng graph và bản tóm tắt theo cụm; [KAG](https://arxiv.org/abs/2409.13731) liên kết graph với chunk gốc rồi phối hợp nhiều cách truy xuất. Điểm chung là: **không có một kiểu chỉ mục phù hợp với mọi câu hỏi**.
-
-Vì vậy, thay vì hỏi “chọn vector database nào?”, tôi muốn thiết kế một lớp tri thức có nhiều cách biểu diễn:
+Vector và keyword search phù hợp với evidence; SQL và knowledge graph phù hợp hơn với procedure. Retrieval planner chọn cách truy xuất theo câu hỏi thay vì luôn lấy một số chunk cố định.
 
 ```text
 tài liệu gốc
       ↓ cắt, không viết lại
 evidence bất biến + provenance
       ├── vector | keyword
-      └── trích xuất + kiểm chứng
-                  ↓
-                 procedure
-          mục tiêu | điều kiện | hành động | vai trò | trạng thái | nhánh
-                  ↓
-              graph | SQL
-                  ↓
-retrieval planner → evidence hoặc procedure → LLM hoặc AI agent
+      └── trích xuất + kiểm chứng → procedure → graph | SQL
+
+câu hỏi → retrieval planner → evidence hoặc procedure → LLM hoặc AI agent
 ```
 
-Nguồn là tài sản bền vững. Các chỉ mục chỉ là dữ liệu dẫn xuất, có thể xây lại khi công nghệ thay đổi.
-
-## Retrieval không nên là một bước cố định
-
-RAG cơ bản thường lấy số lượng tài liệu cố định cho mọi câu hỏi. [Self-RAG](https://arxiv.org/abs/2310.11511) cho mô hình quyết định khi nào cần retrieval; [CRAG](https://arxiv.org/abs/2401.15884) đánh giá tài liệu lấy về để điều chỉnh chiến lược. Bài học thực dụng là thiết kế pipeline biết chọn nguồn, kiểm tra evidence đã đủ, còn hiệu lực và đúng quyền chưa, rồi truy xuất lại, đổi nguồn hoặc từ chối trước khi trả lời.
-
-Câu hỏi đơn giản vẫn nên đi đường ngắn. Hệ thống thông minh không phải hệ thống lúc nào cũng gọi năm agent; đôi khi biết khỏi họp cũng là một dạng thông minh.
-
-## Tri thức phải có lịch sử và trách nhiệm
-
-Một evidence ghi “giám đốc là A” có thể đúng hôm qua và sai hôm nay. Khi tài liệu thay đổi, hệ thống cần tạo evidence mới thay vì ghi đè bản cũ; procedure dẫn xuất từ bản cũ phải được cập nhật hoặc đánh dấu đã bị thay thế. [Temporal GraphRAG](https://arxiv.org/abs/2510.13590) đưa thời gian vào biểu diễn tri thức cũng vì vấn đề này.
-
-[W3C PROV](https://www.w3.org/TR/prov-overview/) dùng provenance (nguồn gốc dữ liệu) để ghi lại thực thể, hoạt động và người chịu trách nhiệm trong quá trình tạo dữ liệu. Với hệ thống Tri thức cho AI, provenance, phiên bản và quyền truy cập phải đi xuyên suốt từ evidence, procedure, chỉ mục cho tới citation ở đầu ra.
-
-## Chất lượng phải được đo liên tục
-
-Demo RAG thường được đánh giá bằng vài câu hỏi đã biết đáp án. [RAGAS](https://arxiv.org/abs/2309.15217) tách chất lượng retrieval, mức độ LLM bám vào ngữ cảnh và chất lượng câu trả lời; hệ thống Tri thức còn phải đo độ mới, lỗi phân quyền, chi phí và hiệu quả công việc.
-
-Phản hồi của người dùng chỉ nên tạo ra đề xuất có nguồn và được kiểm tra. Đây cũng là nguyên tắc tôi theo đuổi với [Lorekeep](/lorekeep-kho-tri-thuc-dung-chung-coding-agent): agent có thể đóng góp, nhưng không được âm thầm sửa ký ức chung.
+Evidence là tài sản bền vững; chỉ mục có thể xây lại. Provenance, phiên bản và quyền truy cập phải đi từ nguồn đến câu trả lời. Evidence đổi thì procedure liên quan phải được cập nhật hoặc đánh dấu đã lỗi thời.
 
 ## Nâng cấp dần, không cần đập đi xây lại
 
-Không phải dự án nào cũng cần graph, agentic retrieval hay một ontology hoành tráng ngay từ đầu. Lộ trình hợp lý hơn là:
+Tôi sẽ đi theo ba bước:
 
-1. **Xây lớp evidence:** lưu chunk nguyên văn, phiên bản, vị trí, quyền và checksum; xem các chỉ mục là dữ liệu có thể xây lại.
-2. **Xây procedure:** mô hình hóa mục tiêu, điều kiện, hành động, vai trò, trạng thái và ngoại lệ; liên kết về evidence rồi kiểm tra bằng con người.
-3. **Bổ sung theo lỗi thực tế:** chỉ thêm reranking, routing, graph, SQL hoặc xử lý thời gian khi benchmark cho thấy cần.
-4. **Tách thành dịch vụ dùng chung:** cung cấp API hoặc MCP để nhiều ứng dụng và agent dùng cùng nền tri thức.
+1. **Xây lớp evidence:** lưu chunk nguyên văn cùng nguồn, phiên bản, quyền và checksum.
+2. **Xây procedure cho công việc quan trọng:** mô hình hóa hành động, vai trò, trạng thái và ngoại lệ; liên kết về evidence rồi kiểm tra bằng con người.
+3. **Bổ sung theo lỗi thực tế:** chỉ thêm reranking, graph, SQL hay agentic retrieval khi benchmark cho thấy cần.
 
-So với [cách nhìn “RAG không chỉ là vector” trước đây](/2026/07/01/rag-khong-chi-la-vector), đây là bước tiếp theo trong tư duy của tôi. Tôi vẫn làm RAG, nhưng giờ RAG là cơ chế đưa đúng evidence hoặc procedure vào ngữ cảnh, không phải tên của cả hệ thống. Evidence cho AI căn cứ để trả lời; procedure cho nó cấu trúc để lập kế hoạch, hành động và kiểm tra kết quả.
+So với [cách nhìn “RAG không chỉ là vector” trước đây](/2026/07/01/rag-khong-chi-la-vector), đây là bước tiếp theo: RAG đưa đúng tri thức vào ngữ cảnh; evidence cho AI căn cứ để trả lời; procedure cho AI biết phải làm gì và kiểm tra kết quả ra sao.
 
 ## Tài liệu tham khảo
 
 1. [Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks](https://arxiv.org/abs/2005.11401) — Lewis và cộng sự, 2020.
-2. [Introducing Contextual Retrieval](https://www.anthropic.com/engineering/contextual-retrieval) — Anthropic, 2024.
-3. [From Local to Global: A Graph RAG Approach to Query-Focused Summarization](https://www.microsoft.com/en-us/research/publication/from-local-to-global-a-graph-rag-approach-to-query-focused-summarization/) — Microsoft Research, 2024.
-4. [KAG: Boosting LLMs in Professional Domains via Knowledge Augmented Generation](https://arxiv.org/abs/2409.13731) — Liang và cộng sự, 2024.
-5. [Self-RAG](https://arxiv.org/abs/2310.11511) và [Corrective Retrieval Augmented Generation](https://arxiv.org/abs/2401.15884).
-6. [RAG Meets Temporal Graphs](https://arxiv.org/abs/2510.13590) — Han và cộng sự, 2025.
-7. [PROV-O: The PROV Ontology](https://www.w3.org/TR/prov-o/) và [W3C PROV Overview](https://www.w3.org/TR/prov-overview/).
-8. [RAGAS: Automated Evaluation of Retrieval Augmented Generation](https://arxiv.org/abs/2309.15217) — Es và cộng sự, 2023.
-9. [Tracking State Changes in Procedural Text](https://aclanthology.org/N18-1144/) — Dalvi và cộng sự, 2018.
-10. [A Dataset for Tracking Entities in Open Domain Procedural Text](https://aclanthology.org/2020.emnlp-main.520/) — Tandon và cộng sự, 2020.
-11. [proScript: Partially Ordered Scripts Generation](https://aclanthology.org/2021.findings-emnlp.184/) — Sakaguchi và cộng sự, 2021.
-12. [Business Process Model and Notation, Version 2.0](https://www.omg.org/spec/BPMN/2.0/PDF/) — Object Management Group, 2011.
-13. [Dense Passage Retrieval for Open-Domain Question Answering](https://aclanthology.org/2020.emnlp-main.550/) — Karpukhin và cộng sự, 2020.
-14. [Questions Are All You Need to Train a Dense Passage Retriever](https://aclanthology.org/2023.tacl-1.35/) — Sachan và cộng sự, 2023.
-15. [FEVER: a Large-scale Dataset for Fact Extraction and VERification](https://aclanthology.org/N18-1074/) — Thorne và cộng sự, 2018.
-16. [KILT: a Benchmark for Knowledge Intensive Language Tasks](https://aclanthology.org/2021.naacl-main.200/) — Petroni và cộng sự, 2021.
+2. [Dense Passage Retrieval](https://aclanthology.org/2020.emnlp-main.550/), [ART](https://aclanthology.org/2023.tacl-1.35/) và [FEVER](https://aclanthology.org/N18-1074/).
+3. [PROV-O: The PROV Ontology](https://www.w3.org/TR/prov-o/) — W3C.
+4. [ProPara](https://aclanthology.org/N18-1144/), [OpenPI](https://aclanthology.org/2020.emnlp-main.520/) và [proScript](https://aclanthology.org/2021.findings-emnlp.184/).
+5. [Business Process Model and Notation 2.0](https://www.omg.org/spec/BPMN/2.0/PDF/) — Object Management Group.
 
 *Nguồn nghiên cứu được kiểm tra ngày 23/8/2026.*
