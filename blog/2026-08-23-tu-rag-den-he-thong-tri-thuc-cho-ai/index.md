@@ -83,7 +83,7 @@ So với [cách nhìn “RAG không chỉ là vector” trước đây](/2026/07
 
 ## Tài liệu tham khảo
 
-1. [Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks](https://arxiv.org/abs/2005.11401) — Lewis và cộng sự, 2020.
+1. [Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks](https://arxiv.org/abs/2005.11401) — Lewis và cộng sự, 2020; paper giới thiệu RAG bằng cách kết hợp tri thức trong mô hình với nguồn ngoài có thể truy xuất.
 2. [Dense Passage Retrieval](https://aclanthology.org/2020.emnlp-main.550/), [ART](https://aclanthology.org/2023.tacl-1.35/) và [FEVER](https://aclanthology.org/N18-1074/).
 3. [PROV-O: The PROV Ontology](https://www.w3.org/TR/prov-o/) — W3C.
 4. [ProPara](https://aclanthology.org/N18-1144/), [OpenPI](https://aclanthology.org/2020.emnlp-main.520/) và [proScript](https://aclanthology.org/2021.findings-emnlp.184/).
