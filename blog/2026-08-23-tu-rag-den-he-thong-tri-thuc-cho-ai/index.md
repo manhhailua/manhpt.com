@@ -26,7 +26,7 @@ Khi AI phải xử lý dữ liệu thay đổi, nguồn mâu thuẫn và câu h�
 tài liệu → chunk → embedding → vector search → prompt → câu trả lời
 ```
 
-Pipeline này hợp khi đáp án nằm trong vài đoạn gần nghĩa. Hybrid search, reranking hay graph giúp truy xuất tốt hơn, nhưng chưa cho agent biết vòng tiếp theo cần tìm gì, kết hợp dữ kiện ra sao và khi nào nên dừng.
+Pipeline này hợp khi đáp án nằm trong vài đoạn gần nghĩa. Tối ưu retrieval có thể giúp tìm đúng đoạn hơn, nhưng chưa cho agent biết vòng tiếp theo cần tìm gì, kết hợp dữ kiện ra sao và khi nào nên dừng.
 
 ## Hai lớp: evidence và procedure
 
@@ -57,7 +57,7 @@ Tương quan giữa các chunk chỉ là tín hiệu khám phá, chưa phải pr
 
 ## Procedure dẫn agent qua vòng lặp suy luận
 
-Vector và keyword search phù hợp với evidence; SQL hoặc knowledge graph có thể lưu trạng thái và quan hệ trong procedure. Quan trọng hơn, agent phải dùng procedure để quyết định bước tiếp theo trong mỗi vòng lặp.
+Cách lưu trữ evidence và procedure không phải luận điểm chính. Quan trọng hơn, agent phải dùng procedure để quyết định bước tiếp theo trong mỗi vòng lặp.
 
 ```text
 câu hỏi → agent dùng procedure chọn bước → truy xuất evidence
@@ -75,7 +75,7 @@ Tôi sẽ đi theo ba bước:
 
 1. **Xây lớp evidence:** lưu chunk nguyên văn cùng nguồn, phiên bản, quyền và checksum.
 2. **Xây procedure cho câu hỏi quan trọng:** mô hình hóa bước truy xuất, quy tắc suy luận, nhánh xử lý, cách kiểm tra và điều kiện dừng; liên kết về evidence rồi kiểm tra bằng con người.
-3. **Bổ sung theo lỗi thực tế:** chỉ thêm reranking, graph, SQL hay agentic retrieval khi benchmark cho thấy cần.
+3. **Bổ sung theo lỗi thực tế:** chỉ mở rộng retrieval hoặc reasoning khi benchmark cho thấy cần.
 
 So với [cách nhìn “RAG không chỉ là vector” trước đây](/2026/07/01/rag-khong-chi-la-vector), đây là bước tiếp theo: RAG đưa đúng tri thức vào ngữ cảnh; evidence cung cấp dữ kiện; procedure dẫn đường cho vòng lặp suy luận để agent tìm và kiểm chứng câu trả lời.
 
