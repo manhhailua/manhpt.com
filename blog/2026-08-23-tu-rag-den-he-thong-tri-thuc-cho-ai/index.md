@@ -12,9 +12,9 @@ image: ./cover.webp
 
 Nếu hỏi tôi cách xây một hệ thống tri thức cho AI cách đây không lâu, câu trả lời sẽ khá gọn: chia tài liệu thành các chunk, tạo embedding, lưu vào vector database, lấy top-k rồi đưa cho LLM.
 
-Cách đó không sai. Nó vẫn là điểm bắt đầu tốt để kiểm chứng một bài toán. Nhưng có một cái tủ hồ sơ chưa đồng nghĩa với việc đã có thư viện.
+Cách đó không sai và vẫn là điểm bắt đầu tốt. Nhưng có một cái tủ hồ sơ chưa đồng nghĩa với việc đã có thư viện.
 
-Khi AI phải làm việc lâu dài với dữ liệu liên tục thay đổi, nhiều nguồn mâu thuẫn, nhiều phạm vi truy cập và nhiều agent cùng sử dụng, câu hỏi không còn là **“tối ưu retrieval thế nào?”**. Câu hỏi quan trọng hơn là: **“AI cần biết điều gì, dựa vào nguồn nào, đúng ở thời điểm nào và làm sao để kiểm chứng?”**
+Khi AI làm việc lâu dài với dữ liệu thay đổi, nhiều nguồn mâu thuẫn, nhiều phạm vi truy cập và nhiều agent cùng sử dụng, câu hỏi không còn là **“tối ưu retrieval thế nào?”**. Câu hỏi quan trọng hơn là: **“AI cần biết điều gì, dựa vào nguồn nào, đúng ở thời điểm nào và làm sao để kiểm chứng?”**
 
 Đó là lúc tôi chuyển từ việc xây một pipeline RAG sang xây **hệ thống Tri thức cho AI**. Thêm hybrid search, reranking hay knowledge graph chỉ là phần dễ thấy; thay đổi quan trọng hơn nhiều nằm ở cách tri thức được hình thành từ dữ liệu.
 
@@ -22,7 +22,7 @@ Khi AI phải làm việc lâu dài với dữ liệu liên tục thay đổi, n
 
 ## RAG giải một phần quan trọng, không phải toàn bộ bài toán
 
-[Nghiên cứu RAG ban đầu](https://arxiv.org/abs/2005.11401) kết hợp bộ nhớ tham số của mô hình với bộ nhớ ngoài là một chỉ mục vector của Wikipedia. Hai động lực quan trọng của hướng tiếp cận này là cập nhật tri thức và cung cấp nguồn cho câu trả lời.
+[Nghiên cứu RAG ban đầu](https://arxiv.org/abs/2005.11401) kết hợp bộ nhớ tham số của mô hình với chỉ mục vector bên ngoài để cập nhật tri thức và cung cấp nguồn cho câu trả lời.
 
 Trong thực tế, cách triển khai này dần được rút gọn thành một pipeline khá cố định:
 
@@ -30,29 +30,27 @@ Trong thực tế, cách triển khai này dần được rút gọn thành mộ
 tài liệu → chunk → embedding → vector search → prompt → câu trả lời
 ```
 
-Pipeline này rất hợp với câu hỏi cục bộ, khi đáp án nằm trong một vài đoạn văn gần nghĩa với truy vấn. Nhưng nó bắt đầu hụt hơi khi phải trả lời những câu như:
+Pipeline này hợp với câu hỏi cục bộ có đáp án trong vài đoạn gần nghĩa với truy vấn. Nhưng nó bắt đầu hụt hơi khi phải trả lời những câu như:
 
-- Chính sách này thay đổi qua các phiên bản ra sao?
-- Hai quyết định ở hai tài liệu khác nhau liên quan với nhau thế nào?
-- Con số nào còn hiệu lực tại thời điểm được hỏi?
-- Agent này có được phép đọc nguồn chứa câu trả lời không?
-- Nếu tài liệu gốc bị thu hồi, những chỉ mục và câu trả lời nào bị ảnh hưởng?
+- Chính sách hay con số này đã thay đổi ra sao và còn hiệu lực tại thời điểm nào?
+- Các quyết định ở nhiều tài liệu liên hệ với nhau thế nào, và các bước rời rạc ghép thành quy trình nào?
+- Ai được phép đọc nguồn và điều gì bị ảnh hưởng nếu nguồn đó bị thu hồi?
 
 Đây không còn là bài toán tìm đoạn văn. Đây là bài toán quản lý tri thức.
 
 ## Nâng cấp tính năng chỉ là phần nhỏ
 
-Nhìn từ bên ngoài, lộ trình nâng cấp RAG thường là thêm hybrid search, reranking, query routing, graph hoặc agentic loop. Tất cả đều hữu ích, nhưng chủ yếu trả lời câu hỏi **AI tìm và sử dụng tri thức thế nào**.
+Hybrid search, reranking, query routing, graph hay agentic loop đều là những thành phần hữu ích của một hệ thống Tri thức. Nhưng thêm chúng vào RAG chủ yếu giúp **AI tìm và sử dụng thông tin tốt hơn**.
 
-Nếu dữ liệu bên dưới vẫn chỉ là các chunk và embedding, hệ thống mới tìm kiếm tốt hơn trên những mảnh thông tin rời rạc. Nó chưa làm rõ được ai liên quan tới ai, quyết định nào dẫn đến thay đổi nào, một quy trình diễn ra qua những bước gì, điều kiện và ngoại lệ nằm ở đâu.
+Chỉ cắt tài liệu thành chunk rồi lưu embedding vào vector database chưa đủ để tạo ra tri thức. Hệ thống có thể tìm kiếm tốt hơn, nhưng chưa làm rõ ai liên quan tới ai, quyết định nào dẫn đến thay đổi nào, một quy trình diễn ra qua những bước gì, điều kiện và ngoại lệ nằm ở đâu.
 
-Phần nâng cấp lớn hơn là chuyển từ tư duy **đưa tài liệu vào hệ thống** sang **xây dựng tri thức từ tài liệu**: nhận diện thực thể, sự kiện và quyết định; phát hiện mối liên hệ hoặc tương quan; khôi phục các quy trình; rồi gắn mọi kết quả trở lại nguồn, thời gian và mức độ tin cậy.
+Phần nâng cấp quan trọng hơn là chuyển từ **đưa tài liệu vào hệ thống** sang **xây dựng tri thức từ tài liệu**: nhận diện thực thể, sự kiện và quyết định; phát hiện mối liên hệ hoặc tương quan; khôi phục quy trình; rồi gắn kết quả với nguồn, thời gian và mức độ tin cậy.
 
 ## Chunk là nguyên liệu, không phải tri thức
 
-Chunk là đơn vị tiện cho indexing và retrieval, không mặc nhiên là một đơn vị tri thức. Một chunk có thể chỉ chứa nửa quyết định, một bước trong quy trình hoặc một mối liên hệ chỉ có nghĩa khi đặt cạnh nhiều nguồn khác.
+Chunk tiện cho indexing và retrieval, nhưng không mặc nhiên là một đơn vị tri thức. Nó có thể chỉ chứa nửa quyết định, một bước trong quy trình hoặc một mối liên hệ chỉ có nghĩa khi đặt cạnh nhiều nguồn khác.
 
-[Contextual Retrieval của Anthropic](https://www.anthropic.com/engineering/contextual-retrieval) cho thấy các chunk thiếu ngữ cảnh có thể khiến hệ thống lấy sai hoặc bỏ sót đoạn cần thiết. Cách họ bổ sung ngữ cảnh riêng cho từng chunk, kết hợp embedding với BM25 và reranking, là một cải tiến thực dụng. Nhưng với tôi, bài học lớn hơn là: **nội dung không thể tách khỏi bối cảnh đã tạo ra nó**.
+[Contextual Retrieval của Anthropic](https://www.anthropic.com/engineering/contextual-retrieval) bổ sung ngữ cảnh cho từng chunk rồi kết hợp embedding, BM25 và reranking để giảm lỗi truy xuất. Với tôi, bài học lớn hơn là: **nội dung không thể tách khỏi bối cảnh đã tạo ra nó**.
 
 Một vài ví dụ cho thấy khác biệt giữa lưu đoạn văn và hình thành tri thức:
 
@@ -62,26 +60,17 @@ Một vài ví dụ cho thấy khác biệt giữa lưu đoạn văn và hình t
 | “Nếu có X, nhóm Y phải làm Z trước W” | quy trình, người chịu trách nhiệm, điều kiện, thứ tự và quan hệ phụ thuộc |
 | A và B thường xuất hiện cùng nhau trong nhiều nguồn | mối liên hệ hoặc tương quan, bằng chứng và độ tin cậy; không tự suy thành quan hệ nhân quả |
 
-Để đi từ mảnh văn bản tới tri thức, pipeline có thể kết hợp schema extraction, entity resolution, các rule định sẵn, LLM và bước xác nhận của con người. Kỹ thuật cụ thể có thể thay đổi; yêu cầu bền vững là tri thức dẫn xuất phải truy ngược được về nguồn, còn điều do hệ thống suy ra phải giữ mức độ tin cậy thay vì âm thầm trở thành “sự thật”.
+Để đi từ văn bản tới tri thức, pipeline có thể kết hợp schema extraction, entity resolution, quy tắc, LLM và bước xác nhận của con người. Kỹ thuật có thể thay đổi, nhưng tri thức dẫn xuất phải truy ngược được về nguồn; điều do hệ thống suy ra phải giữ bằng chứng và độ tin cậy thay vì âm thầm thành “sự thật”.
 
-Trong hệ thống Tri thức, một đơn vị có thể vẫn giữ chunk gốc làm bằng chứng, nhưng phải đi cùng ít nhất:
-
-- nguồn gốc và phiên bản tài liệu;
-- thực thể, sự kiện, quyết định và quan hệ liên quan;
-- các bước của quy trình, người chịu trách nhiệm, đầu vào, đầu ra, điều kiện và ngoại lệ;
-- thời điểm ghi nhận, thời gian có hiệu lực;
-- phạm vi truy cập;
-- trạng thái và độ tin cậy: đã xác nhận, đang đề xuất hay đã bị thay thế.
+Một đơn vị tri thức vẫn có thể giữ chunk gốc làm bằng chứng, nhưng cần thêm nguồn và phiên bản; thực thể, sự kiện, quyết định và quan hệ; các bước, vai trò, điều kiện và ngoại lệ của quy trình; thời gian, quyền truy cập, trạng thái và độ tin cậy.
 
 Embedding chỉ là một cách biểu diễn để tìm kiếm. Nó không nên trở thành bản gốc duy nhất của tri thức.
 
 ## Một kho tri thức cần nhiều cách nhìn
 
-Sau khi tri thức được hình thành, hệ thống vẫn cần nhiều cách tìm và sử dụng nó. Vector search phù hợp với nội dung gần nghĩa. Keyword search phù hợp với tên riêng, mã lỗi và cụm từ chính xác. SQL xử lý tốt con số và các điều kiện xác định. Knowledge graph giúp biểu diễn quan hệ giữa các thực thể. Tài liệu gốc vẫn cần được giữ lại để đối chiếu bằng chứng.
+Sau khi tri thức được hình thành, hệ thống vẫn cần nhiều cách sử dụng nó: vector search cho nội dung gần nghĩa, keyword search cho tên và mã chính xác, SQL cho số liệu và knowledge graph cho quan hệ. Tài liệu gốc vẫn phải được giữ để đối chiếu.
 
-[GraphRAG của Microsoft](https://www.microsoft.com/en-us/research/publication/from-local-to-global-a-graph-rag-approach-to-query-focused-summarization/) chỉ ra một giới hạn cụ thể của RAG thông thường: câu hỏi cần nhìn toàn bộ kho tài liệu, chẳng hạn tìm các chủ đề chính, không phù hợp với việc lấy vài đoạn gần nhất. GraphRAG dựng knowledge graph từ các thực thể, sau đó tóm tắt từng cụm để tạo góc nhìn toàn cục.
-
-[KAG](https://arxiv.org/abs/2409.13731) đi thêm một hướng khác: liên kết qua lại giữa knowledge graph và chunk gốc, rồi kết hợp truy xuất văn bản, truy vấn graph, phép tính và suy luận theo logical form. Tôi không xem đây là công thức phải chép nguyên xi, nhưng nó củng cố một nguyên tắc: **không có một kiểu chỉ mục nào phù hợp với mọi loại câu hỏi**.
+[GraphRAG của Microsoft](https://www.microsoft.com/en-us/research/publication/from-local-to-global-a-graph-rag-approach-to-query-focused-summarization/) dùng knowledge graph và bản tóm tắt theo cụm để trả lời câu hỏi cần nhìn toàn bộ kho tài liệu. [KAG](https://arxiv.org/abs/2409.13731) liên kết graph với chunk gốc, rồi phối hợp truy xuất văn bản, truy vấn graph, phép tính và suy luận. Hai hướng này củng cố một nguyên tắc: **không có một kiểu chỉ mục phù hợp với mọi câu hỏi**.
 
 Vì vậy, thay vì hỏi “chọn vector database nào?”, tôi muốn thiết kế một lớp tri thức có nhiều cách biểu diễn:
 
@@ -99,15 +88,14 @@ Nguồn là tài sản bền vững. Các chỉ mục chỉ là dữ liệu dẫ
 
 ## Retrieval không nên là một bước cố định
 
-RAG cơ bản thường lấy một số lượng tài liệu cố định cho mọi câu hỏi. [Self-RAG](https://arxiv.org/abs/2310.11511) cho phép mô hình quyết định khi nào cần retrieval, đồng thời đánh giá mức độ liên quan và khả năng hỗ trợ câu trả lời. [CRAG](https://arxiv.org/abs/2401.15884) bổ sung bước đánh giá chất lượng tài liệu lấy về để quyết định có cần sửa chiến lược retrieval hay không.
+RAG cơ bản thường lấy một số lượng tài liệu cố định cho mọi câu hỏi. [Self-RAG](https://arxiv.org/abs/2310.11511) cho mô hình quyết định khi nào cần retrieval; [CRAG](https://arxiv.org/abs/2401.15884) đánh giá tài liệu lấy về để điều chỉnh chiến lược.
 
-Trong thực tế, không nhất thiết phải huấn luyện một mô hình theo hai kiến trúc đó. Điều đáng học là cách thiết kế pipeline:
+Không nhất thiết phải triển khai đúng hai kiến trúc đó; điều đáng học là cách thiết kế pipeline:
 
 1. Hiểu ý định và tách câu hỏi nếu cần.
 2. Chọn nguồn cùng cách truy xuất phù hợp.
-3. Đánh giá bằng chứng đã đủ và còn hiệu lực chưa.
-4. Truy xuất lại, đổi nguồn hoặc từ chối nếu chưa đủ căn cứ.
-5. Chỉ sau đó mới tổng hợp câu trả lời hay thực hiện hành động.
+3. Kiểm tra bằng chứng đã đủ, còn hiệu lực và đúng quyền truy cập chưa.
+4. Truy xuất lại, đổi nguồn hoặc từ chối trước khi trả lời nếu chưa đủ căn cứ.
 
 Câu hỏi đơn giản vẫn nên đi đường ngắn. Hệ thống thông minh không phải hệ thống lúc nào cũng gọi năm agent; đôi khi biết khỏi họp cũng là một dạng thông minh.
 
@@ -115,32 +103,28 @@ Câu hỏi đơn giản vẫn nên đi đường ngắn. Hệ thống thông min
 
 Một chunk nói “giám đốc là A” có thể đúng hôm qua và sai hôm nay. Xóa bản cũ rồi lập chỉ mục lại giúp trả lời hiện tại, nhưng làm mất khả năng giải thích câu trả lời đã được tạo ở quá khứ.
 
-[Temporal GraphRAG](https://arxiv.org/abs/2510.13590) xem thời gian là một phần của biểu diễn tri thức, giữ các quan hệ ở từng thời điểm và hỗ trợ cập nhật tăng dần. Đây là hướng nghiên cứu còn mới, nhưng vấn đề nó nêu ra rất thật: tri thức không đứng yên, trong khi phần lớn benchmark RAG giả định một kho dữ liệu tĩnh.
+[Temporal GraphRAG](https://arxiv.org/abs/2510.13590) đưa thời gian vào biểu diễn tri thức và giữ quan hệ ở từng thời điểm. Hướng nghiên cứu này còn mới, nhưng vấn đề rất thật: tri thức không đứng yên trong khi phần lớn benchmark RAG giả định dữ liệu tĩnh.
 
-Thời gian vẫn chưa đủ. Hệ thống còn phải biết một dữ kiện đến từ đâu, qua bước xử lý nào và ai chịu trách nhiệm. [W3C PROV](https://www.w3.org/TR/prov-overview/) dùng khái niệm provenance (nguồn gốc dữ liệu) để ghi lại thực thể, hoạt động và con người tham gia tạo ra dữ liệu; thông tin đó giúp đánh giá chất lượng, độ tin cậy và khả năng kiểm chứng.
+Hệ thống còn phải biết dữ kiện đến từ đâu, qua bước xử lý nào và ai chịu trách nhiệm. [W3C PROV](https://www.w3.org/TR/prov-overview/) dùng provenance (nguồn gốc dữ liệu) để ghi lại các thông tin này nhằm phục vụ đánh giá và kiểm chứng.
 
 Với hệ thống Tri thức cho AI, provenance, phiên bản và quyền truy cập không nên là ba cột metadata thêm vào sau cùng. Chúng phải đi xuyên suốt từ lúc nhập dữ liệu, tạo chỉ mục, truy xuất cho tới citation ở đầu ra.
 
 ## Chất lượng phải được đo liên tục
 
-Demo RAG thường được đánh giá bằng vài câu hỏi mà người làm hệ thống đã biết đáp án. Khi đưa vào sử dụng, chất lượng phải được tách thành nhiều lớp.
+Demo RAG thường được đánh giá bằng vài câu hỏi đã biết đáp án. Khi vận hành, [RAGAS](https://arxiv.org/abs/2309.15217) gợi ý tách việc lấy đúng ngữ cảnh, mức độ LLM bám vào ngữ cảnh và chất lượng câu trả lời; hệ thống Tri thức còn phải đo độ mới, thời gian cập nhật, lỗi phân quyền, chi phí và hiệu quả công việc.
 
-[RAGAS](https://arxiv.org/abs/2309.15217) đề xuất đánh giá riêng khả năng lấy đúng ngữ cảnh, mức độ LLM bám vào ngữ cảnh và chất lượng câu trả lời. Một hệ thống Tri thức còn cần đo thêm độ mới của dữ liệu, thời gian cập nhật, lỗi phân quyền, chi phí và hiệu quả công việc sau cùng.
-
-Phản hồi của người dùng cũng không nên tự động biến thành “sự thật”. Nó nên tạo ra một đề xuất có nguồn, được kiểm tra rồi mới trở thành tri thức chính thức. Đây cũng là nguyên tắc tôi đang theo đuổi với [Lorekeep](/lorekeep-kho-tri-thuc-dung-chung-coding-agent): agent có thể đóng góp, nhưng không được âm thầm sửa ký ức chung.
+Phản hồi của người dùng không nên tự động thành “sự thật”; nó phải tạo ra đề xuất có nguồn và được kiểm tra. Đây cũng là nguyên tắc tôi đang theo đuổi với [Lorekeep](/lorekeep-kho-tri-thuc-dung-chung-coding-agent): agent có thể đóng góp, nhưng không được âm thầm sửa ký ức chung.
 
 ## Nâng cấp dần, không cần đập đi xây lại
 
-Tôi không cho rằng dự án nào cũng cần graph, agentic retrieval hay một ontology hoành tráng ngay từ ngày đầu. Lộ trình hợp lý hơn là:
+Không phải dự án nào cũng cần graph, agentic retrieval hay một ontology hoành tráng ngay từ đầu. Lộ trình hợp lý hơn là:
 
 1. **Giữ nguyên liệu có thể truy vết:** lưu tài liệu gốc, phiên bản, quyền và citation; tạo bộ câu hỏi từ nhu cầu sử dụng thật.
 2. **Xác định tri thức cần hình thành:** chọn các thực thể, sự kiện, quyết định, quan hệ, quy trình và quy tắc thật sự cần cho use case; trích xuất trên phạm vi nhỏ rồi kiểm tra bằng con người.
 3. **Bổ sung tính năng theo lỗi quan sát được:** thêm keyword search, reranking, query routing, graph, SQL hoặc xử lý thời gian khi benchmark cho thấy cần.
 4. **Tách thành dịch vụ tri thức dùng chung:** cung cấp API hoặc MCP để chatbot, workflow và nhiều agent cùng dùng một nền tri thức, thay vì mỗi ứng dụng tự tạo một kho riêng.
 
-So với [cách nhìn “RAG không chỉ là vector” trước đây](/2026/07/01/rag-khong-chi-la-vector), đây là bước tiếp theo trong tư duy của tôi. Thay đổi lớn nhất không nằm ở số lượng retriever hay tính năng, mà ở việc chuyển từ lưu các mảnh văn bản sang chủ động phát hiện, kiểm chứng và vận hành tri thức từ những mối liên hệ và quy trình ẩn trong dữ liệu.
-
-Tôi vẫn làm RAG. Nhưng trọng tâm đã chuyển từ cắt chunk và tối ưu top-k sang xây dựng tri thức mà AI có thể truy xuất, kết nối, sử dụng và kiểm chứng. RAG là một bộ phận của hệ thống — không còn là tên của cả hệ thống nữa.
+So với [cách nhìn “RAG không chỉ là vector” trước đây](/2026/07/01/rag-khong-chi-la-vector), đây là bước tiếp theo trong tư duy của tôi. Tôi vẫn làm RAG, nhưng trọng tâm đã chuyển từ cắt chunk và tối ưu top-k sang phát hiện, kiểm chứng các mối liên hệ và quy trình để tạo tri thức mà AI có thể sử dụng. RAG cùng các tính năng retrieval là một phần của hệ thống Tri thức — không phải toàn bộ hệ thống.
 
 ## Tài liệu tham khảo
 
