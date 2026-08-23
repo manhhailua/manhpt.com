@@ -4,7 +4,7 @@ slug: tu-rag-den-he-thong-tri-thuc-cho-ai
 authors: [manhpt]
 tags: [rag, retrieval, architecture, agentic-ai, ai-strategy, ai]
 date: 2026-08-23
-description: "RAG chỉ là điểm bắt đầu. Hệ thống Tri thức cần giữ source passage nguyên văn và xây procedure có thể truy vết để AI biết cách hành động."
+description: "RAG chỉ là điểm bắt đầu. Hệ thống Tri thức cần giữ evidence ở dạng nguyên văn và xây procedure có thể truy vết để AI biết cách hành động."
 image: ./cover.webp
 ---
 
@@ -16,7 +16,7 @@ Cách đó không sai và vẫn là điểm bắt đầu tốt. Nhưng có một
 
 Khi AI làm việc lâu dài với dữ liệu thay đổi, nhiều nguồn mâu thuẫn, nhiều phạm vi truy cập và nhiều agent cùng sử dụng, câu hỏi không còn là **“tối ưu retrieval thế nào?”**. Câu hỏi quan trọng hơn là: **“AI cần biết điều gì, dựa vào nguồn nào, đúng ở thời điểm nào và làm sao để kiểm chứng?”**
 
-Đó là lúc tôi chuyển từ việc xây một pipeline RAG sang xây **hệ thống Tri thức cho AI** với hai lớp rõ ràng: **source passage** giữ nguyên điều nguồn đã nói; **procedure** diễn tả cách công việc thực sự diễn ra để AI không chỉ trả lời mà còn biết cách hành động.
+Đó là lúc tôi chuyển từ việc xây một pipeline RAG sang xây **hệ thống Tri thức cho AI** với hai lớp rõ ràng: **evidence** là các đoạn nguồn nguyên văn; **procedure** diễn tả cách công việc thực sự diễn ra để AI không chỉ trả lời mà còn biết cách hành động.
 
 <!-- truncate -->
 
@@ -42,27 +42,27 @@ Pipeline này hợp với câu hỏi cục bộ có đáp án trong vài đoạn
 
 Hybrid search, reranking, query routing, graph hay agentic loop đều là những thành phần hữu ích của một hệ thống Tri thức. Nhưng thêm chúng vào RAG chủ yếu giúp **AI tìm và sử dụng thông tin tốt hơn**.
 
-Cắt tài liệu thành các source passage tạo ra lớp dữ liệu có thể truy xuất; embedding và vector database chỉ giúp tìm trong lớp này. Hệ thống biết đoạn nào gần nghĩa với câu hỏi, nhưng chưa biết công việc phải được thực hiện theo những bước nào.
+Cắt tài liệu thành chunk mới chỉ tạo ra lớp evidence có thể truy xuất; embedding và vector database chỉ giúp tìm trong lớp này. Hệ thống biết đoạn nào gần nghĩa với câu hỏi, nhưng chưa biết công việc phải được thực hiện theo những bước nào.
 
-Phần nâng cấp quan trọng hơn là xây procedure từ các source passage: mục tiêu, điều kiện, hành động, thứ tự, vai trò, thay đổi trạng thái, nhánh xử lý và kết quả. Mỗi thành phần dẫn xuất vẫn phải trỏ ngược về đoạn nguồn đã tạo ra nó.
+Phần nâng cấp quan trọng hơn là xây procedure từ evidence: mục tiêu, điều kiện, hành động, thứ tự, vai trò, thay đổi trạng thái, nhánh xử lý và kết quả. Mỗi thành phần dẫn xuất vẫn phải trỏ ngược về evidence đã tạo ra nó.
 
-## Hai lớp: source passage và procedure
+## Hai lớp: evidence và procedure
 
-[Dense Passage Retrieval](https://aclanthology.org/2020.emnlp-main.550/) gọi các khối 100 từ được cắt từ Wikipedia là *passage*. [ART](https://aclanthology.org/2023.tacl-1.35/) dùng *evidence passage*, nhưng [FEVER](https://aclanthology.org/N18-1074/) chỉ xem câu là evidence khi nó hỗ trợ hoặc bác bỏ một nhận định; [KILT](https://aclanthology.org/2021.naacl-main.200/) dùng *provenance* cho vị trí trong nguồn dùng để kiểm chứng đầu ra.
+[Dense Passage Retrieval](https://aclanthology.org/2020.emnlp-main.550/) gọi các khối 100 từ được cắt từ Wikipedia là *passage*. [ART](https://aclanthology.org/2023.tacl-1.35/) dùng *evidence passage*, nhưng [FEVER](https://aclanthology.org/N18-1074/) chỉ xem câu là evidence khi nó hỗ trợ hoặc bác bỏ một nhận định; [KILT](https://aclanthology.org/2021.naacl-main.200/) dùng *provenance* cho vị trí trong nguồn dùng để kiểm chứng đầu ra. Trong các paper này, evidence thường là vai trò theo ngữ cảnh, không mặc nhiên có nghĩa “nguyên văn”, “bất biến” hay “đúng”.
 
-Vì vậy, tôi giữ thuật ngữ phổ biến *passage* và gọi lớp lưu trữ là **source passage**. Tính nguyên văn và bất biến là quy ước của hệ thống; khi source passage hỗ trợ câu trả lời hoặc procedure, nó mới đóng vai trò evidence.
+Vì vậy, **evidence trong bài này là một quy ước kiến trúc**, không phải một phân loại tri thức phổ quát. Tôi dùng nó cho lớp dữ liệu trả lời câu hỏi “nguồn đã nói gì?”, còn procedure trả lời “công việc phải được thực hiện thế nào?”.
 
-### Source passage: phần nguyên văn của nguồn
+### Evidence: bản ghi nguyên văn từ nguồn
 
-Source passage là đoạn nguyên văn được cắt từ tài liệu. Chunking chỉ xác định ranh giới; nội dung không được diễn giải lại, tóm tắt hay sửa cho “đẹp”. Kết quả OCR hoặc chuẩn hóa phải là bản dẫn xuất, không được ghi đè source passage.
+Trong phạm vi bài này, evidence không đồng nghĩa với sự thật đã được xác minh. Tôi định nghĩa **evidence = chunk nguyên văn + provenance + metadata quản trị**. Chunking chỉ xác định ranh giới; nội dung không được diễn giải lại, tóm tắt hay sửa cho “đẹp”. Kết quả OCR hoặc chuẩn hóa phải là bản dẫn xuất, không được ghi đè evidence gốc.
 
-Mỗi source passage cần nguồn, phiên bản, vị trí, thời điểm thu thập và có hiệu lực, quyền truy cập cùng checksum. Nó trả lời **“nguồn đã nói gì?”**, không khẳng định nội dung đó còn đúng hay đã được chấp nhận làm sự thật.
+Mỗi evidence cần nguồn, phiên bản, vị trí, thời điểm thu thập, thời gian có hiệu lực, quyền truy cập và checksum. Nó chỉ chứng minh **“nguồn này đã nói như vậy”**; nội dung vẫn có thể cũ, sai hoặc mâu thuẫn với nguồn khác.
 
-[Contextual Retrieval của Anthropic](https://www.anthropic.com/engineering/contextual-retrieval) bổ sung ngữ cảnh để truy xuất chunk tốt hơn. Phần ngữ cảnh, bản tóm tắt và embedding nên nằm bên cạnh source passage dưới dạng dữ liệu dẫn xuất. [W3C PROV-O](https://www.w3.org/TR/prov-o/) cũng phân biệt nội dung được trích từ nguồn với bản sửa đổi và dữ liệu dẫn xuất.
+[Contextual Retrieval của Anthropic](https://www.anthropic.com/engineering/contextual-retrieval) bổ sung ngữ cảnh để truy xuất chunk tốt hơn. Phần ngữ cảnh, bản tóm tắt và embedding nên nằm bên cạnh evidence dưới dạng dữ liệu dẫn xuất. [W3C PROV-O](https://www.w3.org/TR/prov-o/) cũng phân biệt nội dung được trích từ nguồn với bản sửa đổi và dữ liệu dẫn xuất.
 
 ### Procedure: để AI biết cách làm
 
-Procedure không phải bản tóm tắt dài hơn hay việc phát hiện vài chunk thường xuất hiện cùng nhau. Nó là mô hình vận hành được hình thành từ một hoặc nhiều source passage để AI lập kế hoạch, thực hiện và kiểm tra kết quả.
+Procedure không phải bản tóm tắt dài hơn hay việc phát hiện vài chunk thường xuất hiện cùng nhau. Nó là mô hình vận hành được hình thành từ một hoặc nhiều evidence để AI lập kế hoạch, thực hiện và kiểm tra kết quả.
 
 [ProPara](https://aclanthology.org/N18-1144/) và [OpenPI](https://aclanthology.org/2020.emnlp-main.520/) mô hình hóa quy trình qua thay đổi trạng thái của thực thể ở từng bước. [proScript](https://aclanthology.org/2021.findings-emnlp.184/) chỉ ràng buộc những sự kiện buộc phải trước hoặc sau nhau; [BPMN 2.0](https://www.omg.org/spec/BPMN/2.0/PDF/) còn mô hình hóa activity, event, gateway, dữ liệu và người chịu trách nhiệm. Từ đó, một procedure cần có:
 
@@ -71,13 +71,13 @@ Procedure không phải bản tóm tắt dài hơn hay việc phát hiện vài 
 - **Cách thực hiện:** hành động, thứ tự, quan hệ phụ thuộc, bước song song và nhánh lựa chọn.
 - **Trách nhiệm và tài nguyên:** người thực hiện, đầu vào, công cụ, dữ liệu và quyền.
 - **Thay đổi trạng thái:** trạng thái trước, trạng thái sau và đầu ra của mỗi bước.
-- **Kiểm soát:** ngoại lệ, cách phục hồi, bước xác minh và source passage hỗ trợ từng trường.
+- **Kiểm soát:** ngoại lệ, cách phục hồi, bước xác minh và evidence hỗ trợ từng trường.
 
-Tương quan giữa các chunk chỉ là tín hiệu khám phá, không chứng minh thứ tự, trách nhiệm hay quan hệ nhân quả. Procedure là dữ liệu dẫn xuất nên phải có phiên bản, độ tin cậy và trạng thái xác nhận; phần chưa có source passage hỗ trợ phải được đánh dấu là suy luận hoặc đề xuất.
+Tương quan giữa các chunk chỉ là tín hiệu khám phá, không chứng minh thứ tự, trách nhiệm hay quan hệ nhân quả. Procedure là dữ liệu dẫn xuất nên phải có phiên bản, độ tin cậy và trạng thái xác nhận; phần chưa có evidence hỗ trợ phải được đánh dấu là suy luận hoặc đề xuất.
 
 ## Một kho tri thức cần nhiều cách nhìn
 
-Hai lớp này cần những cách truy xuất khác nhau. Vector và keyword search phù hợp với source passage; SQL và knowledge graph phù hợp hơn với điều kiện, trạng thái, vai trò và quan hệ phụ thuộc trong procedure. Tài liệu gốc vẫn phải được giữ để đối chiếu.
+Hai lớp này cần những cách truy xuất khác nhau. Vector và keyword search phù hợp với evidence; SQL và knowledge graph phù hợp hơn với điều kiện, trạng thái, vai trò và quan hệ phụ thuộc trong procedure. Tài liệu gốc vẫn phải được giữ để đối chiếu.
 
 [GraphRAG của Microsoft](https://www.microsoft.com/en-us/research/publication/from-local-to-global-a-graph-rag-approach-to-query-focused-summarization/) tạo góc nhìn toàn cục bằng graph và bản tóm tắt theo cụm; [KAG](https://arxiv.org/abs/2409.13731) liên kết graph với chunk gốc rồi phối hợp nhiều cách truy xuất. Điểm chung là: **không có một kiểu chỉ mục phù hợp với mọi câu hỏi**.
 
@@ -86,7 +86,7 @@ Vì vậy, thay vì hỏi “chọn vector database nào?”, tôi muốn thiế
 ```text
 tài liệu gốc
       ↓ cắt, không viết lại
-source passage bất biến + provenance
+evidence bất biến + provenance
       ├── vector | keyword
       └── trích xuất + kiểm chứng
                   ↓
@@ -95,22 +95,22 @@ source passage bất biến + provenance
                   ↓
               graph | SQL
                   ↓
-retrieval planner → source passage hoặc procedure → LLM hoặc AI agent
+retrieval planner → evidence hoặc procedure → LLM hoặc AI agent
 ```
 
 Nguồn là tài sản bền vững. Các chỉ mục chỉ là dữ liệu dẫn xuất, có thể xây lại khi công nghệ thay đổi.
 
 ## Retrieval không nên là một bước cố định
 
-RAG cơ bản thường lấy số lượng tài liệu cố định cho mọi câu hỏi. [Self-RAG](https://arxiv.org/abs/2310.11511) cho mô hình quyết định khi nào cần retrieval; [CRAG](https://arxiv.org/abs/2401.15884) đánh giá tài liệu lấy về để điều chỉnh chiến lược. Bài học thực dụng là thiết kế pipeline biết chọn nguồn, kiểm tra các source passage đã đủ, còn hiệu lực và đúng quyền chưa, rồi truy xuất lại, đổi nguồn hoặc từ chối trước khi trả lời.
+RAG cơ bản thường lấy số lượng tài liệu cố định cho mọi câu hỏi. [Self-RAG](https://arxiv.org/abs/2310.11511) cho mô hình quyết định khi nào cần retrieval; [CRAG](https://arxiv.org/abs/2401.15884) đánh giá tài liệu lấy về để điều chỉnh chiến lược. Bài học thực dụng là thiết kế pipeline biết chọn nguồn, kiểm tra evidence đã đủ, còn hiệu lực và đúng quyền chưa, rồi truy xuất lại, đổi nguồn hoặc từ chối trước khi trả lời.
 
 Câu hỏi đơn giản vẫn nên đi đường ngắn. Hệ thống thông minh không phải hệ thống lúc nào cũng gọi năm agent; đôi khi biết khỏi họp cũng là một dạng thông minh.
 
 ## Tri thức phải có lịch sử và trách nhiệm
 
-Một source passage nói “giám đốc là A” có thể đúng hôm qua và sai hôm nay. Khi tài liệu thay đổi, hệ thống cần tạo source passage mới thay vì ghi đè bản cũ; procedure dẫn xuất từ bản cũ phải được cập nhật hoặc đánh dấu đã bị thay thế. [Temporal GraphRAG](https://arxiv.org/abs/2510.13590) đưa thời gian vào biểu diễn tri thức cũng vì vấn đề này.
+Một evidence ghi “giám đốc là A” có thể đúng hôm qua và sai hôm nay. Khi tài liệu thay đổi, hệ thống cần tạo evidence mới thay vì ghi đè bản cũ; procedure dẫn xuất từ bản cũ phải được cập nhật hoặc đánh dấu đã bị thay thế. [Temporal GraphRAG](https://arxiv.org/abs/2510.13590) đưa thời gian vào biểu diễn tri thức cũng vì vấn đề này.
 
-[W3C PROV](https://www.w3.org/TR/prov-overview/) dùng provenance (nguồn gốc dữ liệu) để ghi lại thực thể, hoạt động và người chịu trách nhiệm trong quá trình tạo dữ liệu. Với hệ thống Tri thức cho AI, provenance, phiên bản và quyền truy cập phải đi xuyên suốt từ source passage, procedure, chỉ mục cho tới citation ở đầu ra.
+[W3C PROV](https://www.w3.org/TR/prov-overview/) dùng provenance (nguồn gốc dữ liệu) để ghi lại thực thể, hoạt động và người chịu trách nhiệm trong quá trình tạo dữ liệu. Với hệ thống Tri thức cho AI, provenance, phiên bản và quyền truy cập phải đi xuyên suốt từ evidence, procedure, chỉ mục cho tới citation ở đầu ra.
 
 ## Chất lượng phải được đo liên tục
 
@@ -122,12 +122,12 @@ Phản hồi của người dùng chỉ nên tạo ra đề xuất có nguồn v
 
 Không phải dự án nào cũng cần graph, agentic retrieval hay một ontology hoành tráng ngay từ đầu. Lộ trình hợp lý hơn là:
 
-1. **Xây lớp source passage:** lưu chunk nguyên văn, phiên bản, vị trí, quyền và checksum; xem các chỉ mục là dữ liệu có thể xây lại.
-2. **Xây procedure:** mô hình hóa mục tiêu, điều kiện, hành động, vai trò, trạng thái và ngoại lệ; liên kết về source passage rồi kiểm tra bằng con người.
+1. **Xây lớp evidence:** lưu chunk nguyên văn, phiên bản, vị trí, quyền và checksum; xem các chỉ mục là dữ liệu có thể xây lại.
+2. **Xây procedure:** mô hình hóa mục tiêu, điều kiện, hành động, vai trò, trạng thái và ngoại lệ; liên kết về evidence rồi kiểm tra bằng con người.
 3. **Bổ sung theo lỗi thực tế:** chỉ thêm reranking, routing, graph, SQL hoặc xử lý thời gian khi benchmark cho thấy cần.
 4. **Tách thành dịch vụ dùng chung:** cung cấp API hoặc MCP để nhiều ứng dụng và agent dùng cùng nền tri thức.
 
-So với [cách nhìn “RAG không chỉ là vector” trước đây](/2026/07/01/rag-khong-chi-la-vector), đây là bước tiếp theo trong tư duy của tôi. Tôi vẫn làm RAG, nhưng giờ RAG là cơ chế đưa đúng source passage hoặc procedure vào ngữ cảnh, không phải tên của cả hệ thống. Source passage cho AI căn cứ để trả lời; procedure cho nó cấu trúc để lập kế hoạch, hành động và kiểm tra kết quả.
+So với [cách nhìn “RAG không chỉ là vector” trước đây](/2026/07/01/rag-khong-chi-la-vector), đây là bước tiếp theo trong tư duy của tôi. Tôi vẫn làm RAG, nhưng giờ RAG là cơ chế đưa đúng evidence hoặc procedure vào ngữ cảnh, không phải tên của cả hệ thống. Evidence cho AI căn cứ để trả lời; procedure cho nó cấu trúc để lập kế hoạch, hành động và kiểm tra kết quả.
 
 ## Tài liệu tham khảo
 
