@@ -578,6 +578,16 @@ multi-agent:
   permalink: /multi-agent
   description: Hệ thống multi-agent — orchestration nhiều AI agents làm việc song song, phân chia công việc và phối hợp để giải quyết tác vụ phức tạp.
 
+agent-loop:
+  label: Agent Loop
+  permalink: /agent-loop
+  description: Loop engineering — thiết kế các vòng lặp vận hành cho AI agent, từ nhịp chạy, điều kiện dừng đến chi phí token của mỗi vòng.
+
+context-engineering:
+  label: Context Engineering
+  permalink: /context-engineering
+  description: Quản lý context của AI agent như một tài nguyên hữu hạn — compaction, ghi chú có cấu trúc, sub-agent và ngân sách attention.
+
 ai-tools:
   label: AI Tools
   permalink: /ai-tools
