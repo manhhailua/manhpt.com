@@ -588,6 +588,11 @@ context-engineering:
   permalink: /context-engineering
   description: Quản lý context của AI agent như một tài nguyên hữu hạn — compaction, ghi chú có cấu trúc, sub-agent và ngân sách attention.
 
+opencode:
+  label: OpenCode
+  permalink: /opencode
+  description: OpenCode là công cụ coding agent mã nguồn mở hỗ trợ nhiều provider/LLM, agent/subagent, MCP và skills — dùng qua CLI, TUI, web hoặc desktop.
+
 ai-tools:
   label: AI Tools
   permalink: /ai-tools
