@@ -1,49 +1,49 @@
 ---
-title: "opencode giá rẻ: hai model free và một đội agent bảy vai chạy thật"
+title: "Hai model miễn phí của opencode, và đội agent bảy vai chạy bằng 0 đồng"
 slug: opencode-gia-re-va-model-free
 authors: [manhpt]
 tags: [opencode, llm, coding-agent, pricing, multi-agent, agentic-ai]
 date: 2026-10-17
-description: "opencode vừa cho dùng miễn phí DeepSeek V4.1 Flash và GLM 5.3 Flash. Bảng giá, cách tự kiểm bằng một lệnh, và cách tôi vận hành một đội agent 7 vai với chi phí 0đ."
+description: "opencode vừa cho dùng miễn phí DeepSeek V4.1 Flash và GLM 5.3 Flash. Tôi thử cho đội agent bảy vai chạy bằng hai model đó: bảng giá, cách tự kiểm, và những gì nhận được."
 image: ./cover.webp
 ---
 
-![opencode giá rẻ — model free và đội agent bảy vai](./cover.webp)
+![Hai model miễn phí của opencode và đội agent bảy vai](./cover.webp)
 
-Với coding agent, rào cản lớn nhất thường không phải năng lực của model, mà là hóa đơn. Một phiên làm việc dài có thể ngốn vài đô tiền token, và khi bạn muốn chạy nhiều agent song song thì con số đó nhân lên rất nhanh.
+Sáng nay tôi mở lại phần chi phí token của đội agent mình đang chạy. Bảy phiên, gần như chạy liên tục mấy ngày nay. Con số hiện ra là 0 đồng. Cả đội vẫn làm đủ việc, chỉ khác một chỗ: opencode mới cho dùng miễn phí hai model, DeepSeek V4.1 Flash và GLM 5.3 Flash.
 
-opencode gần đây thay đổi đúng điểm đau đó: nó cho dùng **miễn phí** hai model — **DeepSeek V4.1 Flash** và **GLM 5.3 Flash**. Trong bài này tôi sẽ đưa bảng giá thực tế, cách tự kiểm chỉ bằng một lệnh, và quan trọng hơn: cách tôi đang vận hành **một đội agent bảy vai** trên opencode với **chi phí 0đ**.
+Chuyện tiền token vẫn là thứ khiến tôi chùn tay mỗi lần cho agent chạy nền. Một phiên dài ngốn vài đô, nhân lên vài agent là tới cuối tháng nhìn hóa đơn thấy rõ. Nên khi nghe có hai model miễn phí, tôi không chỉ đọc thông báo. Nghe "miễn phí" hơi đáng ngờ, nên tôi mang ra dùng thật.
+
+Bài này có ba phần: bảng giá của opencode, cách tự kiểm hai model free bằng một lệnh, và đội bảy vai của tôi đang chạy ra sao.
 
 <!-- truncate -->
 
-## 1. opencode là gì, trong một đoạn
+## opencode, gói gọn trong một đoạn
 
-opencode là một coding agent chạy được ở CLI, TUI, web và desktop. Nó không tự huấn luyện model mà đóng vai lớp điều phối: hỗ trợ **75+ LLM provider**, quản lý **agent/subagent**, MCP server, skills, permissions và formatter. Một điểm đáng chú ý là **variant**: cùng một model nhưng chạy ở mức `low` / `high` / `max` để đổi giữa tốc độ và "độ suy nghĩ".
+opencode là coding agent chạy được ở CLI, TUI, web và desktop. Nó không tự huấn luyện model. Việc của nó là điều phối: hơn 75 LLM provider, agent và subagent, MCP server, skills, permissions, formatter. Một thứ tôi dùng nhiều là variant, tức chạy cùng model ở mức `low`, `high` hoặc `max` để đổi giữa tốc độ và độ suy nghĩ.
 
-Cách gọi model trong opencode theo dạng `provider_id/model_id`, ví dụ `opencode/glm-5.3-flash-free`. Với ai đang dùng Claude Code, Codex hay Cursor, opencode là lựa chọn cùng loại nhưng mở hơn ở khoản chọn provider và model.
+Cách gọi model theo dạng `provider_id/model_id`, ví dụ `opencode/glm-5.3-flash-free`. So với Claude Code hay Cursor, điểm mở hơn của opencode nằm ở khoản chọn provider và model.
 
-## 2. Bảng giá: cùng một model, nhiều mức giá
+## Cùng một model, ba bốn cái giá
 
-Điều đầu tiên cần hiểu: **cùng một model có thể xuất hiện ở nhiều provider với giá khác nhau**. Bảng dưới lấy từ danh sách model của opencode trên máy tôi, ngày 17/10/2026 (đơn vị: USD / 1 triệu token).
+Xem bảng giá lần đầu, tôi mới để ý cùng một model có thể nằm ở nhiều provider với giá khác nhau. Đây là số tôi lấy từ danh sách model của opencode trên máy, ngày 17/10/2026, đơn vị là USD trên một triệu token.
 
 | Model | Vào | Ra | Biến thể |
 |---|---:|---:|---|
-| `opencode/deepseek-v4.1-flash-free` (**free**) | **0** | **0** | low · high · max |
-| `opencode/glm-5.3-flash-free` (**free**) | **0** | **0** | low · high · max |
-| `opencode/deepseek-v4.1-flash` (trả phí) | 0,30 | 1,20 | low · high · max |
+| `opencode/deepseek-v4.1-flash-free` | 0 | 0 | low · high · max |
+| `opencode/glm-5.3-flash-free` | 0 | 0 | low · high · max |
+| `opencode/deepseek-v4.1-flash` | 0,30 | 1,20 | low · high · max |
 | `opencode-go/deepseek-v4.1-flash` | 0,15 | 0,60 | low · high · max |
 | `opencode/glm-5.3-flash` | 0,15 | 0,50 | low · high · max |
 | `opencode-go/glm-5.3-flash` | 0,15 | 0,50 | low · high · max |
-| Tham chiếu: `openrouter/z-ai/glm-5.3-flash` | 0,0341 | 0,4182 | — |
-| Tham chiếu: gói `z.ai coding plan` | 0 | 0 | theo gói |
+| `openrouter/z-ai/glm-5.3-flash` | 0,0341 | 0,4182 | — |
+| gói `z.ai coding plan` | 0 | 0 | theo gói |
 
-Hai điều rút ra. Thứ nhất, bản `-free` có giá **0/0** — không phải "rẻ", mà đúng nghĩa miễn phí token. Thứ hai, ngay cả khi phải trả tiền, **cache đọc** rẻ hơn nhiều lần so với token vào (ví dụ bản `opencode-go` có giá vào 0,15 nhưng cache đọc chỉ 0,003), nên các agent chạy vòng lặp đọc lại ngữ cảnh không tốn nhiều như cảm giác.
+Hai dòng đầu ghi thẳng 0/0, tức token miễn phí thật, không phải hàng giảm giá. Còn khi phải trả tiền thì nên nhìn thêm cột cache đọc. Bản `opencode-go` có giá vào 0,15 nhưng cache đọc chỉ 0,003. Agent chạy vòng lặp đọc lại ngữ cảnh rất nhiều, nên khoản này quyết định phần lớn hóa đơn cuối cùng.
 
-## 3. Tin mới: hai model free, tự kiểm bằng một lệnh
+## Hai model miễn phí, kiểm bằng một lệnh
 
-Hai model miễn phí mới là **DeepSeek V4.1 Flash** và **GLM 5.3 Flash**. Cách ghi nguồn ở đây cần rõ ràng: đây là thông tin từ **thông báo gần đây của opencode** (người dùng chuyển lại), và tôi **xác nhận trực tiếp bằng CLI** thay vì chỉ tin lời.
-
-Cách kiểm nằm gọn trong một lệnh — chạy ngay trên máy bạn:
+Hai model miễn phí là DeepSeek V4.1 Flash và GLM 5.3 Flash. Chỗ này tôi nói rõ cách biết: thông tin đến từ thông báo gần đây của opencode do người dùng chuyển lại. Web search đang lỗi nên tôi không kiểm được trên mạng, thay vào đó tôi kiểm trực tiếp trên máy.
 
 ```bash
 opencode models | grep -E "flash-free"
@@ -51,17 +51,11 @@ opencode models | grep -E "flash-free"
 # opencode/glm-5.3-flash-free
 ```
 
-CLI liệt kê **đúng tên** hai model này trong danh sách của opencode. Đây là cách kiểm nhanh, không phụ thuộc vào một trang thông báo có thể đổi địa chỉ. Chọn model rồi thêm hậu tố biến thể để đổi mức suy nghĩ, ví dụ chạy ở mức cao nhất:
+CLI liệt kê đúng tên hai model này trong danh sách của opencode. Cách kiểm này tiện hơn vì không phụ thuộc vào một trang thông báo có thể đổi địa chỉ. Cần model suy nghĩ kỹ hơn thì thêm variant, ví dụ `opencode/glm-5.3-flash-free#max`.
 
-```text
-opencode/glm-5.3-flash-free#max
-```
+## Đội bảy vai chạy bằng 0 đồng
 
-Phần `#max` là variant mạnh nhất của model đó. Với các tác vụ cần suy luận nhiều, đây là lựa chọn tôi dùng cho vai kiểm định chất lượng bên dưới.
-
-## 4. Use case thật: một đội agent bảy vai, 0đ
-
-Thay vì một agent làm tất cả, tôi chia việc thành **một đội bảy phiên**, mỗi phiên một vai, phối hợp qua một bảng công việc chung. Đây là mô hình "Option B" tôi đang chạy.
+Tôi không để một agent làm hết. Đội của tôi có bảy phiên, mỗi phiên một vai, phối hợp qua một bảng công việc chung. Đây là mô hình "Option B" đang chạy.
 
 ```text
                     ┌──────────── Bảng công việc chung ────────────┐
@@ -76,55 +70,51 @@ Thay vì một agent làm tất cả, tôi chia việc thành **một đội b�
                                    └────────────────┘  └────────────────────┘
 ```
 
-Điểm đáng chú ý: **chọn model theo vai**, không dùng một model cho tất cả.
+Cái đáng nói ở đây là cách chọn model cho từng vai.
 
 | Vai | Model | Việc chính |
 |---|---|---|
-| PM điều phối | DeepSeek V4.1 Flash | Ưu tiên hóa, giao việc, nghiệm thu; loop 15 phút (giờ thấp điểm) / 1 giờ (giờ cao điểm) |
-| Platform/Data Engineer | DeepSeek V4.1 Flash | Corpus (VBPL · arXiv · Lịch sử), KB, backup/ops |
+| PM điều phối | DeepSeek V4.1 Flash | Ưu tiên hóa, giao việc, nghiệm thu; loop 15 phút giờ thấp điểm, 1 giờ giờ cao điểm |
+| Platform/Data Engineer | DeepSeek V4.1 Flash | Corpus VBPL, arXiv, Lịch sử; KB; backup và ops |
 | Product/App Engineer | DeepSeek V4.1 Flash | KB Chat, UI/UX, wrapper OpenAI-compatible |
-| Discovery & Research | DeepSeek V4.1 Flash | Khảo sát nguồn/công nghệ, xác minh đa nguồn (read-only) |
+| Discovery & Research | DeepSeek V4.1 Flash | Khảo sát nguồn và công nghệ, xác minh đa nguồn, read-only |
 | Prototyping Lab | DeepSeek V4.1 Flash | PoC, benchmark, spike |
 | Content & Docs | DeepSeek V4.1 Flash | Blog, docs, release notes |
-| **QC độc lập** | **GLM 5.3 Flash Free `#max`** | Nghiệm thu độc lập, verdict PASS / PASS-điều kiện / FAIL |
+| QC độc lập | GLM 5.3 Flash Free `#max` | Nghiệm thu độc lập, verdict PASS, PASS-điều kiện hoặc FAIL |
 
-Sau khoảng **hai ngày** vận hành, bảng có **227 task**: **203 Done**, 19 Cancelled, 4 còn mở. Vài kết quả cụ thể để thấy quy mô:
+PM và năm vai chạy DeepSeek V4.1 Flash. Riêng QC tôi cố ý cho chạy `opencode/glm-5.3-flash-free#max`. Lý do khá đơn giản: người chấm mà dùng chung model với người làm thì dễ mắc chung một điểm mù, và cũng dễ tự khen mình.
 
-- **Pipeline citation VBPL**: xử lý **157.766 văn bản**, **106.616 tên file**, đối chiếu **88.210 + 73.956 dòng file** ở các định dạng `pdf/doc/docx/xls/zip/png`, tốc độ khoảng **1,4 giây/văn bản**, chạy nền bằng **systemd** và tự resume sau khi dừng.
-- **Một sự cố thật**: API gateway của nguồn dữ liệu sập **503 trong ~16,5 giờ**. Job **tự chờ và thử lại 10 phút một lần**, không mất dữ liệu khi nguồn trở lại; vai QC tự phát hiện outage và chờ hồi phục thay vì báo lỗi giả.
-- **QC độc lập**: mỗi task được chấm verdict `PASS / PASS-điều kiện / FAIL`, tái lập số liệu bằng truy vấn **read-only**, kiểm URL bằng `HEAD`, và **mở trình duyệt thật** để kiểm giao diện. Có task được xác nhận PASS vì số liệu **khớp chính xác từng con**, và kết luận "lỗi nằm ở nguồn chứ pipeline không đánh rơi dữ liệu".
+Sau khoảng hai ngày, bảng có 227 task: 203 Done, 19 Cancelled, 4 còn mở. Vài kết quả cụ thể.
 
-Tổng chi phí token cho toàn bộ đội: **0đ** — vì PM và năm vai chạy bản model free, còn QC chạy một model free khác. Hạ tầng là máy local (SQLite cho corpus, UI chat chạy local, GPU RTX 2060), nên chi phí thật chỉ còn tiền điện và Internet.
+Pipeline citation VBPL xử lý 157.766 văn bản, 106.616 tên file, đối chiếu 88.210 và 73.956 dòng file ở các định dạng pdf, doc, docx, xls, zip, png, tốc độ khoảng 1,4 giây một văn bản. Nó chạy nền bằng systemd và tự resume khi dừng.
 
-## 5. Bốn bài học
+Có hôm API gateway của nguồn dữ liệu sập, trả 503 liên tục trong khoảng 16,5 giờ. Job không chết theo. Nó chờ và thử lại 10 phút một lần, tới khi nguồn sống lại thì chạy tiếp, không mất dòng dữ liệu nào. Vai QC tự phát hiện outage và chờ hồi phục, thay vì báo lỗi giả.
 
-**Chọn model theo vai.** Không phải vai nào cũng cần model mạnh nhất. Việc đọc tài liệu, tổng hợp, hay chạy vòng lặp kiểm tra đều nằm gọn trong một model Flash; chỉ những quyết định khó mới cần mức `#max`.
+QC chấm mỗi task một verdict, tái lập số liệu bằng truy vấn read-only, kiểm URL bằng HEAD, và mở trình duyệt thật để xem giao diện. Hai task được PASS vì số liệu khớp chính xác từng con, kết luận là lỗi nằm ở nguồn chứ pipeline không đánh rơi dữ liệu.
 
-**QC phải dùng model khác.** Nếu người viết và người chấm cùng một model, họ **chia sẻ cùng điểm mù** và rất dễ "chấm điểm cho chính mình". Tôi cố ý để vai QC chạy GLM 5.3 Flash trong khi phần còn lại chạy DeepSeek V4.1 Flash — khác model, và vẫn 0đ vì cả hai đều có bản free.
+Tổng tiền token cho cả đội là 0 đồng, vì PM và năm vai chạy bản free, QC chạy một bản free khác. Hạ tầng là máy local: SQLite cho corpus, UI chat chạy local, GPU RTX 2060. Tiền thật chỉ còn điện và Internet.
 
-**Quản chi phí là quản nhịp và ngữ cảnh, không phải chọn model rẻ.** Như [bài trước về loop engineering](/loop-engineering-agent-team) đã nói, chi phí tỉ lệ với số lần gọi nhân với kích thước ngữ cảnh. Việc cơ học (crawl, làm sạch, backup) nên chạy bằng script, **không gọi model**; chỉ việc cần phán đoán mới gọi LLM. Và việc nặng nên dồn vào giờ thấp điểm.
+## Vài thứ tôi rút ra
 
-**Resilience quan trọng hơn tốc độ.** Job dài sẽ gặp mạng chập, API 503, tiến trình chết. Job phải **idempotent và resume-safe**, chạy dưới systemd và tự thử lại có kiểm soát. Sự cố 16,5 giờ không làm mất một dòng dữ liệu nào — đó là giá trị của thiết kế, không phải may mắn.
+Chọn model theo vai. Đọc tài liệu, tổng hợp, hay chạy vòng kiểm tra thì model Flash là đủ; chỉ việc khó mới cần tới mức `max`.
 
-## 6. Hạn chế, nói thẳng
+QC nên dùng model khác với người làm. Chuyện này tôi đã nói ở trên nhưng đáng nhắc lại, vì nó là thứ dễ bỏ qua nhất khi dựng đội.
 
-Model free không phải bản trả phí. Chúng **có thể bị rate-limit**, độ ổn định và độ trễ không đồng đều, và có lúc chậm hơn hẳn. Free phù hợp để **thử nghiệm, học, và các đội nhỏ chạy khối lượng vừa phải**; việc quan trọng hoặc cần độ ổn định cao thì nên dùng bản trả phí.
+Về chi phí, số lần gọi và kích thước ngữ cảnh vẫn quyết định nhiều hơn giá mỗi token. Việc cơ học như crawl, làm sạch, backup thì chạy bằng script, không cần gọi model. Việc nặng nên dồn vào giờ thấp điểm. Tôi kể kỹ chuyện này trong bài trước về [loop engineering](/loop-engineering-agent-team).
 
-Chi phí 0đ cũng không hoàn toàn "miễn phí": bạn vẫn trả bằng **điện, Internet và phần cứng**, cộng thời gian vận hành. Số liệu 227 task ở trên là của **một máy local cụ thể**, không phải một benchmark chuẩn hóa — nên đọc nó như kinh nghiệm, không phải bảng xếp hạng.
+Về độ bền, job dài kiểu gì cũng gặp mạng chập, API 503, tiến trình chết. Job cần chạy lại được từ chỗ dừng và không sinh dữ liệu trùng. Sự cố 16,5 giờ kia không mất dòng nào, phần lớn nhờ thiết kế chứ không phải may.
 
-Cuối cùng, đừng vì free mà bỏ qua chất lượng: nếu task thật sự khó, hãy cho nó một model đủ mạnh, hoặc thêm một vai kiểm định độc lập. Tiết kiệm token mà trả giá bằng kết quả sai thì đắt hơn nhiều.
+Còn phần chưa ngon. Model free vẫn không bằng bản trả phí: có thể bị rate-limit, độ trễ không đều, có lúc chậm hơn hẳn. Nó hợp để thử nghiệm, học, và những đội nhỏ làm khối lượng vừa phải. Việc quan trọng hoặc cần ổn định thì nên trả tiền. Còn 0 đồng cũng không hẳn miễn phí, tôi vẫn trả bằng điện, Internet, phần cứng và thời gian vận hành. Số 227 task ở trên là của một máy local, nên đọc như kinh nghiệm của tôi, đừng coi là bảng xếp hạng.
 
 ## Kết
 
-opencode đang rẻ theo hai nghĩa: bản trả phí đã rẻ hơn nhiều lựa chọn khác, và nay còn **hai model free** để bạn bắt đầu mà không cần thẻ tín dụng. Nhưng thứ quyết định thành công không phải giá model, mà là **cách chia vai, chọn model theo vai, và thiết kế để chạy bền**.
-
-Nếu bạn muốn tự kiểm, chỉ cần một lệnh: `opencode models | grep flash-free`. Còn muốn hiểu cách tôi ghép đội và thiết kế vòng lặp, xem lại bài [loop engineering](/loop-engineering-agent-team).
+Thứ giữ đội chạy được không nằm ở giá model, mà ở cách chia vai và thiết kế để chạy bền. Hai model miễn phí chỉ làm việc bắt đầu dễ hơn. Muốn thử thì một lệnh là đủ: `opencode models | grep flash-free`.
 
 ## Tài liệu tham khảo
 
-1. [opencode — Models](https://opencode.ai/docs/models/) — 75+ provider, variant `low`/`high`/`max`, cấu hình model và cách chọn.
+1. [opencode — Models](https://opencode.ai/docs/models/) — hơn 75 provider, variant `low`/`high`/`max`, cấu hình model và cách chọn.
 2. [opencode v2](https://opencode.ai/v2) — phiên bản v2.
 3. `opencode models` — CLI liệt kê model trên máy; xác nhận `opencode/deepseek-v4.1-flash-free` và `opencode/glm-5.3-flash-free` (kiểm ngày 17/10/2026).
 4. [Loop engineering: vận hành một đội agent làm hơn 100 việc](/loop-engineering-agent-team) — bài trước về thiết kế vòng lặp và chi phí token.
 
-*Giá trong bài là giá tại thời điểm 17/10/2026 và có thể thay đổi. Thông tin về hai model free được ghi theo thông báo gần đây của opencode (người dùng cung cấp) và xác nhận lại bằng CLI trên máy.*
+*Giá trong bài là giá ngày 17/10/2026 và có thể thay đổi. Hai model free được ghi theo thông báo gần đây của opencode do người dùng cung cấp, và tôi xác nhận lại bằng CLI trên máy.*
